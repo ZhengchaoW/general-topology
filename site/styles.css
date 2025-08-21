@@ -1,0 +1,15 @@
+:root{--bg:#fbfbfb;--accent:#2b6cb0;--muted:#666;--border:#ccc;--sep:#e6e6e6}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:var(--bg);color:#111;margin:0}
+.container{max-width:900px;margin:32px auto;padding:16px}
+header h1{margin:0 0 4px}
+.term{color:var(--muted);margin:0 0 12px}
+nav a{color:var(--accent)}
+.note{color:var(--muted);font-size:0.9rem;margin-top:0}
+.schedule-table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:0.95rem}
+.schedule-table th{text-align:left;font-weight:600;padding:6px 8px;border-bottom:2px solid #222}
+.schedule-table td{padding:6px 8px;vertical-align:top;border-bottom:1px solid var(--sep)}
+.schedule-table tr.week-sep td{padding:0;border:0;height:0;position:relative}
+.schedule-table tr.week-sep td:after{content:"";display:block;border-bottom:4px solid var(--accent);margin:10px 0 6px 0;border-radius:2px}
+.schedule-table td.date{white-space:nowrap;font-weight:600}
+.schedule-table td.remark{color:var(--accent);font-style:italic}
+footer{margin-top:28px;color:var(--muted);font-size:0.85rem}
