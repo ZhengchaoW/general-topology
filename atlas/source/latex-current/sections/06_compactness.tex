@@ -1,0 +1,750 @@
+\section{Compactness}
+
+Let's have a look at two examples from calculus:
+
+
+\begin{theorem}[Intermediate Value Theorem]
+    Let $f:[0,1]\to\R$ be a continuous function. WLOG, we assume that $f(0)<f(1)$. Then, for any $r\in [f(0),f(1)]$, there exists $c\in (0,1)$ such that $f(c)=r$.
+\end{theorem}
+
+
+\begin{theorem}[Maximum value theorem]
+    Let $f:[0,1]\to\R$ be a continuous function. Then there exists $c\in[0,1]$ such that $f(c)\ge f(x)$ for all $x\in[0,1]$.
+\end{theorem}
+
+
+
+
+These are due to the fact that  $[0,1]$ is ``connected'' and ``compact''. We will talk about these two notions for general topological spaces in this and the next section.
+
+
+\begin{definition}
+    A topological space \(X\) is \emph{compact} if every open cover $\mathcal{U}$ of \(X\) has a finite subcover, i.e., there exist finitely many \(U_1, U_2, \ldots, U_n \in \mathcal{U}\) such that \(X \subseteq U_1 \cup U_2 \cup \ldots \cup U_n\).
+\end{definition}
+
+
+
+\begin{example}
+    $\R$ is not compact: $\{(n-1,n+1)\}_{n\in\Z}$ is an open cover of $\R$ with no finite subcover.
+\end{example}
+
+\begin{example}
+    Every finite topological space $X$ is compact (regardless of the topology): given any open cover $\mathcal{U}$, for each point $x\in X$ choose $U_x\in\mathcal{U}$ such that $x\in U_x$. Then, $\{U_x:x\in X\}$ is a finite subcover.
+\end{example}
+
+\begin{example}
+    $(0,1]$ is not compact: $\{(1/n,1]:n\in\mathbb{N}\}$ is an open cover of $(0,1]$ with no finite subcover.
+\end{example}
+
+
+\begin{example}
+    Any closed interval such as $[0,1]$ in real line is compact. This is not trivial and we will prove it later. As a consequence, we will see $X\subset\R^n$ is compact iff it is closed and bounded (Heine-Borel theorem). 
+\end{example}
+
+Although we have the result for $\R^n$, not every closed and bounded subset of a general metric space is compact. Let me show you two examples.
+
+\begin{example}
+    Let $X=[0,1]$ with the discrete topology. Then, $X$ is closed and bounded as a subset of itself. However, it is not compact: $\{\{x\}:x\in[0,1]\}$ is an open cover of $X$ with no finite subcover.
+\end{example}
+
+
+
+
+We say a collection of sets $\{U_\alpha\}$ in $X$ covers $Y\subset X$ if $Y\subseteq \bigcup_\alpha U_\alpha$.
+
+\begin{lemma}
+    $Y\subset X$ is compact iff every cover of $Y$ by open sets in $X$ has a finite subcover.
+\end{lemma}
+
+\begin{proof}
+    $Y$ is compact iff every open cover of the form $\{U_\alpha\cap Y\}$ has a finite subcover iff every cover $\{U_\alpha\}$ of $Y$ by open sets in $X$ has a finite subcover.
+\end{proof}
+
+
+\begin{example}
+    $\{1/n\}_{n\in \N}\subset \R$ is not compact: $\{\{1/n\}\}$ is an open cover with no finite subcover.
+
+    However, $\{0\}\cup \{1/n\}_{n\in\N}\subset\R$ is compact: given any open cover $\mathcal{U}$, there exists $U\in\mathcal{U}$ such that $0\in U$. Choose $\varepsilon>0$ such that $(-\varepsilon,\varepsilon)\subset U$. Then, only finitely many points of the set $\{1/n\}_{n\in\N}$ are outside $U$. Choosing open sets from $\mathcal{U}$ covering these finitely many points gives a finite subcover.
+\end{example}
+
+
+\begin{theorem}
+    Every closed subset $Y$ of a compact space $X$ is compact.
+\end{theorem}
+
+\begin{proof}
+    Let $\{U_\alpha\}$ be an open cover of $Y$ by open sets in $X$. Then, $\{U_\alpha\}\cup \{X\setminus Y\}$ is an open cover of $X$. By compactness of $X$, there exists a finite subcover $\{U_{\alpha_1},\ldots,U_{\alpha_n},X\setminus Y\}$ of $X$. Then, $Y\subseteq \bigcup_{i=1}^n U_{\alpha_i}$, we conclude that $\{U_{\alpha_1},\ldots,U_{\alpha_n}\}$ is a finite subcover of $Y$.
+\end{proof}
+
+\begin{theorem}
+    Every compact subspace $Y$ of a Hausdorff space $X$ is closed.
+\end{theorem}
+
+\begin{proof}
+    We will show that $X\setminus Y$ is open. Given any fixed $x\in X\setminus Y$, for each $y\in Y$ choose disjoint open sets $U_y$ and $V_y$ such that $x\in U_y$ and $y\in V_y$. Then, $\{V_y:y\in Y\}$ is an open cover of $Y$. By compactness of $Y$, there exists a finite subcover $\{V_{y_1},\ldots,V_{y_n}\}$ of $Y$. Let $U=\bigcap_{i=1}^n U_{y_i}$. Then, $U$ is disjoint from $V_{y_1}\cup\cdots\cup V_{y_n}$ and hence is an open neighbourhood of $x$ disjoint from $Y$. Hence, $X\setminus Y$ is open.
+\end{proof}
+
+In fact, the proof above shows that for any $x\in X\setminus Y$, there exist disjoint open sets $U$ and $V$ such that $x\in U$ and $Y\subseteq V$.
+
+
+\begin{example}
+    This theorem immediately tells us $(a,b]$ or $[a,b)$ is not compact in $\R$ as it is not closed.
+\end{example}
+
+Note that the compactness assumption is necessary. 
+
+\begin{example}
+    Let $X=\R$ be endowed with the finite complement topology. Then, $X$ is not Hausdorff as we have seen. However, any subset $Y$ of $X$ is compact. 
+\end{example}
+
+\begin{theorem}
+    Every compact Hausdorff space is normal.
+\end{theorem}
+
+\begin{proof}
+    Let $A$ and $B$ be disjoint closed sets in a compact Hausdorff space $X$. Then, they are compact as well. For each $a\in A$, choose disjoint open sets $U_a$ and $V_a$ such that $a\in U_a$ and $B\subseteq V_a$. Then, $\{U_a:a\in A\}$ is an open cover of $A$. By compactness of $A$, there exists a finite subcover $\{U_{a_1},\ldots,U_{a_n}\}$ of $A$. Let $U=\bigcup_{i=1}^n U_{a_i}$ and $V=\bigcap_{i=1}^n V_{a_i}$. Then, $U$ and $V$ are disjoint open sets separating $A$ and $B$.
+\end{proof}
+
+\subsubsection*{Finite intersection property}
+
+\begin{definition}
+    A collection of sets $\{C_\alpha\}$ in $X$ is said to have the \emph{finite intersection property} if for any finite subcollection $\{C_{\alpha_1},\ldots,C_{\alpha_n}\}$, we have $\bigcap_{i=1}^n C_{\alpha_i}\ne\emptyset$.
+\end{definition}
+
+\begin{theorem}
+    A topological space $X$ is compact iff for any collection of closed sets $\{C_\alpha\}$ in $X$ with the finite intersection property, we have $\bigcap_\alpha C_\alpha\ne\emptyset$.
+\end{theorem}
+\begin{proof}
+    (\(\Rightarrow\)) Let $\{C_\alpha\}$ be a collection of closed sets in $X$ with the finite intersection property. Suppose that $\bigcap_\alpha C_\alpha=\emptyset$. Then, $\{X\setminus C_\alpha\}$ is an open cover of $X$. By compactness of $X$, there exists a finite subcover $\{X\setminus C_{\alpha_1},\ldots,X\setminus C_{\alpha_n}\}$ of $X$. This implies that $\bigcap_{i=1}^n C_{\alpha_i}=\emptyset$, contradicting the finite intersection property.
+
+    (\(\Leftarrow\)) Let $\{U_\alpha\}$ be an open cover of $X$. Suppose that there is no finite subcover. Then, for any finite subcollection $\{U_{\alpha_1},\ldots,U_{\alpha_n}\}$, we have $\bigcap X\setminus U_{\alpha_i}=X\setminus (U_{\alpha_1}\cup\cdots\cup U_{\alpha_n})\ne\emptyset$. This implies that the collection of closed sets $\{X\setminus U_\alpha\}$ has the finite intersection property. By assumption, we have $\bigcap_\alpha (X\setminus U_\alpha)\ne\emptyset$, contradicting the fact that $\{U_\alpha\}$ is an open cover of $X$.
+\end{proof}
+
+
+\subsubsection*{Relation with continuous functions}
+
+\begin{theorem}
+    If $f:X\to Y$ is continuous and $X$ is compact, then $f(X)$ is compact.
+\end{theorem}
+\begin{proof}
+    Let $\{V_\alpha\}$ be an open cover of $f(X)$ by open sets in $Y$. Then, $\{f^{-1}(V_\alpha)\}$ is an open cover of $X$ by open sets in $X$. By compactness of $X$, there exists a finite subcover $\{f^{-1}(V_{\alpha_1}),\ldots,f^{-1}(V_{\alpha_n})\}$ of $X$. Then, $f(X)\subseteq \bigcup_{i=1}^n V_{\alpha_i}$, we conclude that $\{V_{\alpha_1},\ldots,V_{\alpha_n}\}$ is a finite subcover of $f(X)$.
+\end{proof}
+
+As a consequence we can go back to the maximum value theorem.
+
+\begin{corollary}[Maximum value theorem]
+    Let $f:X\to\R$ be a continuous function. Then there exists $c\in X$ such that $f(c)\ge f(x)$ for all $x\in X$.
+\end{corollary}
+\begin{proof}
+    By the previous theorem, $f(X)$ is compact in $\R$. In particular, it is closed and bounded. Let $M=\sup f(X)$. This implies that there will be a sequence $\{y_n\}\subset\R$ such that $y_n\to M$. Since $f(X)$ is closed, the limit $M\in f(X)$. Then, it is not hard to see that $M\in f(X)$. Hence, there exists $c\in X$ such that $f(c)=M\ge f(x)$ for all $x\in X$.
+\end{proof}
+
+\begin{theorem}
+    Let $f:X\to Y$ be a bijective continuous map. Assume that $X$ is compact and $Y$ is Hausdorff. Then $f$ is a homeomorphism.
+\end{theorem}
+\begin{proof}
+    It suffices to show that $f$ is a closed map. Given any closed set $C$ in $X$, it is compact. By continuity of $f$, $f(C)$ is compact as well. By Hausdorffness of $Y$, $f(C)$ is closed in $Y$. Hence, $f$ is a homeomorphism.
+\end{proof}
+
+
+
+\subsubsection*{Finite vs Compact}
+
+Compactness can be viewed as a generalization of finiteness. In particular, compactness to continuous maps is what finiteness is to functions. 
+
+% \begin{problem}
+%     Any finite topological space is compact.
+% \end{problem}
+
+\begin{proposition}
+    Any function sends a finite set to a finite set.
+
+    Any continuous map sends a compact set to a compact set.
+\end{proposition}
+
+\begin{theorem}
+    \begin{itemize}
+        \item Any finite function $f:A\to \R$ obtains maximal and minimal values.
+        \item Any continuous function $f:X\to \R$ from a compact space $X$ obtains maximal and minimal values. 
+    \end{itemize}
+\end{theorem}
+
+\begin{theorem}
+    \begin{itemize}
+        \item Any sequence $(x_n)$ taking value in a finite set $A$ has a convergent subsequence (actually constant).
+        \item Any sequence $(x_n)$ taking value in a compact \emph{metric space} $X$ has a convergent subsequence.
+    \end{itemize}
+\end{theorem}
+
+
+
+\subsection{Order topology and Metric spaces}
+
+
+
+
+\begin{theorem}
+    Let $X$ be a linear post. Assume that $X$ has the least upper bound property\footnote{This means any subset that is bounded above has a least upper bound. For example, we know $\R$ satisfies this property as we can always take the supremum of a bounded set.}. Then, any closed interval $[a,b]$ in $X$ is compact under the order topology (generated by $(a,b)$ and $[a_0,b)$ and $(a,b_0]$ if $a_0$ is the least element and $b_0$ is the greatest element).
+\end{theorem}
+\begin{proof}
+    Let $\mathcal{U}$ be an open cover of $[a,b]$ where $a<b$. Define 
+    \[
+        S=\{x\in [a,b]:[a,x]\text{ can be covered by a finite subcover of }\mathcal{U}\}.
+    \]
+    It is clear that $a\in S$ and if $x\in S$, then $[a,x]\subset S$. Since $S$ is clearly upperbounded by $b$, we let $c=\sup S$, i.e., the least upper bound of $S$. We will show that $c\in S$ and $c=b$. 
+    
+    Clearly $c\leq b$. If $(a,c)$ is empty, then $a=c\in S$. Suppose $(a,c)$ is nonempty. Then, we have that $[a,c)\subset S$. Let $U_c$ be an open set in $\mathcal{U}$ containing $c$. By the definition of the order topology, there exists some $(d,e)$ such that $c\in (d,e)\subseteq U_c$. There must be some $x\in (d,c)$ otherwise $\sup S\leq d<c$. Then, we know $x\in S$ and hence $[a,x]$ can be covered by a finite subcover $\mathcal{U}_x$ of $\mathcal{U}$. Note that $\mathcal{U}_x\cup \{U_c\}$ is a finite subcover of $[a,c]$. This implies that $c\in S$.
+    
+
+
+    Suppose $c<b$. Now we consider the interval $(c,b)$. Let $T=\{x\in [c,b]:[c,x]=\{c\}\}$ and let $y=\sup T$. Note that $y\leq b$. If $y=c$, then the open set $U_c$ containing $c$ also contains some element $z$ of $(c,b)$, and hence $[x,z]$ can be covered by a finite subcover, which contradicts the definition of $c$. Therefore, we must have $y>c$. But then the interval $[a,y]$ can be covered by a finite subcover of $\mathcal{U}$ by considering an open set around $y$, contradicting the definition of $c$. Hence, we must have $c=b$.
+
+    Therefore, we have shown that every open cover $\mathcal{U}$ of $[a,b]$ has a finite subcover. This completes the proof.
+
+\end{proof}
+
+As a corollary, we have the following result.
+\begin{corollary}
+    Any closed and bounded interval $[a,b]$ in $\R$ is compact. 
+\end{corollary}
+
+We can now use this corollary to prove the Heine-Borel theorem.
+
+\begin{theorem}[Heine-Borel theorem]
+    A subset \(K\) of \(\mathbb{R}^n\) is compact if and only if it is closed and bounded.
+\end{theorem}
+
+\begin{proof}
+    (\(\Rightarrow\)) Assume \(K\) is compact. Then, \(K\) is closed since $\R^n$ is Hausdorff. Then, consider the collection of open sets \(\{B_m(0) : m \in \mathbb{N}\}\), which is a cover of $\R^n$ and hence $K$. There exists a finite subcover \(\{B_{m_1}(0), B_{m_2}(0), \ldots, B_{m_k}(0)\}\) of \(K\). Then, let \(M = \max\{m_1, m_2, \ldots, m_k\}\). It follows that \(K \subseteq B_M(0)\), showing that \(K\) is bounded.
+
+    (\(\Leftarrow\)) Assume \(K\) is closed and bounded. Since \(K\) is bounded, it is contained in some ball \(B_R(0)\) for some radius \(R > 0\). But then \(B_R(0)\subset [-R,R]^n\). $[-R,R]^n$ is compact as it is a finite product of compact sets (which we will prove later). So $K$ as a closed subset of a compact set is compact. 
+\end{proof}
+
+In general metric spaces, we can't expect closed and bounded subsets to be compact as we have seen before. However, we do have the following important characterizations of compactness in metric spaces.
+
+
+
+\begin{definition}
+    Let $(X,d)$ be a metric space. A sequence $(x_n)$ is said to be \emph{Cauchy} if for every $\epsilon>0$, there exists $N\in\mathbb{N}$ such that $d(x_n,x_m)<\epsilon$ for all $n,m\ge N$. 
+
+    The metric space $(X,d)$ is said to be \emph{complete} if every Cauchy sequence in $X$ converges to a point in $X$.
+\end{definition}
+
+
+\begin{example}
+    The Euclidean space $\mathbb{R}^n$ is a complete metric space. $\R^n\setminus\{0\}$ is not complete.
+\end{example}
+
+\begin{definition}
+    A metric space $(X,d)$ is said to be \emph{totally bounded} if for every $\epsilon>0$, there exists a finite set $F\subset X$ such that $X$ is covered by the open balls $B_\epsilon(x)$ for $x\in F$.
+\end{definition}
+
+
+\begin{theorem}\label{thm: complete and totally bounded}
+    A metric space is compact iff it is complete and totally bounded.
+\end{theorem}
+
+We will postpone the proof of this theorem until we have developed more tools.
+
+We now prove one thing that we used previously in showing $\S^1$ is not contractible.
+
+\begin{definition}
+    A function $f:(X,d_X)\to (Y,d_Y)$ between two metric spaces is said to be \emph{uniformly continuous} if for every $\epsilon>0$, there exists $\delta>0$ such that for all $x_1,x_2\in X$, if $d_X(x_1,x_2)<\delta$, then $d_Y(f(x_1),f(x_2))<\epsilon$.
+\end{definition}
+\begin{theorem}
+    Let $f:(X,d_X)\to (Y,d_Y)$ be a continuous function between two metric spaces. If $X$ is compact, then $f$ is uniformly continuous.
+\end{theorem}
+\begin{proof}
+    Given $\epsilon>0$, for each $x\in X$, by continuity of $f$ at $x$, there exists $\delta_x>0$ such that for all $y\in X$, if $d_X(x,y)<\delta_x$, then $d_Y(f(x),f(y))<\epsilon/2$. Then, $\{B_{\delta_x/2}(x):x\in X\}$ is an open cover of $X$. By compactness of $X$, there exists a finite subcover $\{B_{\delta_{x_i}/2}(x_i):i=1,2,\ldots,n\}$. Let $\delta=\min\{\delta_{x_i}/2:i=1,2,\ldots,n\}$. We will show that this $\delta$ works. Given any $x_1,x_2\in X$ such that $d_X(x_1,x_2)<\delta$, there exists some $i$ such that $x_1\in B_{\delta_{x_i}/2}(x_i)$. This implies that $d_X(x_1,x_i)<\delta_{x_i}/2$ and hence $d_X(x_2,x_i)\le d_X(x_2,x_1)+d_X(x_1,x_i)<\delta_{x_i}/2+\delta_{x_i}/2=\delta_{x_i}$. Therefore, we have 
+    \[d_Y(f(x_1),f(x_2))\le d_Y(f(x_1),f(x_i))+d_Y(f(x_i),f(x_2))<\epsilon/2+\epsilon/2=\epsilon.\]
+
+\end{proof}
+
+\subsubsection{Compactness via sequences and nets}
+
+\begin{definition}
+A space $X$ is said to be \emph{sequentially compact} if every sequence in $X$ has a convergent subsequence.
+\end{definition}
+
+\begin{theorem}
+Let $X$ be a metric space. Then, the following are equivalent:
+\begin{enumerate}
+    \item $X$ is compact.
+    \item $X$ is complete and totally bounded.
+    \item $X$ is sequentially compact.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+   
+    (3) \(\Rightarrow\) (2): For completeness, let \((x_n)\) be a Cauchy sequence in \(X\). By sequential compactness, there exists a convergent subsequence \((x_{n_k})\) converging to some \(x \in X\). Since \((x_n)\) is Cauchy, it must converge to the same limit \(x\) (exercise). Hence, \(X\) is complete. For total boundedness, suppose not. Then, there exists \(\epsilon > 0\) such that for any finite set \(F \subset X\), there exists some \(x \in X\) such that \(d(x,y) \geq \epsilon\) for all \(y \in F\). In this way, we can construct a sequence \((x_n)\) in \(X\) such that \(d(x_n, x_m) \geq \epsilon\) for all \(n \neq m\). This sequence has no convergent subsequence, contradicting the sequential compactness of \(X\). Hence, \(X\) is totally bounded.
+
+    (2) \(\Rightarrow\) (1): Assume \(X\) is complete and totally bounded. Let \(\{U_\alpha\}_{\alpha\in I}\) be an open cover of \(X\).
+    Suppose there is no finite subcover.
+
+    Using total boundedness, for each \(n\ge1\) choose a finite \(2^{-n}\)-net \(F_n\subset X\).
+    We build inductively a sequence \((x_n)\) with
+    (i) \(x_n\in F_n\),
+    (ii) no finite subfamily of \(\{U_\alpha\}\) covers \(B_{2^{-n}}(x_n)\), and
+    (iii) for \(n\ge2\), \(B_{2^{-(n-1)}}(x_{n-1})\cap B_{2^{-n}}(x_n)\neq\emptyset\).
+
+    Base step: pick \(x_1\in F_1\) with (ii); such a choice exists because if every ball
+    \(\{B_{2^{-1}}(y):y\in F_1\}\) had a finite subcover, then, since \(F_1\) is finite, \(X\) would have a finite subcover.
+    Induction: having chosen \(x_{n-1}\), consider those \(y\in F_n\) with
+    \(B_{2^{-(n-1)}}(x_{n-1})\cap B_{2^{-n}}(y)\neq\emptyset\).
+    If each such ball had a finite subcover, finitely many of them would cover
+    \(B_{2^{-(n-1)}}(x_{n-1})\), contradicting (ii) for \(x_{n-1}\). Hence choose \(x_n\) with (ii)–(iii).
+
+    From (iii), pick \(z\in B_{2^{-(n-1)}}(x_{n-1})\cap B_{2^{-n}}(x_n)\); then
+    \(d(x_{n-1},x_n)\le d(x_{n-1},z)+d(z,x_n)\le 2^{-(n-1)}+2^{-n}\le 2^{-(n-2)}\).
+    Thus for \(m<n\),
+    \[
+    d(x_m,x_n)\le\sum_{k=m+1}^n d(x_{k-1},x_k)\le\sum_{k=m+1}^n 2^{-(k-2)}\le 2^{-(m-2)},
+    \]
+    so \((x_n)\) is Cauchy and, by completeness, \(x_n\to a\in X\).
+
+    Choose \(\alpha_0\) with \(a\in U_{\alpha_0}\) and \(\varepsilon>0\) such that \(B(a,\varepsilon)\subset U_{\alpha_0}\).
+    Pick \(n\) with \(d(x_n,a)<\varepsilon/2\) and \(2^{-n}<\varepsilon/2\). Then for any \(y\in B(x_n,2^{-n})\),
+    \(d(y,a)\le d(y,x_n)+d(x_n,a)<\varepsilon\); hence
+    \(B(x_n,2^{-n})\subset B(a,\varepsilon)\subset U_{\alpha_0}\),
+    contradicting (ii). Therefore the cover has a finite subcover, and \(X\) is compact.
+
+    (1) \(\Rightarrow\) (3): Assume \(X\) is compact. Let \((x_n)\) be any sequence in \(X\). If \(\{x_n:n\in\mathbb{N}\}\) is finite, then there exists some \(x\in X\) such that \(x_n=x\) for infinitely many \(n\). Hence, the constant subsequence converges to \(x\). Now assume that \(\{x_n:n\in\mathbb{N}\}\) is infinite. Let \(A=\{x_n:n\in\mathbb{N}\}\). Suppose that $(x_n)$ has no convergent subsequence. Then, for any $x\in X\setminus A$, there exists an open neighbourhood $U_x$ of $x$ such that $U_x\cap A=\emptyset$. This implies that $A$ is closed and hence compact. For any $a\in A$, since no subsequence of $(x_n)$ converges to $a$, there exists an open neighbourhood $V_a$ of $a$ such that $V_a\cap A=\{a\}$. Then, $\{V_a\}$ is an infinite open cover of $A$ with no finite subcover, contradicting the compactness of $A$. Therefore, $(x_n)$ has a convergent subsequence.
+
+    \end{proof}
+
+
+
+
+Neither does sequential compactness imply compactness nor vice versa in general topological spaces. 
+
+\begin{example}[Compact but not sequentially compact]
+Let $X=\{0,1\}^{[0,1]}$ with the product topology. By Tychonoff, $X$ is compact. For each $n\in\mathbb{N}$ define $f_n\in X$ by
+$f_n(r)=\text{the $n$-th binary digit of }r$ (choose the expansion not ending in all $1$'s).
+Take any subsequence $(f_{n_k})$. If it converges, we know that for any $r\in [0,1]$, the sequence $(f_{n_k}(r))$ must converge in $[0,1]$. Choose $r\in [0,1]$ whose binary expansion has digit $n_k$ equal to $0$ if $k$ is odd and $1$ if $k$ is even (this is possible since we prescribe digits only on the positions $\{n_k\}$). Then
+$f_{n_k}(r)=0,1,0,1,\dots$ does not converge. Therefore $(f_{n_k})$ cannot converge in the product topology. Hence no subsequence of $(f_n)$ converges; $X$ is not sequentially compact.
+\end{example}
+
+\begin{example}[Sequentially compact but not compact]
+Let $Y\subset \{0,1\}^{[0,1]}$ be a subspace consisting of all functions $f$ such that $f(r)=1$ for at most countably many $r\in [0,1]$. We claim that $Y$ is sequentially compact but not compact.
+Given any sequence $(f_n)$ in $Y$, let $A=\bigcup_n\{r:f_n(r)=1\}$. Then, $A$ is countable. For each $r\in A$, the sequence $(f_n(r))$ in $\{0,1\}$ has a convergent subsequence. By a diagonal argument, we can find a subsequence $(f_{n_k})$ such that for each $r\in A$, the sequence $(f_{n_k}(r))$ converges in $\{0,1\}$. For $r\notin A$, define $f(r)=0$. Then, it is easy to see that $f\in Y$ and $f_{n_k}\to f$ in the product topology. Hence, $Y$ is sequentially compact.
+
+To see that $Y$ is not compact, we just need to show that $Y$ is not closed. Pick $\mathbf{1}\in X\setminus Y$ being the constant function with value $1$. For any basic open neighbourhood of $\mathbf{1}$ of the form
+\[U=\bigcap_{i=1}^n \pi_{r_i}^{-1}(\{1\})\]
+where $\pi_{r_i}:X\to \{0,1\}$ is the projection map, we can find $f\in Y$ such that $f(r_i)=1$ for all $i=1,2,\ldots,n$ (for example, let $f(r)=1$ if $r=r_i$ for some $i$ and $f(r)=0$ otherwise). This shows that every open neighbourhood of $\mathbf{1}$ intersects $Y$. Hence, $\mathbf{1}\in \overline{Y}\setminus Y$ and $Y$ is not closed, therefore not compact.
+\end{example}
+
+
+% We can now prove Theorem~\ref{thm: complete and totally bounded}.
+% \begin{proof}[Proof of \Cref{thm: complete and totally bounded}]
+%     Assume that $X$ is compact. Then, it is sequentially compact and hence complete. Since $X$ is compact, the covering of $X$ by open balls of radius $\epsilon$ has a finite subcover for any $\epsilon>0$. This implies that $X$ is totally bounded.
+
+%     Now assume that $X$ is complete and totally bounded. We now prove that $X$ is sequentially compact. Pick any sequence $(x_n)$ in $X$. Since $X$ is totally bounded, there exists a finite set $F_1\subset X$ such that $X$ is covered by the open balls of radius $1$ centered at points in $F_1$. Then, there exists some $y_1\in F_1$ such that infinitely many terms of the sequence $(x_n)$ lie in $B_1(y_1)$. Let $(x_n^{(1)})$ be the subsequence of $(x_n)$ consisting of all such terms.
+
+%     Proceeding inductively, for each $k\in\mathbb{N}$, there exists a finite set $F_k\subset X$ such that $X$ is covered by the open balls of radius $1/k$ centered at points in $F_k$. Then, there exists some $y_k\in F_k$ such that infinitely many terms of the sequence $(x_n^{(k-1)})$ lie in $B_{1/k}(y_k)$. Let $(x_n^{(k)})$ be the subsequence of $(x_n^{(k-1)})$ consisting of all such terms.
+
+%     Now, consider the diagonal subsequence $(x_n^{(n)})$. This will be obviously Cauchy which is also convergent by the completeness of $X$. Hence, $X$ is sequentially compact and therefore compact.
+% \end{proof}
+
+
+In general topological spaces, compactness can be characterized using nets. A net is a generalization of a sequence that allows for indexing by a directed set.
+
+\begin{definition}
+    We say a net \((x_\alpha)_{\alpha \in A}\) has a cluster point \(x \in X\) if for every open neighbourhood \(U\) of \(x\) and every \(\alpha_0 \in A\), there exists (not for all) \(\alpha \geq \alpha_0\) such that \(x_\alpha \in U\).
+\end{definition}
+
+One equivalent way to describe cluster points is via subnets.
+
+\begin{definition}
+    A \emph{subnet} of a net $P:\Lambda\to X$ is the composition $P\circ \varphi$ where \(\varphi: \Gamma \to \Lambda\) is an increasing function between directed sets \(\Gamma\) and \(\Lambda\) such that: For every \(\lambda \in \Lambda\), there exists \(\gamma\in \Gamma\) such that $\lambda\leq\varphi(\gamma)$. If we represent $P$ as $(x_\lambda)$, then the subnet can be represented as $(x_{\lambda_\gamma})$ or $(x_{\varphi(\gamma)})$ (cf. the subsequence notation $(x_{n_k})$).
+\end{definition}
+\begin{example}
+    Any subsequence $(x_{n_k})$ of a sequence $(x_n)$ is a subnet. Note that here the map \(\varphi: \mathbb{N} \to \mathbb{N}\) is defined by \(\varphi(k) = n_k\).
+\end{example}
+
+
+\begin{proposition}
+    A net \((x_\alpha)_{\alpha \in A}\) has a cluster point \(x \in X\) iff there exists a subnet of \((x_\alpha)_{\alpha \in A}\) that converges to \(x\).
+\end{proposition}
+\begin{proof}
+    (\(\Rightarrow\)) Assume \(x\) is a cluster point of the net \((x_\alpha)_{\alpha \in A}\). Define the directed set 
+    \[
+        \Gamma = \{(\alpha, U) : \alpha \in A, U \text{ is an open neighbourhood of } x_\alpha\}
+    \]
+    with the order \((\alpha_1, U_1) \leq (\alpha_2, U_2)\) if and only if \(\alpha_1 \leq \alpha_2\) and \(U_2 \subseteq U_1\). Define the map \(\varphi: \Gamma \to A\) by $(\alpha,U)\mapsto \alpha$. Then, the subnet \((x_{\varphi(\gamma)})_{\gamma \in \Gamma}\) converges to \(x\). (Note that the map $\varphi$ is not injective, so a subnet is quite different from a subsequence.)
+
+    (\(\Leftarrow\)) Assume there exists a subnet \((x_{\varphi(\gamma)})_{\gamma \in \Gamma}\) that converges to \(x\). Given any open neighbourhood \(U\) of \(x\) and any \(\alpha_0 \in A\), by the definition of subnet, there exists some \(\gamma_0 \in \Gamma\) such that for all \(\gamma \geq \gamma_0\), we have \(\varphi(\gamma) \geq \alpha_0\). Since the subnet converges to \(x\), there exists some \(\gamma_1 \geq \gamma_0\) such that for all \(\gamma \geq \gamma_1\), we have \(x_{\varphi(\gamma)} \in U\). In particular, for this choice of $\gamma_1$, we have some $\beta = \varphi(\gamma_1) \geq \alpha_0$ such that $x_\beta = x_{\varphi(\gamma_1)} \in U$. Therefore, $x$ is a cluster point of the net.
+\end{proof}
+
+\begin{theorem}
+    A topological space \(X\) is compact iff every net in \(X\) has a cluster point and hence iff every net in \(X\) has a convergent subnet.
+\end{theorem}
+
+\begin{proof}
+    (\(\Rightarrow\)) Assume \(X\) is compact. Let \((x_\alpha)_{\alpha \in A}\) be any net in \(X\). For each \(\alpha \in A\), let 
+    \[
+        C_\alpha = \overline{\{x_\beta : \beta \geq \alpha\}}.
+    \]
+    Then, each \(C_\alpha\) is closed and the collection \(\{C_\alpha\}_{\alpha \in A}\) has the finite intersection property. By compactness of \(X\), we have 
+    \[
+        \bigcap_{\alpha \in A} C_\alpha \neq \emptyset.
+    \]
+    Let \(x\) be any point in this intersection. We will show that \(x\) is a cluster point of the net. Given any open neighbourhood \(U\) of \(x\) and any \(\alpha_0 \in A\), since \(x \in C_{\alpha_0}\), we have 
+    \[
+        U \cap \{x_\beta : \beta \geq \alpha_0\} \neq \emptyset.
+    \]
+    Hence, there exists some \(\beta \geq \alpha_0\) such that \(x_\beta \in U\). Therefore, \(x\) is a cluster point of the net.
+
+    (\(\Leftarrow\)) Assume every net in \(X\) has a cluster point. Let \(\{C_i\}_{i\in I}\) be a collection of closed sets in \(X\) with the finite intersection property. Direct the set \(\mathcal{F}\) of finite subsets of \(I\) by inclusion, and for each \(F \in \mathcal{F}\), choose 
+    \[
+        x_F \in \bigcap_{i \in F} C_i
+    \]
+    (nonempty by the finite intersection property). The net \((x_F)_{F \in \mathcal{F}}\) has a cluster point \(x\). Now pick any neighbourhood \(U\) of \(x\). For any \(i \in I\), consider \(F_0 = \{i\}\). By definition of cluster point, there exists some \(F \supseteq F_0\) such that \(x_F \in U\). Since \(x_F \in C_i\), we have \(U \cap C_i \neq \emptyset\). This shows that every neighbourhood of \(x\) intersects \(C_i\), so \(x \in \overline{C_i} = C_i\). Hence, 
+    \[
+        x \in \bigcap_{i \in I} C_i.
+    \]
+    Therefore, the intersection is nonempty, and \(X\) is compact.
+\end{proof}
+
+
+
+
+
+
+\subsection{Tychonoff's theorem}
+
+There are multiple proofs of Tychonoff's theorem. You can check Munkres book for such proofs. We will give a proof using nets here which is somewhat conceptually clean.
+
+We know that if a net has a cluster point, then it has a subnet that converges to that cluster point. Then, is there any special kind of net such that if it has a cluster point, then it converges to that cluster point? The answer is yes, and one kind of such nets is called ultranets.
+
+\begin{definition}
+    A net $\{x_\lambda\}$ in a set $X$ is an \emph{ultranet} if for any subset $S\subset X$, the net is eventually in $S$ or eventually in $X\setminus S$ (there exists $\lambda_0$ such that either $x_\lambda \in S$ for all $\lambda \geq \lambda_0$ or $x_\lambda \in X\setminus S$ for all $\lambda \geq \lambda_0$).
+\end{definition}
+
+\begin{example}
+    Any constant net is an ultranet. Any eventually constant net is an ultranet. If $\Lambda$ has a greatest element $\lambda_0$, then any net indexed by $\Lambda$ is an ultranet as it is eventually constant at $x_{\lambda_0}$. 
+\end{example}
+
+One immediate consequence of this definition is the following lemma.
+\begin{lemma}
+    An ultranet converges to each of its cluster points.
+\end{lemma}
+\begin{proof}
+    Let $\{x_\lambda\}$ be an ultranet in $X$ and let $x\in X$ be a cluster point of the net. Given any open neighbourhood $U$ of $x$, since $\{x_\lambda\}$ is an ultranet, it is eventually in $U$ or eventually in $X\setminus U$. Since $x$ is a cluster point, it cannot be eventually in $X\setminus U$. Hence, it is eventually in $U$. Therefore, $\{x_\lambda\}$ converges to $x$.
+\end{proof}
+
+\begin{lemma}
+    Every net has a subnet that is an ultranet.
+\end{lemma}
+This is a nontrivial result and we will not give a full proof here. I'll provide a reference on Canvas if you are interested in the full proof.
+\begin{proof}[Sketch of proof]
+    Let $(x_\lambda)$ be a net in a set $X$. We call $Q\subset P(X)$ a admissible family if 
+    \begin{itemize}
+        \item for any $A_1,A_2\in Q$, we have $\emptyset\neq A_1\cap A_2\in Q$;
+        \item for any $A\in Q$, the net $(x_\lambda)$ is frequently in $A$ (for any $\lambda_0$, there exists some $\lambda\geq \lambda_0$ such that $x_\lambda\in A$).
+    \end{itemize}
+    Let $\mathcal{Q}$ denote the collection of all admissible families and we partially order $\mathcal{Q}$ by inclusion. Using Zorn's lemma, we can show that $\mathcal{Q}$ has a maximal element $Q_{max}$. You can show that if $A\subset X$, then either $A\in Q_{max}$ or $X\setminus A\in Q_{max}$. Now, we define a directed set $\Gamma=\{(\lambda,A):\lambda\in \Lambda,A\in Q_{max}, \text{ s.t. }x_\lambda\in A\}$ with the order defined by $(\lambda_1,A_1)\leq (\lambda_2,A_2)$ if $\lambda_1\leq \lambda_2$ and $A_2\subseteq A_1$. Then, let $\varphi: \Gamma\to \Lambda$ be defined by $(\lambda,A)\mapsto \lambda$. This defines a subnet and you can check that this subnet is indeed an ultranet.
+\end{proof}
+
+\begin{lemma}
+    If $\{x_\lambda\}$ is an ultranet in $X$ and $f:X\to Y$ is a map, then $\{f(x_\lambda)\}$ is an ultranet in $Y$.
+\end{lemma}
+\begin{proof}
+    Given any subset $T\subset Y$, let $S=f^{-1}(T)$. Since $\{x_\lambda\}$ is an ultranet in $X$, it is eventually in $S$ or eventually in $X\setminus S=f^{-1}(Y\setminus T)$. Hence, $\{f(x_\lambda)\}$ is eventually in $T$ or eventually in $Y\setminus T$.
+\end{proof}
+
+\begin{theorem}[Tychonoff's theorem]
+    A nonempty product space is compact iff each factor space is compact.
+\end{theorem}
+
+
+% \begin{proof}[Alternative proof via the finite intersection property]
+% (\(\Rightarrow\)) Assume \(X\) is compact. By the finite intersection property (FIP) characterization of compactness, every family of closed sets with the FIP has nonempty intersection. For a net \((x_\alpha)_{\alpha\in A}\), consider the closed sets
+% \(C_\alpha=\overline{\{x_\beta:\beta\ge\alpha\}}\).
+% Given finitely many \(\alpha_1,\dots,\alpha_n\), pick \(\gamma\ge\alpha_i\) for all \(i\); then
+% \(\{x_\beta:\beta\ge\gamma\}\subset C_{\alpha_i}\) for each \(i\), so \(\bigcap_{i=1}^n C_{\alpha_i}\neq\emptyset\).
+% Hence \(\{C_\alpha\}_{\alpha\in A}\) has the FIP, and by compactness \(\bigcap_\alpha C_\alpha\neq\emptyset\).
+% Any \(x\) in this intersection is a cluster point: for any neighborhood \(U\) of \(x\) and any \(\alpha_0\), since \(x\in C_{\alpha_0}\),
+% \(U\cap\{x_\beta:\beta\ge\alpha_0\}\neq\emptyset\).
+
+% (\(\Leftarrow\)) Assume every net in \(X\) has a cluster point. Let \(\{C_i\}_{i\in I}\) be closed with the FIP. Direct the set \(\mathcal F\) of finite subsets of \(I\) by inclusion, and for each \(F\in\mathcal F\) choose
+% \(x_F\in\bigcap_{i\in F} C_i\) (nonempty by the FIP). The net \((x_F)_{F\in\mathcal F}\) has a cluster point \(x\).
+% Fix \(i\in I\). For any \(F_0\supset\{i\}\), the tail \(\{F\in\mathcal F:F\supset F_0\}\) satisfies \(x_F\in C_i\); hence every neighborhood of \(x\) meets \(C_i\), so \(x\in\overline{C_i}=C_i\).
+% Thus \(x\in\bigcap_{i\in I} C_i\), which is nonempty. By the FIP characterization, \(X\) is compact.
+% \end{proof}
+\begin{proof}
+    (\(\Rightarrow\)) Since each projection map $\pi_\alpha:X=\prod X_\alpha\to X_\alpha$ is continuous, we have that $X_\alpha=\pi_\alpha(X)$ is compact for each $\alpha$.
+
+    (\(\Leftarrow\)) Assume that $X_\alpha$ is compact for each $\alpha$. Let $\{x_\lambda\}$ be a net in $X=\prod X_\alpha$. Then, $\{x_\lambda\}$ has a subnet $\{x_{\lambda_\mu}\}$ that is an ultranet. Then, for each $\alpha$, the net $\{\pi_\alpha(x_{\lambda_\mu})\}$ is an ultranet in $X_\alpha$ which has some cluster point $y_\alpha\in X_\alpha$ as $X_\alpha$ is compact. Since $\{\pi_\alpha(x_{\lambda_\mu})\}$ is an ultranet, it converges to $y_\alpha$. Then, the net $\{x_{\lambda_\mu}\}$ converges to $y=(y_\alpha)\in X$ which is hence a cluster point of the original net $\{x_\lambda\}$. Therefore, by the characterization of compactness using nets, $X$ is compact.
+\end{proof}
+
+\begin{example}
+    $\{0,1\}^{[0,1]}$ is compact. $[0,1]^\R$ is compact.
+\end{example}
+
+\begin{example}
+    The Cantor set $C$ is compact as $C$ is bounded and $C$ is closed since $C=\bigcap C_n$ where each $C_n$ is closed.
+
+    We can also see this using Tychonoff's theorem. We know there is a bijection between $C$ and $\{0,2\}^\mathbb{N}$: each $x\in C$ can be written in base 3 using only digits 0 and 2, and this gives a bijection between $C$ and $\{0,2\}^\mathbb{N}$. It turns out that this bijection is actually a homeomorphism. To see this, let's actually give a metric on $\{0,2\}^\mathbb{N}$ that induces the product topology. For any two sequences $(a_n),(b_n)\in \{0,2\}^\mathbb{N}$, define
+    \[d((a_n),(b_n))=\begin{cases}
+    0 & \text{if } a_n=b_n \text{ for all } n\\
+    1/3^{k} & \text{where } k=\min\{n:a_n\neq b_n\}
+    \end{cases}\]
+    We defined an ultrametric on $C$ before. You can check that this metric on $\{0,2\}^\mathbb{N}$ is actually the same as the ultrametric on $C$ under the above bijection. So the bijection is an isometry. The only thing left to check is that this metric on $\{0,2\}^\mathbb{N}$ induces the product topology. This is left as an exercise. Therefore, $C$ is homeomorphic to $\{0,2\}^\mathbb{N}$ which is compact by Tychonoff's theorem. Hence, $C$ is compact.
+\end{example}
+
+\subsection{Local compactness and compactification}
+
+% We have some nice topological spaces: metric spaces and compact Hausdorff spaces. We know that every subspace of a metric space is metric space. What can we say about the subspaces of compact Hausdorff spaces? 
+
+% We know of course any closed subspace of a compact Hausdorff space is compact Hausdorff. But what about open subspaces? They are not compact in general (unless they are both open and closed). However, they do have a nice property called local compactness.
+
+\begin{definition}
+    A topological space \(X\) is said to be \emph{locally compact} if for every point \(x \in X\), there exists an open neighbourhood \(U\) of \(x\) and a compact set \(K\) such that \(U\subseteq K\).
+\end{definition}
+
+
+
+\begin{example}
+    Any compact space is locally compact.
+\end{example}
+
+\begin{example}
+    $\R$ is locally compact. For each $x\in \R$, we pick the open neighbourhood $U=(x-1,x+1)$ and the compact set $K=[x-1,x+1]$ such that $U\subset K$.
+
+    Similarly, $\R^n$ is locally compact. For each $x\in \R^n$, we pick the open neighbourhood $U=(x_1-1,x_1+1)\times \cdots \times (x_n-1,x_n+1)$ and the compact set $K=[x_1-1,x_1+1]\times \cdots \times [x_n-1,x_n+1]$ such that $U\subset K$.
+\end{example}
+
+\begin{example}
+    $\R^\N$ is not locally compact. For any $x\in \R^\N$, pick any basic open neighborhood $U=U_1\times U_2\times\cdots\times U_n\times\R\times \R\times\cdots$. Suppose there exists some compact set $K$ such that $U\subset K$. Consider the projection map $\pi_{n+1}:\R^\N\to \R$ defined by $\pi_{n+1}((x_i))=x_{n+1}$. Then, $\pi_{n+1}(U)=\R$ and hence $\pi_{n+1}(K)\supset \pi_{n+1}(U)=\R$. However, the continuous image of a compact set is compact and $\R$ is not compact. This is a contradiction. Therefore, there does not exist any compact set $K$ such that $U\subset K$ and hence $\R^\N$ is not locally compact.
+\end{example}
+
+
+
+\begin{theorem}
+    Let $X$ be a topological space. Then, $X$ is locally compact Hausdorff iff there exists a compact Hausdorff space $Y$ such that
+    \begin{itemize}
+        \item $X$ is a subspace of $Y$;
+        \item $Y\setminus X$ consists of a single point.
+    \end{itemize}
+    Such a space $Y$ is called the \emph{one-point compactification} of $X$ and is unique up to homeomorphism.
+\end{theorem}
+
+\begin{example}
+    $X=\R\cong (0,1)$ and $Y=S^1\cong [0,1]/_{0\sim 1}$
+\end{example}
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[width=0.8\textwidth]{figures/compactification.png}
+% \caption{Compactification of $\R$}
+% \label{fig:compactification}
+% \end{figure}
+
+\begin{proof}
+    (\(\Rightarrow\)) Let $Y=X\sqcup \{\infty\}$ with the topology $\tau$ defined as follows:
+    \begin{itemize}
+        \item For any open set $U$ in $X$, $U\in \tau$;
+        \item For any compact set $K$ in $X$, the set $Y\setminus K\in \tau$. 
+    \end{itemize}
+
+    To see that this is indeed a topology, note
+    \begin{itemize}
+        \item $\emptyset$ and $Y=Y\setminus \emptyset$ are in $\tau$;
+        \item $U=\bigcup U_\alpha$ is open in X; and $\bigcup (Y\setminus K_\beta)=Y\setminus \bigcap K_\beta=Y\setminus C$ is in $\tau$ since $\bigcap K_\beta$ is a closed subset of the compact set $K_{\beta_0}$ for some $\beta_0$ and hence compact; and $\bigcup U_\alpha \cup \bigcup (Y\setminus K_\beta)=U\cup (Y\setminus C)=Y\setminus (C\setminus U)$ is in $\tau$ since $C\setminus U$ is a closed subset of the compact set $C$ and hence compact.
+        \item $U_1\cap U_2$ is open in $X$; $(Y\setminus C_1)\cap (Y\setminus C_2)=Y\setminus (C_1\cup C_2)$ is in $\tau$ since $C_1\cup C_2$ is compact; and $U\cap (Y\setminus C)=U\cap (X\setminus C)$ is open in $X$ since $C$ is closed in $X$.
+    \end{itemize}
+
+    Note that the subspace topology on $X$ induced from $Y$ is the same as the original topology on $X$ (note $Y\setminus C\cap X$ is open in $X$). 
+
+    To see that $Y$ is compact, note if $\mathcal{U}$ is an open cover of $Y$, then $\mathcal{U}$ must have an element of the form $\infty\in Y\setminus K$ where $K$ is a compact set in $X$. $K$ is then also compact in $Y$. Hence, there exists a finite subcover of $\mathcal{U}$ that covers $K$. Together with the element $Y\setminus K$, we have a finite subcover of $\mathcal{U}$ that covers $Y$.
+
+    To see that $Y$ is Hausdorff, note for any $x,x'\in X$, we just use the Hausdorff property of $X$ to separate them. For any $x\in X$ and $y=\infty$, since $X$ is locally compact, there exists some open neighbourhood $U$ of $x$ and some compact set $K$ such that $U\subset K$. Then, $U$ and $Y\setminus K$ are disjoint open neighbourhoods of $x$ and $\infty$ respectively.
+
+    (\(\Leftarrow\)) We still write the extra point in $Y\setminus X$ as $\infty$. Note since $Y$ is Hausdorff, as a subspace, $X$ is also Hausdorff. For any $x\in X$, since $Y$ is Hausdorff, there exist disjoint open neighbourhoods $U$ of $x$ and $V$ of $\infty$. Then, $K=Y\setminus V$ is a compact in $Y$ (and hence in $X$) since it is closed. Note that $U\subset K\subset X$. Therefore, $X$ is locally compact. 
+
+    It remains to show that $Y$ is unique up to homeomorphism. Let $Y'$ be another compactification of $X$. Define the map $f:Y\to Y'$ as follows: $h(\infty)=\infty'$ and $h(x)=x$ for any $x\in X$. Then, I'll leave it as an exercise to check that $h$ is a homeomorphism.
+\end{proof}
+
+% \begin{theorem}
+%     Let $X$ be Hausdorff. Then, $X$ is locally compact iff for every $x\in X$ and every open neighbourhood $U$ of $x$, there exists an open neighbourhood $V$ of $x$ such that $\overline{V}$ is compact and $\overline{V}\subset U$.
+% \end{theorem}
+% \begin{proof}
+    
+% \end{proof}
+
+% \begin{corollary}
+    
+% \end{corollary}
+
+\subsection{Paracompact and Partition of Unity}
+
+Another generalization of compactness is paracompactness. We will use it to prove the partition of unity theorem which is very useful in differential geometry. We will also prove another metrization theorem using paracompactness.
+
+
+
+First recall the definition of compactness.
+
+\begin{definition}
+    A space \(X\) is said to be \emph{compact} if every open cover of \(X\) has a finite subcover.
+\end{definition}
+
+It turns out that we can characterize compactness using refinements of open covers.
+\begin{definition}
+    Let $\mathcal{A}$ be a collection of subsets of a set $X$. A collection $\mathcal{B}$ of subsets of $X$ is said to be a \emph{refinement} of $\mathcal{A}$ if for each $B\in \mathcal{B}$, there exists some $A\in \mathcal{A}$ such that $B\subset A$.
+\end{definition}
+
+\begin{proposition}
+    A space \(X\) is compact iff every open cover of \(X\) has a finite open refinement that covers $X$.
+\end{proposition}
+
+This can be generalized as follows.
+
+\begin{definition}
+    A space \(X\) is said to be \emph{paracompact} if every open cover $\mathcal{A}$ of \(X\) has a locally finite open refinement $\mathcal{B}$ that covers $X$, i.e., for each $x\in X$, there exists some open neighbourhood $U$ of $x$ such that $U$ intersects only finitely many elements of $\mathcal{B}$.
+\end{definition}
+
+\begin{example}
+    $\R^n$ is paracompact. Let $\mathcal{A}$ be an open cover of $\R^n$. For each $k\in \N$, consider the closed ball $\overline{B_k(0)}$ of radius $k$ centered at the origin. Since $\overline{B_k(0)}$ is compact, there exists a finite subcover $\mathcal{A}_k=\{A_{k,1},\ldots,A_{k,n_k}\}$ of $\mathcal{A}$ that covers $\overline{B_k(0)}$. Then, let $\mathcal{B}_k=\{A_{k,1}\cap (\R^n\setminus \overline{B_{k-1}(0)}),\ldots,A_{k,n_k}\cap (\R^n\setminus \overline{B_{k-1}(0)})\}$ (Here we let $B_0(0)=\emptyset$). Then, $\mathcal{B}=\bigcup \mathcal{B}_k$ is a locally finite open refinement of $\mathcal{A}$ that covers $\R^n$. This is first of all because $B_k(0)$ is covered by $\mathcal{B}_1\cup\cdots\cup \mathcal{B}_k$.
+\end{example}
+
+\begin{example}
+    Every compact space is paracompact.
+\end{example}
+
+
+One useful fact about locally finiteness is the following lemma.
+\begin{lemma}
+    Let $\mathcal{A}$ be a locally finite collection of sets in a topological space $X$. Then, $\overline{\bigcup_{A\in \mathcal{A}}A} = \bigcup_{A\in \mathcal{A}} \overline{A}$.
+   
+   
+\end{lemma}
+\begin{proof}
+
+
+    The inclusion $\supseteq$ is clear. For the other direction, let $x\in \overline{\bigcup_{A\in \mathcal{A}}A}$. Then, for any open neighbourhood $U$ of $x$, we have $U\cap {\bigcup_{A\in \mathcal{A}}A}\neq \emptyset$. Since $\mathcal{A}$ is locally finite, there exists some open neighbourhood $V$ of $x$ such that $V$ intersects only finitely many elements of $\mathcal{A}$, say $A_1,\ldots,A_n$. Now, I claim that $x\in \overline{A_i}$ for some $i$. If not, then $x\in V\setminus \overline{A_1}\cup\cdots\cup \overline{A_n}$, which is a neighbourhood of $x$ that does not intersect $\bigcup_{A\in \mathcal{A}}A$. This is a contradiction. Therefore, $x\in \overline{A_i}$ for some $i$ and hence $x\in \bigcup_{A\in \mathcal{A}} \overline{A}$.
+\end{proof}
+
+\begin{theorem}
+    Every paracompact Hausdorff space $X$ is normal.
+\end{theorem}
+\begin{proof}
+    We first establish regularity. Let $x\in X$ and let $A$ be a closed set in $X$ such that $x\notin A$. For each $y\in A$, find open neighbourhoods $V_y$ of $y$ such that $x\notin \overline{V_y}$ (Hausdorff). Then, $\mathcal{U}=\{X\setminus A\}\cup \{V_y:y\in A\}$ is an open cover of $X$. Let $\mathcal{W}$ be a locally finite open refinement of $\mathcal{U}$ that covers $X$ and let $\mathcal{V}=\{W\in \mathcal{W}:W\cap A\neq\emptyset\}$. Then, $V=\cup_{W\in \mathcal{V}}W$ is an open neighbourhood of $A$. 
+    
+    Since $\mathcal{W}$ is locally finite, we have that 
+    \[\overline{V}=\bigcup_{W\in \mathcal{V}}\overline{W}.\]
+    Note that for any $W\in \mathcal{V}$, we have that $x\notin \overline{W}$. So $x\notin \overline{V}$. So, we have found disjoint open neighbourhoods of $x$ and $A$, namely, $X\setminus \overline{V}$ and $V$ respectively. Therefore, $X$ is regular.
+
+    The proof of normality is similar. We simply replace where we used Hausdorff with regularity and where we separated a point and a closed set with separating two closed sets.
+\end{proof}
+
+It turns out that metric spaces are paracompact. This makes paracompactness a very nice notion that generalizes both compactness and metric spaces (note that metric spaces may not be locally compact).
+
+To prove this result, we need a technical lemma.
+\begin{lemma}
+    Let $X$ be regular. Then, TFAE:
+    Every open covering $\mathcal{U}$ of $X$ has a refinement that is:
+    \begin{enumerate}
+        \item a locally finite open cover;
+        \item A countably locally finite open cover, i.e., it can be written as a countable union of locally finite collections;
+        \item a locally finite cover;
+        \item a locally finite closed cover.
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+    1\(\Rightarrow\) 2: straightforward.
+
+    2\(\Rightarrow\) 3: Let $\mathcal{V}=\cup_n\mathcal{V}_n$ is a countably locally finite open refinement of $\mathcal{U}$ where each $\mathcal{V}_n$ is locally finite. For each $n$, define $W_n=\bigcup\mathcal{V}_n$ which is open. Then, $\{W_1,\ldots\}$ covers $X$. Define $A_n=W_n\setminus \cup_{i<n}W_i$. Then, $\{A_n\}$ is a locally finite refinement of $\{W_n\}$ that covers $X$. Now, define
+    \[\mathcal{W}=\{V\cap A_n:V\in \mathcal{V}_n,n\in \N\}.\]
+    Then, $\mathcal{W}$ is a locally finite refinement of $\mathcal{V}$ and hence $\mathcal{U}$ that covers $X$.
+
+    3 \(\Rightarrow\) 4: Let $\mathcal{B}$ be the collection of all open sets $U$ such that $\overline{U}$ is contained in some element of $\mathcal{U}$ (I just want something smaller so that I can take closure). By regularity, $\mathcal{B}$ is an open cover of $X$. Then, it has a locally finite refinement $\mathcal{C}$ that covers $X$ by (3). Let $\mathcal{D}=\{\overline{C}|C\in \mathcal{C}\}$. Then, $\mathcal{D}$ still covers $X$ which refines $\mathcal{U}$. It is still locally finite which can be checked directly. 
+
+    4 \(\Rightarrow\) 1: Let $\mathcal{V}$ be a locally finite closed refinement of $\mathcal{U}$ that covers $X$. For each $x\in X$, let $W_x$ be a neighborhood of $x$ meeting only finitely many elements of $\mathcal{V}$. Then, $\{W_x\}$ is an open cover of $X$. Apply 4, there exists a locally finite closed refinement $\mathcal{A}$ of $\{W_x\}$ that covers $X$. 
+
+    For each $V\in \mathcal{V}$, define
+    \[V^*=X\setminus \bigcup_{\substack{A\in \mathcal{A}\\A\cap V=\emptyset}}A\supset V.\]
+    Then, $V^*$ is open as it is the complement of a closed set. Furthermore, $\{V^*|V\in \mathcal{V}\}$ is an open cover of $X$. Now, we show that $\{V^*|V\in \mathcal{V}\}$ is locally finite. Given any $x\in X$, there is a neighborhood $U$ of $x$ meeting finitely many $A_1,\ldots, A_n$ (they also cover $U$). But whenever $U\cap V^*\neq \emptyset$, there exists some $A_i$ such that $A_i\cap V^*\neq \emptyset$ which implies that $A_i\cap V\neq \emptyset$. Since each $A_i$ meets only finitely many $V$'s due to the definition, we have that $U$ meets only finitely many $V^*$'s. Therefore, $\{V^*|V\in \mathcal{V}\}$ is locally finite.
+    
+    
+    Now, for each $V\in \mathcal{V}$, pick $U\in \mathcal{U}$ such that $V\subset U$, and form $W=V^*\cap U$. Then, the collection of all such $W$'s is an open refinement of $\mathcal{U}$ that covers $X$ and is locally finite.
+\end{proof}
+
+
+\begin{theorem}
+    Every metric space is paracompact.
+\end{theorem}
+\begin{proof}
+    Let $X$ be a metric space and let $\mathcal{U}$ be an open cover of $X$. Choose a well ordering on $\mathcal{U}$. For each $U\in \mathcal{U}$ and $n\in \N$, we define
+    \[ U_n=\{x\in U:d(x,X\setminus U)\geq 1/2^n\}.\]
+
+    Then, $d(U_n,X\setminus U_{n+1})\geq \frac{1}{2^{n+1}}$.
+
+    Now, we let 
+    \[U_n^*=U_n\setminus \bigcup_{\substack{V<U\\V\in \mathcal{U}}} V_{n+1}.\]
+    Then, for each $U,V\in \mathcal{U}$, WLOG assume $U>V$. Then, we have that
+    $U_n^*\subset X\setminus V_{n+1}$. This implies that $d(U_n^*,V_n^*)\geq \frac{1}{2^{n+1}}$.
+
+    Finally, let's define some open sets:
+    \[\tilde{U}_n=\{x\in U:d(x,U_n^*)<1/2^{n+3}\}=U\cap \bigcup_{x\in U_n^*} B_{1/2^{n+3}}(x)\]
+    Then, it is easy to check that $d(\tilde{U}_n, \tilde{V}_n)\geq 1/2^{n+2}$. Then, the collection $\mathcal{U}_n=\{\tilde{U}_n:U\in \mathcal{U},n\in \N\}$ is a locally finite open refinement of $\mathcal{U}$: for any $x\in X$, its neighborhood $B_{1/2^{n+2}}(x)$ meets only $\tilde{U}_n$'s for each $n$. Then, $\mathcal{U}'=\bigcup_n \mathcal{U}_n$ is a locally finite open refinement of $\mathcal{U}$ that covers $X$. Therefore, $X$ is paracompact.
+\end{proof}
+
+\begin{example}
+    This theorem gives us a bunch of examples of paracompact spaces, e.g. \(\mathbb{R}^n\), $[0,1)$ etc.
+\end{example}
+
+\subsection*{Partition of Unity}
+\begin{definition}
+    Let $\mathcal{U}=\{U_\alpha\}_{\alpha \in A}$ be an open cover of a topological space \(X\).
+    A \emph{partition of unity} subordinated to $\mathcal{U}$ is a collection of continuous functions \(\{\varphi_\alpha: X \to [0,1]\}_{\alpha \in A}\) such that:
+    \begin{itemize}
+        \item $\operatorname{supp} \phi_\alpha\subset U_\alpha$; here the support of a function \(f:X\to \mathbb{R}\) is defined as \(\operatorname{supp} f = \overline{\{x \in X : f(x) \neq 0\}}\)
+        \item $\{\operatorname{supp}\varphi_\alpha\}$ is locally finite; and
+        \item For every \(x \in X\), \(\sum_{\alpha\in A} \varphi_\alpha(x) = 1\).
+    \end{itemize}
+\end{definition}
+
+\begin{lemma}
+    Let $X$ be Hausdorff and paracompact. Then, every open cover $\mathcal{U}=\{U_\alpha\}_{\alpha \in J}$ of $X$ has a shrinking, i.e., an open refinement $\{V_\alpha\}_{\alpha \in J}$ covering $X$ such that $\overline{V_\alpha}\subset U_\alpha$ for each $\alpha$.
+\end{lemma}
+\begin{proof}
+    Let $\mathcal{A}=\{A\in \tau:\overline{A}\subset U_\alpha, \text{ for some }\alpha \in J\}$. Since $X$ is normal and hence regular, $\mathcal{A}$ is an open cover of $X$. Let $\mathcal{B}$ be a locally finite open refinement of $\mathcal{A}$ that covers $X$ (exists since $X$ is paracompact). Assume that $\mathcal{B}=\{B_\beta\}_{\beta\in K}$ for some index set $K$. For each $\beta\in K$, pick some $\alpha\in J$ such that $\overline{B_\beta}\subset U_\alpha$ and define a function $f:K\to J$ by $\beta\mapsto \alpha$. 
+
+    Then, for each $\alpha\in J$, define
+    \[V_\alpha=\bigcup_{\beta\in f^{-1}(\alpha)} B_\beta.\]
+    By locally finiteness of $\mathcal{B}$, we have that 
+    $$\overline{V_\alpha}=\bigcup_{\beta\in f^{-1}(\alpha)} \overline{B_\beta}\subset U_\alpha$$ 
+
+    It is clear that $\{V_\alpha\}_{\alpha \in J}$ is an open refinement of $\mathcal{U}$ that covers $X$ (since $\mathcal{B}$ covers $X$). We now check that $\{V_\alpha\}_{\alpha \in J}$ is locally finite. Given any $x\in X$, there exists some open neighbourhood $W$ of $x$ that meets only finitely many elements of $\mathcal{B}$, say $B_{\beta_1},\ldots, B_{\beta_n}$. Now, whenever $W\cap V_\alpha\neq \emptyset$, there exists some $\beta_i$ such that $B_{\beta_i}\subset V_\alpha$, i.e., $f(\beta_i)=\alpha$. So $W$ meets only $V_\alpha$ 's for $\alpha\in \{f(\beta_1),\ldots,f(\beta_n)\}$. Therefore, $\{V_\alpha\}_{\alpha \in J}$ is locally finite.
+\end{proof}
+
+\begin{theorem}[Partition of Unity]
+    Let \(X\) be Hausdorff and paracompact. Then, every open cover of \(X\) has a partition of unity subordinated to it.
+\end{theorem}
+\begin{proof}
+    Let \(\mathcal U=\{U_\alpha\}_{\alpha\in J}\) be an open cover. We apply the shrinking lemma twice to find locally finite open covers \(\{V_\alpha\}_{\alpha\in J}\) and \(\{W_\alpha\}_{\alpha\in J}\) such that
+    \[\overline{W_\alpha}\subset V_\alpha \quad\text{and}\quad \overline{V_\alpha}\subset U_\alpha\]
+    for each \(\alpha\).
+
+    Since $X$ is normal, for each \(\alpha\), by Urysohn’s lemma (valid in normal spaces) there exists a continuous \(h_\alpha:X\to[0,1]\) such that
+    \(h_\alpha\equiv 1\) on \(\overline{W_\alpha}\) and \( h_\alpha\equiv 0\) on \(X \setminus V_\alpha\).
+    This implies that 
+    \[supp h_\alpha \subset \overline{V_\alpha}\subset U_\alpha.\]
+
+    Since \(\{V_\alpha\}\) is locally finite, $\{\overline{V_\alpha}\}$ is also locally finite. Hence, $\{supp h_\alpha\}$ is locally finite.
+
+
+    Set \(h=\sum_{\alpha\in J} h_\alpha\).
+    For each $x\in X$, there is some neighborhood $U$ of $x$ that meets only finitely many $supp h_\alpha$'s, say $supp h_{\alpha_1},\ldots,supp h_{\alpha_n}$. Therefore, $h|_U=\sum_{i=1}^nh_{\alpha_i}|_U$. Since each $h_{\alpha_i}|_U$ is continuous, $h|_U$ is continuous. Then, $h$ is continuous.
+    Furthermore, there is $W_\alpha$ containing the point since it is a cover. Hence, $h_\alpha(x)=1>0$ and hence $h(x)>0$.
+
+    
+    Define \(\varphi_\alpha=h_\alpha/h:X\to[0,1]\). Then, \(\{\varphi_\alpha\}_{\alpha\in J}\) is a locally finite partition of unity subordinated to \(\mathcal U\). 
+\end{proof}
+% TODO: include proofs of basic properties of compactness, Alexander's
+% subbase lemma, and examples illustrating finite vs. infinite products.
+
+%---------------------------------------------------------------------------
+% Section 7: Baire theory (Willard §25)
+%---------------------------------------------------------------------------
+
+\newpage

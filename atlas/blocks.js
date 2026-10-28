@@ -1,3 +1,4 @@
+import { latexStatement, latexProof } from './latex-source.js';
 import {unsupportedSteps,assumptionUse} from './graph.mjs';
 // Shared content blocks (statement, source, relation lists, proof). Each prototype
 // composes and styles them differently; the course content itself is identical.
@@ -20,18 +21,11 @@ export const entityRow = (n, extra = '') => `<button class="entity" data-action=
 
 // The statement as printed in the notes (source excerpt + facsimile), then the atlas paraphrase.
 export function statementBlock(atlas, n, { facsimileOpen = false } = {}) {
-  const ex = n.excerpts.filter(x => x.role === 'statement');
-  const printed = ex.map(x => `<figure class="source-text"><figcaption><span class="eyebrow">In the notes</span><b>${esc(x.label)}</b> ${srcLink(x.page, `PDF ${x.page}`)}</figcaption>${facsimileHTML(x.facsimiles,x.label)}<details><summary>Read the text transcription</summary><blockquote class="math">${math(x.text)}</blockquote></details></figure>`).join('');
-  const editorial = n.env === 'editorial_variant' ? `<p class="note editorial">Editorial variant constructed for the atlas; the notes do not state it.</p>` : '';
-  return `${printed}${editorial}<div class="paraphrase"><span class="eyebrow">${ex.length ? 'Atlas paraphrase' : 'Atlas statement'}</span><p class="math">${math(n.statement)}</p>${n.formula ? `<p class="formula math">${math(n.formula)}</p>` : ''}</div>`;
+  return latexStatement(atlas, n);
 }
-export function contextBlock(n) {
-  const ex = n.excerpts.filter(x => x.role !== 'statement');
-  if (!ex.length) return '';
-  return `<details class="context"><summary>Context in the notes · ${ex.length}</summary>${ex.map(x => `<figure class="source-text"><figcaption><b>${esc(x.label)}</b> ${srcLink(x.page, `PDF ${x.page}${x.endPage > x.page ? '–' + x.endPage : ''}`)}</figcaption>${x.facsimiles?.length ? facsimileHTML(x.facsimiles, x.label) : `<blockquote class="math">${math(x.text)}</blockquote>`}</figure>`).join('')}</details>`;
-}
+export function contextBlock(n) { return ''; }
 export function occurrencesBlock(n) {
-  return `<ul class="occ">${n.occurrences.map(o => `<li>${srcLink(o.page, `${o.number} · ${pages(o)}`)}<q>${esc(o.quote)}</q></li>`).join('')}</ul>`;
+  return `<ul class="occ">${n.occurrences.map(o => `<li>${srcLink(o.page, `${o.number} · frozen PDF ${pages(o)}`)}</li>`).join('')}</ul>`;
 }
 export function relationGroupsHTML(atlas, n, { why = true } = {}) {
   return atlas.groups(n.id).map(g => `<section class="rel-group kind-${g.kind}" data-kind="${g.kind}"><h4><i class="line line-${g.kind}"></i>${esc(g.title)}<span class="count">${g.items.length}</span></h4><ul>${g.items.map(({ r, other }) => `<li>${entityRow(other)}${why ? `<button class="why" data-action="why" data-rel="${r.id}" aria-label="Why">?</button>` : ''}</li>`).join('')}</ul></section>`).join('');
@@ -61,9 +55,9 @@ export function proofHTML(atlas, p, { expanded = new Set(), expandAll = false, a
     const rule = RULES[s.inferenceRule] || { symbol: '·', label: s.inferenceRule, long: '' }, open = expandAll || expanded.has(s.id) || activeStep === s.id;
     return `<li class="step${lost.has(s.id) ? ' unsupported' : ''}${use.direct.includes(s.id) ? ' direct-use' : use.downstream.includes(s.id) ? ' downstream-use' : ''}${activeStep === s.id ? ' active' : ''}${open ? ' open' : ''}" data-row="${s.id}" id="step-${esc(s.id)}">
       <span class="idx">S${s.index}</span>
-      <div class="step-main"><button class="step-title math" data-action="step" data-id="${s.id}" aria-expanded="${open}">${math(s.title)}${s.origin === 'editorial_expansion' ? '<em class="tag">atlas expansion</em>' : ''}</button>
+      <div class="step-main"><button class="step-title math" data-action="step" data-id="${s.id}" aria-expanded="${open}">${s.origin==='source_passage_with_editorial_segmentation'?'Source argument · S'+s.index:math(s.title)}${s.origin!=='source_passage_with_editorial_segmentation'?'<em class="tag">atlas reading aid</em>':''}</button>
         <div class="just"><span class="rule" title="${esc(rule.long)}"><b>${rule.symbol}</b> ${esc(rule.label)}</span>${s.inputs.map(id => `<button class="premise" data-action="premise" data-id="${id}" title="${esc(p.steps.find(y => y.id === id)?.title || p.assumptions.find(a => a.id === id)?.label || '')}">${label[id] || id}</button>`).join('')}${s.resources.length ? '<span class="by">by</span>' : ''}${s.resources.map(id => chip(atlas.node.get(id))).join('')}</div>
-        ${open ? `<div class="step-body"><p class="math">${math(s.body)}</p>${s.sourceExcerpt ? `<figure class="source-text"><figcaption><span class="eyebrow">Source excerpt</span> ${srcLink(s.sourcePage || s.physicalPage, `PDF p.${s.sourcePage || s.physicalPage}`)}</figcaption>${facsimileHTML(s.facsimiles, 'Proof excerpt')}<details><summary>Read the text transcription</summary><blockquote class="math">${math(s.sourceExcerpt)}</blockquote></details></figure>` : ''}<p class="small"><details><summary>Provenance details</summary>${esc(ORIGIN[s.origin] || s.origin.replaceAll('_', ' '))}</details>${s.inputs.length ? ` · ${rule.long ? esc(rule.long) : ''}` : ''}</p></div>` : ''}
+        ${open ? `<div class="step-body">${s.origin==='source_passage_with_editorial_segmentation'?'':`<p class="math">${math(s.body)}</p>`}<p class="small">This step is an atlas reading aid. The complete original LaTeX argument appears in “Read the original proof” below.</p><p class="small"><details><summary>Provenance details</summary>${esc(ORIGIN[s.origin] || s.origin.replaceAll('_', ' '))}</details>${s.inputs.length ? ` · ${rule.long ? esc(rule.long) : ''}` : ''}</p></div>` : ''}
       </div></li>`;
   };
   let rows = '', scope = 'gt:scope:global', macro = 0;
@@ -87,7 +81,7 @@ export function proofHTML(atlas, p, { expanded = new Set(), expandAll = false, a
     </div>
     <div class="proof-actions"><button class="btn" data-action="expand-all" aria-pressed="${expandAll}">${expandAll ? 'Collapse step explanations' : `Explain ${p.steps.length === 1 ? 'this step' : 'all ' + p.steps.length + ' steps'}`}</button></div>
     ${hyps.length ? `<details class="assumption-lab"${removedId ? ' open' : ''}><summary>What if a hypothesis is removed?</summary><p>Losing a justification is not a proof that the conclusion is false.</p>${hyps.map(a=>`<button class="btn" data-action="remove-assumption" data-id="${a.id}" aria-pressed="${removedId===a.id}">${removedId===a.id?'Restore':'Remove'} ${esc(a.label)}</button>`).join(' ')}${removedId?`<p class="note">Steps losing recorded support: ${p.steps.filter(s=>lost.has(s.id)).map(s=>'S'+s.index).join(', ')||'none'}.</p>${variant?`<p>Recorded editorial variant: ${chip(variant)} ${esc(variant.statement)}</p>${counter?`<p>Recorded counterexample: ${chip(atlas.node.get(counter.prereq))}</p>`:''}`:'<p>No variant or counterexample is recorded for this removal.</p>'}`:''}</details>`:''}
-    <details class="original"><summary>Read the original proof${p.sourcePage ? ' · p.' + p.sourcePage : ''}</summary>${facsimileHTML(p.facsimiles, 'Original proof')}<details><summary>Read the text transcription</summary><blockquote class="math pre">${math(p.sourceText)}</blockquote></details>${p.sourcePage ? srcLink(p.sourcePage, `Open PDF p.${p.sourcePage}`) : ''}<p class="small">Step labels, scopes and premise numbers are an atlas reconstruction, pending teacher review.</p></details>
+    <details class="original" open><summary>Read the original proof · current canonical LaTeX</summary>${latexProof(atlas,p)}<p class="small">Step labels, scopes and premise numbers are an atlas reconstruction, pending teacher review.</p></details>
   </article>`;
 }
 

@@ -1,0 +1,291 @@
+\section{Continuity and Convergence}
+
+
+
+\subsection{Convergence in Topological Spaces}
+
+We will try to answer the following questions:
+
+\begin{enumerate}
+    \item Can we define sequential convergence in general topological spaces?
+    \item If so, does this convergence describe the notion of topology?
+\end{enumerate}
+
+In metric space setting, we have the notion of convergence of a sequence (in the language of open balls):
+
+\begin{proposition}
+    A sequence $(x_n)_{n\in\mathbb{N}}$ in a metric space $X$ converges to a point $x\in X$ if and only if for every $\epsilon>0$, there exists $N\in\mathbb{N}$ such that $x_n\in B_\epsilon(x)$ for all $n\ge N$.
+\end{proposition}
+
+This motivates the following definition in general topological spaces:
+
+
+
+\begin{definition}
+    A sequence $(x_n)_{n\in\mathbb{N}}$ in a topological space $X$ is said to converge to a point $x\in X$ if for every neighbourhood $U$ of $x$, there exists $N\in\mathbb{N}$ such that $x_n\in U$ for all $n\ge N$.
+\end{definition}
+
+\begin{problem}
+    A sequence $(x_n)$ in a metric space converges in the metric sense if and only if it converges in the topological sense defined above.
+\end{problem}
+\begin{proof}
+    ($\Rightarrow$) Let $(x_n)$ be a sequence in a metric space $(X,d)$ converging to $x\in X$ in the metric sense. For every neighborhood $U$ of $x$, there exists $\epsilon>0$ such that $B_\epsilon(x)\subseteq U$. Then, there exists $N$ such that $d(x_n,x)<\epsilon$ for all $n\ge N$. In particular, $x_n\in B_\epsilon(x)\subset U$ for all $n\ge N$. So we have $x_n\to x$ in the topological sense.
+
+    ($\Leftarrow$) Let $(x_n)$ be a sequence in a metric space $(X,d)$ converging to $x\in X$ in the topological sense. For every $\epsilon>0$, the open ball $B_\epsilon(x)$ is a neighbourhood of $x$, so there exists $N$ such that $x_n\in B_\epsilon(x)$ for all $n\ge N$. This means that $d(x_n,x)<\epsilon$ for all $n\ge N$. Hence, $(x_n)$ converges to $x$ in the metric sense.
+\end{proof}
+
+
+
+\begin{proposition}
+   Let $X$ be a topological space. For $A\subseteq X$ and $x\in X$, if there is a sequence $(a_n)\subseteq A$ with $a_n\to x$, then $x\in\overline{A}$.
+\end{proposition}
+\begin{proof}
+    Let $U$ be any neighbourhood of $x$. Then there exists $N$ such that $a_n\in U$ for all $n\ge N$. In particular, $a_N\in A\cap U$, so $A\cap U\neq \emptyset$. Since $U$ was arbitrary, we have $x\in\overline{A}$.
+\end{proof}
+
+We know the converse is true in metric spaces. Is it true in general topological spaces?
+
+
+% \begin{definition}
+%     A topological space $X$ is first countable if every point $x\in X$ has a countable neighbourhood basis.
+% \end{definition}
+
+% Under this assumption, we have the following characterization of convergence:
+% \begin{theorem}
+%     If $X$ is first countable and $E\subset X$, then $x\in\overline{E}$ iff there exists a sequence $(x_n)_{n\in\mathbb{N}}$ in $E$ such that $x_n\to x$.
+% \end{theorem}
+
+% \begin{corollary}
+%     Let $X$ and $Y$ be first countable topological spaces. Then,
+%     \begin{enumerate}
+%         \item $U\subset X$ is open iff whenever $x_n\to x\in U$, $x_n$ is eventually in $U$.
+%         \item $F\subset X$ is closed iff whenever $(x_n)\subset F$, $x_n\to x$, then $x\in F$.
+%         \item $f:X\to Y$ is continuous iff whenever $x_n\to x\in X$, then $f(x_n)\to f(x)\in Y$.
+%     \end{enumerate}
+% \end{corollary}
+
+% For first countable spaces, the notion of sequential convergence describes the topology.
+
+
+\begin{example}
+Let $X=\R$ be endowed with the 
+\emph{countable complement topology}: a set $U\subseteq X$ is open 
+iff $X\setminus U$ is countable or $U=\emptyset$. 
+
+\begin{itemize}
+  \item Any sequence $(x_n)$ converging to $x$ is eventually equal to $x$.  
+  Indeed, we let $B=\{x_n:\,x_n\neq x\}$ and hence $U=X\setminus B$ is an 
+  open neighborhood of $x$. Then, there exists $N$ such that $x_n\in U$ for all
+  $n\ge N$, i.e., $x_n\notin B$ for all $n\ge N$. This means that 
+  $x_n=x$ for all $n\ge N$.
+  \item The closed sets are exactly the countable sets and $X$ itself.  
+  Hence, if $A\subsetneq X$ is uncountable, then 
+  $\overline{A}=X$.
+\end{itemize}
+
+Thus $\overline{[0,1]}=\R$, but there is no sequence in $[0,1]$ converging to $2$.
+\end{example}
+
+Let's see another example.
+
+\begin{example}
+    Let $X=\R^\R$ be endowed with the product topology. We consider 
+    $$E=\{f\in \R^\R:f(x)=0\text{ or }1\text{ and }f(x)=0\text{ only finitely often}\}.$$
+
+    Let $\mathbf{0}$ denote the all 0 function in $X$. Note that any basis element of the product topology containing $\mathbf{0}$ is of the form
+    $$V=\{g\in \R^\R:g(x_i)\in U_i\text{ for }i=1,\ldots,n\}$$
+    for some $x_1,\ldots,x_n\in\R$ and open sets $U_i\ni\R$ containing $0$. We now define $g:\R\to \R$ as follows: $g(x_i)=0$ for $i=1,\ldots,n$ and $g(x)=0$ otherwise. Then, $g\in E\cap V$ and hence $E\cap V\neq\emptyset$. Hence, $\mathbf{0}\in\overline{E}$.
+    
+    Now let $(f_n)$ be a sequence in $E$ such that each $f_n$ is 0 on a finite set $A_n\subset \R$. If $(f_n)$ converges to $f$, then $f$ can be zero at most on the countable set $\bigcup_{n} A_n$. Suppose otherwise $f(x)=0$ for some $x\notin \bigcup_n A_n$. Pick the basic open neighbourhood
+    $$U=\{g\in \R^\R:g(x)\in (-1,1)\}.$$
+    Then, there exists $N$ such that $f_n\in U$ for all $n\ge N$. In particular, $f_n(x)\in (-1,1)$ for all $n\ge N$. This implies that $f_n(x)=0$ for all $n\ge N$, contradicting the choice of $x$.
+    
+    Hence, there is no sequence in $E$ converging to $\mathbf{0}$.
+\end{example}
+
+In metric spaces, the limit of a convergent sequence is unique. Is this true in general topological spaces?
+
+\begin{example}
+    Let $X$ be endowed with the trivial topology $\tau=\{\emptyset,X\}$. Then the constant sequence $(x_n)$ with $x_n=a\in X$ for all $n\in\mathbb{N}$ converges to every point in $X$. 
+\end{example}
+
+\begin{example}
+    Let $X=\{a,b\}$ with the topology $\tau=\{\emptyset,\{a\},X\}$. Then the constant sequence $(x_n)$ with $x_n=a$ for all $n\in\mathbb{N}$ converges to $a$ and $b$. 
+\end{example}
+
+In general, the limit of a convergent sequence may not be unique. We will need to give some additional conditions on the topology to ensure uniqueness of limits.
+
+Finally, let's talk about continuity.
+
+\begin{proposition}
+    Let $f:X\to Y$ be continuous at $x$. Then, whenever $x_n\to x$ in $X$, we have $f(x_n)\to f(x)$ in $Y$.
+\end{proposition}
+\begin{proof}
+    Let $U$ be any neighbourhood of $f(x)$ in $Y$. By continuity of $f$ at $x$, there exists a neighbourhood $V$ of $x$ such that $f(V)\subseteq U$. Since $x_n \to x$, there exists $N$ such that for all $n \geq N$, $x_n \in V$. Hence, for all $n \geq N$, $f(x_n) \in U$, which shows that $f(x_n) \to f(x)$.
+\end{proof}
+
+The converse is not true in general. We will see an example below. But before that, let's see an interesting consequence.
+
+\begin{theorem}
+    Let $X=\Pi X_\alpha$ be a product of topological spaces $X_\alpha$. A sequence $(x_n)$ in $X$ converges to $x\in X$ if and only if for every $\alpha$, the sequence $(\pi_\alpha(x_n))$ converges to $\pi_\alpha(x)$ in $X_\alpha$.
+\end{theorem}
+\begin{proof}
+    ($\Rightarrow$) This follows from the continuity of the projection maps $\pi_\alpha$.
+
+    ($\Leftarrow$) Let $(x_n)$ be a sequence in $X$ such that for every $\alpha$, the sequence $(\pi_\alpha(x_n))$ converges to $\pi_\alpha(x)$ in $X_\alpha$. Let $U$ be a subbasis neighbourhood of $x$ in $X$ of the form  
+    $$U=\pi_{\alpha}^{-1}(V)=V\times \prod_{\beta \neq \alpha} X_\beta,$$
+    where $\alpha$ is an index and $V$ is a neighbourhood of $\pi_{\alpha}(x)$ in $X_{\alpha}$. 
+    Since $\pi_{\alpha}(x_n)\to \pi_{\alpha}(x)$, there exists $N$ such that $\pi_{\alpha}(x_n)\in V$ for all $n\ge N$. Then, for all $n\ge N$, we have $x_n\in U$. Hence, $(x_n)$ converges to $x$ in $X$.
+\end{proof}
+
+\begin{example}[Sequential continuity does not imply continuity]
+Let
+\[
+X=\{0,1\}^{\R}
+\]
+have the product topology, where each factor $\{0,1\}$ is discrete. For $x\in X$, write
+\[
+\operatorname{supp}(x)=\{t\in\R:x(t)=1\}.
+\]
+Let $S=\{0,1\}$ have the topology $\{\varnothing,\{1\},S\}$, and define
+\[
+f:X\longrightarrow S,\qquad
+f(x)=
+\begin{cases}
+0,&\operatorname{supp}(x)\text{ is countable},\\
+1,&\operatorname{supp}(x)\text{ is uncountable}.
+\end{cases}
+\]
+Then $f$ preserves limits of sequences but is not continuous.
+
+\begin{proof}
+We first show that $f$ is not continuous. Let $\mathbf{1}\in X$ be the constant function with value $1$. Since $f(\mathbf{1})=1$ and $\{1\}$ is open in $S$, continuity at $\mathbf{1}$ would require a neighborhood of $\mathbf{1}$ on which $f$ is constantly $1$.
+
+However, every basic neighborhood of $\mathbf{1}$ restricts only finitely many coordinates, say those in $F\subseteq\R$. The function
+\[
+y(t)=
+\begin{cases}
+1,&t\in F,\\
+0,&t\notin F
+\end{cases}
+\]
+belongs to that neighborhood but has finite support, so $f(y)=0$. Thus $f$ is not continuous at $\mathbf{1}$.
+
+To prove sequential continuity, we use the following observation:
+\begin{quote}
+If $z_n\to z$ in $X$ and each $z_n$ has countable support, then $z$ also has countable support.
+\end{quote}
+Indeed, the set
+\[
+C=\bigcup_{n=1}^{\infty}\operatorname{supp}(z_n)
+\]
+is countable. For every $t\notin C$, we have $z_n(t)=0$ for all $n$. Since convergence in the product topology implies coordinatewise convergence, $z(t)=0$. Consequently,
+\[
+\operatorname{supp}(z)\subseteq C,
+\]
+which proves the observation.
+
+Now suppose $x_n\to x$ in $X$. Recall that in $S$, every sequence converges to $0$, whereas a sequence converges to $1$ exactly when it is eventually equal to $1$.
+
+If $f(x)=0$, we therefore have $f(x_n)\to f(x)$ automatically.
+
+If $f(x)=1$, we claim that $f(x_n)=1$ eventually. Otherwise, there would be a subsequence $(x_{n_k})$ such that every $x_{n_k}$ has countable support. But $x_{n_k}\to x$, so the observation would imply that $x$ has countable support, contradicting $f(x)=1$.
+
+Hence $f(x_n)\to f(x)$ in both cases.
+\end{proof}
+\end{example}
+
+
+\subsection{Nets}
+How do we fix this? We need a more general notion of convergence.
+
+Note that a sequence $(x_n)$ in $X$ is in fact a function from $x:\mathbb{N}\to X$. Instead of just using $\mathbb{N}$ as the index set, we can use more general index sets.
+
+\begin{definition}
+    A set $\Lambda$ is a \emph{directed set} if it is a non-empty set with a relation $\le$ such that
+    \begin{itemize}
+        \item reflexive: for all $\lambda\in\Lambda$, $\lambda\le \lambda$,
+        \item transitive: for all $\lambda_1,\lambda_2,\lambda_3\in\Lambda$, if $\lambda_1\le \lambda_2$ and $\lambda_2\le \lambda_3$, then $\lambda_1\le \lambda_3$,
+        \item directed: for all $\lambda_1,\lambda_2\in\Lambda$, there exists $\mu\in\Lambda$ such that $\lambda_1\le \mu$ and $\lambda_2\le \mu$.
+    \end{itemize}
+    
+    
+    This relation $\le$ is called a direction on $\Lambda$.
+\end{definition}
+
+\begin{remark}
+    Note a direction may not be a partial order, i.e., it may not be antisymmetric. For example, let $\Lambda=\{a,b\}$ with $a\le b$ and $b\le a$. This is a directed set but not a poset because $a\neq b$.
+\end{remark}
+
+\begin{example}
+    $\N$ with the standard order (which is obviously a direction) is a directed set.
+\end{example}
+
+
+\begin{definition}
+    A net in a topological space $X$ is a function $P\colon \Lambda\to X$ where $\Lambda$ is a directed set. We often write $P(\lambda)=x_\lambda$ and write the net $(x_\lambda)_{\lambda\in\Lambda}$ or $(x_\lambda)$.
+
+    % A subnet of a net $(x_\lambda)_{\lambda\in\Lambda}$ is the composition $P\circ \varphi$ where $\varphi:M\to \Lambda$ is a map between directed sets such that 
+    % \begin{enumerate}
+    %      \item for every $\mu_1,\mu_2\in M$ such that $\mu_1\le\mu_2$, we have $\varphi(\mu_1)\le\varphi(\mu_2)$.
+    %     \item for every $\lambda\in\Lambda$, there exists $\mu\in M$ such that $\lambda\le\varphi(\mu)$.
+    % \end{enumerate}
+    % For $\mu\in M$, the point $P\circ \varphi(\mu)$ is often denoted by $x_{\lambda_\mu}$ and the subnet is denoted by $(x_{\lambda_\mu})_{\mu\in M}$. (think of the case of subsequences to understand this definition)
+\end{definition}
+
+\begin{definition}
+    We say that a net $(x_\lambda)_{\lambda\in\Lambda}$ converges to a point $x\in X$ if for every neighbourhood $U$ of $x$, there exists $\lambda_0\in\Lambda$ such that $x_\lambda\in U$ for all $\lambda\ge \lambda_0$.
+\end{definition}
+
+\begin{remark}
+    Note that if we take $\Lambda=\N$ with the standard order, then the notion of convergence of nets reduces to the notion of convergence of sequences.
+\end{remark}
+
+\begin{example}
+    Let $\mathcal{P}$ denote the collection of all finite partitions of the closed interval $[a,b]$ into closed subintervals. In other words, each $P\in \mathcal{P}$ has the form $P=\{[x_0,x_1],[x_1,x_2],\ldots,[x_{n-1},x_n]\}$ where $a=x_0<x_1<\cdots<x_n=b$.
+    
+    This becomes a directed set if we define the direction by refinement: for two partitions $P_1,P_2\in\mathcal{P}$, we say that $P_1\le P_2$ if $P_2$ is a refinement of $P_1$ (i.e., every subinterval in $P_1$ is a union of subintervals in $P_2$).
+
+    Now, consider a function $f:[a,b]\to \R$. Define a net $(R_L(P))_{P\in \mathcal{P}}$ as follows: for each partition $P=\{[x_0,x_1],[x_1,x_2],\ldots,[x_{n-1},x_n]\}$, let
+    $$R_L(P)=\sum_{i=1}^n \inf_{x\in [x_{i-1},x_i]} f(x) \cdot (x_i - x_{i-1}).$$
+    This net is called the \emph{lower Riemann sum} net of $f$.
+
+    Similarly, we can define the \emph{upper Riemann sum} net $(R_U(P))_{P\in \mathcal{P}}$ by
+    $$R_U(P)=\sum_{i=1}^n \sup_{x\in [x_{i-1},x_i]} f(x) \cdot (x_i - x_{i-1}).$$
+
+    If both nets converge to the same limit $L$, then we say that $f$ is Riemann integrable on $[a,b]$ with integral $L$.
+\end{example}
+
+
+\begin{example}
+    One typical example of a net is the following: let $X$ be a topological space and $x\in X$. Let $\Lambda$ be the set of all neighbourhoods of $x$ and define the direction on $\Lambda$ by $U\le V$ iff $V\subseteq U$ (reverse inclusion). You should check that this is indeed a directed set.  Pick a point $x_U\in U$ for each neighbourhood $U$ of $x$. Then the net $(x_U)_{U\in\Lambda}$ converges to $x$. To see this, let $V$ be any neighbourhood of $x$, then for all $U\geq V$, we have $x_U\in U\subseteq V$. This shows that $x_U\to x$.
+\end{example}
+
+\begin{theorem}
+    If $E\subset X$, then $x\in\overline{E}$ iff there is a net $(x_\lambda)_{\lambda\in\Lambda}$ in $E$ such that $x_\lambda\to x$.
+\end{theorem}
+\begin{proof}
+    If $x\in \overline{E}$, then every neighbourhood $U$ of $x$ intersects $E$. Choose $x_U\in E\cap U$ for each neighbourhood $U$ of $x$. Then the net $(x_U)_{U\in\Lambda}$ is a net converging to $x$.
+
+    Conversely, if there is a net $(x_\lambda)_{\lambda\in\Lambda}$ in $E$ such that $x_\lambda\to x$, then for every neighbourhood $U$ of $x$, there exists $\lambda_0$ such that $x_\lambda\in U$ for all $\lambda\ge \lambda_0$. In particular, $x_{\lambda_0}\in E\cap U$, so $E\cap U\neq \emptyset$. Since $U$ was arbitrary, we have $x\in \overline{E}$.
+\end{proof}
+
+\begin{theorem}
+    Let $f:X\to Y$. Then $f$ is continuous at $x\in X$ iff for every net $(x_\lambda)_{\lambda\in\Lambda}$ in $X$ such that $x_\lambda\to x$, we have $f(x_\lambda)\to f(x)$.
+\end{theorem}
+\begin{proof}
+    ($\Rightarrow$) Given a neighborhood $V$ of $f(x)$ in $Y$, by continuity of $f$ at $x$, there exists a neighbourhood $U$ of $x$ such that $f(U)\subseteq V$. Since $x_\lambda\to x$, there exists $\lambda_0$ such that $x_\lambda\in U$ for all $\lambda\ge \lambda_0$. Hence, for all $\lambda\ge \lambda_0$, we have $f(x_\lambda)\in V$, which shows that $f(x_\lambda)\to f(x)$.
+
+    ($\Leftarrow$) Suppose $f$ is not continuous at $x$. Then there exists a neighbourhood $V$ of $f(x)$ such that for every neighbourhood $U$ of $x$, there exists $x_U\in U$ with $f(x_U)\notin V$. Let $\Lambda$ be the set of all neighbourhoods of $x$ directed by reverse inclusion. Then the net $(x_U)_{U\in\Lambda}$ converges to $x$, but $f(x_U)\notin V$ for all $U\in\Lambda$. Hence, $f(x_U)$ does not converge to $f(x)$.
+\end{proof}
+
+
+
+% TODO: include examples of nets, subnets, and their use in proofs of
+% continuity and closure properties.
+
+%---------------------------------------------------------------------------
+% Section 5: Separation and countability axioms (Willard §§13–16)
+%---------------------------------------------------------------------------
+
+\newpage

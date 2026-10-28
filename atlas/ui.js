@@ -17,10 +17,10 @@ export function entityCardHTML(atlas, n, { headerExtra = '', proofButton = true 
   const ch = atlas.chapter.get(n.chapter), proofs = atlas.proofsOf.get(n.id) || [];
   const tools = atlas.proofFocus(n.id).length - 1;
   return `<div class="card-head"><span class="eyebrow role-${n.role}">${ROLE_LABEL[n.role]} · ${esc(n.number)}</span>${headerExtra}<h2 class="title">${esc(n.en)}</h2>
-    <p class="meta"><span class="chapter-pill ch-${n.chapter}">Ch. ${ch.number} · ${esc(ch.title)}</span><span>${esc(atlas.sectionOf(n))}</span><span>p.${n.page}</span></p></div>
+    <p class="meta"><span class="chapter-pill ch-${n.chapter}">Ch. ${ch.number} · ${esc(ch.title)}</span><span>${esc(atlas.sectionOf(n))}</span><span>Frozen PDF p.${n.page}</span></p></div>
     ${statementBlock(atlas, n)}${contextBlock(n)}
     ${n.fullEnvironmentId ? `<p class="note">Models selected parts of ${chip(atlas.node.get(n.fullEnvironmentId))} (complete printed environment).</p>` : ''}
-    ${proofButton && proofs.length ? proofs.map((p, i) => `<button class="btn primary proof-open" data-action="proof" data-id="${p.id}"><span><b>Read proof ${esc(p.label)}${proofs.length > 1 ? ' · ' + esc(p.title) : ''}</b><small>${p.steps.length} step${p.steps.length > 1 ? 's' : ''} · ${i ? '' : tools + ' cited entit' + (tools === 1 ? 'y' : 'ies') + ' · '}source p.${p.sourcePage}</small></span><span class="go">→</span></button>`).join('') : ''}
+    ${proofButton && proofs.length ? proofs.map((p, i) => `<button class="btn primary proof-open" data-action="proof" data-id="${p.id}"><span><b>Read proof ${esc(p.label)}${proofs.length > 1 ? ' · ' + esc(p.title) : ''}</b><small>${p.steps.length} step${p.steps.length > 1 ? 's' : ''} · ${i ? '' : tools + ' cited entit' + (tools === 1 ? 'y' : 'ies') + ' · '}frozen PDF p.${p.sourcePage}</small></span><span class="go">→</span></button>`).join('') : ''}
     ${!proofs.length && ['result', 'example'].includes(n.role) ? `<p class="note">${esc(n.sourceProofDisposition?.note || 'No separately written proof is supplied for this environment in the notes.')} ${n.sourceProofDisposition ? srcLink(n.sourceProofDisposition.physicalPage, 'Source instruction') : ''}</p>` : ''}
     <div class="relations">${relationGroupsHTML(atlas, n)}</div>
     <h4 class="section-label">Topics</h4><p class="topics">${n.topics.map(t => `<button class="topic" data-topic="${t}">${esc(atlas.topics.get(t))}</button>`).join('')}</p>

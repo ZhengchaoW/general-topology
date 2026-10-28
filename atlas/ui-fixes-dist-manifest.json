@@ -1,153 +1,10 @@
 {
-  "version": 5,
-  "counts": {
-    "regions": 7,
-    "modeledRegions": 7,
-    "entities": 450,
-    "sourceEntities": 440,
-    "editorialVariants": 10,
-    "numberedEnvironments": 422,
-    "modeledNumberedEnvironments": 422,
-    "unnumberedPassages": 17,
-    "occurrences": 1023,
-    "relations": 1511,
-    "proofs": 132,
-    "steps": 431,
-    "approved": 0,
-    "baselineRelations": 26,
-    "proposedRelations": 1485,
-    "inspectedPages": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19,
-      20,
-      21,
-      22,
-      23,
-      24,
-      25,
-      26,
-      27,
-      28,
-      29,
-      30,
-      31,
-      32,
-      33,
-      34,
-      35,
-      36,
-      37,
-      38,
-      39,
-      40,
-      41,
-      42,
-      43,
-      44,
-      45,
-      46,
-      47,
-      48,
-      49,
-      50,
-      51,
-      52,
-      53,
-      54,
-      55,
-      56,
-      57,
-      58,
-      59,
-      60,
-      61,
-      62,
-      63,
-      64,
-      65,
-      66,
-      67,
-      68,
-      69,
-      70,
-      71,
-      72,
-      73,
-      74,
-      75,
-      76,
-      77,
-      78,
-      79,
-      80,
-      81,
-      82,
-      83,
-      84,
-      85,
-      86,
-      87,
-      88,
-      89,
-      90,
-      91,
-      92,
-      93,
-      94,
-      95,
-      96,
-      97,
-      98,
-      99,
-      100,
-      101
-    ],
-    "coverageDescription": "422/422 numbered environments; 7/7 chapters implemented. Every numbered source passage is retained in the inventory. Proof structure remains pending teacher review.",
-    "containedDefinitions": 15,
-    "localClaims": 2,
-    "defaultDisplayRelationships": 1378,
-    "crossChapterRelationships": 436
-  },
-  "sourceSha256": "72086f7e37384fb62f9a7d2732bee297722d98832eed3d4ccacfa6c83901b0f2",
-  "baselineManifestCompared": "/Users/mozhengchao/Documents/Codex/2026-10-26/task/general-topology-network/site/docs/full-course-build-manifest.json",
-  "integrity": [
-    {
-      "folder": "data",
-      "files": 8,
-      "byteIdentical": true
-    },
-    {
-      "folder": "source",
-      "files": 102,
-      "byteIdentical": true
-    },
-    {
-      "folder": "fonts",
-      "files": 5,
-      "byteIdentical": true
-    }
-  ],
+  "status": "TESTED LOCAL; NOT PUBLISHED",
+  "generatedAt": "2026-10-28T16:01:33.193202+00:00",
   "files": {
     "app.js": {
-      "bytes": 5261,
-      "sha256": "9706867c552e2e4ea09055fa0e2c1d5648d461ac3b327d653afd7d07c4d1b0df"
+      "bytes": 6467,
+      "sha256": "6b495a378732f93d4a40993c14cee3ffb743a58f2468d673ef390b235f9f46b5"
     },
     "app.mjs": {
       "bytes": 73690,
@@ -158,20 +15,20 @@
       "sha256": "860d73bc5d9c8eb5a9e411cd52d721fcfab947366ecdfbfcb7a84f3858c53055"
     },
     "blocks.js": {
-      "bytes": 14089,
-      "sha256": "5df598947536490f5243604c26c9d3a42ae4d641d76f77a4877c9043d0d02720"
+      "bytes": 12518,
+      "sha256": "9f0d77cc1d2375f1a46cf725e3fe9417845e5dbca0b02f6d88bb461149b736bb"
     },
     "bundle.mjs": {
-      "bytes": 374145,
-      "sha256": "43c6fc58994e858b78e9f3dcd68bddba977a674d38d225dd8df9e9765a9909ac"
+      "bytes": 376751,
+      "sha256": "099b188529027af641112ae7575792ee4950dd2fe66ab469203f4a489a45f7f6"
     },
     "canvas.js": {
       "bytes": 10834,
       "sha256": "bb0647042353cb17702c588d8a233f188009223a25f2ad0a87d831ed11792ded"
     },
     "core.js": {
-      "bytes": 14578,
-      "sha256": "e9523ab7da955a6be068b89fea1461c3cea332f235adf10ba301f2cc9fa9529c"
+      "bytes": 13746,
+      "sha256": "4ddf4b81d674385c3a7c8d61bfd70612cd2cee229c58234ec3e95a0d1caed54c"
     },
     "data/atlas.json": {
       "bytes": 5117080,
@@ -184,6 +41,38 @@
     "data/display-manifest.json": {
       "bytes": 1591028,
       "sha256": "8ad4f6c56dcd70e11029668117c74541ecfae793500627160ffc63e1da5b929e"
+    },
+    "data/latex-chapter-1.html": {
+      "bytes": 1107251,
+      "sha256": "7871b3f7a5554f7327bfa0bf2671faaa3ad77568dfd10f44e8dfee6cade750bd"
+    },
+    "data/latex-chapter-2.html": {
+      "bytes": 496709,
+      "sha256": "597455adee48e9030e275cdc0042c6842ace850cd25b5f760259fed8c9056903"
+    },
+    "data/latex-chapter-3.html": {
+      "bytes": 2216534,
+      "sha256": "8315bf015f86d327a42779e2dcf7d3812a1139a042dffc28c085b1c61f2dee9b"
+    },
+    "data/latex-chapter-4.html": {
+      "bytes": 401106,
+      "sha256": "885704109c4a9d56cf7586eefd90b16aa966ebd0bc0bd9124665f12afd181475"
+    },
+    "data/latex-chapter-5.html": {
+      "bytes": 797673,
+      "sha256": "24ae10313f55a1c93f3075417f24c3370d0526014753c941b91adfa13fa1ebe2"
+    },
+    "data/latex-chapter-6.html": {
+      "bytes": 1292062,
+      "sha256": "b7ebbf88dc5637d19540e9d3b962647b07a894c285ed38752e4b387d78593fab"
+    },
+    "data/latex-chapter-7.html": {
+      "bytes": 383594,
+      "sha256": "2a05050901804b27daa9d57ce07a512bf23cfb10a065b477af7b270b45fe9eb5"
+    },
+    "data/latex-source.json": {
+      "bytes": 7533942,
+      "sha256": "37a19b66bb6a2794ea4254369df69a38b6fa345be1c961193aba0de7a172b5f1"
     },
     "data/layout.json": {
       "bytes": 101413,
@@ -210,8 +99,8 @@
       "sha256": "fa78fb4cfafc0d98f6d3730e4fd8044d7ff46832292d8f50fbe1e1e90da051ac"
     },
     "desk.js": {
-      "bytes": 6726,
-      "sha256": "dce24cf541230547b24b95c11d92cc4afb17e6dd6fe0dd22fab162e129e9145b"
+      "bytes": 6737,
+      "sha256": "132a02c8cc4de5fe6822bd18b7f8660acf7fab2111172c5675f8fdde4a40282f"
     },
     "facsimile-crops.js": {
       "bytes": 249782,
@@ -242,12 +131,16 @@
       "sha256": "e8d60b618590bb58bef9c41b1f9367244dffebec57515d54c09abbd665cc95f1"
     },
     "hyper.js": {
-      "bytes": 30911,
-      "sha256": "685e2d2c718d74e88700d0e5bb1b89fbc2e193abfa29b6e9615b239e057986d0"
+      "bytes": 31948,
+      "sha256": "6f094f938ffd749b4fca9cbdc75641f569b9b58474eea98aa1399db4fb62cc90"
     },
     "index.html": {
-      "bytes": 1910,
-      "sha256": "f92057b90021955fcfd39d8c16b99f1a9140d721608979c74115e7cc444c5db4"
+      "bytes": 1967,
+      "sha256": "a28b491369fdee068263f90dea012ec1d93e9e4b6bf50ca569deca3bf3033e78"
+    },
+    "latex-source.js": {
+      "bytes": 2663,
+      "sha256": "522e791e2ad711660082ee86ac7734056a9d97284e592ceb314814e870d90736"
     },
     "renderer.mjs": {
       "bytes": 20717,
@@ -256,6 +149,130 @@
     "source/General-Topology-lecture-notes-2025-101pages.pdf": {
       "bytes": 923677,
       "sha256": "72086f7e37384fb62f9a7d2732bee297722d98832eed3d4ccacfa6c83901b0f2"
+    },
+    "source/latex-current/figures/close-continuity.png": {
+      "bytes": 97567,
+      "sha256": "aea6736a3e87e20aa01ddc6a3cb9214369d6814d91e947f6b45d7b911e767b2f"
+    },
+    "source/latex-current/figures/torus-sphere-subspace.png": {
+      "bytes": 219693,
+      "sha256": "1a8642a4f79e7afa0a5192ebc07e90ffe3d399188011d2689cefc67699f591b8"
+    },
+    "source/latex-current/figures/torus-sphere.png": {
+      "bytes": 162561,
+      "sha256": "d124386c1ad05195f22a5f858c6bd351d920648e227d2c8b9b389929c48ef95f"
+    },
+    "source/latex-current/notes.aux": {
+      "bytes": 11082,
+      "sha256": "5ee54d28f6a78b61818ee91c6893fe02eb9174bc2978b577450ee899343f77a2"
+    },
+    "source/latex-current/notes.pdf": {
+      "bytes": 931594,
+      "sha256": "68c0da0951316dba4800d5aa317a7e354529860df0498c604f84695a81a3ab0a"
+    },
+    "source/latex-current/notes.tex": {
+      "bytes": 2361,
+      "sha256": "6efdf4aef9189191dec2f352ee4db4cab27c1640bfb65ea7af818384b8d9aa97"
+    },
+    "source/latex-current/notes.toc": {
+      "bytes": 4997,
+      "sha256": "7735fa67471ec508cd79d5e7c6445dea1458456d1bc49de86c65fd1cbf5e6dbc"
+    },
+    "source/latex-current/sections/01_set_theory.tex": {
+      "bytes": 50092,
+      "sha256": "732e4cf0768fc1afcd8257726b598cee62f76ff17f9f4d4e0437a25cbc82fc20"
+    },
+    "source/latex-current/sections/02_metric_spaces.tex": {
+      "bytes": 22397,
+      "sha256": "ac34f7d47d5dc18fe5a491dd0b9397cca1a4139148cc54d1c0543d120b464f71"
+    },
+    "source/latex-current/sections/03_topological_spaces.tex": {
+      "bytes": 92209,
+      "sha256": "001f6593bf8cb42e3acdf9ae5466615b69f6a1d6f41511f8e3bbcdfdcea9e0c8"
+    },
+    "source/latex-current/sections/04_convergence.tex": {
+      "bytes": 16456,
+      "sha256": "37a7c03782e8998db27edee29b389e2d3274e19124b4dac58aa4aebe49599d8b"
+    },
+    "source/latex-current/sections/05_separation_countability.tex": {
+      "bytes": 31454,
+      "sha256": "190f69555a9fa5e46d40e9f5f16a3e6b59e3c91008424c506bb9278a317fd3a3"
+    },
+    "source/latex-current/sections/06_compactness.tex": {
+      "bytes": 54453,
+      "sha256": "87fc06a96ec096051786637fdc99fdca405385a7dae59c6aa0e4a4c376072f54"
+    },
+    "source/latex-current/sections/08_connectedness.tex": {
+      "bytes": 18633,
+      "sha256": "120722308ce54a2dfa5f281d240393446b6e7bf88c74a779de5ad2835a3c9443"
+    },
+    "source/latex-diagrams/275b03e4f3b0eed433bb.svg": {
+      "bytes": 27586,
+      "sha256": "9286c93c91f55bddd13aec9d879c11e31bd891531e120eca33c2fd37414d000d"
+    },
+    "source/latex-diagrams/28e1742692ba724de983.svg": {
+      "bytes": 29086,
+      "sha256": "248ad66b574b77c84bd4af81474418b97ff571b71b94787b905b3158e5cfcd21"
+    },
+    "source/latex-diagrams/31666e6ed1e4fe0d614e.svg": {
+      "bytes": 22542,
+      "sha256": "eb05374c59a4cf29ec06d87f29d35ee5579415eee53ec155c255d08bc044c4d4"
+    },
+    "source/latex-diagrams/362a0b401a3759abc6fa.svg": {
+      "bytes": 12975,
+      "sha256": "3500d2ff0ee0599e11e102e45ea874c6aa2469a0b91651ba7e1aceb0dd9f634a"
+    },
+    "source/latex-diagrams/37917302f9a73ccf9152.svg": {
+      "bytes": 23672,
+      "sha256": "2de0ede9a11d2d77cf96a6aa5f3a7f3000831c9a1c01f001ef5eab315306b1a5"
+    },
+    "source/latex-diagrams/4f0aa75ac2d70fc22b68.svg": {
+      "bytes": 20897,
+      "sha256": "b4fdeced812c3fe0af17a6f3734b678e633762c3617f0b5a51dd4f65bb30c731"
+    },
+    "source/latex-diagrams/5c92eb68a0d897f53bef.svg": {
+      "bytes": 20961,
+      "sha256": "1fd9894f181005600aad6aebcaf6de5ea30d189757467d1b4e7c98b848b5cfab"
+    },
+    "source/latex-diagrams/61f4d046552bc23e90e0.svg": {
+      "bytes": 8545,
+      "sha256": "41c870078d2c2831f649311aa29f5106b3a1337de4ea62e70ef36a052c02062e"
+    },
+    "source/latex-diagrams/741ba2fcae1d40c3b24c.svg": {
+      "bytes": 10851,
+      "sha256": "13bc28373a3b52b0eb54517db15225b14bddbf60157d2d3a9185dc60c8b89fe8"
+    },
+    "source/latex-diagrams/9a78eab831463fd5f9c1.svg": {
+      "bytes": 8438,
+      "sha256": "377765418d6c4e0d5989b407387ad9386eb5a4d8102c59542dcdab4bbf191ca2"
+    },
+    "source/latex-diagrams/9c3cf684ce5796e801b7.svg": {
+      "bytes": 13866,
+      "sha256": "3c5bccb66bdd7dc58aeb88d4e6008eb485f58bd7db67d954b7568cd3c5d3e925"
+    },
+    "source/latex-diagrams/a13bf91f1e276107897c.svg": {
+      "bytes": 18255,
+      "sha256": "fafb0b49d18f7b51f7bb0bb7d98b5c4d123eb38c3da18a303b384d126b2788c8"
+    },
+    "source/latex-diagrams/a15dc776ecc4175ed1e1.svg": {
+      "bytes": 2736,
+      "sha256": "91e5b1da9afb866d470cc60f716c439c712fc75e958a61d261bb499b5216c095"
+    },
+    "source/latex-diagrams/b5bb9761b9901c0cbd3f.svg": {
+      "bytes": 12276,
+      "sha256": "88275ce20752cc7ce7b333a484b70c3dceceba7a7b2ee4c3377690c219561433"
+    },
+    "source/latex-diagrams/c0509e73dc1485f6129d.svg": {
+      "bytes": 13777,
+      "sha256": "cd7c8532188e5b96d48bd2f7ee0c396e857ce40d2bfcb06575983b458296d2c2"
+    },
+    "source/latex-diagrams/e2088fa6f2310b1bea8f.svg": {
+      "bytes": 38036,
+      "sha256": "84beeb7ef9a7855378c63e6dfe245e8a1dfb9d0f263e712b3aedc0a95e421561"
+    },
+    "source/latex-diagrams/fbace59a0ac074b7bfbd.svg": {
+      "bytes": 16955,
+      "sha256": "1108c29eb0df09441380dbf7ab58904dc07b3b0c4726cedafbda75b4ff4481c0"
     },
     "source/pages/page-001.webp": {
       "bytes": 103058,
@@ -666,8 +683,8 @@
       "sha256": "cda6f9d0f6ba5a13a52ad41c2b2e57853ae7e4c27b1b2ebf7a2f1e0bdfc2b745"
     },
     "style.css": {
-      "bytes": 7835,
-      "sha256": "8e798f3db4dbdf706d655603097b105855884945a2b56867b3f83fc543d3ea85"
+      "bytes": 9235,
+      "sha256": "c6b72b97699df2bb3864cedf57cbdcbd2587ed83382e02172064d29dd456c84a"
     },
     "tree.js": {
       "bytes": 2995,
@@ -678,8 +695,260 @@
       "sha256": "19960278b17644659409997c4ed73257de7a83e8aa482ce31f81d9065d3260f2"
     },
     "ui.js": {
-      "bytes": 7685,
-      "sha256": "f2790f0a1ca3e5ddf526e653150276b3600fc33a19e9c4c82a7eaa4258586a23"
+      "bytes": 7700,
+      "sha256": "155d739d3bf72a8a9c342e7b68cb146af68a1541a0b2d0cd346f0d10ed41e678"
+    },
+    "vendor/katex/LICENSE": {
+      "bytes": 1107,
+      "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3"
+    },
+    "vendor/katex/fonts/KaTeX_AMS-Regular.ttf": {
+      "bytes": 63632,
+      "sha256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13"
+    },
+    "vendor/katex/fonts/KaTeX_AMS-Regular.woff": {
+      "bytes": 33516,
+      "sha256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251"
+    },
+    "vendor/katex/fonts/KaTeX_AMS-Regular.woff2": {
+      "bytes": 28076,
+      "sha256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308"
+    },
+    "vendor/katex/fonts/KaTeX_Caligraphic-Bold.ttf": {
+      "bytes": 12368,
+      "sha256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268"
+    },
+    "vendor/katex/fonts/KaTeX_Caligraphic-Bold.woff": {
+      "bytes": 7716,
+      "sha256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed"
+    },
+    "vendor/katex/fonts/KaTeX_Caligraphic-Bold.woff2": {
+      "bytes": 6912,
+      "sha256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c"
+    },
+    "vendor/katex/fonts/KaTeX_Caligraphic-Regular.ttf": {
+      "bytes": 12344,
+      "sha256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7"
+    },
+    "vendor/katex/fonts/KaTeX_Caligraphic-Regular.woff": {
+      "bytes": 7656,
+      "sha256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c"
+    },
+    "vendor/katex/fonts/KaTeX_Caligraphic-Regular.woff2": {
+      "bytes": 6908,
+      "sha256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b"
+    },
+    "vendor/katex/fonts/KaTeX_Fraktur-Bold.ttf": {
+      "bytes": 19584,
+      "sha256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1"
+    },
+    "vendor/katex/fonts/KaTeX_Fraktur-Bold.woff": {
+      "bytes": 13296,
+      "sha256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb"
+    },
+    "vendor/katex/fonts/KaTeX_Fraktur-Bold.woff2": {
+      "bytes": 11348,
+      "sha256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f"
+    },
+    "vendor/katex/fonts/KaTeX_Fraktur-Regular.ttf": {
+      "bytes": 19572,
+      "sha256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3"
+    },
+    "vendor/katex/fonts/KaTeX_Fraktur-Regular.woff": {
+      "bytes": 13208,
+      "sha256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463"
+    },
+    "vendor/katex/fonts/KaTeX_Fraktur-Regular.woff2": {
+      "bytes": 11316,
+      "sha256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc"
+    },
+    "vendor/katex/fonts/KaTeX_Main-Bold.ttf": {
+      "bytes": 51336,
+      "sha256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8"
+    },
+    "vendor/katex/fonts/KaTeX_Main-Bold.woff": {
+      "bytes": 29912,
+      "sha256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822"
+    },
+    "vendor/katex/fonts/KaTeX_Main-Bold.woff2": {
+      "bytes": 25324,
+      "sha256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021"
+    },
+    "vendor/katex/fonts/KaTeX_Main-BoldItalic.ttf": {
+      "bytes": 32968,
+      "sha256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f"
+    },
+    "vendor/katex/fonts/KaTeX_Main-BoldItalic.woff": {
+      "bytes": 19412,
+      "sha256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c"
+    },
+    "vendor/katex/fonts/KaTeX_Main-BoldItalic.woff2": {
+      "bytes": 16780,
+      "sha256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b"
+    },
+    "vendor/katex/fonts/KaTeX_Main-Italic.ttf": {
+      "bytes": 33580,
+      "sha256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a"
+    },
+    "vendor/katex/fonts/KaTeX_Main-Italic.woff": {
+      "bytes": 19676,
+      "sha256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf"
+    },
+    "vendor/katex/fonts/KaTeX_Main-Italic.woff2": {
+      "bytes": 16988,
+      "sha256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267"
+    },
+    "vendor/katex/fonts/KaTeX_Main-Regular.ttf": {
+      "bytes": 53580,
+      "sha256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830"
+    },
+    "vendor/katex/fonts/KaTeX_Main-Regular.woff": {
+      "bytes": 30772,
+      "sha256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc"
+    },
+    "vendor/katex/fonts/KaTeX_Main-Regular.woff2": {
+      "bytes": 26272,
+      "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866"
+    },
+    "vendor/katex/fonts/KaTeX_Math-BoldItalic.ttf": {
+      "bytes": 31196,
+      "sha256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5"
+    },
+    "vendor/katex/fonts/KaTeX_Math-BoldItalic.woff": {
+      "bytes": 18668,
+      "sha256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e"
+    },
+    "vendor/katex/fonts/KaTeX_Math-BoldItalic.woff2": {
+      "bytes": 16400,
+      "sha256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1"
+    },
+    "vendor/katex/fonts/KaTeX_Math-Italic.ttf": {
+      "bytes": 31308,
+      "sha256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a"
+    },
+    "vendor/katex/fonts/KaTeX_Math-Italic.woff": {
+      "bytes": 18748,
+      "sha256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571"
+    },
+    "vendor/katex/fonts/KaTeX_Math-Italic.woff2": {
+      "bytes": 16440,
+      "sha256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264"
+    },
+    "vendor/katex/fonts/KaTeX_SansSerif-Bold.ttf": {
+      "bytes": 24504,
+      "sha256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0"
+    },
+    "vendor/katex/fonts/KaTeX_SansSerif-Bold.woff": {
+      "bytes": 14408,
+      "sha256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba"
+    },
+    "vendor/katex/fonts/KaTeX_SansSerif-Bold.woff2": {
+      "bytes": 12216,
+      "sha256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62"
+    },
+    "vendor/katex/fonts/KaTeX_SansSerif-Italic.ttf": {
+      "bytes": 22364,
+      "sha256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083"
+    },
+    "vendor/katex/fonts/KaTeX_SansSerif-Italic.woff": {
+      "bytes": 14112,
+      "sha256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2"
+    },
+    "vendor/katex/fonts/KaTeX_SansSerif-Italic.woff2": {
+      "bytes": 12028,
+      "sha256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a"
+    },
+    "vendor/katex/fonts/KaTeX_SansSerif-Regular.ttf": {
+      "bytes": 19436,
+      "sha256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad"
+    },
+    "vendor/katex/fonts/KaTeX_SansSerif-Regular.woff": {
+      "bytes": 12316,
+      "sha256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605"
+    },
+    "vendor/katex/fonts/KaTeX_SansSerif-Regular.woff2": {
+      "bytes": 10344,
+      "sha256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342"
+    },
+    "vendor/katex/fonts/KaTeX_Script-Regular.ttf": {
+      "bytes": 16648,
+      "sha256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67"
+    },
+    "vendor/katex/fonts/KaTeX_Script-Regular.woff": {
+      "bytes": 10588,
+      "sha256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a"
+    },
+    "vendor/katex/fonts/KaTeX_Script-Regular.woff2": {
+      "bytes": 9644,
+      "sha256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b"
+    },
+    "vendor/katex/fonts/KaTeX_Size1-Regular.ttf": {
+      "bytes": 12228,
+      "sha256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b"
+    },
+    "vendor/katex/fonts/KaTeX_Size1-Regular.woff": {
+      "bytes": 6496,
+      "sha256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9"
+    },
+    "vendor/katex/fonts/KaTeX_Size1-Regular.woff2": {
+      "bytes": 5468,
+      "sha256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe"
+    },
+    "vendor/katex/fonts/KaTeX_Size2-Regular.ttf": {
+      "bytes": 11508,
+      "sha256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b"
+    },
+    "vendor/katex/fonts/KaTeX_Size2-Regular.woff": {
+      "bytes": 6188,
+      "sha256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d"
+    },
+    "vendor/katex/fonts/KaTeX_Size2-Regular.woff2": {
+      "bytes": 5208,
+      "sha256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd"
+    },
+    "vendor/katex/fonts/KaTeX_Size3-Regular.ttf": {
+      "bytes": 7588,
+      "sha256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082"
+    },
+    "vendor/katex/fonts/KaTeX_Size3-Regular.woff": {
+      "bytes": 4420,
+      "sha256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949"
+    },
+    "vendor/katex/fonts/KaTeX_Size3-Regular.woff2": {
+      "bytes": 3624,
+      "sha256": "73d591271b1604960cb10bb90fee021670af7297017e0e98480b332d11f51995"
+    },
+    "vendor/katex/fonts/KaTeX_Size4-Regular.ttf": {
+      "bytes": 10364,
+      "sha256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877"
+    },
+    "vendor/katex/fonts/KaTeX_Size4-Regular.woff": {
+      "bytes": 5980,
+      "sha256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58"
+    },
+    "vendor/katex/fonts/KaTeX_Size4-Regular.woff2": {
+      "bytes": 4928,
+      "sha256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0"
+    },
+    "vendor/katex/fonts/KaTeX_Typewriter-Regular.ttf": {
+      "bytes": 27556,
+      "sha256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa"
+    },
+    "vendor/katex/fonts/KaTeX_Typewriter-Regular.woff": {
+      "bytes": 16028,
+      "sha256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7"
+    },
+    "vendor/katex/fonts/KaTeX_Typewriter-Regular.woff2": {
+      "bytes": 13568,
+      "sha256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b"
+    },
+    "vendor/katex/katex.cjs": {
+      "bytes": 276701,
+      "sha256": "e8d885505949f3a5f4abdd5dd0d53696bd1371ad26ffbf4f310dcd77c8cdae89"
+    },
+    "vendor/katex/katex.min.css": {
+      "bytes": 23352,
+      "sha256": "19095127357ed6d29fe0a63a6b000c913a89f7f1963b765dd3715e97c9852e75"
     }
   }
 }

@@ -23,7 +23,7 @@ export function createDesk(atlas, { deskEl, trailEl, whyEl, whyBodyEl, introHTML
     const n = atlas.node.get(id); if (!n || host.querySelector(`:scope > .leaf[data-id="${CSS.escape(id)}"]`)) return;
     const proofs = atlas.proofsOf.get(id) || [];
     const leaf = document.createElement('article'); leaf.className = `leaf level-${level}`; leaf.dataset.id = id;
-    leaf.innerHTML = `<div class="leaf-head"><span class="eyebrow">${ROLE_LABEL[n.role]} · ${esc(n.number)} · Chapter ${atlas.chapter.get(n.chapter).number} · p.${n.page}</span><button class="icon" data-action="close-leaf" aria-label="Close">×</button></div><h3>${esc(n.en)}</h3>${statementBlock(atlas, n)}
+    leaf.innerHTML = `<div class="leaf-head"><span class="eyebrow">${ROLE_LABEL[n.role]} · ${esc(n.number)} · Chapter ${atlas.chapter.get(n.chapter).number} · frozen PDF p.${n.page}</span><button class="icon" data-action="close-leaf" aria-label="Close">×</button></div><h3>${esc(n.en)}</h3>${statementBlock(atlas, n)}
       <div class="leaf-actions">${proofs.map(p => `<button class="btn" data-action="proof" data-id="${p.id}">Read its proof ${esc(p.label)} here · ${p.steps.length} step${p.steps.length > 1 ? 's' : ''}</button>`).join('')}<button class="btn ghost" data-action="select" data-id="${id}">Make this the page</button>${srcLink(n.page, 'PDF p.' + n.page)}</div>
       ${n.role !== 'definition' && !proofs.length ? '<p class="note">No separately written proof in the notes for this environment.</p>' : ''}<div class="proof-slot"></div>`;
     host.append(leaf); state.path = [...state.path.slice(0, level), id]; renderTrail(); emit();

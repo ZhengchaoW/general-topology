@@ -171,9 +171,10 @@ export async function bootHyper({ mode, intro, title }) {
   }
   // ---- motion ------------------------------------------------------------------------------------------
   const settle = () => { S.moving = true; clearTimeout(S.idle); S.idle = setTimeout(() => { S.moving = false; app.view.requestSettled(); }, 160); app.view.requestSettled(); };
-  function animateTo(target, k = S.k, ms = 360) { cancelAnimationFrame(S.anim); const c0 = S.centre, k0 = S.k, t0 = performance.now(); // move along the geodesic from the current centre to the target
+  function stopMotion() { cancelAnimationFrame(S.anim); S.anim = 0; clearTimeout(S.idle); S.moving = false; app?.view.requestSettled(); }
+  function animateTo(target, k = S.k, ms = 460) { stopMotion(); const c0 = {...S.centre}, k0 = S.k; let elapsed = 0, previous = null; // move along the geodesic from the current centre to the target
     const tp = mob(target, c0), L = Math.sqrt(abs2(tp)), ah = atanh(Math.min(.9999999, L));
-    const step = now => { const t = Math.min(1, (now - t0) / ms), e = 1 - Math.pow(1 - t, 3); const s = L > 1e-9 ? Math.tanh(ah * e) / L : 0; S.centre = mobInv(C(tp.re * s, tp.im * s), c0); S.k = k0 + (k - k0) * e; if (t < 1) { S.moving = true; app.view.requestSettled(); S.anim = requestAnimationFrame(step); } else { S.moving = false; app.view.requestSettled(); } }; S.anim = requestAnimationFrame(step); }
+    const step = now => { if (previous !== null) elapsed += Math.min(20, Math.max(0, now - previous)); previous = now; const t = Math.min(1, elapsed / ms), e = t * t * (3 - 2 * t); const s = L > 1e-9 ? Math.tanh(ah * e) / L : 0; S.centre = mobInv(C(tp.re * s, tp.im * s), c0); S.k = k0 + (k - k0) * e; if (t < 1) { S.moving = true; app.view.requestSettled(); S.anim = requestAnimationFrame(step); } else { S.anim = 0; S.centre = {...target}; S.k = k; S.moving = false; app.view.requestSettled(); } }; S.anim = requestAnimationFrame(step); }
   // Where to look when an entity is selected: shift a little from the entity toward the hyperbolic
   // barycentre of its direct relations (so the disk is not half empty), and pick the zoom that puts
   // nearly all of them inside 0.8 of the radius.
@@ -181,10 +182,10 @@ export async function bootHyper({ mode, intro, title }) {
     const ws = nb.map(n => mob(lay.pos.get(n), z0)); const m = ws.reduce((a, w) => C(a.re + w.re, a.im + w.im), C(0, 0)); const mm = C(m.re / ws.length * .5, m.im / ws.length * .5); const target = mobInv(mm, z0);
     const ds = [id, ...nb].map(n => 2 * atanh(Math.min(.9999999, Math.sqrt(abs2(mob(lay.pos.get(n), target)))))).sort((a, b) => a - b); const D = ds[Math.floor(ds.length * .9)] || ds.at(-1);
     return { target, k: Math.max(.45, Math.min(2.4, 2 * atanh(.8) / Math.max(.3, D))) }; }
-  function hitAt(sx, sy) { const vp = { width: app.view.width, height: app.view.height }, { R, cx, cy } = disk(vp); let best = null, bd = 1e9; for (const [id, z] of app.lay.pos) { if (!S.roles.has(app.atlas.node.get(id).role)) continue; const d = view2(z); const x = cx + d.re * R, y = cy + d.im * R; const dd = (x - sx) ** 2 + (y - sy) ** 2; if (dd < bd) { bd = dd; best = id; } } return bd < 13 * 13 ? best : null; }
+  function hitAt(sx, sy) { const vp = { width: app.view.width, height: app.view.height }, { R, cx, cy } = disk(vp); let best = null, bd = 1e9; for (const [id, z] of app.lay.pos) { const n = app.atlas.node.get(id); if (!S.roles.has(n.role) || (S.isolate && S.topics.size && !n.topics.some(t=>S.topics.has(t)))) continue; const d = view2(z); const x = cx + d.re * R, y = cy + d.im * R; const dd = (x - sx) ** 2 + (y - sy) ** 2; if (dd < bd) { bd = dd; best = id; } } return bd < 13 * 13 ? best : null; }
 
   app = await bootTreeApp({ name: mode, bind: false, rebuildOnSelect: false, layout, paint,
-    onSelect: id => { app.checkpoint?.(); if (id && app.lay.pos.has(id)) { const { target, k } = focusFor(id); animateTo(target, k, 400); } },
+    onSelect: id => { app.checkpoint?.(); if (id && app.lay.pos.has(id)) { const { target, k } = focusFor(id); animateTo(target, k, 460); } else if (!id) animateTo(C(0, 0), 1); },
     zoomHandler: z => { if (z === 'fit') animateTo(C(0, 0), 1); else animateTo(S.centre, Math.max(.35, Math.min(5, S.k * (z === 'in' ? 1.35 : 1 / 1.35))), 220); },
     fitHandler: () => animateTo(C(0, 0), 1),
     chapterHandler: id => { // centre on the chapter's most used entity
@@ -195,21 +196,47 @@ export async function bootHyper({ mode, intro, title }) {
   // ---- pointer: drag = Möbius translation; click = centre + select; wheel / pinch = hyperbolic zoom ---------
   const el = app.view.canvas; el.style.touchAction = 'none'; let down = null; const pts = new Map(); let pinch = null;
   const toDisk = (sx, sy) => { const { R, cx, cy } = disk({ width: app.view.width, height: app.view.height }); return C((sx - cx) / R, (sy - cy) / R); };
-  el.addEventListener('pointerdown', e => { el.setPointerCapture(e.pointerId); const r = el.getBoundingClientRect(); pts.set(e.pointerId, { x: e.clientX - r.left, y: e.clientY - r.top }); if (pts.size === 2) { const [a, b] = [...pts.values()]; pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), k: S.k }; down = null; return; } const u = toDisk(e.clientX - r.left, e.clientY - r.top); if (abs2(u) >= .998) return; app.checkpoint?.(); down = { x: e.clientX, y: e.clientY, z0: mobInv(unmag(u, S.k), S.centre), moved: false }; cancelAnimationFrame(S.anim); });
+  el.addEventListener('pointerdown', e => {
+    if (e.button !== 0) return;
+    el.setPointerCapture(e.pointerId);
+    // Freeze the displayed camera before establishing any drag or pinch anchor.
+    stopMotion(); app.checkpoint?.();
+    const r = el.getBoundingClientRect();
+    pts.set(e.pointerId, { x: e.clientX - r.left, y: e.clientY - r.top });
+    if (pts.size >= 2) { const [a, b] = [...pts.values()]; pinch = { d: Math.max(1, Math.hypot(a.x - b.x, a.y - b.y)), k: S.k }; down = null; return; }
+    const u = toDisk(e.clientX - r.left, e.clientY - r.top);
+    down = { pointer: e.pointerId, x: e.clientX, y: e.clientY, z0: abs2(u) < .998 ? mobInv(unmag(u, S.k), S.centre) : null, moved: false };
+  });
   el.addEventListener('pointermove', e => { const r = el.getBoundingClientRect(); const sx = e.clientX - r.left, sy = e.clientY - r.top; if (pts.has(e.pointerId)) pts.set(e.pointerId, { x: sx, y: sy });
-    if (pinch && pts.size === 2) { const [a, b] = [...pts.values()]; S.k = Math.max(.35, Math.min(5, pinch.k * Math.hypot(a.x - b.x, a.y - b.y) / pinch.d)); settle(); return; }
-    if (down) { if (Math.hypot(e.clientX - down.x, e.clientY - down.y) > 3) down.moved = true; if (!down.moved) return; let u = toDisk(sx, sy); const m = Math.sqrt(abs2(u)); if (m > .985) u = C(u.re * .985 / m, u.im * .985 / m); const w1 = unmag(u, S.k), z0 = down.z0; // solve T_c(z0) = w1 for c
-      const kk = cmul(w1, z0), mm = csub(z0, w1), den = 1 - abs2(kk); const cn = C((mm.re + (kk.re * mm.re + kk.im * mm.im)) / den, (mm.im + (kk.im * mm.re - kk.re * mm.im)) / den); if (abs2(cn) < .9995) S.centre = cn; settle(); return; }
-    const id = hitAt(sx, sy); if (id !== app.hover) app.hoverFn(id); });
-  const up = e => { pts.delete(e.pointerId); if (pts.size < 2) pinch = null; if (!down) return; const was = down; down = null; if (!was.moved) { const r = el.getBoundingClientRect(); const id = hitAt(e.clientX - r.left, e.clientY - r.top); if (id) app.desk.select(id); } };
-  el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up); el.addEventListener('pointerleave', () => { if (!down && app.hover) app.hoverFn(null); });
-  el.addEventListener('wheel', e => { e.preventDefault(); if(!S.moving) app.checkpoint?.(); cancelAnimationFrame(S.anim); S.k = Math.max(.35, Math.min(5, S.k * Math.exp(-e.deltaY * (e.deltaMode ? .05 : .0016)))); settle(); }, { passive: false });
+    if (pinch && pts.size >= 2) { const [a, b] = [...pts.values()]; S.k = Math.max(.35, Math.min(5, pinch.k * Math.hypot(a.x - b.x, a.y - b.y) / pinch.d)); settle(); return; }
+    if (down && down.pointer === e.pointerId) { if (Math.hypot(e.clientX - down.x, e.clientY - down.y) > 5) down.moved = true; if (!down.moved || !down.z0) return; let u = toDisk(sx, sy); const m = Math.sqrt(abs2(u)); if (m > .985) u = C(u.re * .985 / m, u.im * .985 / m); const w1 = unmag(u, S.k), z0 = down.z0;
+      const cn = dragCentre(z0, w1); if (abs2(cn) < .9995) S.centre = cn; settle(); return; }
+    if (!pts.size) { const id = hitAt(sx, sy); if (id !== app.hover) app.hoverFn(id); }
+  });
+  const up = e => {
+    pts.delete(e.pointerId); if (pts.size < 2) pinch = null;
+    const was = down; if (was?.pointer !== e.pointerId) return; down = null;
+    if (e.type === 'pointercancel' || was.moved || Math.hypot(e.clientX - was.x, e.clientY - was.y) > 5) return;
+    const r = el.getBoundingClientRect(), id = hitAt(e.clientX - r.left, e.clientY - r.top);
+    if (id) { const same = app.desk.state.selected === id; app.desk.select(id); if (same) { const {target,k}=focusFor(id); animateTo(target,k); } }
+    else if (app.desk.state.selected) app.desk.clear();
+    else animateTo(C(0, 0), 1);
+  };
+  el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
+  el.addEventListener('lostpointercapture', e => { pts.delete(e.pointerId); if (down?.pointer === e.pointerId) down = null; if (pts.size < 2) pinch = null; });
+  el.addEventListener('pointerleave', () => { if (!pts.size && app.hover) app.hoverFn(null); });
+  el.addEventListener('wheel', e => {
+    e.preventDefault(); if(!S.moving) app.checkpoint?.(); stopMotion();
+    // A wheel gesture during a held pointer must invalidate its old zoom anchor.
+    down = null; pinch = null;
+    S.k = Math.max(.35, Math.min(5, S.k * Math.exp(-e.deltaY * (e.deltaMode ? .05 : .0016)))); settle();
+  }, { passive: false });
   app.view.lowRes = () => S.moving; app.view.lowResScale = 1;
   // hover: redraw the cached frame plus a ring, instead of repainting the whole disk
   const baseHover = app.hoverFn; app.hoverFn = id => { baseHover(id); const v = app.view; if (S.moving || !v.settled) return; const c = v.ctx; c.setTransform(1, 0, 0, 1, 0, 0); c.drawImage(v.settled, 0, 0); if (!id) return; const p = toScreen(app.lay.pos.get(id), { width: v.width, height: v.height }); const k = 1 - abs2(p.d), im = app.lay.imp.get(id); const rr = Math.max(1.3, (2 + 8.5 * im * im) * (.22 + .9 * k) * Math.pow(S.k, .25)); c.setTransform(v.dpr, 0, 0, v.dpr, 0, 0); c.beginPath(); c.arc(p.x, p.y, rr + 5, 0, Math.PI * 2); c.strokeStyle = '#fff'; c.lineWidth = 1.5; c.stroke(); };
   settle();
-  window.proto.hyper = S; app.checkpoint = () => {S.history.push({centre:{...S.centre},k:S.k}); if(S.history.length>40)S.history.shift(); S.future=[];}; app.travel = back => {const from=back?S.history:S.future,to=back?S.future:S.history,entry=from.pop();if(!entry)return;to.push({centre:{...S.centre},k:S.k});cancelAnimationFrame(S.anim);S.centre=entry.centre;S.k=entry.k;settle();}; app.visible = () => ({nodes: app.atlas.nodes.filter(n => S.roles.has(n.role)).map(n => n.id), relations: app.atlas.rels.filter(r => r.kind !== 'teaching' && S.roles.has(app.atlas.node.get(r.prereq).role) && S.roles.has(app.atlas.node.get(r.dependent).role) && S.kinds.has(r.kind === 'variant' ? 'counter' : r.kind === 'teaching' ? 'context' : r.kind)).map(r => r.id)}); window.atlas = window.proto; window.atlas.ready = true;
-  document.addEventListener('keydown', e => {if(e.target.closest('input,textarea'))return;const delta={ArrowLeft:[-.08,0],ArrowRight:[.08,0],ArrowUp:[0,-.08],ArrowDown:[0,.08]}[e.key];if(!delta)return;e.preventDefault();app.checkpoint();S.centre=mobInv(C(...delta),S.centre);settle();});
+  window.proto.hyper = S; app.checkpoint = () => {S.history.push({centre:{...S.centre},k:S.k}); if(S.history.length>40)S.history.shift(); S.future=[];}; app.travel = back => {const from=back?S.history:S.future,to=back?S.future:S.history,entry=from.pop();if(!entry)return;to.push({centre:{...S.centre},k:S.k});stopMotion();S.centre=entry.centre;S.k=entry.k;settle();}; app.visible = () => ({nodes: app.atlas.nodes.filter(n => S.roles.has(n.role)).map(n => n.id), relations: app.atlas.rels.filter(r => r.kind !== 'teaching' && S.roles.has(app.atlas.node.get(r.prereq).role) && S.roles.has(app.atlas.node.get(r.dependent).role) && S.kinds.has(r.kind === 'variant' ? 'counter' : r.kind === 'teaching' ? 'context' : r.kind)).map(r => r.id)}); window.atlas = window.proto; window.atlas.ready = true;
+  document.addEventListener('keydown', e => {if(e.target.closest('input,textarea'))return;const delta={ArrowLeft:[-.08,0],ArrowRight:[.08,0],ArrowUp:[0,-.08],ArrowDown:[0,.08]}[e.key];if(!delta)return;e.preventDefault();stopMotion();app.checkpoint();S.centre=mobInv(C(...delta),S.centre);settle();});
   return app;
 }
 

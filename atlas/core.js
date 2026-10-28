@@ -31,25 +31,13 @@ export function numberLabel(n) {
 
 export const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
-// Typography only: transcription markup (_{..} ^{..} ‾{..}) becomes sub/sup/overline, and
-// isolated Latin letters are set in math italic, as in the printed notes. Content unchanged.
-export function math(t) {
-  let s = esc(t);
-  s = s.replace(/_\{([^}]*)\}/g, '<sub>$1</sub>').replace(/\^\{([^}]*)\}/g, '<sup>$1</sup>').replace(/‾\{([^}]*)\}/g, '<span class="ov">$1</span>');
-  s = s.replace(/(^|[\s(\[{,:;|→⇒⇔∈⊆⊂∪∩\\×=≠≤≥<>+\-−/])([A-Za-z])(?=$|[\s()\]},:;.|→⇒⇔∈⊆⊂∪∩\\×=≠≤≥<>+\-−/'′])/g, (m, pre, ch, off, str) => {
-    const after = str.slice(off + m.length, off + m.length + 2);
-    // the articles "a" / "A" and the pronoun "I" stay upright when they start an ordinary word sequence
-    if ((ch === 'a' || ch === 'I') && /^ [a-z]/.test(after)) return m;
-    if (ch === 'A' && /^ [a-z]/.test(after) && (off === 0 || /[.!?]\s$/.test(str.slice(Math.max(0, off - 2), off + 1)) || pre === '')) return m;
-    return pre + '<i>' + ch + '</i>';
-  });
-  return s;
-}
+// Atlas reading aids use plain text. Canonical mathematics is rendered by strict KaTeX at build time.
+export const math = esc;
 
 export async function loadAtlas(url) {
   const get = async u => { const r = await fetch(u); if (!r.ok) throw Error('Could not load ' + u); return r.json(); };
-  const [raw, source, review] = await Promise.all([get(url), get('data/source-text.json'), get('data/review-notes.json')]);
-  const atlas = new Atlas(project(raw, source)); atlas.raw = raw; atlas.source = source; atlas.review = review; return atlas;
+  const [raw, source, review, latex] = await Promise.all([get(url), get('data/source-text.json'), get('data/review-notes.json'), get('data/latex-source.json')]);
+  const atlas = new Atlas(project(raw, source)); atlas.raw = raw; atlas.source = source; atlas.review = review; atlas.latex = latex; return atlas;
 }
 
 export class Atlas {

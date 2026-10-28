@@ -1,0 +1,57 @@
+\contentsline {section}{\numberline {1}Set theory}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Basic definitions}{3}{subsection.1.1}%
+\contentsline {paragraph}{Set calculus}{3}{section*.2}%
+\contentsline {subsection}{\numberline {1.2}Functions}{4}{subsection.1.2}%
+\contentsline {paragraph}{Cartesian product}{4}{section*.3}%
+\contentsline {paragraph}{Cartesian products of families of sets}{5}{section*.4}%
+\contentsline {subsection}{\numberline {1.3}Relations}{5}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Equivalence relations}{5}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Partial orders}{7}{subsubsection.1.3.2}%
+\contentsline {paragraph}{Order preserving maps}{10}{section*.5}%
+\contentsline {subsection}{\numberline {1.4}Axiom of Choice}{11}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Maximum principle and Zorn's lemma}{12}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Four equivalent statements}{13}{subsubsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.5}Cardinality}{14}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Finite sets}{15}{subsubsection.1.5.1}%
+\contentsline {subsubsection}{\numberline {1.5.2}Infinite sets}{16}{subsubsection.1.5.2}%
+\contentsline {paragraph}{Claim 1}{20}{section*.6}%
+\contentsline {paragraph}{Claim 2}{21}{section*.7}%
+\contentsline {subsubsection}{\numberline {1.5.3}Proofs of some general theorems}{22}{subsubsection.1.5.3}%
+\contentsline {section}{\numberline {2}Metric spaces}{24}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Characterizations of continuity}{25}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}A sequential characterization of continuity}{25}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}A open set characterization of continuity}{26}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}A closed set characterization of continuity}{28}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Ultrametric}{29}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Topological spaces and continuous functions}{32}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Basis}{34}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Subbasis}{36}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Kuratowski's approach}{37}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Closure and Interior}{38}{subsubsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.3}Order topology}{40}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Product Topology on $X\times Y$}{41}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Subspace Topology}{42}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Continuous functions}{44}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Constructing continuous functions}{46}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Homeomorphism}{48}{subsubsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.7}Product Topology}{50}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Quotient spaces}{54}{subsection.3.8}%
+\contentsline {subsubsection}{\numberline {3.8.1}Universal properties: products and quotients}{58}{subsubsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.9}Homotopy}{60}{subsection.3.9}%
+\contentsline {section}{\numberline {4}Continuity and Convergence}{66}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Convergence in Topological Spaces}{66}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Nets}{69}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Separation and countability}{72}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Countability}{72}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Separation Axioms}{75}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Urysohn's Metrization Theorem}{81}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Compactness}{82}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Order topology and Metric spaces}{85}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Compactness via sequences and nets}{87}{subsubsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.2}Tychonoff's theorem}{90}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Local compactness and compactification}{92}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Paracompact and Partition of Unity}{93}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Connectedness}{98}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Connected spaces}{98}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Connected subspaces of $\mathbb {R}$}{99}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Components and local connectedness}{101}{subsection.7.3}%

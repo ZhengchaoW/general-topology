@@ -1,0 +1,455 @@
+\section{Separation and countability}
+
+We see that a general topological space can behave weirdly compared to metric spaces. We want to impose some additional conditions on topological spaces to make them ``nicer'' and closer to metric spaces. Eventually, we would like to answer the following question: when can a topological space be embedded into a metric space? Of course not all of them as we've seen previously. We will see that the answer is related to separation axioms and countability axioms.
+
+\subsection{Countability}
+
+Recall the notion of neighbourhoods.
+\begin{definition}[Neighbourhood]
+Let $(X,\mathcal{T})$ be a topological space and $x\in X$. A set $B\in \mathcal{T}$ is a \emph{(open) neighbourhood} of $x$ if $x\in B$.
+\end{definition}
+
+\begin{definition}
+    A space $X$ has a \emph{countable basis at a point} $x\in X$ if there is a countable collection of neighbourhoods $\mathcal{B}=\{B_n:n\in\mathbb{N}\}$ of $x$ such that for every neighbourhood $V$ of $x$, there exists $n$ with $B_n\subseteq V$. 
+    
+    We call $X$ a \emph{first countable space} if it has a countable basis at each point.
+\end{definition}
+
+
+\begin{example}
+    Let $X$ be equipped with the discrete topology. Then $X$ is first countable: for each $x\in X$, the collection $\{\{x\}\}$ is a countable basis at $x$.
+\end{example}
+
+
+\begin{example}
+    A metric space $(X,d)$ is first countable: for each $x\in X$, the collection $\{B_{1/n}(x):n\in\mathbb{N}\}$ is a countable basis at $x$.
+\end{example}
+
+\begin{remark}
+    For a general first countable space, we can always assume that $B_{n+1}\subseteq B_n$ for all $n$. This is because we can replace $B_n$ by $\bigcap_{i=1}^n B_i$.
+\end{remark}
+
+Let's see some non-examples of first countable spaces.
+
+\begin{example}
+    Let $X=\R$. Then, the complement finite topology on $X$ is not first countable. To see this, suppose there is a countable basis of neighbourhoods $\{B_n:n\in\N\}$ at some point $x\in X$. Since each $B_n$ is open, we have $X\setminus B_n$ is finite for each $n$. Let $E=x\cup \bigcup_{n\in\N} (X\setminus B_n)$. Then, $E$ is countable. Now, pick any $y\in \R\setminus E$ and consider the open set $U=X\setminus \{y\}$. Note that $U$ is a neighbourhood of $x$. However, for any $n$, we have $B_n\not\subseteq U$ since $y\in B_n\setminus U$. This contradicts the assumption that $\{B_n:n\in\N\}$ is a basis at $x$. Hence, $X$ is not first countable.
+\end{example}
+
+\begin{example}
+    Let $X$ be a metric space with at least 2 points. Then, $X^\R$ is not first countable with the product topology. To see this, let $g\in X^\R$ and suppose there is a countable basis $\{B_n:n\in\N\}$ at $g$. Each $B_n$ contains a basic open neighbourhood of the form
+    $$V_n=\{f\in X^\R:f(t_{n,i})\in U_{n,i}\text{ for }i=1,\ldots,k_n\}$$
+    for some $t_{n,1},\ldots,t_{n,k_n}\in\R$ and open sets $X\neq U_{n,i}\ni g(t_{n,i})$.
+
+    Let $E=\bigcup_n\{t_{n,1},t_{n,2},\ldots, t_{n,k_n}\}$. Then, $E\subset \R$ is countable as a countable union of finite sets. Now, pick $t_0\in \R\setminus E$ and create
+    $$V=\pi_{t_0}^{-1}(U_0)$$
+    where $X\neq U_0$ is an open set containing $g(t_0)$. Note that $V$ is a basic open neighbourhood of $g$, but it contains none of $V_n$ since $t_0\notin E$. This also implies that $V$ contains none of $B_n$. This contradicts the assumption that $\{B_n:n\in\N\}$ is a basis at $g$. Hence, $X^\R$ is not first countable. So $X^\R$ is not metrizable.
+\end{example}
+
+
+
+We have previously seen the following result in the setting of metric spaces (and the net version for general topological spaces). Now, we can generalize it to first countable spaces. 
+
+\begin{theorem}
+    Let $X$ be a topological space.
+
+    \begin{enumerate}
+        \item For $A\subseteq X$ and $x\in X$, if there is a sequence $(a_n)\subseteq A$ with $a_n\to x$, then $x\in\overline{A}$. If $X$ is first countable, the converse holds: $x\in\overline{A}$ implies that there exists a sequence $(a_n)\subseteq A$ with $a_n\to x$.
+        \item If $f:X\to Y$ is continuous at $x$ and $x_n\to x$ in $X$, then $f(x_n)\to f(x)$ in $Y$. If $X$ is first countable, the converse holds: $x_n\to x\Rightarrow f(x_n)\to f(x)$ for all sequences $(x_n)$ in $X$ implies that $f$ is continuous at $x$.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    We only prove the converse statement of (1).
+
+    (1) Let $x\in\overline{A}$. Since $X$ is first countable, there exists a countable basis of neighbourhoods $\{B_n:n\in\N\}$ at $x$. We assume that $B_{n+1}\subseteq B_n$. For each $n$, pick $x_n\in B_n$. Now, we claim that $(x_n)\to x$: for any neighbourhood $V$ of $x$, there exists $N$ such that $B_N\subseteq V$. Then, for all $n\ge N$, we have $x_n\in B_n \subseteq B_N \subseteq V$.
+
+    % (2) Suppose that for any sequence $(x_n)$ in $X$ with $x_n\to x$, we have $f(x_n)\to f(x)$. To show that $f$ is continuous at $x$, let $V$ be a neighbourhood of $f(x)$ in $Y$. We want to find a neighbourhood $U$ of $x$ in $X$ such that $f(U)\subseteq V$. Since $X$ is first countable, there exists a countable basis of neighbourhoods $\{B_n:n\in\N\}$ at $x$. We can assume that $B_{n+1}\subseteq B_n$ for all $n$. Suppose that for each $n$, there exists $x_n\in B_n$ such that $f(x_n)\notin V$. Then, the sequence $(x_n)$ converges to $x$. By assumption, we have $f(x_n)\to f(x)$. Hence, there exists $N$ such that for all $n\ge N$, we have $f(x_n)\in V$. This contradicts the choice of $x_n$. Hence, there exists some $N$ such that  $f(B_N)\subset V$. Thus, $f$ is continuous at $x$.
+\end{proof}
+
+\begin{definition}
+    Let $X$ be a topological space. We say that $X$ is \emph{second countable} if it has a countable basis.
+\end{definition}
+
+\begin{example}
+    Every second countable space is first countable. The converse is not true. For example, consider an uncountable set $X$ with the discrete topology. Then $X$ is first countable but not second countable. This also implies that not every metric space is second countable.
+\end{example}
+
+\begin{example}
+    Let $X=\R$ be endowed with the complement finite topology. Then, $X$ is not second countable since $X$ is not first countable.
+\end{example}
+
+
+\begin{example}
+    The space $\mathbb{R}$ with the usual topology is second countable: the collection $\{(a,b):a,b\in\mathbb{Q}, a<b\}$ forms a countable basis.
+
+    Similarly, $\mathbb{R}^n$ has a countable basis $\{(a_1,b_1)\times\cdots\times(a_n,b_n):a_i,b_i\in\mathbb{Q}, a_i<b_i\}$.
+
+    $\R^\N$ with the product topology also has a countable basis: $\{ (a_1,b_1)\times\cdots\times(a_n,b_n)\times\R\times\R\times\cdots : a_i,b_i\in\Q, a_i<b_i, n\in\N \}$.
+\end{example}
+
+\newpage
+
+
+\begin{theorem}
+    Subspaces and countable products of first (resp. second) countable spaces are first (resp. second) countable.
+\end{theorem}
+\begin{proof}
+    We only prove the first countable case as the second countable case is similar.
+
+    Let $X$ be a first countable space and $A\subseteq X$. For each $x\in A$, let $\{B_n:n\in\N\}$ be a countable basis of neighbourhoods of $x$ in $X$. Then, $\{B_n\cap A:n\in\N\}$ is a countable basis of neighbourhoods of $x$ in $A$. Hence, $A$ is first countable.
+
+    Let $\{X_\alpha:\alpha\in J\}$ be a family of first countable spaces and let $X=\prod_{\alpha\in J} X_\alpha$ with the product topology. For each $\alpha$, let $\mathcal{B}_\alpha=\{B_{\alpha,n}:n\in\N\}$ be a countable basis of neighbourhoods at $x_\alpha\in X_\alpha$. Let $x=(x_\alpha)\in X$. Consider the collection
+    $$\mathcal{B}=\left\{\bigcap_{i=1}^k \pi_{\alpha_i}^{-1}(B_{\alpha_i,n_i}): k\in\N, \alpha_1,\ldots,\alpha_k\in J, n_i\in\N \right\}.$$
+    Then, $\mathcal{B}$ is a countable basis of neighbourhoods at $x$ in $X$. To see this, let $U$ be any neighbourhood of $x$ in $X$. Then, there exist finitely many indices $\alpha_1,\ldots,\alpha_k$ and neighbourhoods $U_{\alpha_i}$ of $x_{\alpha_i}$ in $X_{\alpha_i}$ such that 
+    $$V=\bigcap_{i=1}^k \pi_{\alpha_i}^{-1}(U_{\alpha_i})\subseteq U.$$
+    Since $\mathcal{B}_{\alpha_i}$ is a basis at $x_{\alpha_i}$, there exists $n_i$ such that $B_{\alpha_i,n_i}\subseteq U_{\alpha_i}$. Then,
+    $$\bigcap_{i=1}^k \pi_{\alpha_i}^{-1}(B_{\alpha_i,n_i}) \subseteq V \subseteq U.$$ Hence, $X$ is first countable.
+\end{proof}
+
+\begin{definition}
+    A subset $A$ of a topological space $X$ is \emph{dense} if $\overline{A}=X$. A space $X$ is \emph{separable} if it contains a countable dense subset.
+\end{definition}
+
+\begin{example}
+    $\mathbb{R}$ is separable: $\mathbb{Q}$ is a countable dense subset of $\mathbb{R}$.
+
+    $\Q^2$ is also a dense subset of $\R^2$, so $\R^2$ is separable.
+\end{example}
+
+\begin{theorem}
+    For a second countable space $X$, 
+    \begin{itemize}
+        \item (Lindelöf property) every open cover of $X$ has a countable subcover;
+        \item $X$ is separable.
+    \end{itemize}
+\end{theorem}
+\begin{proof}
+    Let $\mathcal{B}=\{B_n:n\in\mathbb{N}\}$ be a countable basis of $X$.
+    \begin{itemize}
+        \item Let $\mathcal{U}$ be an open cover of $X$. For each $B_n$, choose $U_n\in\mathcal{U}$ such that $B_n\subseteq U_n$ if such $U_n$ exists (when exists, there could be multiple such $U_n$, and we just choose one). Then $\{U_n:n\in\mathbb{N}, B_n\subseteq U_n\}$ is a countable collection. We claim that it covers $X$. For any $x\in X$, there exists $U\in\mathcal{U}$ such that $x\in U$. Since $\mathcal{B}$ is a basis, there exists some $B_m$ such that $x\in B_m\subseteq U$. By construction, there exists $U_m\in\mathcal{U}$ such that $B_m\subseteq U_m$. Hence, $x\in U_m$. This shows that $\{U_n:n\in\mathbb{N}, B_n\subseteq U_n\}$ covers $X$.
+        \item For each $B_n$, choose $x_n\in B_n$. Then $A=\{x_n:n\in\mathbb{N}, x_n\text{ is chosen from }B_n\}$ is a countable dense subset of $X$. To see this, pick any $x\in X$. Then, for any basis element $B_n$ containing $x$, we have $B_n\cap A\neq\varnothing$. Hence $x\in\overline{A}$.
+    \end{itemize}
+\end{proof}
+% TODO: provide precise statements and proofs of the separation axioms,
+% explore Lindelöf and separable spaces, and develop Urysohn's lemma.
+
+%---------------------------------------------------------------------------
+% Section 6: Compactness (Willard §§17–19)
+%---------------------------------------------------------------------------
+
+\subsection{Separation Axioms}
+We've seen such an example before and I claimed that this appears because the points are not ``separated'' enough. 
+\begin{example}
+    Let $X=\{a,b\}$ with the topology $\tau=\{\emptyset,\{a\},X\}$. Then the constant sequence $(x_n)$ with $x_n=a$ for all $n\in\mathbb{N}$ converges to $a$ and $b$. 
+\end{example}
+
+Let's see some different ways to separate points and sets in a topological space and check if they can help us to avoid such pathological examples.
+
+\begin{definition}
+    We say a topological space \(X\) is \emph{Hausdorff} if for any two distinct points \(x, y \in X\), there exist disjoint open sets \(U\) and \(V\) such that \(x \in U\) and \(y \in V\).
+\end{definition}
+
+\begin{lemma}
+    Let $X$ be a Hausdorff space. Then, one-point sets are closed.
+\end{lemma}
+\begin{proof}
+    Let $x\in X$. To show that $\{x\}$ is closed, we show that its complement $X\setminus\{x\}$ is open. For any $y\in X\setminus\{x\}$, since $X$ is Hausdorff, there exist disjoint open sets $U$ and $V$ such that $x\in U$ and $y\in V$. Then $V\subseteq X\setminus\{x\}$. Hence for each point in $X\setminus\{x\}$, we can find an open neighbourhood contained in $X\setminus\{x\}$. This shows that $X\setminus\{x\}$ is open.
+\end{proof}
+
+\begin{example}
+    The trivial topology on a set of more than one point is not Hausdorff.
+\end{example}
+
+\begin{example}
+    Consider the space \(X=\{a,b\}\) with the topology \(\mathcal{T}=\{\emptyset, \{a\}, \{a,b\}\}\). This space is also not Hausdorff.
+\end{example}
+
+\begin{example}
+    Let $X=\R$. Then, complement finite and complement countable topologies on $X$ are not Hausdorff. This is because any two non-empty open sets intersect.
+\end{example}
+
+\begin{example}
+    Every metric space is Hausdorff. For \(x,y\in X\) with \(x\neq y\), let \(\varepsilon=d(x,y)/2>0\). Then the open balls \(B_\varepsilon(x)\) and \(B_\varepsilon(y)\) are disjoint neighbourhoods of \(x\) and \(y\), respectively.
+\end{example}
+
+\begin{proposition}
+    Every sequence has a unique limit in a topological space.
+\end{proposition}
+\begin{proof}
+    When $X$ is Hausdorff, suppose that a sequence $(x_n)$ converges to both $x$ and $y$ with $x\neq y$. Since $X$ is Hausdorff, there exist disjoint open sets $U$ and $V$ such that $x\in U$ and $y\in V$. Since $(x_n)\to x$, there exists $N_1$ such that for all $n\ge N_1$, we have $x_n\in U$. Similarly, since $(x_n)\to y$, there exists $N_2$ such that for all $n\ge N_2$, we have $x_n\in V$. Let $N=\max\{N_1,N_2\}$. Then, for all $n\ge N$, we have $x_n\in U$ and $x_n\in V$, contradicting the fact that $U$ and $V$ are disjoint. Hence, the limit is unique.
+\end{proof}
+
+
+\begin{example}
+Let $X=\R$ be endowed with the 
+\emph{countable complement topology}. We know that any sequence $(x_n)$ converging to $x$ is eventually equal to $x$. Hence, every converging sequence has a unique limit. However, $X$ is not Hausdorff.
+\end{example}
+
+\begin{theorem}
+    Suppose $X$ is first countable. Assume that every convergent sequence has a unique limit in $X$. Then, $X$ is Hausdorff. (This is homework)
+\end{theorem}
+% \begin{proof}
+%     Suppose $X$ is not Hausdorff. Then, there exist $x,y\in X$ with $x\neq y$ such that for any open neighbourhoods $U$ of $x$ and $V$ of $y$, we have $U\cap V\neq\varnothing$. Since $X$ is first countable, there exists a countable basis of neighbourhoods $\{B_n:n\in\N\}$ at $x$ and a countable basis of neighbourhoods $\{C_n:n\in\N\}$ at $y$. We can assume that $B_{n+1}\subseteq B_n$ and $C_{n+1}\subseteq C_n$ for all $n$. 
+
+%     We construct a sequence $(x_n)$ as follows: for each $n$, since $B_n\cap C_n\neq\varnothing$, pick $x_n\in B_n\cap C_n$. We claim that $(x_n)\to x$ and $(x_n)\to y$. To see this, let $U$ be any neighbourhood of $x$. Then, there exists $N$ such that $B_N\subseteq U$. For all $n\ge N$, we have $x_n\in B_n \subseteq B_N \subseteq U$. Hence, $(x_n)\to x$. Similarly, we can show that $(x_n)\to y$. This contradicts the assumption that every convergent sequence has a unique limit. Hence, $X$ is Hausdorff.
+% \end{proof}
+
+
+In fact, metric spaces satisfy stronger separation axioms. We will introduce some of them.
+
+\begin{definition}
+    Let $X$ be a topological space such that one-point sets are closed. We say that $X$ is:
+    \begin{enumerate}
+        \item \emph{regular} if for any point $x$ and a disjoint closed set $B$, there exist disjoint open sets $U$ and $V$ such that $x\in U$ and $B\subseteq V$.
+        \item \emph{normal} if for any two disjoint closed sets $A$ and $B$, there exist disjoint open sets $U$ and $V$ such that $A\subseteq U$ and $B\subseteq V$.
+    \end{enumerate}
+\end{definition}
+
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[width=0.8\textwidth]{./figures/image10.png}
+% \caption{Separation axioms}
+% \label{fig:separation_axioms}
+% \end{figure}
+
+\begin{remark}
+    A regular space is Hausdorff. A normal space is regular (hence Hausdorff).
+\end{remark}
+
+
+
+% \begin{example}
+%     Let $X$ be any infinite set with the cofinite topology, where the open sets are either the empty set or the complements of finite sets. Then $X$ is $T_1$ but not $T_2$ since any two non-empty open sets intersect.
+% \end{example}
+
+% \begin{example}
+%     A pseudometric space is a $T_0$ space iff it is a metric space.
+% \end{example}
+
+
+
+\begin{example}[The $K$–topology on $\mathbb{R}$]
+Let $K=\{1/n:n\in\mathbb{N}\}$ and let $\mathbb{R}_K$ be $\mathbb{R}$ with the topology generated by the basis $\{(a,b),(a,b)\setminus K:a<b\}$.
+\begin{itemize}
+    \item It is Hausdorff: for $x\neq y$ pick disjoint usual intervals around $x$ and $y$.
+    \item $K$ is closed (note $K$ is not closed in the usual topology): if $x\notin K$ and $x\neq0$, choose $\varepsilon>0$ with $(x-\varepsilon,x+\varepsilon)\cap K=\varnothing$; if $x=0$, then $( -\varepsilon,\varepsilon)\setminus K$ is an open neighbourhood of $0$ disjoint from $K$. Hence $\mathbb{R}\setminus K$ is open.
+    \item It is not regular: $0\notin K$. Suppose there are disjoint open sets $U,V$ with $0\in U$ and $K\subseteq V$. Choose a basis element $(a,b)\setminus K\subset U$ containing $0$. Pick $n$ large enough so that $1/n\in(a,b)$ and let $(c,d)$ be a basis element with $1/n\in(c,d)\subseteq V$. Finally, choose $z$ so that $z\in(\max(c,\frac1{n+1}),1/n)$. Then, $z\in U\cap V$, contradicting the assumption that $U$ and $V$ are disjoint.
+\end{itemize}
+Consequently $\mathbb{R}_K$ is Hausdorff but not regular.
+\end{example}
+
+Now we have some other useful ways of stating these properties.
+
+\begin{lemma}\label{lemma:regularity and normal}
+    Let $X$ be a topological space with one-point sets closed. Then,
+    \begin{enumerate}
+        \item $X$ is regular iff for every neighbourhood $U$ of a any point $x$, there exists a neighbourhood $V$ of $x$ such that $x\in V\subset \overline{V}\subset{U}$.
+        \item $X$ is normal iff for every closed set $A$ and any open set $U$ such that $A\subset U\subseteq X$, there exists an open $V$ with $A\subset V\subset \overline{V}\subset U$.
+    \end{enumerate}
+\end{lemma}
+
+% \begin{figure}[htbp!]
+% \centering
+% \begin{subfigure}{0.48\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{figures/regular-proof1.png}
+%     \caption{Illustration of the proof that regular spaces have neighborhoods with closure contained in a given neighborhood}
+%     \label{fig:regular-proof1}
+% \end{subfigure}\hfill
+% \begin{subfigure}{0.48\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{figures/regular-proof2.png}
+%     \caption{Illustration of the proof that regular spaces have neighborhoods with closure contained in a given neighborhood}
+%     \label{fig:regular-proof2}
+% \end{subfigure}
+% \caption{Regular spaces: neighborhoods with closure contained in a given neighborhood.}
+% \label{fig:regular-proof}
+% \end{figure}
+\begin{proof}
+    We prove the regular case. The normal case is similar.
+
+    Suppose $X$ is regular. Let $U$ be a neighbourhood of $x$. Then, $X\setminus U$ is closed and disjoint from $\{x\}$. By regularity, there exist disjoint open sets $V$ and $W$ such that $x\in V$ and $X\setminus U\subseteq W$. Since $V\cap W=\emptyset$, we have that $V\subset X\setminus W$ which is closed. Then, $\overline{V}\subseteq X\setminus W\subseteq U$. Hence, we have found a neighbourhood $V$ of $x$ such that $x\in V\subseteq \overline{V}\subseteq U$.
+
+    Conversely, let $U=X\setminus B$, where $B$ is a closed set disjoint from $\{x\}$. By assumption, there exists a neighbourhood $V$ of $x$ such that $x\in V\subseteq \overline{V}\subseteq U$. So $x\in V$ and $X\setminus\overline{V}\supset X\setminus U= B$ are disjoint open sets separating $x$ and $B$. Hence, $X$ is regular.
+\end{proof}
+
+
+
+Let me state some important results about these separation axioms.
+
+\begin{theorem}
+    Subspaces and products of Hausdorff (resp. regular) spaces are Hausdorff (resp. regular).
+\end{theorem}
+
+\begin{proof}
+    Let's prove the regular case. 
+
+    Let $Y\subset X$. Pick any $x\in Y$, and let $B$ be a closed set in $Y$ disjoint from $\{x\}$. Then, there exists a closed set $C$ in $X$ such that $B=Y\cap C$. Since $X$ is regular, there exist disjoint open sets $U$ and $V$ in $X$ such that $x\in U$ and $C\subseteq V$. Then, $U\cap Y$ and $V\cap Y$ are disjoint open sets in $Y$ such that $x\in U\cap Y$ and $B\subseteq V\cap Y$. Hence, $Y$ is regular.
+
+    Now let $X=\prod X_\alpha$ be a product of regular spaces $X_\alpha$. Let $x=(x_\alpha)\in X$ and let $U=\prod U_\alpha$ be a neighbourhood of $x$ in $X$ such that $U_\alpha=X_\alpha$ for all but finitely many $\alpha$. By Lemma \ref{lemma:regularity and normal}, for each $\alpha$ with $U_\alpha\neq X_\alpha$, there exists a neighbourhood $V_\alpha$ of $x_\alpha$ such that $x_\alpha\in V_\alpha\subseteq \overline{V_\alpha}\subseteq U_\alpha$. For other $\alpha$, let $V_\alpha=X_\alpha$. Let $V=\prod V_\alpha$. Then, $V$ is a neighbourhood of $x$ in $X$ such that $x\in V\subseteq \overline{V}=\prod \overline{V}_\alpha\subseteq U$. 
+\end{proof}
+
+The above theorem doesn't hold for normal spaces. Here are counterexamples.
+
+\begin{example}
+    $\R^\R$ is not normal (See Munkres Chapter 4 section 32 problem 9.)
+
+    Since $\R\cong (0,1)$, we have that $(0,1)^\R$ is not normal. But $(0,1)^\R$ is a subspace of $[0,1]^\R$ which is compact Hausdorff (we will prove this later) and hence normal. So a subspace of a normal space need not be normal.
+\end{example}
+
+\begin{example}
+    Let $\R_\ell$ be $\R$ endowed with the so-called lower limit topology which is generated by the basis $\{[a,b)\}$. You can check that this is finer than the usual topology on $\R$ since every open interval $(a,b)$ can be written as the union of basis elements: $(a,b)=\bigcup_{n=1}^\infty [a+\frac{1}{n},b)$.
+
+    Then, $\R_\ell$ is normal: let $A$ and $B$ be disjoint closed sets in $\R_\ell$. For each $a\in A$, choose a basis element such that $[a,x_a)\cap B=\varnothing$. Similarly, for each $b\in B$, choose a basis element such that $[b,y_b)\cap A=\varnothing$. Let $U=\bigcup_{a\in A} [a,x_a)$ and $V=\bigcup_{b\in B} [b,y_b)$. Then, $U$ and $V$ are disjoint open sets separating $A$ and $B$.
+
+    By the theorem above, we know that $\R_\ell\times\R_\ell$ is regular. But it is not normal. Indeed, $L=\{(x,-x):x\in\R\}$ is closed in $\R^2$ and hence closed in $\R_\ell\times\R_\ell$. Note $\{(a,-a)\}=L\cap [a,a+1)\times [-a,-a+1)$ and hence $\{(a,-a)\}$ is open in $L$. So $L$ has the discrete topology. So every subset of $L$ is closed in subspace topology and hence closed in $\R_\ell\times\R_\ell$. 
+
+    Now let $A=\{(x,-x):x\in\Q\}$ and $B=L\setminus A$. Both are closed in $\R_\ell\times\R_\ell$. One can check that there are no disjoint open sets separating $A$ and $B$ (see Munkres Chapter 4 section 31 problem 9). So $\R_\ell\times\R_\ell$ is not normal.
+\end{example}
+
+There is still a positive result about subspaces of  normal spaces.
+
+\begin{proposition}
+    Every closed subsets of a normal space is normal.
+\end{proposition}
+
+\subsubsection*{Normal spaces}
+
+\begin{theorem}
+    Every regular second countable space is normal.
+\end{theorem}
+\begin{proof}
+    Let $X$ be a regular second countable space. Let $\mathcal{B}=\{B_n:n\in\N\}$ be a countable basis of $X$. 
+
+    Let $A$ and $B$ be disjoint closed sets in $X$. We want to find disjoint open sets $U$ and $V$ such that $A\subseteq U$ and $B\subseteq V$.
+
+    For each $a\in A$, there exists a neighbourhood $U_a$ of $a$ disjoint from $B$. By \Cref{lemma:regularity and normal} above, there exists a neighbourhood $V_a$ of $a$ such that $a\in V_a\subseteq \overline{V_a}\subseteq U_a$. We then further choose a basis element $B_{n_a}$ such that $a\in B_{n_a}\subseteq V_a$. So, we have a countable open cover $\{U_n\}$ of $A$ so that the closure of each element is disjoint from $B$. Similarly, we can find a countable open cover $\{V_n\}$ of $B$ with the property that the closure of each element is disjoint from $A$. 
+
+    Consider the sets $U=\cup U_n$ and $V=\cup V_n$. They are not necessarily disjoint. To fix this, we modify the sets as follows:
+
+    For each $n$, let
+    \[U_n'=U_n\setminus \bigcup_{m=1}^{n} \overline{V_m},\quad V_n'=V_n\setminus \bigcup_{m=1}^{n} \overline{U_m}.\]
+    Note that $U_n'$ and $V_n'$ are still open sets since they are obtained by removing closed sets from open sets. Also, we have $A\subseteq \bigcup_n U_n'$ and $B\subseteq \bigcup_n V_n'$ since we only removed closures of sets disjoint from $A$ and $B$ respectively.
+
+    Now we let
+    \[U'=\bigcup_n U_n',\quad V'=\bigcup_n V_n'.\]
+    Then, $U'$ and $V'$ are open sets with $A\subseteq U'$ and $B\subseteq V'$. We claim that $U'\cap V'=\varnothing$. If not, there exists $x\in U'\cap V'$ and thence there exist $U_k'$ and $V_j'$ such that $x\in U_k'$ and $x\in V_j'$. Suppose WLOG that $k\ge j$. Then, by the definition of $U_k'$, we have
+    \[x\in U_k'\subseteq U_k\setminus \bigcup_{m=1}^{k} \overline{V_m} \subseteq U_k\setminus \overline{V_j}.\]
+    This contradicts the fact that $x\in V_j' \subseteq V_j \subseteq \overline{V_j}$.
+     Hence, $U'$ and $V'$ are disjoint open sets separating $A$ and $B$.
+\end{proof}
+
+\begin{theorem}
+    Every metric space (and hence every metrizable space) is normal. 
+\end{theorem}
+\begin{proof}
+    Since metric spaces are Hausdorff, one-point sets are closed. 
+
+    Let $A$ and $B$ be disjoint closed sets in a metric space $(X,d)$. For each $a\in A$, there exists $r_a>0$ such that $B_{r_a}(a)\cap B=\varnothing$ since $B$ is closed (otherwise, $a\in \overline{B}=B$). Similarly, for each $b\in B$, there exists $r_b>0$ such that $B_{r_b}(b)\cap A=\varnothing$.
+
+    Let $U=\bigcup_{a\in A} B_{r_a/2}(a)$ and $V=\bigcup_{b\in B} B_{r_b/2}(b)$. Then $U$ and $V$ are open sets with $A\subseteq U$ and $B\subseteq V$. We claim that $U\cap V=\varnothing$. If not, there exists $x\in U\cap V$. Then there exist $a\in A$ and $b\in B$ such that $x\in B_{r_a/2}(a)$ and $x\in B_{r_b/2}(b)$.
+    WLOG, assume $r_a\le r_b$.
+    By the triangle inequality, we have
+    \[d(a,b)\le d(a,x)+d(x,b)<\frac{r_a}{2}+\frac{r_b}{2}\le r_b.\]
+    This contradicts the choice of $r_b$. Hence $U$ and $V$ are disjoint open sets separating $A$ and $B$.
+\end{proof}
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[width=0.8\textwidth]{./figures/proof-metric-normal.png}
+% \caption{Proof that metric spaces are normal}
+% \label{fig:proof-metric-normal}
+% \end{figure}
+
+% Finally, I'd like to mention that Hausdorff spaces are going to be normal if we assume some other common condition that we will learn later:
+% \begin{theorem}
+%     Every compact Hausdorff space is normal.
+% \end{theorem}
+
+
+\newpage
+
+\subsubsection*{Urysohn's lemma}
+
+Here is one deep theorem about normal spaces which has many important applications.
+
+\begin{lemma}[Urysohn's lemma]
+
+    Let $X$ be a normal space. Then for every two disjoint closed sets $A$ and $B$, there exists a continuous function $f:X\to[0,1]$ such that $f|_A\equiv0$ and $f|_B\equiv1$.
+    
+\end{lemma}
+\begin{proof}
+    Order the countable set of rationals in $[0,1]$ as $\{r_n:n\in\N\}$ with $r_1=0$ and $r_2=1$. For example, we can take the enumeration
+    \[0,1,\frac{1}{2},\frac{1}{3},\frac{2}{3},\frac{1}{4},\frac{3}{4},\frac{1}{5},\frac{2}{5},\ldots\]
+
+    By normality, we can find disjoint open sets $U_0\supseteq A$ and $V_0\supseteq B$. Then, $U_0\subseteq X\setminus V_0$ which is closed. Hence, $\overline{U_0}\subseteq X\setminus V_0\subseteq X\setminus B$.
+
+    Let $U_1:=X\setminus B$. Then, $A\subseteq U_0\subseteq\overline{U_0}\subseteq U_1$.  
+
+    Continue inductively, obtaining open sets $U_{r_n}$ for each rational $r_n\in[0,1]$ such that
+    \[r_n<r_m\implies \overline{U}_{r_n}\subseteq U_{r_m}\] 
+    More precisely, suppose we have defined $U_{r_1},\ldots,U_{r_k}$. Let $r_{k+1}$ be the next rational in the enumeration. Assume that $r_i<r_{k+1}<r_j$ for some $i,j\le k$ and there is nothing between $r_i$ and $r_j$ in $\{r_1,\ldots,r_k\}$. By normality, we can find disjoint open sets $\overline{U}_{r_i}\subseteq W$ and $X\setminus U_{r_j}\subseteq V$. Let $U_{r_{k+1}}=W$. Then, we have
+    \[\overline{U}_{r_i}\subseteq U_{r_{k+1}}\subseteq\overline{U}_{r_{k+1}}\subseteq U_{r_j}.\]
+
+    Now, for each $p\in \Q\cap (-\infty,0)$, we define $U_p:=\emptyset$ and for each $p\in \Q\cap(1,+\infty)$, we define $U_p:=X$. 
+
+    Finally, we define a function $f:X\to[0,1]$ by
+    \[f(x):=\inf\{r\in\Q: x\in U_r\}.\]
+    Note that if $x\in A$, then $x\in U_p$ for all $p\geq 0$, so $f(x)=0$. If $x\in B$, then $x\notin U_p$ for all $p<1$, so $f(x)=1$.
+
+    We now check that $f$ is continuous. Let $x_0\in X$ and open $(c,d)$ containing $f(x_0)$. Pick rationals $p$ and $q$ such that $c<p<f(x_0)<q<d$ (This is why we need the weird extension before).
+
+    We claim that $U_q-\overline{U}_p$ is an open neighbourhood of $x_0$ with $f(U_q-\overline{U}_p)\subseteq (c,d)$.
+
+    Note that $f(x_0)<q$ implies $x_0\in U_q$. Also, $f(x_0)>p$ implies $x_0\notin \overline{U}_p$. Hence, $x_0\in U_q-\overline{U}_p$.
+
+    Finally, let $x\in U_q-\overline{U}_p$. Then, $x\in U_q$ and $x\notin \overline{U}_p$. Thus, $f(x)\leq q$ and $f(x)\geq p$, which shows that $f(x)\in [p,q]\subset (c,d)$.
+\end{proof}
+
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[width=0.8\textwidth]{./figures/urysohn-lemma.png}
+% \caption{Illustration of Urysohn's lemma}
+% \label{fig:urysohn-lemma}
+% \end{figure}
+
+
+
+
+
+
+\subsection{Urysohn's Metrization Theorem}
+
+
+\begin{theorem}[Urysohn's metrization theorem]\label{thm:urysohn-metrization}
+    Every regular space with a countable base is metrizable.
+\end{theorem}
+
+We first prove the following lemma.
+\begin{lemma}
+    Let $X$ be a regular space with a countable basis. Then, there exists a countable family of continuous functions $f_n:X\to[0,1]$ such that for any $x\in X$ and any neighborhood $U$ of $x$, there exists $n$ with $f_n(x)>0$ and $f_n|_{U^c}\equiv 0$.
+\end{lemma}
+\begin{proof}
+    Let $\mathcal{B}=\{B_n:n\in\N\}$ be a countable basis of $X$. Let $\mathcal{S}:=\{(B_n,B_m)\in \mathcal{B}\times \mathcal{B}:\,\overline{B}_n\subseteq B_m\}$. For each $(B_n,B_m)\in\mathcal{S}$, by Urysohn's lemma, there exists a continuous function $f_{n,m}:X\to[0,1]$ such that $f_{n,m}|_{\overline{B}_n}\equiv 1$ and $f_{n,m}|_{B_m^c}\equiv 0$.
+
+    Then, for any $x\in X$ and any neighborhood $U$ of $x$, there exists $B_m\in\mathcal{B}$ such that $x\in B_m\subseteq U$. By regularity, there exists $B_n\in\mathcal{B}$ such that $x\in \overline{B}_n\subseteq B_m$. Then, $f_{n,m}$ satisfies the requirement.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{thm:urysohn-metrization}]
+    We reindex the functions in the lemma above as $\{f_n:n\in\N\}$. Define a map $F:X\to [0,1]^\N$ by $F(x)=(f_1(x),f_2(x),\ldots)$.
+
+    Since each $f_n$ is continuous, $F$ is continuous when $[0,1]^\N$ is equipped with the product topology (cf. \Cref{theorem: product continuous}).
+
+    We claim that $F$ is an embedding. To see this, we first show that $F$ is injective. If $x,y\in X$ with $x\neq y$, then there exists a neighborhood $U$ of $x$ such that $y\notin U$. By the lemma, there exists $n$ such that $f_n(x)>0$ and $f_n|_{U^c}\equiv 0$. Hence, $f_n(y)=0\neq f_n(x)$, which shows that $F(x)\neq F(y)$.
+
+    Next, we show that $F$ is a homeomorphism onto its image. Since we already showed that $F$ is continuous and injective, it suffices to show that $F(U)$ is open in $F(X)$ for any open set $U$.
+
+    Let $x$ be any point in $U$ and hence $f(x)$ is an arbitrary point in $F(U)$. By the construction of $\{f_n\}$, there exists $n$ such that $f_n(x)>0$ and $f_n|_{U^c}\equiv 0$. Let $\pi_n:[0,1]^\N\to[0,1]$ be the projection onto the $n$-th coordinate. Then, $\pi_n^{-1}((f_n(x)/2,1])\cap F(X)$ is an open neighborhood of $F(x)$ in $F(X)$ and
+    \[\pi_n^{-1}((f_n(x)/2,1])\cap F(X)=F(\{y\in X:f_n(y)>f_n(x)/2>0\})\subseteq F(U).\]
+    This shows that $F(U)$ is open in $F(X)$.
+
+    Now, we recall that $[0,1]^\N$ with the product topology is metrizable (Homework). Hence, $F(X)$ is metrizable as a subspace of a metric space. Since $F$ is an embedding, $X$ is metrizable.
+\end{proof}
+
+
+
+
+\newpage

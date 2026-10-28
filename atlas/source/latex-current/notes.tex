@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{tikz-cd}
+\usepackage{subcaption}
+%---------------------------------------------------------------------------
+% Theorem environments
+%---------------------------------------------------------------------------
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{problem}[theorem]{Problem}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{note}[theorem]{Note}
+\newtheorem{observation}[theorem]{Observation}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\id}{\text{id}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+%---------------------------------------------------------------------------
+%  Notes transcribed from class images
+%  These notes summarise proofs about cardinalities and well‑orderings,
+%  the comparable cardinality corollary and the first uncountable ordinal.
+%---------------------------------------------------------------------------
+
+\begin{document}
+
+\tableofcontents
+\newpage
+
+% ---------------------------------------------------------------------------
+% Section 1: Set theory (Willard §1)
+% This section develops the set‑theoretic background for the course.
+% We introduce basic notions such as arbitrary unions and intersections, maps,
+% equivalence relations and quotient sets, cardinalities and the axiom of choice.
+% We also recall paradoxes arising in naive set theory and demonstrate the
+% well‑ordering theorem and its consequences.
+%---------------------------------------------------------------------------
+ 
+
+\input{sections/01_set_theory.tex}
+
+\input{sections/02_metric_spaces.tex}
+
+\input{sections/03_topological_spaces.tex}
+
+\input{sections/04_convergence.tex}
+
+\input{sections/05_separation_countability.tex}
+
+\input{sections/06_compactness.tex}
+
+% \input{sections/07_baire_theory.tex}
+
+\input{sections/08_connectedness.tex}
+
+
+
+% \input{sections/09_homotopy.tex}
+
+
+\end{document}

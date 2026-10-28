@@ -1,0 +1,373 @@
+\section{Connectedness}
+
+One interesting motivating example for studying connectedness is the following result from calculus:
+
+\begin{theorem}[Intermediate Value Theorem]
+    Let $f:[0,1]\to\R$ be a continuous function. WLOG, we assume that $f(0)<f(1)$. Then, for any $r\in [f(0),f(1)]$, there exists $c\in (0,1)$ such that $f(c)=r$.
+\end{theorem}
+
+This is a consequence of the fact that $[0,1]$ is ``connected''.
+
+% TODO: include examples and counterexamples, discuss the components of a
+% space and the relationship between connectedness and path‑connectedness.
+
+%---------------------------------------------------------------------------
+% Section 9: Homotopy and the fundamental group (Willard §§32–34)
+%---------------------------------------------------------------------------
+
+\subsection{Connected spaces}
+
+
+\begin{definition}
+Let $X$ be a topological space. A \emph{separation} of $X$ is a pair of disjoint nonempty open sets $U,V\subseteq X$ with $X=U\cup V$. The space $X$ is \emph{disconnected} if it admits a separation; otherwise $X$ is \emph{connected}.
+\end{definition}
+
+\begin{remark}
+    This is a pure topological property: it depends only on the open sets of $X$. In particular, connectedness is preserved by homeomorphisms.
+\end{remark}
+
+\begin{remark}
+    $X$ is connected iff the only subsets that are both open and closed (clopen) are $\varnothing$ and $X$.
+\end{remark}
+
+
+
+\begin{example}
+    $[-1,0)\cup (0,1]$ is disconnected.
+\end{example}
+
+\begin{example}
+    $\{a,b\}$ with the trivial topology $\{\emptyset,\{a,b\}\}$ is connected.
+\end{example}
+
+\begin{example}
+    $\Q$ is disconnected: for $r$ irrational, $(-\infty,r)\cap \Q$ and $(r,\infty)\cap \Q$ separate $\Q$.
+\end{example}
+
+
+How do we check if a space is connected? 
+
+\begin{theorem}
+    If $f:X\to Y$ is continuous and $X$ is connected, then $f(X)$ is connected.
+\end{theorem}
+\begin{proof}
+    If $U,V$ separate $f(X)$, then $f^{-1}(U), f^{-1}(V)$ separate $X$.
+\end{proof}
+
+\begin{lemma}
+    If $X$ has separation $U, V$ and $Y\subseteq X$ is connected, then $Y\subset U$ or $Y\subset V$.
+\end{lemma}
+\begin{proof}
+    If not, then $Y\cap U$ and $Y\cap V$ are nonempty, disjoint, open in the subspace topology on $Y$, and cover $Y$, contradicting connectedness of $Y$.
+\end{proof}
+
+\begin{theorem}
+    If $A\subset X$ is connected and $A\subseteq B\subseteq \overline{A}$, then $B$ is connected.
+\end{theorem}
+
+\begin{proof}
+    Suppose $B$ has a separation $C,D$. Then, by the lemma, $A\subseteq C$ or $A\subseteq D$. WLOG, $A\subseteq C$. Then, $\overline{A}\subseteq \overline{C}$. Note that $\overline{C}_B=B\cap \overline{C}$. Since $C$ is closed in $B$, we have $\overline{C}_B=C$. Thus, $\overline{C}\cap B=C$. Hence, $\overline{A}\cap B\subseteq C$, so $B\subseteq C$, contradicting that $D$ is nonempty. 
+\end{proof}
+
+\begin{theorem}
+    The union of a collection of connected subspaces of $X$ that have a point in common is connected.
+\end{theorem}
+\begin{proof}
+    Let $Y=\bigcup_\alpha Y_\alpha$ with $y\in Y_\alpha\subset X$ for all $\alpha$. 
+
+    Assume that $Y$ has a separation $U,V$. Suppose $y\in U$. Then, by the lemma, $Y_\alpha\subseteq U$ for all $\alpha$. Thus, $Y\subseteq U$, contradicting that $V$ is nonempty.
+\end{proof}
+
+\begin{theorem}
+    A finite product of connected spaces is connected.
+\end{theorem}
+\begin{proof}
+    We prove the case of two spaces $X,Y$. Let $(a,b)\in X\times Y$. For $x\in X$, let $T_x=(X\times \{b\})\cup (\{x\}\times Y)$. Note that $T_x$ is connected by the previous theorem and the fact that the product of a space with a singleton is homeomorphic to the space itself.
+
+    Note that $X\times Y=\cup_{x\in X}T_x$ is connected again by the previous theorem, since all $T_x$ contain the point $(a,b)$.
+
+    The general case follows by induction.
+\end{proof}
+
+\begin{example}
+    $\R^n$ is connected for all $n\geq 1$ (if we assume the connectedness of $\R$ which will be proved later).
+\end{example}
+
+\begin{example}
+    $\R^\N$ with box topology is not connected. Indeed, let
+    \[U=\{\text{all bounded sequences}\},\quad V=\{\text{all unbounded sequences}\}.\]
+    Then, $U$ and $V$ are disjoint, nonempty and $U\cup V=\R^\N$. Given $\mathbf{a}\in \R^\N$, note that $(a_1-1,a_1+1)\times (a_2-1,a_2+1)\times\cdots$ is an open neighborhood of $\mathbf{a}$ contained in $U$ (resp. $V$) is $\mathbf{a}$ is bounded (resp. unbounded). Hence,  $U$ and $V$ are open in the box topology, so they separate $\R^\N$.
+\end{example}
+
+\begin{example}
+    $\R^\N$ with product topology is connected. 
+    
+    Let $\tilde{\R}^n=\{x\in\R^\N:x_i=0\,\forall i>n\}$.
+    Note that $\tilde{\R}^n\cong \R^n$ so $\tilde{\R}^n$ is connected. Let $\R^\infty=\cup_{n\geq 1}\tilde{\R}^n$. Then, $\R^\infty$ is connected as the union of connected sets with a point in common (the zero sequence). Finally, we claim that $\overline{\R^\infty}=\R^\N$ to conclude the proof. Indeed, for any $x\in\R^\N$ and any basic open neighborhood $U=\prod_{i\geq 1}U_i$ of $x$ (where $U_i=\R$ for all $i>N$ for some $N$), we have that $(x_1,x_2,\ldots,x_N,0,0,\cdots)\in \R^\infty\cap U$. Hence, $x\in\overline{\R^\infty}$.
+\end{example}
+
+The same strategy can be used to show that arbitrary products of connected spaces are connected in the product topology.
+
+
+\subsection{Connected subspaces of $\R$}
+
+We shall prove that $\R$ is connected and so are intervals and rays in $\R$. It turns out that this only depends on the order structure of $\R$.
+
+\begin{definition}
+    A linear poset $L$ having more than one element is called a linear continuum if the following hold:
+    \begin{enumerate}
+        \item $L$ has the least upper bound property: every nonempty subset of $L$ that is bounded above has a least upper bound. (sup exists)
+        \item If $x<y$, then there exists  $z\in L$ such that $x<z<y$.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    $Y\subset L$ is called convex if for any $a,b\in Y$ with $a<b$, we have that $[a,b]\subseteq Y$.
+\end{definition}
+
+\begin{theorem}
+    If $L$ is a linear continuum with the order topology, then every convex subset $Y$ of $L$ is connected.
+\end{theorem}
+\begin{proof}
+    Assume that $Y$ has a separation $A,B$. Pick $a\in A$ and $b\in B$ with $a<b$. Then, $[a,b]\subset Y$. Let $A_0=A\cap [a,b]$ and $B_0=B\cap [a,b]$. Then, $A_0,B_0$ are open in $[a,b]$ w.r.t. the subspace topology which is the same as the order topology on $[a,b]$. So $A_0,B_0$ form a separation of $[a,b]$.
+
+    Let $c=\sup A_0$. We show that $c\notin A_0$ and $c\notin B_0$, contradicting that $[a,b]=A_0\cup B_0$.
+
+    Suppose $c\in B_0$. Then, $c\neq a$, so $c=b$ or $a<c<b$. Since $B_0$ is open, in either case, there exists $d$ such that $(d,c]\subset B_0$. If $c=b$, then $d$ is an upper bound of $A_0$ less than $c$, contradicting that $c=\sup A_0$. If $a<c<b$, then since $c$ is an upper bound, $(c,b]\cap A_0=\emptyset.$ Hence, $(d,b]=(d,c]\cup (c,b]\cap A_0=\emptyset$ which makes $d$ an upper bound of $A_0$ less than $c$, again a contradiction. Thus, $c\notin B_0$.
+
+    Now suppose $c\in A_0$. Then, $c\neq b$, and so $c=a$ or $a<c<b$. Since $A_0$ is open, in either case, there exists $e$ such that $[c,e)\subset A_0$. But then any $z$ such that $c<z<e$ is in $A_0$, contradicting that $c=\sup A_0$ ($z$ exists because of (2)). Thus, $c\notin A_0$.
+\end{proof}
+
+
+Now we can prove the intermediate value theorem.
+\begin{theorem}[Intermediate Value Theorem]
+    Let $f:[a,b]\to\R$ be a continuous function with $X$ being connected. Assume that $f(a)<f(b)$. Then, for any $r\in (f(a),f(b))$, there exists $c\in (a,b)$ such that $f(c)=r$.
+\end{theorem}
+\begin{proof}
+    Note that $f([a,b])$ is connected since $[a,b]$ is connected. We now show that  $[f(a),f(b)]\subseteq f([a,b])$. Suppose not, then there exists $r\in (f(a),f(b))$ with $r\notin f([a,b])$. Let $U=(-\infty,r)$ and $V=(r,\infty)$. Then, $U\cap f([a,b])$ and $V\cap f([a,b])$ separate $f([a,b])$, contradicting connectedness of $f([a,b])$.
+\end{proof}
+
+The interval $[a,b]$ can be replaced by any connected space $X$.
+\begin{theorem}[Intermediate Value Theorem]
+    Let $f:X\to\R$ be a continuous function with $X$ being connected. Assume that $a,b\in X$ and that $f(a)<f(b)$. Then, for any $r\in (f(a),f(b))$, there exists $c\in X$ such that $f(c)=r$.
+\end{theorem}
+
+That intervals in $\R$ are connected gives a sufficient condition for showing that a space is connected.
+
+
+
+\begin{definition}
+    A space $X$ is path connected if every $x,y\in X$ can be joined by a path, i.e., there exists a continuous $f:[a,b]\to X$ with $f(a)=x$ and $f(b)=y$.
+\end{definition}
+
+\begin{lemma}
+    A path connected space $X$ is connected.
+\end{lemma}
+
+\begin{proof}
+    Suppose $U,V$ separates $X$. Let $f:[a,b]\to X$ be a path from $x\in U$ to $y\in V$. Since $[a,b]$ is connected, $f([a,b])$ is connected. So by a theorem we proved previously, $f([a,b])$ is contained in $U$ or $V$, contradicting that $f(a)=x\in U$ and $f(b)=y\in V$.
+\end{proof}
+
+\begin{example}
+    The ball $\mathbb{B}^n=\{x\in\R^n|\|x\|\leq 1\}$ is connected.
+
+    The sphere $\mathbb{S}^{n-1}=\{x\in\R^n|\|x\|= 1\}$ is connected for $n\geq 2$.
+\end{example}
+
+\begin{example}
+    The topologist's sine curve is the closure of the following set in $\R^2$:
+    \[
+        S=\left\{\left(x,\sin\frac{1}{x}\right)|x\in (0,1]\right\}
+    \]
+    Note that
+    \[
+        \overline{S}=S\cup \{(0,y)|y\in [-1,1]\}.
+    \]
+    This space is connected but not path connected.
+
+    To see that it is connected, note that $S$ is path connected (hence connected) and hence $\overline{S}$ is connected.
+
+    To see that it is not path connected, suppose there exists a path $f:[a,b]\to \overline{S}$ with $f(a)=(0,0)$ and $f(b)=(1,\sin 1)$. Consider $A=f^{-1}(0\times [-1,1])\subset [a,b]$ which is the preimage of a closed set, hence closed. Let $c=\sup A\in A$. $c\neq b$ since $f(b)=(1,\sin 1)$. Then, $f((c,b])\subset S$. Replace $[c,b]$ by $[0,1]$ for convenience. We write $f(t)=(x(t),y(t))$. Then, $x(0)=0$ and $x(t)>0$ for all $t\in (0,1]$. Since $x$ is continuous, there exists $t_n\to 0$ with $x(t_n)=\frac{1}{n\pi/2}$ for all $n\geq 1$ (intermediate value theorem). Then, $y(t_n)=\sin(n\pi/2)=(-1)^n$ does not converge as $n\to\infty$, contradicting the continuity of $y$ at $0$.
+\end{example}
+
+% \begin{proposition}
+% For a space $X$ the following are equivalent.
+% \begin{enumerate}
+%     \item $X$ is connected.
+%     \item The only subsets of $X$ that are both open and closed (clopen) are $\varnothing$ and $X$.
+%     \item Every continuous map $f:X\to\{0,1\}$ (discrete topology) is constant.
+% \end{enumerate}
+% \end{proposition}
+
+% \begin{proof}
+% (1)$\Rightarrow$(2): A nontrivial clopen set $H$ gives a separation $(H,X\setminus H)$.  
+% (2)$\Rightarrow$(3): $\partial A=\varnothing$ implies $A$ is clopen.  
+% (3)$\Rightarrow$(4): $f^{-1}(0)$ has empty boundary (preimages of points in a discrete codomain are clopen).  
+% (4)$\Rightarrow$(1): If $X=H\cup K$ is a separation, the characteristic map $X\to\{0,1\}$ is nonconstant.  
+% \end{proof}
+
+
+% Connectedness is preserved by continuous images. This generalizes the intermediate value theorem.
+% \begin{theorem}
+% If $f:X\to Y$ is continuous and $X$ is connected, then $f(X)$ is connected. 
+% \end{theorem}
+
+
+
+\subsection{Components and local connectedness}
+
+\begin{definition}
+    Let $X$ be a topological space. We define an equivalence relation on $X$ by declaring $x\sim y$ iff there exists a connected subspace of $X$ containing both $x$ and $y$. The equivalence classes of this relation are called the \emph{components} of $X$.
+
+    We define another equivalence relation on $X$ by declaring $x\approx y$ iff there exists a path in $X$ connecting $x$ and $y$. The equivalence classes of this relation are called the \emph{path components} of $X$.
+\end{definition}
+
+Symmetry and relexivity are clear. For transitivity, if $x,y$ lie in a connected subspace $A$ and $y,z$ lie in a connected subspace $B$, then $x,z$ lie in the connected subspace $A\cup B$ (since $y\in A\cap B$). 
+
+
+
+\begin{theorem}
+    The components of $X$ are connected disjoint subspaces of $X$ whose union is $X$, such that each nonempty connected subspace of $X$ intersects only one of them.
+\end{theorem}
+
+\begin{proof}
+    Each connected subspace $A$ intersects only one of them: if $A$ intersects two components $C_1,C_2$, then pick $x_i\in A\cap C_i$ for $i=1,2$. Then, $x_1,x_2$ are equivalent, so $C_1=C_2$.
+
+    To show that each component $C$ is connected, choose $x_0\in C$. For each $x\in C$, there exists a connected subspace $A_x$ containing $x_0$ and $x$. So $A_x\subset C$. Therefore, $C=\bigcup_{x\in C}A_x$ is connected as the union of connected sets with a point $x_0$ in common.
+\end{proof}
+
+\begin{theorem}
+    The path components of $X$ are path connected disjoint subspaces of $X$ whose union is $X$, such that each nonempty path connected subspace of $X$ intersects only one of them.
+\end{theorem}
+The proof is similar to that of the previous theorem.
+
+\begin{remark}
+    Each component of $X$ is closed as its closure is connected. If $X$ has only finitely many components, then each component is also open, since its complement is a finite union of closed sets. This doesn't hold in general for infinitely many components.
+\end{remark}
+
+\begin{example}
+    Each component of $\Q$ is a singleton which is not open. 
+\end{example}
+
+\begin{example}
+    For the topologist's sine curve $\overline{S}$, the components are $\overline{S}$ itself, while the path components are $S$ and $V=\{(0,y)|y\in [-1,1]\}$. Note that $S$ is open but not closed in $\overline{S}$, while $V$ is closed but not open in $\overline{S}$.
+\end{example}
+
+Each path component is connected and hence contained in a component. When do they coincide?
+
+\begin{definition}
+    A space $X$ is \emph{locally (path) connected} iff for every $x\in X$ and every open neighborhood $U$ of $x$, there exists a (path) connected open neighborhood $V$ of $x$ with $V\subseteq U$.
+\end{definition}
+
+\begin{remark}
+    locally path connected $\implies$ locally connected.
+\end{remark}
+
+\begin{example}
+    Every open subset of $\R^n$ is locally path connected.
+\end{example}
+
+\begin{example}
+    Let $X=\N$ with the complement finite topology. Then, $X$ is locally connected. It is not locally path connected since the only path connected subsets are singletons.
+\end{example}
+
+\begin{example}
+    The Warsaw circle: connect the topologist's sine curve to the unit circle. This is path connected but not locally connected.
+\end{example}
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Ex} & \textbf{Connected} & \textbf{Not connected} \\
+\hline
+Locally connected
+& intervals in $\R$
+& $[-1,0)\,\cup\,(0,1]$ \\
+\hline
+Not locally connected
+& topologist's sine curve; $[0,1]\times 0 \cup \Q \times [0,1]$
+& $\Q$ \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+\begin{example}
+    The broom space: consider the subset of $\R^2$ given by
+    \[B=\bigcup_{n\geq 1}\left\{\left(x,\frac{x}{n}\right)|x\in [0,1]\right\}\cup \{(x,0)|x\in[0,1]\}.\]
+    Then, $B$ is path connected but not locally path connected at $(1,0)$.
+\end{example}
+
+\begin{theorem}
+    A space is locally (path) connected iff for any open $U\subset X$, each (path) component $P$ of $U$ is open.
+\end{theorem}
+\begin{proof}
+    Let's prove the path version. 
+
+    ($\Rightarrow$) Let $P$ be a path component of an open set $U\subset X$. For any $x\in P$, there exists a path connected open neighborhood $V$ of $x$ with $V\subseteq U$. Then, $V\subseteq P$ since $P$ is a path component. Thus, $P$ is open.
+
+    ($\Leftarrow$) Given any open neighborhood $U$ of $x\in X$, the path component of $U$ containing $x$ is an open path connected neighborhood of $x$ contained in $U$.
+\end{proof}
+
+\begin{theorem}
+    If $X$ is locally path connected, then the components and path components of $X$ coincide.
+\end{theorem}
+\begin{proof}
+    Let $P$ be a path component contained in a component $C$. If $P\neq C$, then let $Q$ be the union of all other path components contained in $C$. By the theorem above, we know $C$ is open. Then, by the theorem again, $P$ and $Q$ are open in $C$ and hence separate $C$, contradicting connectedness of $C$.
+\end{proof}
+
+
+\begin{corollary}
+    A connected, locally path connected space $X$ is path connected.
+\end{corollary}
+\begin{proof}
+    So $X$ is a single component, which is also a single path component.
+\end{proof}
+
+\begin{corollary}
+    An open connected subset of $\R^n$ is path connected.
+\end{corollary}
+\begin{proof}
+    Any open subset of $\R^n$ is locally path connected.
+\end{proof}
+
+
+\subsection*{Totally disconnected spaces}
+
+\begin{definition}
+    A space $X$ is \emph{totally disconnected} iff the components of $X$ are singletons.
+\end{definition}
+
+\begin{example}
+    The space $\Q$ of rational numbers (with the subspace topology from $\R$) is totally disconnected.
+
+    Its complement $\R\setminus\Q$ is also totally disconnected.
+\end{example}
+
+\begin{example}
+    The Cantor set is totally disconnected.
+\end{example}
+
+We are actually going to prove this in two ways.
+
+As we know that the Cantor set topology can be generated by an ultrametric, it turns out that the above example is a special case of the following general fact.
+
+\begin{theorem}
+    Every ultrametric space is totally disconnected.
+\end{theorem}
+
+\begin{proof}
+    Let $X$ be an ultrametric space with ultrametric $d$. We need to show that the components of $X$ are singletons. Let $x,y\in X$ be distinct points. Let $r = {u(x,y)} > 0$. Then, $B_r(x)$ is an open neighborhood of $x$. I claim that $X\setminus B_r(x)$ is an open neighborhood of $y$. Indeed, for any point $z\in X\setminus B_r(x)$, we have $u(x,z) \geq r > 0$. Pick $r_0\in(0,r)$. Then, for any $z'\in B_{r_0}(z)$, we have that $u(x,z')=u(x,z)\geq r$. Hence $z'\notin B_r(x)$ and thus $B_{r_0}(z)\subseteq X\setminus B_r(x)$. This shows that $X\setminus B_r(x)$ is open and hence an open neighborhood of $y$. This implies that $x$ and $y$ lie in different components. Since $x,y\in X$ are arbitrary, we conclude that the components of $X$ are singletons.
+\end{proof}
+
+
+\begin{theorem}
+    Every product of totally disconnected spaces is totally disconnected.
+\end{theorem}
+\begin{proof}
+    Suppose $C$ is a connected subset of $X=\prod_{\alpha\in A}X_\alpha$ with each $X_\alpha$ totally disconnected. Then, for any $\alpha\in A$, the projection $\pi_\alpha(C)$ is connected in $X_\alpha$ and hence a singleton. Thus, $C$ is a singleton.
+\end{proof}
+
+Now, as $\{0,1\}$ is a totally disconnected space, we have that $C\cong \{0,1\}^\N$ is totally disconnected.
+\newpage

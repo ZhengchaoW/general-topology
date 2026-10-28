@@ -53,3 +53,24 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); f
 @media(max-width:720px){.brand small{display:block;font-size:9px;line-height:1.1}}
 
 .step.direct-use{background:#f3dfb8}.step.downstream-use{background:#eee8d9}.step.unsupported{opacity:.55;border-left:3px solid #ba4059}.assumption-lab{margin:18px 0;padding:10px;border:1px solid var(--line-strong)}.assumption-lab .btn{margin:4px}.topic-explorer{position:absolute;left:10px;top:28px;z-index:9;max-width:calc(100% - 20px);font:11px var(--sans);color:#ddd}.topic-explorer[open]{background:#23252a;border:1px solid #555;border-radius:5px;padding:10px;max-height:75%;overflow:auto}.topic-explorer button{font:11px var(--sans);background:#303238;border:1px solid #555;border-radius:4px;color:#eee;padding:4px;margin:3px}.topic-explorer button[aria-pressed=true]{border-color:#e7b45a;color:#e7b45a}.topic-explorer label{display:block;margin:8px}.topic[aria-pressed=true]{background:#ead5ad}
+
+/* Original TeX content, with local KaTeX fonts; display math scrolls inside the reading column. */
+.latex-source { min-width:0; overflow-wrap:anywhere; line-height:1.65; }
+.source-statement { margin:20px 0; padding:16px; border:1px solid var(--line,#53535b); border-radius:8px; }
+.source-caption { display:flex; flex-wrap:wrap; gap:6px 14px; align-items:baseline; font:12px system-ui,sans-serif; opacity:.85; }
+.latex-source .katex { font-size:1.05em; white-space:normal; overflow-wrap:normal; }
+.latex-source .katex-display { overflow-x:auto; overflow-y:hidden; max-width:100%; padding:5px 0; }
+.latex-source .katex-display>.katex { white-space:nowrap; }
+.latex-source .proof { border:0; padding:0; margin:1em 0; }
+.latex-source img { max-width:100%; height:auto; background:#fff; }
+.latex-source figure { margin:16px 0; }
+.latex-source table { display:block; overflow-x:auto; max-width:100%; }
+.latex-source li p { margin:.4em 0; }
+.source-chapters { display:flex; flex-wrap:wrap; gap:8px; }
+.source-gap { padding:12px; border:1px solid #df9b55; }
+.source-chapter { padding:20px; }
+.source-chapter [id] { scroll-margin-top:12px; }
+@media(max-width:720px) { .source-statement {padding:10px;} .latex-source ol,.latex-source ul {padding-left:1.35em;} .source-chapter {padding:12px;} }
+
+/* Keep the full mobile source reader above graph controls. */
+@media(max-width:720px) { .desk { z-index:10; } }

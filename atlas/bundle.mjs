@@ -35,25 +35,13 @@ function numberLabel(n) {
 
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
-// Typography only: transcription markup (_{..} ^{..} ‾{..}) becomes sub/sup/overline, and
-// isolated Latin letters are set in math italic, as in the printed notes. Content unchanged.
-function math(t) {
-  let s = esc(t);
-  s = s.replace(/_\{([^}]*)\}/g, '<sub>$1</sub>').replace(/\^\{([^}]*)\}/g, '<sup>$1</sup>').replace(/‾\{([^}]*)\}/g, '<span class="ov">$1</span>');
-  s = s.replace(/(^|[\s(\[{,:;|→⇒⇔∈⊆⊂∪∩\\×=≠≤≥<>+\-−/])([A-Za-z])(?=$|[\s()\]},:;.|→⇒⇔∈⊆⊂∪∩\\×=≠≤≥<>+\-−/'′])/g, (m, pre, ch, off, str) => {
-    const after = str.slice(off + m.length, off + m.length + 2);
-    // the articles "a" / "A" and the pronoun "I" stay upright when they start an ordinary word sequence
-    if ((ch === 'a' || ch === 'I') && /^ [a-z]/.test(after)) return m;
-    if (ch === 'A' && /^ [a-z]/.test(after) && (off === 0 || /[.!?]\s$/.test(str.slice(Math.max(0, off - 2), off + 1)) || pre === '')) return m;
-    return pre + '<i>' + ch + '</i>';
-  });
-  return s;
-}
+// Atlas reading aids use plain text. Canonical mathematics is rendered by strict KaTeX at build time.
+const math = esc;
 
 async function loadAtlas(url) {
   const get = async u => { const r = await fetch(u); if (!r.ok) throw Error('Could not load ' + u); return r.json(); };
-  const [raw, source, review] = await Promise.all([get(url), get('data/source-text.json'), get('data/review-notes.json')]);
-  const atlas = new Atlas(project(raw, source)); atlas.raw = raw; atlas.source = source; atlas.review = review; return atlas;
+  const [raw, source, review, latex] = await Promise.all([get(url), get('data/source-text.json'), get('data/review-notes.json'), get('data/latex-source.json')]);
+  const atlas = new Atlas(project(raw, source)); atlas.raw = raw; atlas.source = source; atlas.review = review; atlas.latex = latex; return atlas;
 }
 
 class Atlas {
@@ -187,6 +175,27 @@ function project(raw, source) {
 }
 
 return {KIND,KINDS,KIND_LABEL,ROLE_LABEL,numberLabel,esc,math,loadAtlas,Atlas,SOURCE,pdfLink,facsimileHTML,CHAPTER_HUE,ROLE_SHAPE,shapePath,project};})();
+const module_latex_source_js=(()=>{
+const { esc }=module_core_js;
+// HTML is generated exclusively from the byte-preserved canonical TeX at build time.
+// Missing mappings are visible; the frozen PDF transcript is never a fallback.
+function sourceRecords(atlas,n) { return (atlas.latex.entities[n.id]?.keys||[]).map(k=>atlas.latex.records[k]); }
+function sourceSpan(record) {return `<a class="src" href="source/latex-current/${esc(record.file)}" target="_blank" rel="noopener">${esc(record.file)}:${record.startLine}–${record.endLine}</a>`;}
+function latexStatement(atlas,n) {
+ const entry=atlas.latex.entities[n.id];
+ if(entry?.editorial)return `<section class="note editorial"><b>Atlas editorial variant · no canonical LaTeX environment</b><p>${esc(n.statement)}</p>${n.formula?`<p>${esc(n.formula)}</p>`:''}</section>`;
+ const records=sourceRecords(atlas,n);
+ if(!records.length)return `<section class="source-gap" role="status"><b>Source mapping needs review</b><p>${esc(entry?.gap||n.number+' has no verified canonical source span.')} Open the current source chapter to inspect the original LaTeX.</p><button data-source-chapter="${esc(n.number.match(/\d+/)?.[0]||'1')}">Read current source chapter</button></section>`;
+ return records.map(r=>`<section class="latex-source source-statement" data-source-key="${r.key}"><div class="source-caption"><b>Current notes · ${esc(r.kind)} ${r.number}</b>${sourceSpan(r)}</div>${entry.atlasNumber!==r.kind[0].toUpperCase()+r.kind.slice(1)+' '+r.number?`<p class="small source-edition">Atlas label: ${esc(entry.atlasNumber)}. Complete current source environment follows; the graph retains its frozen edition numbering.</p>`:''}${r.html}</section>`).join('');
+}
+function latexProof(atlas,p) {
+ const n=atlas.node.get(p.theorem),records=sourceRecords(atlas,n),proofs=records.flatMap(r=>r.proofs);
+ if(!proofs.length)return `<p class="source-gap">No separately mapped canonical proof for ${esc(n.number)}. ${records.length?'The complete environment above may contain its argument.':'Source mapping needs review.'}</p>`;
+ return proofs.map(r=>`<section class="latex-source source-proof"><div class="source-caption"><b>Original LaTeX proof</b>${sourceSpan(r)}</div>${r.html}</section>`).join('');
+}
+function sourceChapterHTML(atlas,number,html) {const ch=atlas.latex.chapters.find(c=>c.number===String(number));return `<article class="source-chapter latex-source"><h2>Current notes · Chapter ${esc(number)}</h2><p class="small">Original canonical LaTeX prose and mathematics. Source: <a href="source/latex-current/${esc(ch.file)}">${esc(ch.file)}</a>. The graph retains frozen edition labels.</p>${html}</article>`;}
+
+return {sourceRecords,sourceSpan,latexStatement,latexProof,sourceChapterHTML};})();
 const module_canvas_js=(()=>{
 // Shared cached-bitmap canvas camera.
 //
@@ -516,6 +525,7 @@ function prerequisitePath(data,fromId,toId){
 
 return {LAYERS,DEFAULT_LAYERS,PHRASES,buildDisplayGraph,bundle,visibleGraph,proofFocus,neighbors,dependencyDepth,wrapLabel,nodeName,labelBox,modeledChapters,courseLayout,bounds,fitCamera,unsupportedSteps,inferenceGroups,assumptionUse,proofToolSupport,RULES,statementStructure,numberLabel,searchNodes,pdfLink,courseSpine,prerequisitePath};})();
 const module_blocks_js=(()=>{
+const { latexStatement, latexProof }=module_latex_source_js;
 const {unsupportedSteps,assumptionUse}=module_graph_mjs;
 // Shared content blocks (statement, source, relation lists, proof). Each prototype
 // composes and styles them differently; the course content itself is identical.
@@ -538,18 +548,11 @@ const entityRow = (n, extra = '') => `<button class="entity" data-action="select
 
 // The statement as printed in the notes (source excerpt + facsimile), then the atlas paraphrase.
 function statementBlock(atlas, n, { facsimileOpen = false } = {}) {
-  const ex = n.excerpts.filter(x => x.role === 'statement');
-  const printed = ex.map(x => `<figure class="source-text"><figcaption><span class="eyebrow">In the notes</span><b>${esc(x.label)}</b> ${srcLink(x.page, `PDF ${x.page}`)}</figcaption>${facsimileHTML(x.facsimiles,x.label)}<details><summary>Read the text transcription</summary><blockquote class="math">${math(x.text)}</blockquote></details></figure>`).join('');
-  const editorial = n.env === 'editorial_variant' ? `<p class="note editorial">Editorial variant constructed for the atlas; the notes do not state it.</p>` : '';
-  return `${printed}${editorial}<div class="paraphrase"><span class="eyebrow">${ex.length ? 'Atlas paraphrase' : 'Atlas statement'}</span><p class="math">${math(n.statement)}</p>${n.formula ? `<p class="formula math">${math(n.formula)}</p>` : ''}</div>`;
+  return latexStatement(atlas, n);
 }
-function contextBlock(n) {
-  const ex = n.excerpts.filter(x => x.role !== 'statement');
-  if (!ex.length) return '';
-  return `<details class="context"><summary>Context in the notes · ${ex.length}</summary>${ex.map(x => `<figure class="source-text"><figcaption><b>${esc(x.label)}</b> ${srcLink(x.page, `PDF ${x.page}${x.endPage > x.page ? '–' + x.endPage : ''}`)}</figcaption>${x.facsimiles?.length ? facsimileHTML(x.facsimiles, x.label) : `<blockquote class="math">${math(x.text)}</blockquote>`}</figure>`).join('')}</details>`;
-}
+function contextBlock(n) { return ''; }
 function occurrencesBlock(n) {
-  return `<ul class="occ">${n.occurrences.map(o => `<li>${srcLink(o.page, `${o.number} · ${pages(o)}`)}<q>${esc(o.quote)}</q></li>`).join('')}</ul>`;
+  return `<ul class="occ">${n.occurrences.map(o => `<li>${srcLink(o.page, `${o.number} · frozen PDF ${pages(o)}`)}</li>`).join('')}</ul>`;
 }
 function relationGroupsHTML(atlas, n, { why = true } = {}) {
   return atlas.groups(n.id).map(g => `<section class="rel-group kind-${g.kind}" data-kind="${g.kind}"><h4><i class="line line-${g.kind}"></i>${esc(g.title)}<span class="count">${g.items.length}</span></h4><ul>${g.items.map(({ r, other }) => `<li>${entityRow(other)}${why ? `<button class="why" data-action="why" data-rel="${r.id}" aria-label="Why">?</button>` : ''}</li>`).join('')}</ul></section>`).join('');
@@ -579,9 +582,9 @@ function proofHTML(atlas, p, { expanded = new Set(), expandAll = false, activeSt
     const rule = RULES[s.inferenceRule] || { symbol: '·', label: s.inferenceRule, long: '' }, open = expandAll || expanded.has(s.id) || activeStep === s.id;
     return `<li class="step${lost.has(s.id) ? ' unsupported' : ''}${use.direct.includes(s.id) ? ' direct-use' : use.downstream.includes(s.id) ? ' downstream-use' : ''}${activeStep === s.id ? ' active' : ''}${open ? ' open' : ''}" data-row="${s.id}" id="step-${esc(s.id)}">
       <span class="idx">S${s.index}</span>
-      <div class="step-main"><button class="step-title math" data-action="step" data-id="${s.id}" aria-expanded="${open}">${math(s.title)}${s.origin === 'editorial_expansion' ? '<em class="tag">atlas expansion</em>' : ''}</button>
+      <div class="step-main"><button class="step-title math" data-action="step" data-id="${s.id}" aria-expanded="${open}">${s.origin==='source_passage_with_editorial_segmentation'?'Source argument · S'+s.index:math(s.title)}${s.origin!=='source_passage_with_editorial_segmentation'?'<em class="tag">atlas reading aid</em>':''}</button>
         <div class="just"><span class="rule" title="${esc(rule.long)}"><b>${rule.symbol}</b> ${esc(rule.label)}</span>${s.inputs.map(id => `<button class="premise" data-action="premise" data-id="${id}" title="${esc(p.steps.find(y => y.id === id)?.title || p.assumptions.find(a => a.id === id)?.label || '')}">${label[id] || id}</button>`).join('')}${s.resources.length ? '<span class="by">by</span>' : ''}${s.resources.map(id => chip(atlas.node.get(id))).join('')}</div>
-        ${open ? `<div class="step-body"><p class="math">${math(s.body)}</p>${s.sourceExcerpt ? `<figure class="source-text"><figcaption><span class="eyebrow">Source excerpt</span> ${srcLink(s.sourcePage || s.physicalPage, `PDF p.${s.sourcePage || s.physicalPage}`)}</figcaption>${facsimileHTML(s.facsimiles, 'Proof excerpt')}<details><summary>Read the text transcription</summary><blockquote class="math">${math(s.sourceExcerpt)}</blockquote></details></figure>` : ''}<p class="small"><details><summary>Provenance details</summary>${esc(ORIGIN[s.origin] || s.origin.replaceAll('_', ' '))}</details>${s.inputs.length ? ` · ${rule.long ? esc(rule.long) : ''}` : ''}</p></div>` : ''}
+        ${open ? `<div class="step-body">${s.origin==='source_passage_with_editorial_segmentation'?'':`<p class="math">${math(s.body)}</p>`}<p class="small">This step is an atlas reading aid. The complete original LaTeX argument appears in “Read the original proof” below.</p><p class="small"><details><summary>Provenance details</summary>${esc(ORIGIN[s.origin] || s.origin.replaceAll('_', ' '))}</details>${s.inputs.length ? ` · ${rule.long ? esc(rule.long) : ''}` : ''}</p></div>` : ''}
       </div></li>`;
   };
   let rows = '', scope = 'gt:scope:global', macro = 0;
@@ -605,7 +608,7 @@ function proofHTML(atlas, p, { expanded = new Set(), expandAll = false, activeSt
     </div>
     <div class="proof-actions"><button class="btn" data-action="expand-all" aria-pressed="${expandAll}">${expandAll ? 'Collapse step explanations' : `Explain ${p.steps.length === 1 ? 'this step' : 'all ' + p.steps.length + ' steps'}`}</button></div>
     ${hyps.length ? `<details class="assumption-lab"${removedId ? ' open' : ''}><summary>What if a hypothesis is removed?</summary><p>Losing a justification is not a proof that the conclusion is false.</p>${hyps.map(a=>`<button class="btn" data-action="remove-assumption" data-id="${a.id}" aria-pressed="${removedId===a.id}">${removedId===a.id?'Restore':'Remove'} ${esc(a.label)}</button>`).join(' ')}${removedId?`<p class="note">Steps losing recorded support: ${p.steps.filter(s=>lost.has(s.id)).map(s=>'S'+s.index).join(', ')||'none'}.</p>${variant?`<p>Recorded editorial variant: ${chip(variant)} ${esc(variant.statement)}</p>${counter?`<p>Recorded counterexample: ${chip(atlas.node.get(counter.prereq))}</p>`:''}`:'<p>No variant or counterexample is recorded for this removal.</p>'}`:''}</details>`:''}
-    <details class="original"><summary>Read the original proof${p.sourcePage ? ' · p.' + p.sourcePage : ''}</summary>${facsimileHTML(p.facsimiles, 'Original proof')}<details><summary>Read the text transcription</summary><blockquote class="math pre">${math(p.sourceText)}</blockquote></details>${p.sourcePage ? srcLink(p.sourcePage, `Open PDF p.${p.sourcePage}`) : ''}<p class="small">Step labels, scopes and premise numbers are an atlas reconstruction, pending teacher review.</p></details>
+    <details class="original" open><summary>Read the original proof · current canonical LaTeX</summary>${latexProof(atlas,p)}<p class="small">Step labels, scopes and premise numbers are an atlas reconstruction, pending teacher review.</p></details>
   </article>`;
 }
 
@@ -642,10 +645,10 @@ function entityCardHTML(atlas, n, { headerExtra = '', proofButton = true } = {})
   const ch = atlas.chapter.get(n.chapter), proofs = atlas.proofsOf.get(n.id) || [];
   const tools = atlas.proofFocus(n.id).length - 1;
   return `<div class="card-head"><span class="eyebrow role-${n.role}">${ROLE_LABEL[n.role]} · ${esc(n.number)}</span>${headerExtra}<h2 class="title">${esc(n.en)}</h2>
-    <p class="meta"><span class="chapter-pill ch-${n.chapter}">Ch. ${ch.number} · ${esc(ch.title)}</span><span>${esc(atlas.sectionOf(n))}</span><span>p.${n.page}</span></p></div>
+    <p class="meta"><span class="chapter-pill ch-${n.chapter}">Ch. ${ch.number} · ${esc(ch.title)}</span><span>${esc(atlas.sectionOf(n))}</span><span>Frozen PDF p.${n.page}</span></p></div>
     ${statementBlock(atlas, n)}${contextBlock(n)}
     ${n.fullEnvironmentId ? `<p class="note">Models selected parts of ${chip(atlas.node.get(n.fullEnvironmentId))} (complete printed environment).</p>` : ''}
-    ${proofButton && proofs.length ? proofs.map((p, i) => `<button class="btn primary proof-open" data-action="proof" data-id="${p.id}"><span><b>Read proof ${esc(p.label)}${proofs.length > 1 ? ' · ' + esc(p.title) : ''}</b><small>${p.steps.length} step${p.steps.length > 1 ? 's' : ''} · ${i ? '' : tools + ' cited entit' + (tools === 1 ? 'y' : 'ies') + ' · '}source p.${p.sourcePage}</small></span><span class="go">→</span></button>`).join('') : ''}
+    ${proofButton && proofs.length ? proofs.map((p, i) => `<button class="btn primary proof-open" data-action="proof" data-id="${p.id}"><span><b>Read proof ${esc(p.label)}${proofs.length > 1 ? ' · ' + esc(p.title) : ''}</b><small>${p.steps.length} step${p.steps.length > 1 ? 's' : ''} · ${i ? '' : tools + ' cited entit' + (tools === 1 ? 'y' : 'ies') + ' · '}frozen PDF p.${p.sourcePage}</small></span><span class="go">→</span></button>`).join('') : ''}
     ${!proofs.length && ['result', 'example'].includes(n.role) ? `<p class="note">${esc(n.sourceProofDisposition?.note || 'No separately written proof is supplied for this environment in the notes.')} ${n.sourceProofDisposition ? srcLink(n.sourceProofDisposition.physicalPage, 'Source instruction') : ''}</p>` : ''}
     <div class="relations">${relationGroupsHTML(atlas, n)}</div>
     <h4 class="section-label">Topics</h4><p class="topics">${n.topics.map(t => `<button class="topic" data-topic="${t}">${esc(atlas.topics.get(t))}</button>`).join('')}</p>
@@ -718,7 +721,7 @@ function createDesk(atlas, { deskEl, trailEl, whyEl, whyBodyEl, introHTML, onSta
     const n = atlas.node.get(id); if (!n || host.querySelector(`:scope > .leaf[data-id="${CSS.escape(id)}"]`)) return;
     const proofs = atlas.proofsOf.get(id) || [];
     const leaf = document.createElement('article'); leaf.className = `leaf level-${level}`; leaf.dataset.id = id;
-    leaf.innerHTML = `<div class="leaf-head"><span class="eyebrow">${ROLE_LABEL[n.role]} · ${esc(n.number)} · Chapter ${atlas.chapter.get(n.chapter).number} · p.${n.page}</span><button class="icon" data-action="close-leaf" aria-label="Close">×</button></div><h3>${esc(n.en)}</h3>${statementBlock(atlas, n)}
+    leaf.innerHTML = `<div class="leaf-head"><span class="eyebrow">${ROLE_LABEL[n.role]} · ${esc(n.number)} · Chapter ${atlas.chapter.get(n.chapter).number} · frozen PDF p.${n.page}</span><button class="icon" data-action="close-leaf" aria-label="Close">×</button></div><h3>${esc(n.en)}</h3>${statementBlock(atlas, n)}
       <div class="leaf-actions">${proofs.map(p => `<button class="btn" data-action="proof" data-id="${p.id}">Read its proof ${esc(p.label)} here · ${p.steps.length} step${p.steps.length > 1 ? 's' : ''}</button>`).join('')}<button class="btn ghost" data-action="select" data-id="${id}">Make this the page</button>${srcLink(n.page, 'PDF p.' + n.page)}</div>
       ${n.role !== 'definition' && !proofs.length ? '<p class="note">No separately written proof in the notes for this environment.</p>' : ''}<div class="proof-slot"></div>`;
     host.append(leaf); state.path = [...state.path.slice(0, level), id]; renderTrail(); emit();
@@ -1020,9 +1023,10 @@ async function bootHyper({ mode, intro, title }) {
   }
   // ---- motion ------------------------------------------------------------------------------------------
   const settle = () => { S.moving = true; clearTimeout(S.idle); S.idle = setTimeout(() => { S.moving = false; app.view.requestSettled(); }, 160); app.view.requestSettled(); };
-  function animateTo(target, k = S.k, ms = 360) { cancelAnimationFrame(S.anim); const c0 = S.centre, k0 = S.k, t0 = performance.now(); // move along the geodesic from the current centre to the target
+  function stopMotion() { cancelAnimationFrame(S.anim); S.anim = 0; clearTimeout(S.idle); S.moving = false; app?.view.requestSettled(); }
+  function animateTo(target, k = S.k, ms = 460) { stopMotion(); const c0 = {...S.centre}, k0 = S.k; let elapsed = 0, previous = null; // move along the geodesic from the current centre to the target
     const tp = mob(target, c0), L = Math.sqrt(abs2(tp)), ah = atanh(Math.min(.9999999, L));
-    const step = now => { const t = Math.min(1, (now - t0) / ms), e = 1 - Math.pow(1 - t, 3); const s = L > 1e-9 ? Math.tanh(ah * e) / L : 0; S.centre = mobInv(C(tp.re * s, tp.im * s), c0); S.k = k0 + (k - k0) * e; if (t < 1) { S.moving = true; app.view.requestSettled(); S.anim = requestAnimationFrame(step); } else { S.moving = false; app.view.requestSettled(); } }; S.anim = requestAnimationFrame(step); }
+    const step = now => { if (previous !== null) elapsed += Math.min(20, Math.max(0, now - previous)); previous = now; const t = Math.min(1, elapsed / ms), e = t * t * (3 - 2 * t); const s = L > 1e-9 ? Math.tanh(ah * e) / L : 0; S.centre = mobInv(C(tp.re * s, tp.im * s), c0); S.k = k0 + (k - k0) * e; if (t < 1) { S.moving = true; app.view.requestSettled(); S.anim = requestAnimationFrame(step); } else { S.anim = 0; S.centre = {...target}; S.k = k; S.moving = false; app.view.requestSettled(); } }; S.anim = requestAnimationFrame(step); }
   // Where to look when an entity is selected: shift a little from the entity toward the hyperbolic
   // barycentre of its direct relations (so the disk is not half empty), and pick the zoom that puts
   // nearly all of them inside 0.8 of the radius.
@@ -1030,10 +1034,10 @@ async function bootHyper({ mode, intro, title }) {
     const ws = nb.map(n => mob(lay.pos.get(n), z0)); const m = ws.reduce((a, w) => C(a.re + w.re, a.im + w.im), C(0, 0)); const mm = C(m.re / ws.length * .5, m.im / ws.length * .5); const target = mobInv(mm, z0);
     const ds = [id, ...nb].map(n => 2 * atanh(Math.min(.9999999, Math.sqrt(abs2(mob(lay.pos.get(n), target)))))).sort((a, b) => a - b); const D = ds[Math.floor(ds.length * .9)] || ds.at(-1);
     return { target, k: Math.max(.45, Math.min(2.4, 2 * atanh(.8) / Math.max(.3, D))) }; }
-  function hitAt(sx, sy) { const vp = { width: app.view.width, height: app.view.height }, { R, cx, cy } = disk(vp); let best = null, bd = 1e9; for (const [id, z] of app.lay.pos) { if (!S.roles.has(app.atlas.node.get(id).role)) continue; const d = view2(z); const x = cx + d.re * R, y = cy + d.im * R; const dd = (x - sx) ** 2 + (y - sy) ** 2; if (dd < bd) { bd = dd; best = id; } } return bd < 13 * 13 ? best : null; }
+  function hitAt(sx, sy) { const vp = { width: app.view.width, height: app.view.height }, { R, cx, cy } = disk(vp); let best = null, bd = 1e9; for (const [id, z] of app.lay.pos) { const n = app.atlas.node.get(id); if (!S.roles.has(n.role) || (S.isolate && S.topics.size && !n.topics.some(t=>S.topics.has(t)))) continue; const d = view2(z); const x = cx + d.re * R, y = cy + d.im * R; const dd = (x - sx) ** 2 + (y - sy) ** 2; if (dd < bd) { bd = dd; best = id; } } return bd < 13 * 13 ? best : null; }
 
   app = await bootTreeApp({ name: mode, bind: false, rebuildOnSelect: false, layout, paint,
-    onSelect: id => { app.checkpoint?.(); if (id && app.lay.pos.has(id)) { const { target, k } = focusFor(id); animateTo(target, k, 400); } },
+    onSelect: id => { app.checkpoint?.(); if (id && app.lay.pos.has(id)) { const { target, k } = focusFor(id); animateTo(target, k, 460); } else if (!id) animateTo(C(0, 0), 1); },
     zoomHandler: z => { if (z === 'fit') animateTo(C(0, 0), 1); else animateTo(S.centre, Math.max(.35, Math.min(5, S.k * (z === 'in' ? 1.35 : 1 / 1.35))), 220); },
     fitHandler: () => animateTo(C(0, 0), 1),
     chapterHandler: id => { // centre on the chapter's most used entity
@@ -1044,21 +1048,47 @@ async function bootHyper({ mode, intro, title }) {
   // ---- pointer: drag = Möbius translation; click = centre + select; wheel / pinch = hyperbolic zoom ---------
   const el = app.view.canvas; el.style.touchAction = 'none'; let down = null; const pts = new Map(); let pinch = null;
   const toDisk = (sx, sy) => { const { R, cx, cy } = disk({ width: app.view.width, height: app.view.height }); return C((sx - cx) / R, (sy - cy) / R); };
-  el.addEventListener('pointerdown', e => { el.setPointerCapture(e.pointerId); const r = el.getBoundingClientRect(); pts.set(e.pointerId, { x: e.clientX - r.left, y: e.clientY - r.top }); if (pts.size === 2) { const [a, b] = [...pts.values()]; pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), k: S.k }; down = null; return; } const u = toDisk(e.clientX - r.left, e.clientY - r.top); if (abs2(u) >= .998) return; app.checkpoint?.(); down = { x: e.clientX, y: e.clientY, z0: mobInv(unmag(u, S.k), S.centre), moved: false }; cancelAnimationFrame(S.anim); });
+  el.addEventListener('pointerdown', e => {
+    if (e.button !== 0) return;
+    el.setPointerCapture(e.pointerId);
+    // Freeze the displayed camera before establishing any drag or pinch anchor.
+    stopMotion(); app.checkpoint?.();
+    const r = el.getBoundingClientRect();
+    pts.set(e.pointerId, { x: e.clientX - r.left, y: e.clientY - r.top });
+    if (pts.size >= 2) { const [a, b] = [...pts.values()]; pinch = { d: Math.max(1, Math.hypot(a.x - b.x, a.y - b.y)), k: S.k }; down = null; return; }
+    const u = toDisk(e.clientX - r.left, e.clientY - r.top);
+    down = { pointer: e.pointerId, x: e.clientX, y: e.clientY, z0: abs2(u) < .998 ? mobInv(unmag(u, S.k), S.centre) : null, moved: false };
+  });
   el.addEventListener('pointermove', e => { const r = el.getBoundingClientRect(); const sx = e.clientX - r.left, sy = e.clientY - r.top; if (pts.has(e.pointerId)) pts.set(e.pointerId, { x: sx, y: sy });
-    if (pinch && pts.size === 2) { const [a, b] = [...pts.values()]; S.k = Math.max(.35, Math.min(5, pinch.k * Math.hypot(a.x - b.x, a.y - b.y) / pinch.d)); settle(); return; }
-    if (down) { if (Math.hypot(e.clientX - down.x, e.clientY - down.y) > 3) down.moved = true; if (!down.moved) return; let u = toDisk(sx, sy); const m = Math.sqrt(abs2(u)); if (m > .985) u = C(u.re * .985 / m, u.im * .985 / m); const w1 = unmag(u, S.k), z0 = down.z0; // solve T_c(z0) = w1 for c
-      const kk = cmul(w1, z0), mm = csub(z0, w1), den = 1 - abs2(kk); const cn = C((mm.re + (kk.re * mm.re + kk.im * mm.im)) / den, (mm.im + (kk.im * mm.re - kk.re * mm.im)) / den); if (abs2(cn) < .9995) S.centre = cn; settle(); return; }
-    const id = hitAt(sx, sy); if (id !== app.hover) app.hoverFn(id); });
-  const up = e => { pts.delete(e.pointerId); if (pts.size < 2) pinch = null; if (!down) return; const was = down; down = null; if (!was.moved) { const r = el.getBoundingClientRect(); const id = hitAt(e.clientX - r.left, e.clientY - r.top); if (id) app.desk.select(id); } };
-  el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up); el.addEventListener('pointerleave', () => { if (!down && app.hover) app.hoverFn(null); });
-  el.addEventListener('wheel', e => { e.preventDefault(); if(!S.moving) app.checkpoint?.(); cancelAnimationFrame(S.anim); S.k = Math.max(.35, Math.min(5, S.k * Math.exp(-e.deltaY * (e.deltaMode ? .05 : .0016)))); settle(); }, { passive: false });
+    if (pinch && pts.size >= 2) { const [a, b] = [...pts.values()]; S.k = Math.max(.35, Math.min(5, pinch.k * Math.hypot(a.x - b.x, a.y - b.y) / pinch.d)); settle(); return; }
+    if (down && down.pointer === e.pointerId) { if (Math.hypot(e.clientX - down.x, e.clientY - down.y) > 5) down.moved = true; if (!down.moved || !down.z0) return; let u = toDisk(sx, sy); const m = Math.sqrt(abs2(u)); if (m > .985) u = C(u.re * .985 / m, u.im * .985 / m); const w1 = unmag(u, S.k), z0 = down.z0;
+      const cn = dragCentre(z0, w1); if (abs2(cn) < .9995) S.centre = cn; settle(); return; }
+    if (!pts.size) { const id = hitAt(sx, sy); if (id !== app.hover) app.hoverFn(id); }
+  });
+  const up = e => {
+    pts.delete(e.pointerId); if (pts.size < 2) pinch = null;
+    const was = down; if (was?.pointer !== e.pointerId) return; down = null;
+    if (e.type === 'pointercancel' || was.moved || Math.hypot(e.clientX - was.x, e.clientY - was.y) > 5) return;
+    const r = el.getBoundingClientRect(), id = hitAt(e.clientX - r.left, e.clientY - r.top);
+    if (id) { const same = app.desk.state.selected === id; app.desk.select(id); if (same) { const {target,k}=focusFor(id); animateTo(target,k); } }
+    else if (app.desk.state.selected) app.desk.clear();
+    else animateTo(C(0, 0), 1);
+  };
+  el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
+  el.addEventListener('lostpointercapture', e => { pts.delete(e.pointerId); if (down?.pointer === e.pointerId) down = null; if (pts.size < 2) pinch = null; });
+  el.addEventListener('pointerleave', () => { if (!pts.size && app.hover) app.hoverFn(null); });
+  el.addEventListener('wheel', e => {
+    e.preventDefault(); if(!S.moving) app.checkpoint?.(); stopMotion();
+    // A wheel gesture during a held pointer must invalidate its old zoom anchor.
+    down = null; pinch = null;
+    S.k = Math.max(.35, Math.min(5, S.k * Math.exp(-e.deltaY * (e.deltaMode ? .05 : .0016)))); settle();
+  }, { passive: false });
   app.view.lowRes = () => S.moving; app.view.lowResScale = 1;
   // hover: redraw the cached frame plus a ring, instead of repainting the whole disk
   const baseHover = app.hoverFn; app.hoverFn = id => { baseHover(id); const v = app.view; if (S.moving || !v.settled) return; const c = v.ctx; c.setTransform(1, 0, 0, 1, 0, 0); c.drawImage(v.settled, 0, 0); if (!id) return; const p = toScreen(app.lay.pos.get(id), { width: v.width, height: v.height }); const k = 1 - abs2(p.d), im = app.lay.imp.get(id); const rr = Math.max(1.3, (2 + 8.5 * im * im) * (.22 + .9 * k) * Math.pow(S.k, .25)); c.setTransform(v.dpr, 0, 0, v.dpr, 0, 0); c.beginPath(); c.arc(p.x, p.y, rr + 5, 0, Math.PI * 2); c.strokeStyle = '#fff'; c.lineWidth = 1.5; c.stroke(); };
   settle();
-  window.proto.hyper = S; app.checkpoint = () => {S.history.push({centre:{...S.centre},k:S.k}); if(S.history.length>40)S.history.shift(); S.future=[];}; app.travel = back => {const from=back?S.history:S.future,to=back?S.future:S.history,entry=from.pop();if(!entry)return;to.push({centre:{...S.centre},k:S.k});cancelAnimationFrame(S.anim);S.centre=entry.centre;S.k=entry.k;settle();}; app.visible = () => ({nodes: app.atlas.nodes.filter(n => S.roles.has(n.role)).map(n => n.id), relations: app.atlas.rels.filter(r => r.kind !== 'teaching' && S.roles.has(app.atlas.node.get(r.prereq).role) && S.roles.has(app.atlas.node.get(r.dependent).role) && S.kinds.has(r.kind === 'variant' ? 'counter' : r.kind === 'teaching' ? 'context' : r.kind)).map(r => r.id)}); window.atlas = window.proto; window.atlas.ready = true;
-  document.addEventListener('keydown', e => {if(e.target.closest('input,textarea'))return;const delta={ArrowLeft:[-.08,0],ArrowRight:[.08,0],ArrowUp:[0,-.08],ArrowDown:[0,.08]}[e.key];if(!delta)return;e.preventDefault();app.checkpoint();S.centre=mobInv(C(...delta),S.centre);settle();});
+  window.proto.hyper = S; app.checkpoint = () => {S.history.push({centre:{...S.centre},k:S.k}); if(S.history.length>40)S.history.shift(); S.future=[];}; app.travel = back => {const from=back?S.history:S.future,to=back?S.future:S.history,entry=from.pop();if(!entry)return;to.push({centre:{...S.centre},k:S.k});stopMotion();S.centre=entry.centre;S.k=entry.k;settle();}; app.visible = () => ({nodes: app.atlas.nodes.filter(n => S.roles.has(n.role)).map(n => n.id), relations: app.atlas.rels.filter(r => r.kind !== 'teaching' && S.roles.has(app.atlas.node.get(r.prereq).role) && S.roles.has(app.atlas.node.get(r.dependent).role) && S.kinds.has(r.kind === 'variant' ? 'counter' : r.kind === 'teaching' ? 'context' : r.kind)).map(r => r.id)}); window.atlas = window.proto; window.atlas.ready = true;
+  document.addEventListener('keydown', e => {if(e.target.closest('input,textarea'))return;const delta={ArrowLeft:[-.08,0],ArrowRight:[.08,0],ArrowUp:[0,-.08],ArrowDown:[0,.08]}[e.key];if(!delta)return;e.preventDefault();stopMotion();app.checkpoint();S.centre=mobInv(C(...delta),S.centre);settle();});
   return app;
 }
 
@@ -1088,6 +1118,7 @@ function insideTextBounds(b,width,height,pad=0){return b.x>=pad&&b.y>=pad&&b.x+b
 function boxesOverlap(a,b){return a.x<b.x+b.w&&b.x<a.x+a.w&&a.y<b.y+b.h&&b.y<a.y+a.h;}
 
 return {mob,mobInv,mag,unmag,geoPts,bootHyper,dragCentre,screenTransform,fitCanvasText,rotatedTextBounds,insideTextBounds};})();
+const { sourceChapterHTML }=module_latex_source_js;
 // Direction O · Hyperbolic Geodesics. Engine: shared/hyper.js
 const { bootHyper }=module_hyper_js;
 await bootHyper({ mode: 'geodesics', intro: () => `<div class="intro"><span class="eyebrow">Hyperbolic geodesics</span><h1>Every relation as a straight line of the hyperbolic plane</h1><p>The same disk, but every recorded relation is drawn as its own geodesic: the circular arc that is a straight line in hyperbolic geometry. Nothing is bundled, so each line goes exactly from one entity to the other; where many lines cross, light adds up. A faint hyperbolic grid (circles and rays around the foundations) moves with you, so you can see how far you have travelled.</p><p><b>Click any entity and the disk re-centres on it</b>; drag to move, scroll or pinch to zoom. Use the buttons under the disk to keep, say, only definitions and the lines between them.</p></div>` });
@@ -1096,7 +1127,7 @@ const nav=document.createElement('nav');nav.className='utility-nav';nav.setAttri
 const {esc,pdfLink,numberLabel}=module_core_js;
 nav.addEventListener('click',e=>{const b=e.target.closest('[data-view]');if(!b)return;const i=+b.dataset.view;if(!i){desk.clear();return;}let html='';
 if(i===1)html=`<h2>Review / coverage</h2><p>${esc(A.raw.coverage.coverageDescription)}</p><p>${A.counts.entities} entities · ${A.counts.canonical} canonical relations · ${A.counts.displayed} displayed relationships · ${A.counts.cross} cross-chapter · ${A.counts.proofs} proofs · ${A.counts.steps} steps</p><p>No item has teacher approval; formal verification has not been attempted.</p>${A.review.items.map(x=>`<article class="note"><h3>${esc(x.title)}</h3><p>${esc(x.body)}</p><a href="${pdfLink(x.page)}" target="_blank">PDF p.${x.page}</a></article>`).join('')}`;
-if(i===2)html=`<h2>Notes / source</h2><details><summary>Source provenance</summary><p>Printed and physical page numbers are retained in each source record.</p><a href="data/course-inventory.json">Download course inventory</a></details><p>The original lecture notes retain their original typesetting. Text extraction can move subscripts or lose overbars; use the page image or PDF when checking a formula.</p><a href="${pdfLink(1)}" target="_blank">Open the original notes</a><ol>${Array.from({length:101},(_,i)=>`<li><a href="${pdfLink(i+1)}" target="_blank">PDF / printed ${i+1}</a></li>`).join('')}</ol>`;
+if(i===2)html=`<h2>Notes / source</h2><p>Read the original canonical LaTeX, including prose, definitions, examples and proofs, with rendered mathematics. Current notes: 104 pages. Atlas graph labels and external PDF references retain the frozen 101-page edition.</p><div class="source-chapters">${A.latex.chapters.map(ch=>`<button data-source-chapter="${ch.number}">Chapter ${ch.number}</button>`).join('')}</div><p><a href="source/latex-current/notes.tex">Original notes.tex</a> · <a href="data/latex-source.json">Source spans and mapping</a></p>`;
 if(i===3)html=`<h2>Accessible index</h2><p>Every entity and recorded display relationship is reachable here, independently of the canvas filters. Pending teacher review.</p><details open><summary>${A.nodes.length} entities</summary><ol class="index-list">${A.nodes.map(n=>`<li><button data-index="${n.id}">${esc(n.number)} · ${esc(n.en)}</button></li>`).join('')}</ol></details><details><summary>${A.rels.length} relationships</summary><ol class="index-list">${A.rels.map(r=>`<li><button data-index="${r.prereq}">${esc(numberLabel(A.node.get(r.prereq)))}</button> → <button data-index="${r.dependent}">${esc(numberLabel(A.node.get(r.dependent)))}</button> · ${esc(r.kind)} <button data-index-rel="${r.id}">Why</button></li>`).join('')}</ol></details>`;
 document.querySelector('#desk-scroll').innerHTML=`<article class="utility-view"><p class="review">pending teacher review</p>${html}</article>`;document.querySelector('#desk').dataset.sheet='half';});
 document.querySelector('#desk-scroll').addEventListener('click',async e=>{const b=e.target.closest('[data-index]');if(b)desk.select(b.dataset.index);const r=e.target.closest('[data-index-rel]');if(r){const {whyHTML}=module_ui_js;document.querySelector('#why-body').innerHTML=whyHTML(A,r.dataset.indexRel);document.querySelector('#why').hidden=false;}});
@@ -1104,4 +1135,18 @@ document.querySelector('#desk-scroll').addEventListener('click',async e=>{const 
 const scope=document.createElement('details');scope.className='topic-explorer';scope.innerHTML=`<summary>Topics and view history</summary><div>${[...A.topics].map(([id,label])=>`<button data-topic="${id}" aria-pressed="false">${esc(label)}</button>`).join(' ')}</div><label><input type="checkbox" id="topic-isolate"> Isolate matching topics</label><button data-topic-reset>Reset topics</button><button data-camera-back>Back</button><button data-camera-forward>Forward</button>`;document.querySelector('.ring-foot').before(scope);
 function topicControls(){const S=proto.hyper;document.querySelectorAll('[data-topic]').forEach(b=>b.setAttribute('aria-pressed',S.topics.has(b.dataset.topic)));proto.view.requestSettled();}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-topic]'),S=proto.hyper;if(b){const id=b.dataset.topic;S.topics.has(id)?S.topics.delete(id):S.topics.add(id);topicControls();}if(e.target.closest('[data-topic-reset]')){S.topics.clear();S.isolate=false;document.querySelector('#topic-isolate').checked=false;topicControls();}if(e.target.closest('[data-camera-back]'))proto.app.travel(true);if(e.target.closest('[data-camera-forward]'))proto.app.travel(false);});document.querySelector('#topic-isolate').onchange=e=>{proto.hyper.isolate=e.target.checked;proto.view.requestSettled();};
+
+// Source reference navigation stays inside the reading desk and does not replace entity hash routes.
+let sourceNavigation = 0;
+document.addEventListener('click', async e => {
+  const button=e.target.closest('[data-source-chapter]'),ref=e.target.closest('a[href^="#atlas-source-"]');
+  if(!button&&!ref)return;e.preventDefault();
+  const key=ref?.getAttribute('href').slice('#atlas-source-'.length),number=button?.dataset.sourceChapter||key.split('.')[0],token=++sourceNavigation;
+  const chapter=A.latex.chapters.find(ch=>ch.number===number);if(!chapter)return;
+  document.querySelector('#desk-scroll').innerHTML=`<p class="source-loading" data-source-loading="${token}">Loading current source chapter…</p>`;
+  const response=await fetch(chapter.url);if(!response.ok)throw Error('Could not load canonical chapter '+number);
+  const html=await response.text();if(token!==sourceNavigation||!document.querySelector(`[data-source-loading="${token}"]`))return;
+  document.querySelector('#desk-scroll').innerHTML=sourceChapterHTML(A,number,html);document.querySelector('#desk').dataset.sheet='half';
+  if(key)document.getElementById('atlas-source-'+key)?.scrollIntoView({block:'start',behavior:'smooth'});
+});
 
