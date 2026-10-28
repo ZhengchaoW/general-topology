@@ -1,5 +1,22 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#0c1115"><meta name="description" content="A connected, course-structured atlas of a 19-entity General Topology review slice: definitions, results and examples with traceable proof dependencies, hypotheses and source pages."><title>General Topology Atlas</title><link rel="icon" href="data:,"><link rel="preload" href="fonts/stix-two-text-400Regular.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/stix-two-math-symbols.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="style.css"></head>
-<body><a class="skip" href="#graph">Skip to network</a><div id="app"><p class="loading">Opening the mathematical atlas…</p></div><noscript>This atlas requires JavaScript. <a href="./source/General-Topology-lecture-notes-2025-101pages.pdf#page=81">Read the original notes, page 81.</a></noscript><script type="module" src="app.mjs"></script></body>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="preload" as="fetch" href="data/atlas.json" crossorigin><link rel="preload" as="fetch" href="data/source-text.json" crossorigin><link rel="preload" as="fetch" href="data/review-notes.json" crossorigin><meta name="color-scheme" content="light dark"><title>General Topology Atlas v5</title>
+<link rel="stylesheet" href="blocks.css"><link rel="stylesheet" href="desk.css"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <section class="ring-side">
+    <header class="ring-head"><div class="brand"><b>General Topology</b><small>Hyperbolic Geodesics · pending teacher review</small></div>
+      <div class="search"><input id="search" type="search" placeholder="Search…  /" autocomplete="off" spellcheck="false"><div id="results" class="results" role="listbox" hidden></div></div></header>
+    <div class="graph-wrap"><canvas id="graph" role="img" aria-label="Hyperbolic course network. Use the accessible Index for every entity and relation."></canvas><div id="tip" class="tip" hidden></div>
+      <div class="ring-foot"><div class="key" id="key"></div><div class="zoom"><button data-z="out" aria-label="Zoom out">−</button><output id="zoomv">100%</output><button data-z="in" aria-label="Zoom in">+</button><button data-z="fit">Reset</button></div></div>
+    </div>
+  </section>
+  <section class="desk" id="desk"><button class="sheet-handle" aria-label="Change reading sheet height"></button><nav class="trail" id="trail"></nav><div class="scroll" id="desk-scroll"></div></section>
+  <div id="why" class="modal" hidden><div class="why-box"><button class="close" data-action="close-why" aria-label="Close">×</button><div id="why-body"></div></div></div>
+</div>
+<script type="module" src="bundle.mjs"></script>
+</body>
 </html>

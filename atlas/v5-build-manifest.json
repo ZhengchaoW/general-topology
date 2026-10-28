@@ -1,11 +1,5 @@
 {
-  "baseCommit": "a512e4955c01da707e12a2bda6426aa22cb606fb",
-  "branch": "codex/full-course-atlas",
-  "deliveryDirectory": "dist",
-  "fileCount": 121,
-  "bytes": 21205877,
-  "filesDigestSha256": "f313ac13fd375d374d3dccd60a28eb0700b89100724338bc3e181879366d85fe",
-  "sourceSha256": "72086f7e37384fb62f9a7d2732bee297722d98832eed3d4ccacfa6c83901b0f2",
+  "version": 5,
   "counts": {
     "regions": 7,
     "modeledRegions": 7,
@@ -127,613 +121,565 @@
     ],
     "coverageDescription": "422/422 numbered environments; 7/7 chapters implemented. Every numbered source passage is retained in the inventory. Proof structure remains pending teacher review.",
     "containedDefinitions": 15,
-    "localClaims": 2
+    "localClaims": 2,
+    "defaultDisplayRelationships": 1378,
+    "crossChapterRelationships": 436
   },
-  "files": [
+  "sourceSha256": "72086f7e37384fb62f9a7d2732bee297722d98832eed3d4ccacfa6c83901b0f2",
+  "baselineManifestCompared": "/Users/mozhengchao/Documents/Codex/2026-10-26/task/general-topology-network/site/docs/full-course-build-manifest.json",
+  "integrity": [
     {
-      "path": "dist/app.mjs",
+      "folder": "data",
+      "files": 8,
+      "byteIdentical": true
+    },
+    {
+      "folder": "source",
+      "files": 102,
+      "byteIdentical": true
+    },
+    {
+      "folder": "fonts",
+      "files": 5,
+      "byteIdentical": true
+    }
+  ],
+  "files": {
+    "app.js": {
+      "bytes": 5261,
+      "sha256": "9706867c552e2e4ea09055fa0e2c1d5648d461ac3b327d653afd7d07c4d1b0df"
+    },
+    "app.mjs": {
       "bytes": 73690,
       "sha256": "a272ba42990928bd2ffb5cb8076a0c5dbf671a5db2a09bb1be34ebc3d81b348b"
     },
-    {
-      "path": "dist/data/atlas.json",
+    "blocks.css": {
+      "bytes": 9824,
+      "sha256": "860d73bc5d9c8eb5a9e411cd52d721fcfab947366ecdfbfcb7a84f3858c53055"
+    },
+    "blocks.js": {
+      "bytes": 14089,
+      "sha256": "5df598947536490f5243604c26c9d3a42ae4d641d76f77a4877c9043d0d02720"
+    },
+    "bundle.mjs": {
+      "bytes": 374145,
+      "sha256": "43c6fc58994e858b78e9f3dcd68bddba977a674d38d225dd8df9e9765a9909ac"
+    },
+    "canvas.js": {
+      "bytes": 10834,
+      "sha256": "bb0647042353cb17702c588d8a233f188009223a25f2ad0a87d831ed11792ded"
+    },
+    "core.js": {
+      "bytes": 14578,
+      "sha256": "e9523ab7da955a6be068b89fea1461c3cea332f235adf10ba301f2cc9fa9529c"
+    },
+    "data/atlas.json": {
       "bytes": 5117080,
       "sha256": "facd0b3c488d455952520b6af7aff189f8f82935e0dfedb7f147eddaef848820"
     },
-    {
-      "path": "dist/data/course-inventory.json",
+    "data/course-inventory.json": {
       "bytes": 530342,
       "sha256": "466b9e4d6058c1241e33c113cefbb5e05c5215a2084b85ad71d2314416fc6bbf"
     },
-    {
-      "path": "dist/data/display-manifest.json",
+    "data/display-manifest.json": {
       "bytes": 1591028,
       "sha256": "8ad4f6c56dcd70e11029668117c74541ecfae793500627160ffc63e1da5b929e"
     },
-    {
-      "path": "dist/data/layout.json",
+    "data/layout.json": {
       "bytes": 101413,
       "sha256": "522e78ae972e0ea048432eede96def200219d269f5740fff98e08386b30ab495"
     },
-    {
-      "path": "dist/data/pdf-pages.json",
+    "data/pdf-pages.json": {
       "bytes": 241356,
       "sha256": "c7fd6110866284cc696436fef2319db2d0601301a7f786b1c06689bc0a72955b"
     },
-    {
-      "path": "dist/data/review-notes.json",
+    "data/review-notes.json": {
       "bytes": 21573,
       "sha256": "2da94aa77249a565c331bb9b818cf910b5de06babbd1170ada4ba5f6d65355ba"
     },
-    {
-      "path": "dist/data/source-facsimile-manifest.json",
+    "data/source-facsimile-manifest.json": {
       "bytes": 6603,
       "sha256": "3510a2c2c0d0c25ecaf5e75d8bb0e3cbe8119d676b95de88c057fb5e881231a0"
     },
-    {
-      "path": "dist/data/source-text.json",
+    "data/source-text.json": {
       "bytes": 944511,
       "sha256": "97df261beded120b1640a2b7392f18436426090dae93ce766f69b9e63f26574b"
     },
-    {
-      "path": "dist/fonts/OFL.txt",
+    "desk.css": {
+      "bytes": 5057,
+      "sha256": "fa78fb4cfafc0d98f6d3730e4fd8044d7ff46832292d8f50fbe1e1e90da051ac"
+    },
+    "desk.js": {
+      "bytes": 6726,
+      "sha256": "dce24cf541230547b24b95c11d92cc4afb17e6dd6fe0dd22fab162e129e9145b"
+    },
+    "facsimile-crops.js": {
+      "bytes": 249782,
+      "sha256": "8c70aba248a99beabfb50b4f9cf6fcf9667ccce4cf9de8c9c5918dffa109a293"
+    },
+    "fonts/OFL.txt": {
       "bytes": 4520,
       "sha256": "62c0967a997b9691326d35b1f90baf085a557327b711618bc4161325ce1bb1b2"
     },
-    {
-      "path": "dist/fonts/stix-two-math-symbols.woff2",
+    "fonts/stix-two-math-symbols.woff2": {
       "bytes": 67640,
       "sha256": "e5dcd255b71c95fac4714e8a2917d226623a2ac2583f3a5dce2c1acbaaf837c9"
     },
-    {
-      "path": "dist/fonts/stix-two-text-400Regular.woff2",
+    "fonts/stix-two-text-400Regular.woff2": {
       "bytes": 42112,
       "sha256": "843b7215cf76709c10d069ba142a5cefb2fb3ed5fa36e165c4638d8c69274753"
     },
-    {
-      "path": "dist/fonts/stix-two-text-400Regular_Italic.woff2",
+    "fonts/stix-two-text-400Regular_Italic.woff2": {
       "bytes": 45024,
       "sha256": "604b5ecad2faeb08131046e87a81bfb9264a5af449334cdee225f233f6a21027"
     },
-    {
-      "path": "dist/fonts/stix-two-text-600SemiBold.woff2",
+    "fonts/stix-two-text-600SemiBold.woff2": {
       "bytes": 43064,
       "sha256": "a4cd3c135fc761be464ea02f1a226362c3abd8ea7dcc9bf7f85ccb196768cd01"
     },
-    {
-      "path": "dist/graph.mjs",
+    "graph.mjs": {
       "bytes": 21031,
       "sha256": "e8d60b618590bb58bef9c41b1f9367244dffebec57515d54c09abbd665cc95f1"
     },
-    {
-      "path": "dist/index.html",
-      "bytes": 1126,
-      "sha256": "5577a4f15d24f82516ee3f62a0a794d4437253ccab202f07ce23e569f071bc72"
+    "hyper.js": {
+      "bytes": 30911,
+      "sha256": "685e2d2c718d74e88700d0e5bb1b89fbc2e193abfa29b6e9615b239e057986d0"
     },
-    {
-      "path": "dist/renderer.mjs",
+    "index.html": {
+      "bytes": 1910,
+      "sha256": "f92057b90021955fcfd39d8c16b99f1a9140d721608979c74115e7cc444c5db4"
+    },
+    "renderer.mjs": {
       "bytes": 20717,
       "sha256": "d20f790c41beca734fee9eab9ff7e1f922ba69a77c200ff57b8c56224046cae9"
     },
-    {
-      "path": "dist/source/General-Topology-lecture-notes-2025-101pages.pdf",
+    "source/General-Topology-lecture-notes-2025-101pages.pdf": {
       "bytes": 923677,
       "sha256": "72086f7e37384fb62f9a7d2732bee297722d98832eed3d4ccacfa6c83901b0f2"
     },
-    {
-      "path": "dist/source/pages/page-001.webp",
+    "source/pages/page-001.webp": {
       "bytes": 103058,
       "sha256": "920dd06666f63d8bde361a644bd19d1d18bc6def5de62dd46cc415b754ff4f9a"
     },
-    {
-      "path": "dist/source/pages/page-002.webp",
+    "source/pages/page-002.webp": {
       "bytes": 32334,
       "sha256": "506f24ada835fd783704d9a333480f3b37ecf315384cef4695a528e8a41119d6"
     },
-    {
-      "path": "dist/source/pages/page-003.webp",
+    "source/pages/page-003.webp": {
       "bytes": 96752,
       "sha256": "039dc86f505f8d45ed7b70465656b8b37b247f2703d0add61d2d6cc163998ce7"
     },
-    {
-      "path": "dist/source/pages/page-004.webp",
+    "source/pages/page-004.webp": {
       "bytes": 105036,
       "sha256": "a5f91d7138c7d87959657a09fdc31ce83af6588ab3922e29001d86405c8a7285"
     },
-    {
-      "path": "dist/source/pages/page-005.webp",
+    "source/pages/page-005.webp": {
       "bytes": 103324,
       "sha256": "6a4d0e447e5d00030d2b2936cd8c3d396c3e3442d95f50df3d7d63e626624d62"
     },
-    {
-      "path": "dist/source/pages/page-006.webp",
+    "source/pages/page-006.webp": {
       "bytes": 107508,
       "sha256": "e1ef502890f4a619639201e2abfe4da3e311f67286690b5953ba2164b26ac83e"
     },
-    {
-      "path": "dist/source/pages/page-007.webp",
+    "source/pages/page-007.webp": {
       "bytes": 108232,
       "sha256": "d35e325159ce4a8d16a01d0a1216b53f1a06fd1e38ad0e277afbdc64e0e4816b"
     },
-    {
-      "path": "dist/source/pages/page-008.webp",
+    "source/pages/page-008.webp": {
       "bytes": 55426,
       "sha256": "d9884fda2c3d6c18e9e7645cd338bc9ea91ca59becfba8327bfec07007eca9ae"
     },
-    {
-      "path": "dist/source/pages/page-009.webp",
+    "source/pages/page-009.webp": {
       "bytes": 131460,
       "sha256": "3be215ba3f1eb96577e848e9df62e969385cd195e8a9902585ae13863bbb01b1"
     },
-    {
-      "path": "dist/source/pages/page-010.webp",
+    "source/pages/page-010.webp": {
       "bytes": 115760,
       "sha256": "1e6a3a1cfe6f2cb93a53cbe4b1de2570874bc6a0893d75fbc113106ae6fb7558"
     },
-    {
-      "path": "dist/source/pages/page-011.webp",
+    "source/pages/page-011.webp": {
       "bytes": 102362,
       "sha256": "75f766a4c5086daee1b21501fd360d2abef50d97128deec1ab5d226f861b67ac"
     },
-    {
-      "path": "dist/source/pages/page-012.webp",
+    "source/pages/page-012.webp": {
       "bytes": 133858,
       "sha256": "540339fba7d2ebfdd155c0c050da68380522950a653113208666b8d74621ba6c"
     },
-    {
-      "path": "dist/source/pages/page-013.webp",
+    "source/pages/page-013.webp": {
       "bytes": 69806,
       "sha256": "577a12aced6f3d59999e5588dab7db14d7fbe9b36f1c501ef4cd11929d62715f"
     },
-    {
-      "path": "dist/source/pages/page-014.webp",
+    "source/pages/page-014.webp": {
       "bytes": 116126,
       "sha256": "e779405f142d7bc018a02b7350eac3288d2b7ad7abd9ca28af296617a4e2f563"
     },
-    {
-      "path": "dist/source/pages/page-015.webp",
+    "source/pages/page-015.webp": {
       "bytes": 108692,
       "sha256": "3448768d7db0bdcbf82dfaf82860f1af9f016d932015298e214c1fd22fffe039"
     },
-    {
-      "path": "dist/source/pages/page-016.webp",
+    "source/pages/page-016.webp": {
       "bytes": 80164,
       "sha256": "31353943a8727e1fa74b27e3ca234a980db4b6718ce05087207c7341d34645b0"
     },
-    {
-      "path": "dist/source/pages/page-017.webp",
+    "source/pages/page-017.webp": {
       "bytes": 104658,
       "sha256": "d41046fb9bebc536ceaa42bc827eea0f068bf24e7fb5ddd129b697f782f861cd"
     },
-    {
-      "path": "dist/source/pages/page-018.webp",
+    "source/pages/page-018.webp": {
       "bytes": 110568,
       "sha256": "1c22ab2491d755fdccbe07da89ce7464fad8542dfe77cfa59c34f3f41bb12812"
     },
-    {
-      "path": "dist/source/pages/page-019.webp",
+    "source/pages/page-019.webp": {
       "bytes": 102856,
       "sha256": "df162dacb024067220305ded44dd825419acc9b25073490d8738b5c249da00ab"
     },
-    {
-      "path": "dist/source/pages/page-020.webp",
+    "source/pages/page-020.webp": {
       "bytes": 90658,
       "sha256": "8e13da40b424ac31acf05e3395792d26ddc0ac63412623cd6493584ab11ab0eb"
     },
-    {
-      "path": "dist/source/pages/page-021.webp",
+    "source/pages/page-021.webp": {
       "bytes": 104990,
       "sha256": "c858a3d286a1121d59d3f7c5a7fbc7807f282373aa9cc4471a81d071f5f6d5ad"
     },
-    {
-      "path": "dist/source/pages/page-022.webp",
+    "source/pages/page-022.webp": {
       "bytes": 57578,
       "sha256": "8470aa137b0b45419952e2396223a504b6e0650038fbd7214f57b021e1130eb2"
     },
-    {
-      "path": "dist/source/pages/page-023.webp",
+    "source/pages/page-023.webp": {
       "bytes": 121058,
       "sha256": "5f4303d7db838f40ddd579fb5c0860f9014428cc8d025c6b8facdcd83900d9cb"
     },
-    {
-      "path": "dist/source/pages/page-024.webp",
+    "source/pages/page-024.webp": {
       "bytes": 118356,
       "sha256": "862139d4eb8d0ee9575a5921facc3befe6feb015b95c57110f1095e1f35c79f6"
     },
-    {
-      "path": "dist/source/pages/page-025.webp",
+    "source/pages/page-025.webp": {
       "bytes": 104980,
       "sha256": "b46e20926e6f27978a13dc5b56fb078531762c32f34067cf9432fa1023446a0a"
     },
-    {
-      "path": "dist/source/pages/page-026.webp",
+    "source/pages/page-026.webp": {
       "bytes": 105534,
       "sha256": "157606648bed4212e90d5f529bf4ceea57e16f572b3d4ecec040dc7880da6865"
     },
-    {
-      "path": "dist/source/pages/page-027.webp",
+    "source/pages/page-027.webp": {
       "bytes": 110026,
       "sha256": "1cb93c3ade54e5b854fb122c38b3ef6d509e06a5081e1041445046b90970371b"
     },
-    {
-      "path": "dist/source/pages/page-028.webp",
+    "source/pages/page-028.webp": {
       "bytes": 145676,
       "sha256": "fc24792bad7152eee0afd0dbcc47739c7ee265da7a465808c9a9ea70e7d9b07d"
     },
-    {
-      "path": "dist/source/pages/page-029.webp",
+    "source/pages/page-029.webp": {
       "bytes": 78050,
       "sha256": "d153efa6d6f61f434814e177c8cdf8fa44aa46fe4a713895d8ad1c7da814520e"
     },
-    {
-      "path": "dist/source/pages/page-030.webp",
+    "source/pages/page-030.webp": {
       "bytes": 102412,
       "sha256": "01181b559d380cca64f07fb668139c66183cea2587229b2bd14cc8baaeb656a1"
     },
-    {
-      "path": "dist/source/pages/page-031.webp",
+    "source/pages/page-031.webp": {
       "bytes": 70750,
       "sha256": "a089b94376a1e3101ec535de3e2c1fd4bfb54e97ae047a862cb85c0e2a9efd9d"
     },
-    {
-      "path": "dist/source/pages/page-032.webp",
+    "source/pages/page-032.webp": {
       "bytes": 86044,
       "sha256": "273e65ef5cb9429ad749b2b0028ae935b9a179845dcb700e3017bd69a9bd2cf6"
     },
-    {
-      "path": "dist/source/pages/page-033.webp",
+    "source/pages/page-033.webp": {
       "bytes": 97296,
       "sha256": "907596bfdc55fc20ae5a24c8007937f1e6d233915966a7bf49470e7f2cd749b3"
     },
-    {
-      "path": "dist/source/pages/page-034.webp",
+    "source/pages/page-034.webp": {
       "bytes": 104768,
       "sha256": "cd1c0d8f44bfc9a29454bdb06be108b51a06b49a3226b69ab4ac0e325da562df"
     },
-    {
-      "path": "dist/source/pages/page-035.webp",
+    "source/pages/page-035.webp": {
       "bytes": 100048,
       "sha256": "d721bab69c116ea30f6bf3ffd376c08632f4d2c3acc546925a18c2abb388b088"
     },
-    {
-      "path": "dist/source/pages/page-036.webp",
+    "source/pages/page-036.webp": {
       "bytes": 101388,
       "sha256": "a194bc143e55b6fa2e6934b291732308542613241197f69d085746eb746754ed"
     },
-    {
-      "path": "dist/source/pages/page-037.webp",
+    "source/pages/page-037.webp": {
       "bytes": 99250,
       "sha256": "58198648c558c71fb76cceafa32e0060de4aa786e0044454d193e272f7163b0e"
     },
-    {
-      "path": "dist/source/pages/page-038.webp",
+    "source/pages/page-038.webp": {
       "bytes": 43368,
       "sha256": "938588325734b4bf3fcaab826b8a20d6023df402dcadce4fb2dc2ddf88c20aa4"
     },
-    {
-      "path": "dist/source/pages/page-039.webp",
+    "source/pages/page-039.webp": {
       "bytes": 95338,
       "sha256": "2c0d5b1dfaac4ca6e9b76626fbf34605e69070a7b0b7901a910df4241670eba9"
     },
-    {
-      "path": "dist/source/pages/page-040.webp",
+    "source/pages/page-040.webp": {
       "bytes": 118704,
       "sha256": "efe91bc13066bfa072f0cde12a7134b24532b963a84ca7bd3076373fe21af8b1"
     },
-    {
-      "path": "dist/source/pages/page-041.webp",
+    "source/pages/page-041.webp": {
       "bytes": 113306,
       "sha256": "b180bfbc7df8f66fbdc02a0dd00604b5d985e2842e94138d90dac192577c227d"
     },
-    {
-      "path": "dist/source/pages/page-042.webp",
+    "source/pages/page-042.webp": {
       "bytes": 104210,
       "sha256": "d7a628245eb0d37de057f44a01e66f825ebdac417e5eb04d29c5b94d6fd80d1d"
     },
-    {
-      "path": "dist/source/pages/page-043.webp",
+    "source/pages/page-043.webp": {
       "bytes": 136190,
       "sha256": "c9d0c803560dbe95218b4b9da4350d4c1fdf62c26c230cdf7f3ebd516f3dde39"
     },
-    {
-      "path": "dist/source/pages/page-044.webp",
+    "source/pages/page-044.webp": {
       "bytes": 126718,
       "sha256": "f9f02768ed266c6ed5bb36dc9108fe0e4ca2b6333ffd7da41608f1c937625643"
     },
-    {
-      "path": "dist/source/pages/page-045.webp",
+    "source/pages/page-045.webp": {
       "bytes": 110334,
       "sha256": "e17da50747fc091ca17b14c6a761df0ceaf8c5867aa797183f5725fd02e8c2cf"
     },
-    {
-      "path": "dist/source/pages/page-046.webp",
+    "source/pages/page-046.webp": {
       "bytes": 108644,
       "sha256": "7943030d0e5acf703f8937d1287969130daa50f1a95f84d0ec070ea1378a06e2"
     },
-    {
-      "path": "dist/source/pages/page-047.webp",
+    "source/pages/page-047.webp": {
       "bytes": 119530,
       "sha256": "bd876106a8d2346f31b4563dc47168213c74423be0c5a481e87b3a685fe48a5a"
     },
-    {
-      "path": "dist/source/pages/page-048.webp",
+    "source/pages/page-048.webp": {
       "bytes": 114380,
       "sha256": "bfd39a28348c4318e855058a40e9aa7029075e36c1c64001b34c7f4a1b0ea500"
     },
-    {
-      "path": "dist/source/pages/page-049.webp",
+    "source/pages/page-049.webp": {
       "bytes": 106112,
       "sha256": "c45aa8849f43a05bbefc80b9569996098c4a2b49673e6bc7fc0ade6de8fb7cb0"
     },
-    {
-      "path": "dist/source/pages/page-050.webp",
+    "source/pages/page-050.webp": {
       "bytes": 83874,
       "sha256": "6db44d8fa12e294b26efc4792049798729eb449444cd29905a8ae114111d8e01"
     },
-    {
-      "path": "dist/source/pages/page-051.webp",
+    "source/pages/page-051.webp": {
       "bytes": 126344,
       "sha256": "32076cdad2244c615822a485905009cacc1c528428f0999091bb2c7319eb3b56"
     },
-    {
-      "path": "dist/source/pages/page-052.webp",
+    "source/pages/page-052.webp": {
       "bytes": 66964,
       "sha256": "09ac111d40432b8d3026748a5e0865ee92867842785275fb4a357ed9699bad5a"
     },
-    {
-      "path": "dist/source/pages/page-053.webp",
+    "source/pages/page-053.webp": {
       "bytes": 100112,
       "sha256": "e545fae24043c36f0ebe279412c7ecd7db32103383cfaa128b3898edd114cced"
     },
-    {
-      "path": "dist/source/pages/page-054.webp",
+    "source/pages/page-054.webp": {
       "bytes": 93450,
       "sha256": "473f8e34de3542b0f3c9f83908c4fba70c39688cc0f0bccc30143e15043a205e"
     },
-    {
-      "path": "dist/source/pages/page-055.webp",
+    "source/pages/page-055.webp": {
       "bytes": 116194,
       "sha256": "fdde51cc56061640129b1b7f0df30de5afcb203db1cd0e25ac0d39bff4bebfd2"
     },
-    {
-      "path": "dist/source/pages/page-056.webp",
+    "source/pages/page-056.webp": {
       "bytes": 137808,
       "sha256": "f37cf65e09bcb37c98d4fe2a9607fa5b57d7ccffb9184bc204c7ee19ae1ab756"
     },
-    {
-      "path": "dist/source/pages/page-057.webp",
+    "source/pages/page-057.webp": {
       "bytes": 55144,
       "sha256": "102b0c668d26705b189f9a6fbb9e71c3fc341fd18b08228b9caeef532785f442"
     },
-    {
-      "path": "dist/source/pages/page-058.webp",
+    "source/pages/page-058.webp": {
       "bytes": 123130,
       "sha256": "fc65512eeef5226a8743afec8f610799bdd13eaf9a30f1dc7f21ecbc217f69e5"
     },
-    {
-      "path": "dist/source/pages/page-059.webp",
+    "source/pages/page-059.webp": {
       "bytes": 145310,
       "sha256": "457aafbfe651d8ace7274dba7db2936cf6dec5e7970b7e37b822265c17778d61"
     },
-    {
-      "path": "dist/source/pages/page-060.webp",
+    "source/pages/page-060.webp": {
       "bytes": 125640,
       "sha256": "ee92eeb3f5af73606e03d74ca606707996b0f90ec47fde893dd6bf552382b4eb"
     },
-    {
-      "path": "dist/source/pages/page-061.webp",
+    "source/pages/page-061.webp": {
       "bytes": 112754,
       "sha256": "423b9bf1977293e3333563283acabc2d71a9dac318c945eb69ccda11793168b3"
     },
-    {
-      "path": "dist/source/pages/page-062.webp",
+    "source/pages/page-062.webp": {
       "bytes": 120800,
       "sha256": "22efe4300a4578a50b1b2b3dd3be6ce482522701924a536acbb6ba2338c11333"
     },
-    {
-      "path": "dist/source/pages/page-063.webp",
+    "source/pages/page-063.webp": {
       "bytes": 82190,
       "sha256": "d768a9466c25bbbd475985ce8103769a8053b9c8606e065f8ced184a9d2d38f1"
     },
-    {
-      "path": "dist/source/pages/page-064.webp",
+    "source/pages/page-064.webp": {
       "bytes": 126714,
       "sha256": "6d1ad858f998a8f973f942e2db141e708b9b8d561ea22d5184836712bfaa8a04"
     },
-    {
-      "path": "dist/source/pages/page-065.webp",
+    "source/pages/page-065.webp": {
       "bytes": 119432,
       "sha256": "d7ea576a405a5952495cd51444760d5ea116e15c458e9f388c4b111f75147e0d"
     },
-    {
-      "path": "dist/source/pages/page-066.webp",
+    "source/pages/page-066.webp": {
       "bytes": 127788,
       "sha256": "f18bf2306e37ce48a4bd784e241f2b2f1aec12875f0b934dc84a6bfe84a2a216"
     },
-    {
-      "path": "dist/source/pages/page-067.webp",
+    "source/pages/page-067.webp": {
       "bytes": 115104,
       "sha256": "8c8ee2111942d84816fc53e6b9f3ed71d0d098cda127c45499bf867ac0e10c8e"
     },
-    {
-      "path": "dist/source/pages/page-068.webp",
+    "source/pages/page-068.webp": {
       "bytes": 137678,
       "sha256": "f80f5112f9dbd32ddb6b81ee3d6b8e36bbd2e1e8376fd558f3c24c1e3a2baa18"
     },
-    {
-      "path": "dist/source/pages/page-069.webp",
+    "source/pages/page-069.webp": {
       "bytes": 144866,
       "sha256": "e59ca0324fae5ef3db15a35be64d5f03d620ac36f822e787da5619c8f4ec8413"
     },
-    {
-      "path": "dist/source/pages/page-070.webp",
+    "source/pages/page-070.webp": {
       "bytes": 136016,
       "sha256": "d644fa176265e44424a99a1e272fd0240015add115caa68edf47386f87e059ed"
     },
-    {
-      "path": "dist/source/pages/page-071.webp",
+    "source/pages/page-071.webp": {
       "bytes": 120462,
       "sha256": "7876c377f18d74ac9064ace551371b5e47fd55c8d73a0d117cc5c4d04c710665"
     },
-    {
-      "path": "dist/source/pages/page-072.webp",
+    "source/pages/page-072.webp": {
       "bytes": 142600,
       "sha256": "a547f20c12ab86065e45951fc0db2d6c3bb743e44451762265afd88051865093"
     },
-    {
-      "path": "dist/source/pages/page-073.webp",
+    "source/pages/page-073.webp": {
       "bytes": 129924,
       "sha256": "4d8aa4f0ea4306c7d69974351763d78ff01d35f2d5f2bac9953a4b0d30d70679"
     },
-    {
-      "path": "dist/source/pages/page-074.webp",
+    "source/pages/page-074.webp": {
       "bytes": 150250,
       "sha256": "0d6d711be53ae375a8b859f567e66fbeb9926fdbd1bd30a4e9a2172a90391c2f"
     },
-    {
-      "path": "dist/source/pages/page-075.webp",
+    "source/pages/page-075.webp": {
       "bytes": 128206,
       "sha256": "aef8bcc76ff2cf0c12169c2cb08d6d96d0b9ab4ef537c1d3ef32fc468710e404"
     },
-    {
-      "path": "dist/source/pages/page-076.webp",
+    "source/pages/page-076.webp": {
       "bytes": 57626,
       "sha256": "c6560c45453516fa6b02119427d00958af154718319136a31390d1bbee50f269"
     },
-    {
-      "path": "dist/source/pages/page-077.webp",
+    "source/pages/page-077.webp": {
       "bytes": 106398,
       "sha256": "53dc3872a5398d41293f7d3c8bfb643b23f1618deefc64a24e3e611b6af6c5dc"
     },
-    {
-      "path": "dist/source/pages/page-078.webp",
+    "source/pages/page-078.webp": {
       "bytes": 131518,
       "sha256": "415333bb2061c1e0e607e80f4f10ba27cbcdf7dd4c4a7d107ae63edcbcc28e27"
     },
-    {
-      "path": "dist/source/pages/page-079.webp",
+    "source/pages/page-079.webp": {
       "bytes": 143850,
       "sha256": "1ae5816200aca3a212c710c208492e18eb3a774a8859af06903a97f03b7c9fa1"
     },
-    {
-      "path": "dist/source/pages/page-080.webp",
+    "source/pages/page-080.webp": {
       "bytes": 141084,
       "sha256": "1e69d5f991a76848ba876d8c1924bd0fa5f4d0932408ebed58312b679767db80"
     },
-    {
-      "path": "dist/source/pages/page-081.webp",
+    "source/pages/page-081.webp": {
       "bytes": 142982,
       "sha256": "a4e8e600913a14ef517a2ddf587a0de58bfdb3ce1ce98a4eee8573f02fca3ccd"
     },
-    {
-      "path": "dist/source/pages/page-082.webp",
+    "source/pages/page-082.webp": {
       "bytes": 153448,
       "sha256": "5246bf2226827abe7299c4363595f26e248ee1fb7594579678f34115f7daca93"
     },
-    {
-      "path": "dist/source/pages/page-083.webp",
+    "source/pages/page-083.webp": {
       "bytes": 127528,
       "sha256": "8a9aaa2b20284471cc9be6e4687d11b0644b1b7850b1a434358a56ec1084396e"
     },
-    {
-      "path": "dist/source/pages/page-084.webp",
+    "source/pages/page-084.webp": {
       "bytes": 150236,
       "sha256": "7b9e334c78bc591920892a4ba46f5fee4e1295be8cf337c8a3edddf2bbbe20dc"
     },
-    {
-      "path": "dist/source/pages/page-085.webp",
+    "source/pages/page-085.webp": {
       "bytes": 151306,
       "sha256": "b61808e3c0153860b7cf79a1a7f2aad6603a55a15ee46e8bd302f10b48151fd2"
     },
-    {
-      "path": "dist/source/pages/page-086.webp",
+    "source/pages/page-086.webp": {
       "bytes": 131846,
       "sha256": "83ace07850582b7bd41766adc939e9aacbbbc22fcc9d9588ee5f5f4d8c12ff16"
     },
-    {
-      "path": "dist/source/pages/page-087.webp",
+    "source/pages/page-087.webp": {
       "bytes": 127658,
       "sha256": "b12cc7a045e47e4eebff00b46f2a26c96bd7520b514a898fb20e0d4ba6770852"
     },
-    {
-      "path": "dist/source/pages/page-088.webp",
+    "source/pages/page-088.webp": {
       "bytes": 138950,
       "sha256": "e9393db298f6a1c22f008b29253802ead46010319e0d72609cb57489413434a2"
     },
-    {
-      "path": "dist/source/pages/page-089.webp",
+    "source/pages/page-089.webp": {
       "bytes": 125124,
       "sha256": "cfbc93b55df905dc09075d72acd6e457e3258920c4a5228cad8547aab458c402"
     },
-    {
-      "path": "dist/source/pages/page-090.webp",
+    "source/pages/page-090.webp": {
       "bytes": 142990,
       "sha256": "8c93883d5cca35b3a92861d502abff3ba1b70528534aa2f7e2c5dd896a73cd2f"
     },
-    {
-      "path": "dist/source/pages/page-091.webp",
+    "source/pages/page-091.webp": {
       "bytes": 140526,
       "sha256": "c0fa9c274ef47b3e04a4358cbfd2261832d9aaaa6568cb9ed248f6ccedefb046"
     },
-    {
-      "path": "dist/source/pages/page-092.webp",
+    "source/pages/page-092.webp": {
       "bytes": 129580,
       "sha256": "c20d9056479e1e9f9e388f1e2abb807da43e22fd9511fc82bac3df7f975b9191"
     },
-    {
-      "path": "dist/source/pages/page-093.webp",
+    "source/pages/page-093.webp": {
       "bytes": 108076,
       "sha256": "ded32716d45549d8f21cf3ebdf07ddd8588bfe199997b32eae08070561cbe446"
     },
-    {
-      "path": "dist/source/pages/page-094.webp",
+    "source/pages/page-094.webp": {
       "bytes": 127052,
       "sha256": "718ee557b1eb0b36cf6a78af2aa79805597320fe0ccfc6e85f563ccb13dc23ac"
     },
-    {
-      "path": "dist/source/pages/page-095.webp",
+    "source/pages/page-095.webp": {
       "bytes": 118360,
       "sha256": "0f5bac603580ad2443972eb3bf27d812b93323b070c8fd6a0503e6e589f565c3"
     },
-    {
-      "path": "dist/source/pages/page-096.webp",
+    "source/pages/page-096.webp": {
       "bytes": 134300,
       "sha256": "04bd481862d163746c1c4978516bb0d929406839cf113c64f7d7665d41d42bb8"
     },
-    {
-      "path": "dist/source/pages/page-097.webp",
+    "source/pages/page-097.webp": {
       "bytes": 139524,
       "sha256": "12f7a462708be283f3773ee79534a289260e011c23b04d157629119d61f8896f"
     },
-    {
-      "path": "dist/source/pages/page-098.webp",
+    "source/pages/page-098.webp": {
       "bytes": 137864,
       "sha256": "cff97c1c72fcbf2569a650ac3f6385f9e989bf24eb0e7d3314d9b1c437f603a4"
     },
-    {
-      "path": "dist/source/pages/page-099.webp",
+    "source/pages/page-099.webp": {
       "bytes": 129170,
       "sha256": "7fd9fd7352a1002e5d6d8cdef3629dd33dd2a696a1b363d57a8826748201439f"
     },
-    {
-      "path": "dist/source/pages/page-100.webp",
+    "source/pages/page-100.webp": {
       "bytes": 137294,
       "sha256": "4b89e27bfac5368e8ad0abcda3588d77894be09c38fc6352479aa387348d22f6"
     },
-    {
-      "path": "dist/source/pages/page-101.webp",
+    "source/pages/page-101.webp": {
       "bytes": 39552,
       "sha256": "d940210d333f9adb4591556c883ab352d818da90cf4e65c608d016835f86b534"
     },
-    {
-      "path": "dist/state.mjs",
+    "state.mjs": {
       "bytes": 2349,
       "sha256": "cda6f9d0f6ba5a13a52ad41c2b2e57853ae7e4c27b1b2ebf7a2f1e0bdfc2b745"
     },
-    {
-      "path": "dist/style.css",
-      "bytes": 40749,
-      "sha256": "bd11f0c7835738979546863582eb87e11da9b2aa620b2e116e878a9b92c4eb8f"
+    "style.css": {
+      "bytes": 7835,
+      "sha256": "8e798f3db4dbdf706d655603097b105855884945a2b56867b3f83fc543d3ea85"
+    },
+    "tree.js": {
+      "bytes": 2995,
+      "sha256": "cb5439e3e11fd9cd6892d6b54325e4a5d518aee6ab5159785eb40bb8423158f9"
+    },
+    "treeapp.js": {
+      "bytes": 9509,
+      "sha256": "19960278b17644659409997c4ed73257de7a83e8aa482ce31f81d9065d3260f2"
+    },
+    "ui.js": {
+      "bytes": 7685,
+      "sha256": "f2790f0a1ca3e5ddf526e653150276b3600fc33a19e9c4c82a7eaa4258586a23"
     }
-  ]
+  }
 }
