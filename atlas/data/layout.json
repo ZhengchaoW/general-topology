@@ -1,0 +1,4624 @@
+{
+  "version": "atlas-v3",
+  "algorithm": "Full course: chapter/page reading rows with deterministic ID-seeded displacement; labels placed in screen space. Small baseline networks retain bounded force layout.",
+  "desktop": {
+    "orientation": "horizontal",
+    "width": 2968,
+    "height": 2200,
+    "bands": [
+      {
+        "id": "sets",
+        "index": 1,
+        "label": "Set theory",
+        "start": 0,
+        "end": 518
+      },
+      {
+        "id": "metrics",
+        "index": 2,
+        "label": "Metric spaces",
+        "start": 518,
+        "end": 848
+      },
+      {
+        "id": "topology",
+        "index": 3,
+        "label": "Topological spaces and continuous functions",
+        "start": 848,
+        "end": 1460
+      },
+      {
+        "id": "convergence",
+        "index": 4,
+        "label": "Continuity and Convergence",
+        "start": 1460,
+        "end": 1790
+      },
+      {
+        "id": "separation",
+        "index": 5,
+        "label": "Separation and countability",
+        "start": 1790,
+        "end": 2120
+      },
+      {
+        "id": "compactness",
+        "index": 6,
+        "label": "Compactness",
+        "start": 2120,
+        "end": 2544
+      },
+      {
+        "id": "connectedness",
+        "index": 7,
+        "label": "Connectedness",
+        "start": 2544,
+        "end": 2968
+      }
+    ],
+    "depth": {
+      "gt:e001": 0,
+      "gt:e002": 1,
+      "gt:e003": 1,
+      "gt:e004": 2,
+      "gt:e005": 2,
+      "gt:e006": 2,
+      "gt:e007": 3,
+      "gt:e008": 4,
+      "gt:e009": 2,
+      "gt:e010": 1,
+      "gt:e011": 4,
+      "gt:e012": 1,
+      "gt:e013": 2,
+      "gt:e014": 3,
+      "gt:e015": 3,
+      "gt:e016": 2,
+      "gt:e017": 3,
+      "gt:e018": 4,
+      "gt:e019": 5,
+      "gt:n:example:1.1": 1,
+      "gt:n:definition:1.2": 0,
+      "gt:n:theorem:1.3": 2,
+      "gt:n:example:1.4": 0,
+      "gt:n:remark:1.5": 1,
+      "gt:n:definition:1.6": 1,
+      "gt:n:example:1.7": 2,
+      "gt:n:example:1.8": 3,
+      "gt:n:example:1.9": 2,
+      "gt:n:definition:1.10": 0,
+      "gt:n:definition:1.11": 1,
+      "gt:n:example:1.12": 2,
+      "gt:n:example:1.13": 2,
+      "gt:n:example:1.14": 2,
+      "gt:n:definition:1.15": 0,
+      "gt:n:example:1.16": 2,
+      "gt:n:definition:1.17": 0,
+      "gt:n:example:1.18": 1,
+      "gt:n:example:1.19": 1,
+      "gt:n:theorem:1.20": 2,
+      "gt:n:definition:1.21": 1,
+      "gt:n:example:1.22": 2,
+      "gt:n:example:1.23": 2,
+      "gt:n:example:1.24": 2,
+      "gt:n:example:1.25": 1,
+      "gt:n:definition:1.26": 2,
+      "gt:n:example:1.27": 2,
+      "gt:n:definition:1.28": 2,
+      "gt:n:example:1.29": 2,
+      "gt:n:example:1.30": 2,
+      "gt:n:definition:1.31": 2,
+      "gt:n:remark:1.32": 3,
+      "gt:n:definition:1.33": 3,
+      "gt:n:example:1.34": 4,
+      "gt:n:example:1.35": 4,
+      "gt:n:theorem:1.36": 4,
+      "gt:n:definition:1.37": 4,
+      "gt:n:definition:1.38": 4,
+      "gt:n:example:1.39": 5,
+      "gt:n:example:1.40": 4,
+      "gt:n:lemma:1.41": 4,
+      "gt:n:lemma:1.42": 5,
+      "gt:n:lemma:1.43": 4,
+      "gt:n:theorem:1.44": 5,
+      "gt:n:definition:1.45": 2,
+      "gt:n:proposition:1.46": 3,
+      "gt:n:definition:1.47": 2,
+      "gt:n:definition:1.48": 2,
+      "gt:n:example:1.49": 3,
+      "gt:n:proposition:1.50": 0,
+      "gt:n:theorem:1.51": 5,
+      "gt:n:remark:1.52": 4,
+      "gt:n:lemma:1.53": 3,
+      "gt:n:theorem:1.54": 6,
+      "gt:n:definition:1.55": 4,
+      "gt:n:lemma:1.56": 3,
+      "gt:n:theorem:1.57": 4,
+      "gt:n:corollary:1.58": 5,
+      "gt:n:corollary:1.59": 6,
+      "gt:n:corollary:1.60": 6,
+      "gt:n:definition:1.61": 3,
+      "gt:n:example:1.62": 3,
+      "gt:n:example:1.63": 4,
+      "gt:n:lemma:1.64": 4,
+      "gt:n:proposition:1.65": 0,
+      "gt:n:theorem:1.66": 5,
+      "gt:n:theorem:1.67": 4,
+      "gt:n:proposition:1.68": 0,
+      "gt:n:theorem:1.69": 4,
+      "gt:n:theorem:1.70": 4,
+      "gt:n:corollary:1.71": 5,
+      "gt:n:theorem:1.72": 3,
+      "gt:n:corollary:1.73": 5,
+      "gt:n:proposition:1.74": 5,
+      "gt:n:corollary:1.75": 0,
+      "gt:n:proposition:1.76": 4,
+      "gt:n:corollary:1.77": 0,
+      "gt:n:theorem:1.78": 3,
+      "gt:n:theorem:1.79": 5,
+      "gt:n:theorem:1.80": 3,
+      "gt:n:definition:2.1": 2,
+      "gt:n:example:2.2": 3,
+      "gt:n:definition:2.3": 3,
+      "gt:n:example:2.4": 4,
+      "gt:n:definition:2.5": 4,
+      "gt:n:definition:2.6": 3,
+      "gt:n:proposition:2.7": 5,
+      "gt:n:definition:2.8": 4,
+      "gt:n:proposition:2.9": 5,
+      "gt:n:definition:2.10": 3,
+      "gt:n:example:2.11": 4,
+      "gt:n:proposition:2.12": 4,
+      "gt:n:definition:2.13": 4,
+      "gt:n:proposition:2.14": 4,
+      "gt:n:corollary:2.15": 4,
+      "gt:n:theorem:2.16": 5,
+      "gt:n:theorem:2.17": 5,
+      "gt:n:definition:2.18": 0,
+      "gt:n:definition:2.19": 1,
+      "gt:n:theorem:2.20": 6,
+      "gt:n:lemma:2.21": 5,
+      "gt:n:definition:2.22": 3,
+      "gt:n:proposition:2.23": 4,
+      "gt:n:example:2.24": 5,
+      "gt:n:definition:2.25": 4,
+      "gt:n:example:2.26": 5,
+      "gt:n:theorem:2.27": 5,
+      "gt:n:example:2.28": 5,
+      "gt:n:proposition:3.3": 2,
+      "gt:n:remark:3.4": 2,
+      "gt:n:example:3.5": 1,
+      "gt:n:example:3.6": 4,
+      "gt:n:example:3.7": 1,
+      "gt:n:example:3.8": 1,
+      "gt:n:lemma:3.9": 3,
+      "gt:n:example:3.10": 1,
+      "gt:n:definition:3.11": 0,
+      "gt:n:remark:3.12": 1,
+      "gt:n:definition:3.13": 1,
+      "gt:n:example:3.14": 4,
+      "gt:n:example:3.15": 2,
+      "gt:n:example:3.16": 2,
+      "gt:n:proposition:3.17": 2,
+      "gt:n:proposition:3.18": 2,
+      "gt:n:proposition:3.19": 2,
+      "gt:n:example:3.20": 4,
+      "gt:n:definition:3.21": 1,
+      "gt:n:example:3.22": 2,
+      "gt:n:theorem:3.23": 2,
+      "gt:n:remark:3.24": 1,
+      "gt:n:example:3.25": 2,
+      "gt:n:definition:3.26": 2,
+      "gt:n:proposition:3.27": 3,
+      "gt:n:proposition:3.28": 3,
+      "gt:n:definition:3.29": 1,
+      "gt:n:remark:3.30": 3,
+      "gt:n:example:3.31": 2,
+      "gt:n:definition:3.32": 1,
+      "gt:n:theorem:3.33": 3,
+      "gt:n:definition:3.34": 3,
+      "gt:n:definition:3.35": 3,
+      "gt:n:proposition:3.36": 2,
+      "gt:n:example:3.37": 4,
+      "gt:n:example:3.38": 4,
+      "gt:n:example:3.39": 4,
+      "gt:n:example:3.40": 4,
+      "gt:n:definition:3.41": 2,
+      "gt:n:theorem:3.42": 3,
+      "gt:n:example:3.43": 4,
+      "gt:n:definition:3.44": 1,
+      "gt:n:theorem:3.45": 3,
+      "gt:n:example:3.47": 2,
+      "gt:n:lemma:3.48": 2,
+      "gt:n:lemma:3.49": 2,
+      "gt:n:theorem:3.50": 3,
+      "gt:n:theorem:3.51": 4,
+      "gt:n:remark:3.52": 4,
+      "gt:n:definition:3.53": 3,
+      "gt:n:theorem:3.54": 4,
+      "gt:n:example:3.56": 3,
+      "gt:n:theorem:3.57": 4,
+      "gt:n:remark:3.58": 3,
+      "gt:n:remark:3.59": 3,
+      "gt:n:remark:3.60": 3,
+      "gt:n:example:3.61": 3,
+      "gt:n:example:3.62": 3,
+      "gt:n:example:3.63": 3,
+      "gt:n:theorem:3.64": 5,
+      "gt:n:lemma:3.65": 2,
+      "gt:n:corollary:3.66": 3,
+      "gt:n:remark:3.67": 2,
+      "gt:n:theorem:3.68": 3,
+      "gt:n:theorem:3.70": 4,
+      "gt:n:example:3.71": 4,
+      "gt:n:example:3.72": 4,
+      "gt:n:example:3.73": 4,
+      "gt:n:example:3.75": 4,
+      "gt:n:lemma:3.76": 4,
+      "gt:n:definition:3.77": 1,
+      "gt:n:remark:3.78": 4,
+      "gt:n:theorem:3.79": 5,
+      "gt:n:example:3.80": 4,
+      "gt:n:definition:3.81": 2,
+      "gt:n:example:3.82": 3,
+      "gt:n:definition:3.83": 2,
+      "gt:n:remark:3.84": 3,
+      "gt:n:remark:3.85": 3,
+      "gt:n:example:3.86": 3,
+      "gt:n:example:3.87": 3,
+      "gt:n:theorem:3.88": 3,
+      "gt:n:definition:3.89": 0,
+      "gt:n:theorem:3.90": 3,
+      "gt:n:theorem:3.91": 6,
+      "gt:n:remark:3.92": 3,
+      "gt:n:lemma:3.93": 5,
+      "gt:n:theorem:3.94": 3,
+      "gt:n:example:3.95": 3,
+      "gt:n:example:3.96": 3,
+      "gt:n:definition:3.97": 3,
+      "gt:n:remark:3.98": 4,
+      "gt:n:definition:3.99": 4,
+      "gt:n:example:3.100": 5,
+      "gt:n:example:3.101": 5,
+      "gt:n:definition:3.102": 5,
+      "gt:n:proposition:3.103": 6,
+      "gt:n:theorem:3.104": 6,
+      "gt:n:example:3.105": 6,
+      "gt:n:example:3.106": 6,
+      "gt:n:example:3.107": 6,
+      "gt:n:theorem:3.108": 6,
+      "gt:n:example:3.109": 4,
+      "gt:n:definition:3.110": 3,
+      "gt:n:example:3.111": 4,
+      "gt:n:example:3.112": 4,
+      "gt:n:example:3.113": 4,
+      "gt:n:proposition:3.114": 4,
+      "gt:n:proposition:3.115": 6,
+      "gt:n:definition:3.116": 4,
+      "gt:n:remark:3.117": 5,
+      "gt:n:definition:3.118": 4,
+      "gt:n:theorem:3.119": 5,
+      "gt:n:example:3.120": 5,
+      "gt:n:example:3.121": 5,
+      "gt:n:example:3.122": 5,
+      "gt:n:definition:3.123": 0,
+      "gt:n:definition:3.124": 4,
+      "gt:n:proposition:3.125": 5,
+      "gt:n:example:3.126": 5,
+      "gt:n:example:3.127": 5,
+      "gt:n:theorem:3.128": 4,
+      "gt:n:theorem:3.129": 4,
+      "gt:n:lemma:3.130": 6,
+      "gt:n:lemma:3.131": 4,
+      "gt:n:lemma:3.132": 5,
+      "gt:n:theorem:3.133": 7,
+      "gt:n:corollary:3.134": 3,
+      "gt:n:definition:3.135": 4,
+      "gt:n:definition:3.136": 1,
+      "gt:n:definition:3.137": 5,
+      "gt:n:lemma:3.138": 5,
+      "gt:n:lemma:3.139": 5,
+      "gt:n:theorem:3.140": 6,
+      "gt:n:proposition:4.1": 3,
+      "gt:n:definition:4.2": 2,
+      "gt:n:problem:4.3": 5,
+      "gt:n:proposition:4.4": 3,
+      "gt:n:example:4.5": 4,
+      "gt:n:example:4.6": 5,
+      "gt:n:example:4.7": 3,
+      "gt:n:example:4.8": 3,
+      "gt:n:proposition:4.9": 3,
+      "gt:n:theorem:4.10": 4,
+      "gt:n:example:4.11": 4,
+      "gt:n:definition:4.12": 1,
+      "gt:n:remark:4.13": 2,
+      "gt:n:example:4.14": 2,
+      "gt:n:definition:4.15": 2,
+      "gt:n:definition:4.16": 3,
+      "gt:n:remark:4.17": 3,
+      "gt:n:example:4.18": 3,
+      "gt:n:example:4.19": 3,
+      "gt:n:theorem:4.20": 3,
+      "gt:n:theorem:4.21": 3,
+      "gt:n:definition:5.1": 2,
+      "gt:n:definition:5.2": 5,
+      "gt:n:example:5.3": 6,
+      "gt:n:example:5.4": 6,
+      "gt:n:remark:5.5": 6,
+      "gt:n:example:5.6": 6,
+      "gt:n:example:5.7": 6,
+      "gt:n:theorem:5.8": 6,
+      "gt:n:definition:5.9": 4,
+      "gt:n:example:5.10": 6,
+      "gt:n:example:5.11": 6,
+      "gt:n:example:5.12": 5,
+      "gt:n:theorem:5.13": 5,
+      "gt:n:definition:5.14": 4,
+      "gt:n:example:5.15": 5,
+      "gt:n:theorem:5.16": 5,
+      "gt:n:example:5.17": 3,
+      "gt:n:lemma:5.19": 2,
+      "gt:n:example:5.20": 2,
+      "gt:n:example:5.21": 2,
+      "gt:n:example:5.22": 4,
+      "gt:n:proposition:5.24": 3,
+      "gt:n:example:5.25": 4,
+      "gt:n:theorem:5.26": 6,
+      "gt:n:definition:5.27": 2,
+      "gt:n:remark:5.28": 3,
+      "gt:n:example:5.29": 3,
+      "gt:n:lemma:5.30": 3,
+      "gt:n:theorem:5.31": 4,
+      "gt:n:example:5.32": 3,
+      "gt:n:example:5.33": 3,
+      "gt:n:proposition:5.34": 3,
+      "gt:n:theorem:5.35": 5,
+      "gt:n:theorem:5.36": 5,
+      "gt:n:lemma:5.37": 5,
+      "gt:n:theorem:5.38": 7,
+      "gt:n:lemma:5.39": 6,
+      "gt:n:theorem:6.1": 3,
+      "gt:n:theorem:6.2": 3,
+      "gt:n:example:6.4": 2,
+      "gt:n:example:6.5": 2,
+      "gt:n:example:6.6": 2,
+      "gt:n:example:6.7": 3,
+      "gt:n:example:6.8": 2,
+      "gt:n:example:6.10": 2,
+      "gt:n:example:6.14": 2,
+      "gt:n:theorem:6.15": 4,
+      "gt:n:definition:6.16": 1,
+      "gt:n:theorem:6.17": 2,
+      "gt:n:corollary:6.19": 4,
+      "gt:n:proposition:6.21": 5,
+      "gt:n:theorem:6.22": 3,
+      "gt:n:theorem:6.23": 5,
+      "gt:n:theorem:6.24": 4,
+      "gt:n:corollary:6.25": 2,
+      "gt:n:theorem:6.26": 7,
+      "gt:n:definition:6.27": 3,
+      "gt:n:example:6.28": 4,
+      "gt:n:definition:6.29": 5,
+      "gt:n:theorem:6.30": 6,
+      "gt:n:definition:6.31": 3,
+      "gt:n:theorem:6.32": 4,
+      "gt:n:definition:6.33": 3,
+      "gt:n:theorem:6.34": 6,
+      "gt:n:example:6.35": 4,
+      "gt:n:example:6.36": 4,
+      "gt:n:definition:6.37": 4,
+      "gt:n:definition:6.38": 3,
+      "gt:n:example:6.39": 4,
+      "gt:n:proposition:6.40": 5,
+      "gt:n:theorem:6.41": 5,
+      "gt:n:definition:6.42": 3,
+      "gt:n:example:6.43": 4,
+      "gt:n:lemma:6.44": 5,
+      "gt:n:lemma:6.45": 5,
+      "gt:n:lemma:6.46": 4,
+      "gt:n:theorem:6.47": 6,
+      "gt:n:example:6.48": 2,
+      "gt:n:example:6.49": 4,
+      "gt:n:definition:6.50": 2,
+      "gt:n:example:6.51": 3,
+      "gt:n:example:6.52": 3,
+      "gt:n:example:6.53": 3,
+      "gt:n:theorem:6.54": 4,
+      "gt:n:example:6.55": 5,
+      "gt:n:definition:6.57": 0,
+      "gt:n:proposition:6.58": 2,
+      "gt:n:definition:6.59": 2,
+      "gt:n:example:6.60": 3,
+      "gt:n:example:6.61": 3,
+      "gt:n:lemma:6.62": 3,
+      "gt:n:theorem:6.63": 4,
+      "gt:n:lemma:6.64": 4,
+      "gt:n:theorem:6.65": 5,
+      "gt:n:example:6.66": 4,
+      "gt:n:definition:6.67": 3,
+      "gt:n:lemma:6.68": 5,
+      "gt:n:theorem:6.69": 6,
+      "gt:n:theorem:7.1": 5,
+      "gt:n:definition:7.2": 4,
+      "gt:n:remark:7.3": 5,
+      "gt:n:remark:7.4": 5,
+      "gt:n:example:7.5": 5,
+      "gt:n:example:7.6": 5,
+      "gt:n:example:7.7": 5,
+      "gt:n:theorem:7.8": 5,
+      "gt:n:lemma:7.9": 5,
+      "gt:n:theorem:7.10": 6,
+      "gt:n:theorem:7.11": 6,
+      "gt:n:theorem:7.12": 7,
+      "gt:n:example:7.13": 5,
+      "gt:n:example:7.14": 5,
+      "gt:n:example:7.15": 5,
+      "gt:n:definition:7.16": 3,
+      "gt:n:definition:7.17": 4,
+      "gt:n:theorem:7.18": 5,
+      "gt:n:theorem:7.19": 6,
+      "gt:n:theorem:7.20": 5,
+      "gt:n:definition:7.21": 3,
+      "gt:n:lemma:7.22": 6,
+      "gt:n:example:7.23": 5,
+      "gt:n:example:7.24": 5,
+      "gt:n:definition:7.25": 5,
+      "gt:n:theorem:7.26": 7,
+      "gt:n:theorem:7.27": 6,
+      "gt:n:remark:7.28": 6,
+      "gt:n:example:7.29": 6,
+      "gt:n:example:7.30": 6,
+      "gt:n:definition:7.31": 5,
+      "gt:n:remark:7.32": 6,
+      "gt:n:example:7.33": 6,
+      "gt:n:example:7.34": 6,
+      "gt:n:example:7.35": 6,
+      "gt:n:example:7.36": 6,
+      "gt:n:theorem:7.37": 6,
+      "gt:n:theorem:7.38": 8,
+      "gt:n:corollary:7.39": 9,
+      "gt:n:corollary:7.40": 10,
+      "gt:n:definition:7.41": 6,
+      "gt:n:example:7.42": 7,
+      "gt:n:example:7.43": 7,
+      "gt:n:theorem:7.44": 7,
+      "gt:n:theorem:7.45": 7,
+      "gt:u:sets-basic": 0,
+      "gt:u:set-calculus": 1,
+      "gt:u:cartesian-pair": 0,
+      "gt:u:image": 2,
+      "gt:u:preimage": 0,
+      "gt:u:bijection": 2,
+      "gt:u:composition": 2,
+      "gt:u:product-family": 1,
+      "gt:u:order-map": 3,
+      "gt:u:choice": 0,
+      "gt:u:maximum": 3,
+      "gt:u:zorn": 4,
+      "gt:u:cardinality": 3,
+      "gt:u:real-continuity": 2,
+      "gt:u:product-recall": 2,
+      "gt:u:open-closed-map": 2,
+      "gt:v:V2": 6,
+      "gt:v:V3": 6,
+      "gt:v:V4": 7,
+      "gt:v:V5": 5,
+      "gt:v:V6": 7,
+      "gt:v:V7": 7,
+      "gt:v:V8": 7,
+      "gt:v:V9": 5,
+      "gt:v:V10": 5
+    },
+    "positions": {
+      "gt:n:definition:1.2": {
+        "x": 67.8,
+        "y": 111
+      },
+      "gt:n:example:1.1": {
+        "x": 171.38,
+        "y": 101.03
+      },
+      "gt:u:sets-basic": {
+        "x": 256.04,
+        "y": 105.08
+      },
+      "gt:u:set-calculus": {
+        "x": 358.41,
+        "y": 107.38
+      },
+      "gt:n:definition:1.6": {
+        "x": 444.2,
+        "y": 109.39
+      },
+      "gt:n:example:1.4": {
+        "x": 77.68,
+        "y": 202.65
+      },
+      "gt:n:example:1.7": {
+        "x": 171.99,
+        "y": 187.92
+      },
+      "gt:n:remark:1.5": {
+        "x": 249.84,
+        "y": 187.24
+      },
+      "gt:n:theorem:1.3": {
+        "x": 355.3,
+        "y": 195.48
+      },
+      "gt:u:cartesian-pair": {
+        "x": 436.52,
+        "y": 202.97
+      },
+      "gt:u:image": {
+        "x": 83.64,
+        "y": 275.49
+      },
+      "gt:n:definition:1.10": {
+        "x": 152.12,
+        "y": 279.49
+      },
+      "gt:n:definition:1.11": {
+        "x": 246.22,
+        "y": 283.63
+      },
+      "gt:n:example:1.8": {
+        "x": 360.09,
+        "y": 280.86
+      },
+      "gt:n:example:1.9": {
+        "x": 454.19,
+        "y": 277.47
+      },
+      "gt:n:example:1.12": {
+        "x": 81.25,
+        "y": 358.76
+      },
+      "gt:u:product-family": {
+        "x": 154.07,
+        "y": 364.91
+      },
+      "gt:u:composition": {
+        "x": 251.95,
+        "y": 360.38
+      },
+      "gt:u:bijection": {
+        "x": 357.49,
+        "y": 371.03
+      },
+      "gt:u:preimage": {
+        "x": 443.44,
+        "y": 366.04
+      },
+      "gt:n:definition:1.15": {
+        "x": 83.81,
+        "y": 454.42
+      },
+      "gt:n:definition:1.17": {
+        "x": 177.61,
+        "y": 439.97
+      },
+      "gt:n:example:1.13": {
+        "x": 269.15,
+        "y": 453.89
+      },
+      "gt:n:example:1.14": {
+        "x": 363.86,
+        "y": 443.18
+      },
+      "gt:n:example:1.16": {
+        "x": 457.65,
+        "y": 450.85
+      },
+      "gt:n:example:1.18": {
+        "x": 82.26,
+        "y": 526.5
+      },
+      "gt:n:example:1.19": {
+        "x": 176.16,
+        "y": 524.66
+      },
+      "gt:n:theorem:1.20": {
+        "x": 265.66,
+        "y": 525.11
+      },
+      "gt:n:definition:1.21": {
+        "x": 365.41,
+        "y": 522.67
+      },
+      "gt:n:definition:1.26": {
+        "x": 459.71,
+        "y": 531.39
+      },
+      "gt:n:example:1.22": {
+        "x": 81.86,
+        "y": 620.94
+      },
+      "gt:n:example:1.23": {
+        "x": 175.96,
+        "y": 616.62
+      },
+      "gt:n:example:1.24": {
+        "x": 269.66,
+        "y": 609.4
+      },
+      "gt:n:example:1.25": {
+        "x": 363.76,
+        "y": 621.69
+      },
+      "gt:n:definition:1.28": {
+        "x": 458.69,
+        "y": 615.53
+      },
+      "gt:n:example:1.27": {
+        "x": 81.55,
+        "y": 691.61
+      },
+      "gt:n:example:1.29": {
+        "x": 176.98,
+        "y": 706.07
+      },
+      "gt:n:example:1.30": {
+        "x": 257.67,
+        "y": 698.7
+      },
+      "gt:n:definition:1.31": {
+        "x": 365,
+        "y": 694.54
+      },
+      "gt:n:definition:1.33": {
+        "x": 459.2,
+        "y": 703.57
+      },
+      "gt:n:definition:1.37": {
+        "x": 83.61,
+        "y": 771.98
+      },
+      "gt:n:definition:1.38": {
+        "x": 176.08,
+        "y": 785.08
+      },
+      "gt:n:example:1.34": {
+        "x": 258.08,
+        "y": 781.27
+      },
+      "gt:n:example:1.35": {
+        "x": 351.98,
+        "y": 778.56
+      },
+      "gt:n:example:1.39": {
+        "x": 444.76,
+        "y": 771.81
+      },
+      "gt:n:remark:1.32": {
+        "x": 61.03,
+        "y": 857.48
+      },
+      "gt:n:theorem:1.36": {
+        "x": 171.66,
+        "y": 873.02
+      },
+      "gt:n:example:1.40": {
+        "x": 258.28,
+        "y": 858.7
+      },
+      "gt:n:lemma:1.41": {
+        "x": 356.48,
+        "y": 861.64
+      },
+      "gt:n:lemma:1.42": {
+        "x": 450.18,
+        "y": 859.06
+      },
+      "gt:n:lemma:1.43": {
+        "x": 74.28,
+        "y": 954.04
+      },
+      "gt:n:theorem:1.44": {
+        "x": 160.28,
+        "y": 945.39
+      },
+      "gt:u:order-map": {
+        "x": 268.22,
+        "y": 949.07
+      },
+      "gt:n:definition:1.45": {
+        "x": 365.41,
+        "y": 955.06
+      },
+      "gt:n:proposition:1.46": {
+        "x": 451.76,
+        "y": 950.85
+      },
+      "gt:u:choice": {
+        "x": 80.4,
+        "y": 1041.85
+      },
+      "gt:n:definition:1.47": {
+        "x": 177.61,
+        "y": 1025.32
+      },
+      "gt:n:definition:1.48": {
+        "x": 271.11,
+        "y": 1030.08
+      },
+      "gt:n:example:1.49": {
+        "x": 351.57,
+        "y": 1040.47
+      },
+      "gt:n:proposition:1.50": {
+        "x": 436.73,
+        "y": 1036.55
+      },
+      "gt:n:theorem:1.51": {
+        "x": 76.95,
+        "y": 1111.34
+      },
+      "gt:u:maximum": {
+        "x": 161.15,
+        "y": 1120.72
+      },
+      "gt:u:zorn": {
+        "x": 256.69,
+        "y": 1122.76
+      },
+      "gt:n:lemma:1.53": {
+        "x": 353.84,
+        "y": 1124.57
+      },
+      "gt:n:remark:1.52": {
+        "x": 450.85,
+        "y": 1112.57
+      },
+      "gt:n:theorem:1.54": {
+        "x": 77.46,
+        "y": 1194.72
+      },
+      "gt:u:cardinality": {
+        "x": 159.8,
+        "y": 1203.5
+      },
+      "gt:n:corollary:1.58": {
+        "x": 257.03,
+        "y": 1210.73
+      },
+      "gt:n:corollary:1.59": {
+        "x": 351.13,
+        "y": 1199.61
+      },
+      "gt:n:definition:1.55": {
+        "x": 459.82,
+        "y": 1204.58
+      },
+      "gt:n:lemma:1.56": {
+        "x": 72.35,
+        "y": 1282.53
+      },
+      "gt:n:theorem:1.57": {
+        "x": 171.56,
+        "y": 1289.87
+      },
+      "gt:n:corollary:1.60": {
+        "x": 269.43,
+        "y": 1293.58
+      },
+      "gt:n:definition:1.61": {
+        "x": 351.6,
+        "y": 1279.74
+      },
+      "gt:n:example:1.62": {
+        "x": 457.05,
+        "y": 1283.51
+      },
+      "gt:n:example:1.63": {
+        "x": 81.15,
+        "y": 1365.53
+      },
+      "gt:n:lemma:1.64": {
+        "x": 154.56,
+        "y": 1361.22
+      },
+      "gt:n:proposition:1.65": {
+        "x": 263.66,
+        "y": 1362.18
+      },
+      "gt:n:theorem:1.66": {
+        "x": 348.08,
+        "y": 1367.4
+      },
+      "gt:n:proposition:1.68": {
+        "x": 450.34,
+        "y": 1361.16
+      },
+      "gt:n:theorem:1.67": {
+        "x": 66.18,
+        "y": 1451.81
+      },
+      "gt:n:theorem:1.69": {
+        "x": 158.76,
+        "y": 1450.96
+      },
+      "gt:n:theorem:1.70": {
+        "x": 254.08,
+        "y": 1451.15
+      },
+      "gt:n:corollary:1.71": {
+        "x": 340.17,
+        "y": 1444.83
+      },
+      "gt:n:corollary:1.73": {
+        "x": 459.97,
+        "y": 1458.83
+      },
+      "gt:n:theorem:1.72": {
+        "x": 65.88,
+        "y": 1541.26
+      },
+      "gt:n:corollary:1.75": {
+        "x": 177.76,
+        "y": 1529.89
+      },
+      "gt:n:corollary:1.77": {
+        "x": 271.56,
+        "y": 1537.36
+      },
+      "gt:n:proposition:1.74": {
+        "x": 358.17,
+        "y": 1527.94
+      },
+      "gt:n:proposition:1.76": {
+        "x": 451.96,
+        "y": 1534.73
+      },
+      "gt:n:theorem:1.78": {
+        "x": 65.27,
+        "y": 1630.71
+      },
+      "gt:n:theorem:1.79": {
+        "x": 159.16,
+        "y": 1630.52
+      },
+      "gt:n:theorem:1.80": {
+        "x": 265.25,
+        "y": 1630.63
+      },
+      "gt:n:definition:2.1": {
+        "x": 584.3,
+        "y": 106.19
+      },
+      "gt:n:definition:2.3": {
+        "x": 678.5,
+        "y": 112.87
+      },
+      "gt:n:example:2.2": {
+        "x": 788.13,
+        "y": 108.89
+      },
+      "gt:u:real-continuity": {
+        "x": 583.99,
+        "y": 201.19
+      },
+      "gt:n:definition:2.5": {
+        "x": 677.89,
+        "y": 196.08
+      },
+      "gt:n:definition:2.6": {
+        "x": 771.99,
+        "y": 187.35
+      },
+      "gt:n:definition:2.8": {
+        "x": 583.38,
+        "y": 282
+      },
+      "gt:n:example:2.4": {
+        "x": 693.93,
+        "y": 278.49
+      },
+      "gt:n:proposition:2.7": {
+        "x": 787.76,
+        "y": 283.18
+      },
+      "gt:n:proposition:2.9": {
+        "x": 598.34,
+        "y": 371.04
+      },
+      "gt:n:definition:2.10": {
+        "x": 684.36,
+        "y": 354.15
+      },
+      "gt:n:example:2.11": {
+        "x": 773.34,
+        "y": 363.43
+      },
+      "gt:n:proposition:2.12": {
+        "x": 590.09,
+        "y": 440.41
+      },
+      "gt:n:corollary:2.15": {
+        "x": 695.61,
+        "y": 452.53
+      },
+      "gt:n:definition:2.13": {
+        "x": 778.06,
+        "y": 447.03
+      },
+      "gt:n:proposition:2.14": {
+        "x": 590.29,
+        "y": 532.86
+      },
+      "gt:n:theorem:2.16": {
+        "x": 674.81,
+        "y": 531.73
+      },
+      "gt:n:definition:2.18": {
+        "x": 779.17,
+        "y": 534.7
+      },
+      "gt:n:definition:2.19": {
+        "x": 591.07,
+        "y": 612.38
+      },
+      "gt:n:theorem:2.17": {
+        "x": 674.91,
+        "y": 617.95
+      },
+      "gt:n:theorem:2.20": {
+        "x": 779.78,
+        "y": 614.62
+      },
+      "gt:n:definition:2.22": {
+        "x": 590.77,
+        "y": 704.37
+      },
+      "gt:n:lemma:2.21": {
+        "x": 680.37,
+        "y": 694.72
+      },
+      "gt:n:proposition:2.23": {
+        "x": 789.57,
+        "y": 703.83
+      },
+      "gt:n:example:2.24": {
+        "x": 584.22,
+        "y": 776.66
+      },
+      "gt:n:definition:2.25": {
+        "x": 685.48,
+        "y": 786.89
+      },
+      "gt:n:example:2.26": {
+        "x": 772.02,
+        "y": 789.7
+      },
+      "gt:n:example:2.28": {
+        "x": 585.44,
+        "y": 874.81
+      },
+      "gt:n:theorem:2.27": {
+        "x": 686.29,
+        "y": 862.42
+      },
+      "gt:e001": {
+        "x": 909.08,
+        "y": 119.11
+      },
+      "gt:e002": {
+        "x": 1002.78,
+        "y": 108.66
+      },
+      "gt:n:example:3.5": {
+        "x": 1105.14,
+        "y": 119.1
+      },
+      "gt:n:proposition:3.3": {
+        "x": 1188.18,
+        "y": 103.63
+      },
+      "gt:n:remark:3.4": {
+        "x": 1303.1,
+        "y": 103.17
+      },
+      "gt:n:example:3.6": {
+        "x": 1386.84,
+        "y": 103.73
+      },
+      "gt:n:example:3.7": {
+        "x": 916.94,
+        "y": 188.66
+      },
+      "gt:n:example:3.8": {
+        "x": 1011.45,
+        "y": 183.87
+      },
+      "gt:n:example:3.10": {
+        "x": 1102.4,
+        "y": 203.52
+      },
+      "gt:n:lemma:3.9": {
+        "x": 1188.71,
+        "y": 190.17
+      },
+      "gt:n:definition:3.11": {
+        "x": 1284.27,
+        "y": 185.18
+      },
+      "gt:n:definition:3.13": {
+        "x": 1378.47,
+        "y": 194.59
+      },
+      "gt:n:remark:3.12": {
+        "x": 918.76,
+        "y": 282.17
+      },
+      "gt:n:example:3.14": {
+        "x": 1008.81,
+        "y": 278.51
+      },
+      "gt:n:example:3.15": {
+        "x": 1102.71,
+        "y": 273.09
+      },
+      "gt:n:example:3.16": {
+        "x": 1197.01,
+        "y": 272.59
+      },
+      "gt:n:proposition:3.17": {
+        "x": 1300.23,
+        "y": 282.12
+      },
+      "gt:n:proposition:3.18": {
+        "x": 1395.75,
+        "y": 272.17
+      },
+      "gt:n:definition:3.21": {
+        "x": 919.65,
+        "y": 365.82
+      },
+      "gt:n:example:3.20": {
+        "x": 1019.57,
+        "y": 353.18
+      },
+      "gt:n:proposition:3.19": {
+        "x": 1113.65,
+        "y": 359.43
+      },
+      "gt:n:definition:3.26": {
+        "x": 1202.36,
+        "y": 368.15
+      },
+      "gt:n:example:3.22": {
+        "x": 1301.78,
+        "y": 365.71
+      },
+      "gt:n:example:3.25": {
+        "x": 1396.08,
+        "y": 359.84
+      },
+      "gt:n:remark:3.24": {
+        "x": 907.39,
+        "y": 453.76
+      },
+      "gt:n:theorem:3.23": {
+        "x": 1009.76,
+        "y": 438.54
+      },
+      "gt:n:definition:3.29": {
+        "x": 1108.46,
+        "y": 438.58
+      },
+      "gt:n:definition:3.32": {
+        "x": 1191.18,
+        "y": 445.33
+      },
+      "gt:n:example:3.31": {
+        "x": 1302.08,
+        "y": 452.7
+      },
+      "gt:n:proposition:3.27": {
+        "x": 1395.85,
+        "y": 439.32
+      },
+      "gt:n:proposition:3.28": {
+        "x": 924.74,
+        "y": 526.58
+      },
+      "gt:n:remark:3.30": {
+        "x": 1001.59,
+        "y": 537.12
+      },
+      "gt:n:theorem:3.33": {
+        "x": 1104.58,
+        "y": 535.15
+      },
+      "gt:n:definition:3.34": {
+        "x": 1190.98,
+        "y": 539.08
+      },
+      "gt:n:definition:3.35": {
+        "x": 1285.08,
+        "y": 532.18
+      },
+      "gt:n:example:3.37": {
+        "x": 1396.28,
+        "y": 531.97
+      },
+      "gt:n:example:3.38": {
+        "x": 927,
+        "y": 616.02
+      },
+      "gt:n:proposition:3.36": {
+        "x": 1019.95,
+        "y": 613.81
+      },
+      "gt:n:definition:3.41": {
+        "x": 1108.87,
+        "y": 607.67
+      },
+      "gt:n:example:3.39": {
+        "x": 1208.89,
+        "y": 619.1
+      },
+      "gt:n:example:3.40": {
+        "x": 1301.98,
+        "y": 619.98
+      },
+      "gt:n:theorem:3.42": {
+        "x": 1385.66,
+        "y": 622.14
+      },
+      "gt:n:definition:3.44": {
+        "x": 920.56,
+        "y": 690.65
+      },
+      "gt:e003": {
+        "x": 1002.88,
+        "y": 701.1
+      },
+      "gt:n:example:3.43": {
+        "x": 1113.88,
+        "y": 687.8
+      },
+      "gt:n:theorem:3.45": {
+        "x": 1197.96,
+        "y": 701.6
+      },
+      "gt:n:example:3.47": {
+        "x": 1302.29,
+        "y": 693.69
+      },
+      "gt:n:lemma:3.48": {
+        "x": 1380.49,
+        "y": 703.23
+      },
+      "gt:n:lemma:3.49": {
+        "x": 910.59,
+        "y": 777.55
+      },
+      "gt:n:theorem:3.50": {
+        "x": 1023.06,
+        "y": 783.18
+      },
+      "gt:n:theorem:3.51": {
+        "x": 1116.96,
+        "y": 788.69
+      },
+      "gt:n:definition:3.53": {
+        "x": 1202.66,
+        "y": 772.6
+      },
+      "gt:e004": {
+        "x": 1284.58,
+        "y": 780.91
+      },
+      "gt:n:example:3.56": {
+        "x": 1396.39,
+        "y": 791.58
+      },
+      "gt:n:remark:3.52": {
+        "x": 908.2,
+        "y": 868.29
+      },
+      "gt:n:theorem:3.54": {
+        "x": 1023.47,
+        "y": 870.84
+      },
+      "gt:n:theorem:3.57": {
+        "x": 1117.16,
+        "y": 871.24
+      },
+      "gt:e005": {
+        "x": 1190.68,
+        "y": 856.16
+      },
+      "gt:v:V9": {
+        "x": 1303.82,
+        "y": 868.23
+      },
+      "gt:v:V10": {
+        "x": 1384.57,
+        "y": 871.6
+      },
+      "gt:n:example:3.61": {
+        "x": 915.12,
+        "y": 956.17
+      },
+      "gt:n:example:3.62": {
+        "x": 1009.22,
+        "y": 940.03
+      },
+      "gt:n:example:3.63": {
+        "x": 1103.32,
+        "y": 956.77
+      },
+      "gt:n:remark:3.58": {
+        "x": 1189.19,
+        "y": 945.74
+      },
+      "gt:n:remark:3.59": {
+        "x": 1283.09,
+        "y": 948.62
+      },
+      "gt:n:remark:3.60": {
+        "x": 1389.17,
+        "y": 953.32
+      },
+      "gt:n:theorem:3.64": {
+        "x": 929.27,
+        "y": 1042.24
+      },
+      "gt:e006": {
+        "x": 1002.37,
+        "y": 1036.91
+      },
+      "gt:n:corollary:3.66": {
+        "x": 1107.67,
+        "y": 1036.43
+      },
+      "gt:n:lemma:3.65": {
+        "x": 1194.22,
+        "y": 1040.51
+      },
+      "gt:n:remark:3.67": {
+        "x": 1295.07,
+        "y": 1040.16
+      },
+      "gt:n:theorem:3.68": {
+        "x": 1398.86,
+        "y": 1028.04
+      },
+      "gt:e007": {
+        "x": 908.47,
+        "y": 1115.64
+      },
+      "gt:n:example:3.71": {
+        "x": 1009.52,
+        "y": 1111.78
+      },
+      "gt:n:example:3.72": {
+        "x": 1103.42,
+        "y": 1108.85
+      },
+      "gt:n:example:3.73": {
+        "x": 1197.32,
+        "y": 1124.72
+      },
+      "gt:e008": {
+        "x": 1285.79,
+        "y": 1112.16
+      },
+      "gt:n:theorem:3.70": {
+        "x": 1397.03,
+        "y": 1125.61
+      },
+      "gt:n:definition:3.77": {
+        "x": 921.88,
+        "y": 1202.38
+      },
+      "gt:n:definition:3.81": {
+        "x": 1001.04,
+        "y": 1197.78
+      },
+      "gt:n:example:3.75": {
+        "x": 1103.12,
+        "y": 1200.26
+      },
+      "gt:n:example:3.80": {
+        "x": 1197.43,
+        "y": 1210.1
+      },
+      "gt:n:lemma:3.76": {
+        "x": 1299.49,
+        "y": 1200.7
+      },
+      "gt:n:remark:3.78": {
+        "x": 1390.59,
+        "y": 1209.16
+      },
+      "gt:n:theorem:3.79": {
+        "x": 927.74,
+        "y": 1281.88
+      },
+      "gt:u:product-recall": {
+        "x": 1005.48,
+        "y": 1292.67
+      },
+      "gt:n:definition:3.83": {
+        "x": 1094.84,
+        "y": 1291.06
+      },
+      "gt:n:example:3.82": {
+        "x": 1197.22,
+        "y": 1284.81
+      },
+      "gt:n:example:3.86": {
+        "x": 1290.82,
+        "y": 1282.54
+      },
+      "gt:n:example:3.87": {
+        "x": 1384.92,
+        "y": 1294.68
+      },
+      "gt:n:remark:3.84": {
+        "x": 906.16,
+        "y": 1377.64
+      },
+      "gt:n:remark:3.85": {
+        "x": 1000.26,
+        "y": 1372.44
+      },
+      "gt:n:theorem:3.88": {
+        "x": 1116.45,
+        "y": 1376.1
+      },
+      "gt:n:definition:3.89": {
+        "x": 1189.85,
+        "y": 1365.68
+      },
+      "gt:v:V4": {
+        "x": 1302.7,
+        "y": 1373.01
+      },
+      "gt:n:lemma:3.93": {
+        "x": 1395.42,
+        "y": 1366.37
+      },
+      "gt:n:remark:3.92": {
+        "x": 907.38,
+        "y": 1452.53
+      },
+      "gt:n:theorem:3.90": {
+        "x": 1023.87,
+        "y": 1445.38
+      },
+      "gt:n:theorem:3.91": {
+        "x": 1117.77,
+        "y": 1454.45
+      },
+      "gt:n:example:3.95": {
+        "x": 1195.09,
+        "y": 1445.02
+      },
+      "gt:n:theorem:3.94": {
+        "x": 1305.47,
+        "y": 1443.67
+      },
+      "gt:n:definition:3.97": {
+        "x": 1390.24,
+        "y": 1450.93
+      },
+      "gt:n:example:3.96": {
+        "x": 913.4,
+        "y": 1539.47
+      },
+      "gt:n:remark:3.98": {
+        "x": 1000.36,
+        "y": 1528.58
+      },
+      "gt:n:definition:3.99": {
+        "x": 1108.45,
+        "y": 1540.48
+      },
+      "gt:n:example:3.100": {
+        "x": 1194.05,
+        "y": 1536.39
+      },
+      "gt:n:example:3.101": {
+        "x": 1287.95,
+        "y": 1532.26
+      },
+      "gt:n:definition:3.102": {
+        "x": 1380.47,
+        "y": 1533.79
+      },
+      "gt:n:proposition:3.103": {
+        "x": 928.48,
+        "y": 1628.39
+      },
+      "gt:n:theorem:3.104": {
+        "x": 1019.8,
+        "y": 1624.53
+      },
+      "gt:e009": {
+        "x": 1097.9,
+        "y": 1611.83
+      },
+      "gt:u:open-closed-map": {
+        "x": 1209.32,
+        "y": 1615.29
+      },
+      "gt:n:example:3.105": {
+        "x": 1288.36,
+        "y": 1623.91
+      },
+      "gt:n:example:3.106": {
+        "x": 1382.26,
+        "y": 1628.73
+      },
+      "gt:n:example:3.107": {
+        "x": 912.15,
+        "y": 1711.81
+      },
+      "gt:n:theorem:3.108": {
+        "x": 1021.01,
+        "y": 1709.21
+      },
+      "gt:n:definition:3.110": {
+        "x": 1098.88,
+        "y": 1711.31
+      },
+      "gt:n:example:3.109": {
+        "x": 1193.14,
+        "y": 1707.94
+      },
+      "gt:n:example:3.111": {
+        "x": 1300.54,
+        "y": 1711.48
+      },
+      "gt:n:example:3.112": {
+        "x": 1394.65,
+        "y": 1704.23
+      },
+      "gt:n:example:3.113": {
+        "x": 924.75,
+        "y": 1782.96
+      },
+      "gt:n:proposition:3.114": {
+        "x": 1022.17,
+        "y": 1794.27
+      },
+      "gt:n:proposition:3.115": {
+        "x": 1116.27,
+        "y": 1785.37
+      },
+      "gt:n:definition:3.116": {
+        "x": 1193.08,
+        "y": 1796.91
+      },
+      "gt:n:definition:3.118": {
+        "x": 1286.06,
+        "y": 1790.44
+      },
+      "gt:n:definition:3.123": {
+        "x": 1394.39,
+        "y": 1796.56
+      },
+      "gt:n:definition:3.124": {
+        "x": 924.08,
+        "y": 1867.4
+      },
+      "gt:n:example:3.120": {
+        "x": 1004.02,
+        "y": 1876.13
+      },
+      "gt:n:example:3.121": {
+        "x": 1097.92,
+        "y": 1863.85
+      },
+      "gt:n:example:3.122": {
+        "x": 1192.23,
+        "y": 1882.06
+      },
+      "gt:n:remark:3.117": {
+        "x": 1301.77,
+        "y": 1868.92
+      },
+      "gt:n:theorem:3.119": {
+        "x": 1396.51,
+        "y": 1877.51
+      },
+      "gt:n:example:3.126": {
+        "x": 910.63,
+        "y": 1955.06
+      },
+      "gt:n:example:3.127": {
+        "x": 1004.53,
+        "y": 1959.38
+      },
+      "gt:n:lemma:3.130": {
+        "x": 1103.19,
+        "y": 1949.85
+      },
+      "gt:n:lemma:3.131": {
+        "x": 1197.29,
+        "y": 1952.66
+      },
+      "gt:n:lemma:3.132": {
+        "x": 1291.39,
+        "y": 1966.29
+      },
+      "gt:n:proposition:3.125": {
+        "x": 1386.89,
+        "y": 1956.88
+      },
+      "gt:n:theorem:3.128": {
+        "x": 914.42,
+        "y": 2047.72
+      },
+      "gt:n:theorem:3.129": {
+        "x": 1008.32,
+        "y": 2035.57
+      },
+      "gt:n:corollary:3.134": {
+        "x": 1095.06,
+        "y": 2044.66
+      },
+      "gt:n:definition:3.135": {
+        "x": 1204.15,
+        "y": 2037.24
+      },
+      "gt:n:definition:3.136": {
+        "x": 1298.46,
+        "y": 2041.92
+      },
+      "gt:n:theorem:3.133": {
+        "x": 1384.93,
+        "y": 2041.65
+      },
+      "gt:n:definition:3.137": {
+        "x": 922.35,
+        "y": 2134.99
+      },
+      "gt:n:lemma:3.138": {
+        "x": 1008.38,
+        "y": 2127.87
+      },
+      "gt:n:lemma:3.139": {
+        "x": 1102.48,
+        "y": 2132.22
+      },
+      "gt:n:theorem:3.140": {
+        "x": 1196.01,
+        "y": 2120.64
+      },
+      "gt:n:definition:4.2": {
+        "x": 1522.6,
+        "y": 110.57
+      },
+      "gt:v:V2": {
+        "x": 1632.91,
+        "y": 113.84
+      },
+      "gt:n:example:4.5": {
+        "x": 1730.78,
+        "y": 114.19
+      },
+      "gt:n:problem:4.3": {
+        "x": 1524.75,
+        "y": 194.87
+      },
+      "gt:n:proposition:4.1": {
+        "x": 1622.01,
+        "y": 195.9
+      },
+      "gt:n:proposition:4.4": {
+        "x": 1715.71,
+        "y": 202.56
+      },
+      "gt:n:example:4.6": {
+        "x": 1543.08,
+        "y": 284.07
+      },
+      "gt:n:example:4.7": {
+        "x": 1636.98,
+        "y": 276.66
+      },
+      "gt:n:example:4.8": {
+        "x": 1729.66,
+        "y": 269.7
+      },
+      "gt:v:V3": {
+        "x": 1538.81,
+        "y": 354.86
+      },
+      "gt:n:example:4.11": {
+        "x": 1612.17,
+        "y": 363.39
+      },
+      "gt:n:proposition:4.9": {
+        "x": 1715.2,
+        "y": 367.99
+      },
+      "gt:n:theorem:4.10": {
+        "x": 1531.49,
+        "y": 446.12
+      },
+      "gt:n:definition:4.12": {
+        "x": 1635.7,
+        "y": 436.76
+      },
+      "gt:n:definition:4.15": {
+        "x": 1729.8,
+        "y": 435.76
+      },
+      "gt:n:definition:4.16": {
+        "x": 1542.11,
+        "y": 534.33
+      },
+      "gt:n:example:4.14": {
+        "x": 1612.48,
+        "y": 532.41
+      },
+      "gt:n:example:4.18": {
+        "x": 1731.26,
+        "y": 529.08
+      },
+      "gt:n:remark:4.13": {
+        "x": 1535.5,
+        "y": 621.03
+      },
+      "gt:n:remark:4.17": {
+        "x": 1629.91,
+        "y": 608.92
+      },
+      "gt:n:example:4.19": {
+        "x": 1731.36,
+        "y": 607.87
+      },
+      "gt:n:theorem:4.20": {
+        "x": 1530.88,
+        "y": 691.11
+      },
+      "gt:n:theorem:4.21": {
+        "x": 1624.78,
+        "y": 694.37
+      },
+      "gt:n:definition:5.1": {
+        "x": 1853.46,
+        "y": 107.12
+      },
+      "gt:n:definition:5.2": {
+        "x": 1947.36,
+        "y": 105.33
+      },
+      "gt:n:example:5.3": {
+        "x": 2050.27,
+        "y": 119.09
+      },
+      "gt:n:example:5.4": {
+        "x": 1861.55,
+        "y": 200.01
+      },
+      "gt:n:example:5.6": {
+        "x": 1955.76,
+        "y": 186.47
+      },
+      "gt:n:example:5.7": {
+        "x": 2049.86,
+        "y": 190.99
+      },
+      "gt:n:remark:5.5": {
+        "x": 1855.46,
+        "y": 280.48
+      },
+      "gt:n:definition:5.9": {
+        "x": 1946.65,
+        "y": 285.42
+      },
+      "gt:n:example:5.10": {
+        "x": 2055.28,
+        "y": 286.9
+      },
+      "gt:n:example:5.11": {
+        "x": 1867.18,
+        "y": 366.56
+      },
+      "gt:n:example:5.12": {
+        "x": 1961.08,
+        "y": 355.29
+      },
+      "gt:n:theorem:5.8": {
+        "x": 2044.53,
+        "y": 359
+      },
+      "gt:n:definition:5.14": {
+        "x": 1852.6,
+        "y": 443.11
+      },
+      "gt:n:example:5.15": {
+        "x": 1960.78,
+        "y": 449.58
+      },
+      "gt:n:theorem:5.13": {
+        "x": 2061.63,
+        "y": 455.57
+      },
+      "gt:n:theorem:5.16": {
+        "x": 1848.14,
+        "y": 530.49
+      },
+      "gt:e010": {
+        "x": 1945.59,
+        "y": 535.86
+      },
+      "gt:n:example:5.17": {
+        "x": 2054.57,
+        "y": 524.3
+      },
+      "gt:n:example:5.20": {
+        "x": 1854.89,
+        "y": 623.04
+      },
+      "gt:n:example:5.21": {
+        "x": 1949,
+        "y": 607.23
+      },
+      "gt:n:example:5.22": {
+        "x": 2042.69,
+        "y": 616.02
+      },
+      "gt:e011": {
+        "x": 1851.49,
+        "y": 704.6
+      },
+      "gt:n:lemma:5.19": {
+        "x": 1948.31,
+        "y": 693.57
+      },
+      "gt:n:proposition:5.24": {
+        "x": 2043.79,
+        "y": 691.46
+      },
+      "gt:n:definition:5.27": {
+        "x": 1863.87,
+        "y": 791.07
+      },
+      "gt:n:example:5.25": {
+        "x": 1949.4,
+        "y": 789.18
+      },
+      "gt:n:example:5.29": {
+        "x": 2042.18,
+        "y": 772.63
+      },
+      "gt:n:lemma:5.30": {
+        "x": 1867,
+        "y": 857.48
+      },
+      "gt:n:remark:5.28": {
+        "x": 1953.96,
+        "y": 866.01
+      },
+      "gt:n:theorem:5.26": {
+        "x": 2060.31,
+        "y": 874.81
+      },
+      "gt:v:V5": {
+        "x": 1868.6,
+        "y": 956.27
+      },
+      "gt:n:example:5.32": {
+        "x": 1949.71,
+        "y": 949.34
+      },
+      "gt:n:example:5.33": {
+        "x": 2043.61,
+        "y": 958.89
+      },
+      "gt:n:theorem:5.31": {
+        "x": 1872.21,
+        "y": 1025.95
+      },
+      "gt:n:proposition:5.34": {
+        "x": 1950.4,
+        "y": 1025.89
+      },
+      "gt:n:theorem:5.35": {
+        "x": 2060.62,
+        "y": 1041.45
+      },
+      "gt:n:theorem:5.36": {
+        "x": 1872.51,
+        "y": 1123.66
+      },
+      "gt:n:lemma:5.37": {
+        "x": 1961.1,
+        "y": 1114.29
+      },
+      "gt:n:lemma:5.39": {
+        "x": 2055.71,
+        "y": 1117.43
+      },
+      "gt:n:theorem:5.38": {
+        "x": 1873.12,
+        "y": 1202.12
+      },
+      "gt:e012": {
+        "x": 2181.8,
+        "y": 101.41
+      },
+      "gt:n:example:6.4": {
+        "x": 2288.11,
+        "y": 114.79
+      },
+      "gt:n:example:6.5": {
+        "x": 2382.01,
+        "y": 115.53
+      },
+      "gt:n:example:6.6": {
+        "x": 2475.91,
+        "y": 100.35
+      },
+      "gt:n:example:6.7": {
+        "x": 2193.81,
+        "y": 203.42
+      },
+      "gt:n:example:6.8": {
+        "x": 2286.89,
+        "y": 200.54
+      },
+      "gt:n:example:6.10": {
+        "x": 2391.31,
+        "y": 201.84
+      },
+      "gt:e013": {
+        "x": 2463.69,
+        "y": 184.49
+      },
+      "gt:n:theorem:6.1": {
+        "x": 2195.05,
+        "y": 275.36
+      },
+      "gt:n:theorem:6.2": {
+        "x": 2289.35,
+        "y": 286.98
+      },
+      "gt:n:definition:6.16": {
+        "x": 2390.46,
+        "y": 267.79
+      },
+      "gt:e016": {
+        "x": 2464.2,
+        "y": 274.3
+      },
+      "gt:n:example:6.14": {
+        "x": 2202.9,
+        "y": 366.15
+      },
+      "gt:e014": {
+        "x": 2276,
+        "y": 365.08
+      },
+      "gt:e015": {
+        "x": 2369.9,
+        "y": 360.94
+      },
+      "gt:n:theorem:6.15": {
+        "x": 2470.96,
+        "y": 369.05
+      },
+      "gt:n:theorem:6.17": {
+        "x": 2189.17,
+        "y": 450.87
+      },
+      "gt:n:corollary:6.19": {
+        "x": 2279.35,
+        "y": 447.17
+      },
+      "gt:e019": {
+        "x": 2368.68,
+        "y": 448.74
+      },
+      "gt:n:proposition:6.21": {
+        "x": 2482.68,
+        "y": 441.91
+      },
+      "gt:e017": {
+        "x": 2182.1,
+        "y": 536
+      },
+      "gt:e018": {
+        "x": 2274.78,
+        "y": 525.18
+      },
+      "gt:n:theorem:6.22": {
+        "x": 2379.3,
+        "y": 521.35
+      },
+      "gt:n:theorem:6.23": {
+        "x": 2473.2,
+        "y": 529.94
+      },
+      "gt:n:corollary:6.25": {
+        "x": 2197.13,
+        "y": 603.83
+      },
+      "gt:n:theorem:6.24": {
+        "x": 2284.69,
+        "y": 614.53
+      },
+      "gt:n:theorem:6.26": {
+        "x": 2378.89,
+        "y": 607.06
+      },
+      "gt:n:definition:6.27": {
+        "x": 2471.36,
+        "y": 608.8
+      },
+      "gt:n:definition:6.29": {
+        "x": 2190.78,
+        "y": 704.9
+      },
+      "gt:n:definition:6.31": {
+        "x": 2284.38,
+        "y": 703.57
+      },
+      "gt:n:example:6.28": {
+        "x": 2389.89,
+        "y": 702.61
+      },
+      "gt:n:theorem:6.30": {
+        "x": 2472.49,
+        "y": 706.73
+      },
+      "gt:n:theorem:6.32": {
+        "x": 2190.28,
+        "y": 777.19
+      },
+      "gt:n:definition:6.33": {
+        "x": 2284.58,
+        "y": 773.83
+      },
+      "gt:n:theorem:6.34": {
+        "x": 2378.89,
+        "y": 788.54
+      },
+      "gt:v:V6": {
+        "x": 2480.5,
+        "y": 784.4
+      },
+      "gt:v:V7": {
+        "x": 2198.4,
+        "y": 865.7
+      },
+      "gt:n:example:6.35": {
+        "x": 2296.6,
+        "y": 866.43
+      },
+      "gt:n:example:6.36": {
+        "x": 2390.7,
+        "y": 875.45
+      },
+      "gt:n:definition:6.37": {
+        "x": 2472.99,
+        "y": 860.1
+      },
+      "gt:n:definition:6.38": {
+        "x": 2189.67,
+        "y": 954.16
+      },
+      "gt:n:example:6.39": {
+        "x": 2295.38,
+        "y": 958.79
+      },
+      "gt:n:proposition:6.40": {
+        "x": 2375.37,
+        "y": 940.59
+      },
+      "gt:n:theorem:6.41": {
+        "x": 2485.58,
+        "y": 948.01
+      },
+      "gt:n:definition:6.42": {
+        "x": 2191.29,
+        "y": 1030.76
+      },
+      "gt:n:example:6.43": {
+        "x": 2297.21,
+        "y": 1028.03
+      },
+      "gt:n:lemma:6.44": {
+        "x": 2386.66,
+        "y": 1032.64
+      },
+      "gt:n:lemma:6.45": {
+        "x": 2480.55,
+        "y": 1027.97
+      },
+      "gt:n:example:6.48": {
+        "x": 2202.3,
+        "y": 1115.79
+      },
+      "gt:n:example:6.49": {
+        "x": 2296.2,
+        "y": 1126.42
+      },
+      "gt:n:lemma:6.46": {
+        "x": 2386.45,
+        "y": 1125.67
+      },
+      "gt:n:theorem:6.47": {
+        "x": 2485.79,
+        "y": 1124.95
+      },
+      "gt:n:definition:6.50": {
+        "x": 2191.7,
+        "y": 1201.84
+      },
+      "gt:n:example:6.51": {
+        "x": 2283.6,
+        "y": 1201.06
+      },
+      "gt:n:example:6.52": {
+        "x": 2377.3,
+        "y": 1201.29
+      },
+      "gt:n:example:6.53": {
+        "x": 2471.4,
+        "y": 1194.38
+      },
+      "gt:n:example:6.55": {
+        "x": 2190.01,
+        "y": 1279.89
+      },
+      "gt:n:theorem:6.54": {
+        "x": 2284.48,
+        "y": 1293.12
+      },
+      "gt:n:definition:6.57": {
+        "x": 2378.99,
+        "y": 1282.75
+      },
+      "gt:n:definition:6.59": {
+        "x": 2472.79,
+        "y": 1283.06
+      },
+      "gt:n:example:6.60": {
+        "x": 2188.89,
+        "y": 1376.66
+      },
+      "gt:n:example:6.61": {
+        "x": 2282.79,
+        "y": 1366.37
+      },
+      "gt:n:lemma:6.62": {
+        "x": 2371.42,
+        "y": 1363.95
+      },
+      "gt:n:proposition:6.58": {
+        "x": 2480.95,
+        "y": 1378.21
+      },
+      "gt:n:theorem:6.63": {
+        "x": 2201.76,
+        "y": 1450.63
+      },
+      "gt:n:lemma:6.64": {
+        "x": 2277.63,
+        "y": 1450.84
+      },
+      "gt:n:definition:6.67": {
+        "x": 2390.37,
+        "y": 1453.62
+      },
+      "gt:n:example:6.66": {
+        "x": 2470.28,
+        "y": 1450.23
+      },
+      "gt:n:theorem:6.65": {
+        "x": 2201.96,
+        "y": 1534.29
+      },
+      "gt:n:lemma:6.68": {
+        "x": 2278.03,
+        "y": 1546.5
+      },
+      "gt:n:theorem:6.69": {
+        "x": 2390.37,
+        "y": 1538.85
+      },
+      "gt:n:definition:7.2": {
+        "x": 2616.44,
+        "y": 116.81
+      },
+      "gt:n:example:7.5": {
+        "x": 2714.02,
+        "y": 113.97
+      },
+      "gt:n:example:7.6": {
+        "x": 2807.71,
+        "y": 108.49
+      },
+      "gt:n:example:7.7": {
+        "x": 2901.81,
+        "y": 109.77
+      },
+      "gt:n:lemma:7.9": {
+        "x": 2609.65,
+        "y": 183.83
+      },
+      "gt:n:remark:7.3": {
+        "x": 2708,
+        "y": 191.83
+      },
+      "gt:n:remark:7.4": {
+        "x": 2801.69,
+        "y": 184.61
+      },
+      "gt:n:theorem:7.1": {
+        "x": 2900.58,
+        "y": 191.39
+      },
+      "gt:n:theorem:7.8": {
+        "x": 2619.3,
+        "y": 284.68
+      },
+      "gt:n:theorem:7.10": {
+        "x": 2709.3,
+        "y": 275.45
+      },
+      "gt:n:theorem:7.11": {
+        "x": 2803.19,
+        "y": 277.9
+      },
+      "gt:n:definition:7.16": {
+        "x": 2906.03,
+        "y": 278.43
+      },
+      "gt:n:example:7.13": {
+        "x": 2606.46,
+        "y": 371.38
+      },
+      "gt:n:example:7.14": {
+        "x": 2699.96,
+        "y": 360.45
+      },
+      "gt:n:example:7.15": {
+        "x": 2793.85,
+        "y": 363.48
+      },
+      "gt:n:theorem:7.12": {
+        "x": 2897.09,
+        "y": 367.85
+      },
+      "gt:n:definition:7.17": {
+        "x": 2624.13,
+        "y": 437.53
+      },
+      "gt:n:definition:7.21": {
+        "x": 2706.96,
+        "y": 446.32
+      },
+      "gt:n:lemma:7.22": {
+        "x": 2812.68,
+        "y": 447.26
+      },
+      "gt:n:theorem:7.18": {
+        "x": 2898.11,
+        "y": 441.65
+      },
+      "gt:n:theorem:7.19": {
+        "x": 2616.01,
+        "y": 534.25
+      },
+      "gt:n:theorem:7.20": {
+        "x": 2709.91,
+        "y": 532.67
+      },
+      "gt:n:definition:7.25": {
+        "x": 2800.55,
+        "y": 523.42
+      },
+      "gt:v:V8": {
+        "x": 2905.92,
+        "y": 523.64
+      },
+      "gt:n:example:7.23": {
+        "x": 2617.84,
+        "y": 608.52
+      },
+      "gt:n:example:7.24": {
+        "x": 2711.12,
+        "y": 613
+      },
+      "gt:n:theorem:7.26": {
+        "x": 2803.3,
+        "y": 618.21
+      },
+      "gt:n:definition:7.31": {
+        "x": 2894.55,
+        "y": 620.16
+      },
+      "gt:n:example:7.29": {
+        "x": 2618.45,
+        "y": 696.24
+      },
+      "gt:n:example:7.30": {
+        "x": 2699.14,
+        "y": 689.69
+      },
+      "gt:n:example:7.33": {
+        "x": 2792.84,
+        "y": 695.88
+      },
+      "gt:n:example:7.34": {
+        "x": 2886.74,
+        "y": 695.75
+      },
+      "gt:n:example:7.35": {
+        "x": 2604.63,
+        "y": 775.56
+      },
+      "gt:n:example:7.36": {
+        "x": 2698.53,
+        "y": 786.54
+      },
+      "gt:n:remark:7.28": {
+        "x": 2809.23,
+        "y": 783.9
+      },
+      "gt:n:remark:7.32": {
+        "x": 2904.45,
+        "y": 780.33
+      },
+      "gt:n:theorem:7.27": {
+        "x": 2615.4,
+        "y": 863.23
+      },
+      "gt:n:corollary:7.39": {
+        "x": 2696.12,
+        "y": 859.52
+      },
+      "gt:n:corollary:7.40": {
+        "x": 2791.85,
+        "y": 860
+      },
+      "gt:n:definition:7.41": {
+        "x": 2894.55,
+        "y": 867.62
+      },
+      "gt:n:example:7.42": {
+        "x": 2619.36,
+        "y": 948.73
+      },
+      "gt:n:example:7.43": {
+        "x": 2713.46,
+        "y": 939.72
+      },
+      "gt:n:theorem:7.37": {
+        "x": 2805.02,
+        "y": 952.32
+      },
+      "gt:n:theorem:7.38": {
+        "x": 2897.7,
+        "y": 944.37
+      },
+      "gt:n:theorem:7.44": {
+        "x": 2616.72,
+        "y": 1040.67
+      },
+      "gt:n:theorem:7.45": {
+        "x": 2710.82,
+        "y": 1033.11
+      }
+    }
+  },
+  "mobile": {
+    "orientation": "vertical",
+    "width": 696,
+    "height": 14600,
+    "bands": [
+      {
+        "id": "sets",
+        "index": 1,
+        "label": "Set theory",
+        "start": 0,
+        "end": 2964
+      },
+      {
+        "id": "metrics",
+        "index": 2,
+        "label": "Metric spaces",
+        "start": 2964,
+        "end": 4072
+      },
+      {
+        "id": "topology",
+        "index": 3,
+        "label": "Topological spaces and continuous functions",
+        "start": 4072,
+        "end": 8544
+      },
+      {
+        "id": "convergence",
+        "index": 4,
+        "label": "Continuity and Convergence",
+        "start": 8544,
+        "end": 9420
+      },
+      {
+        "id": "separation",
+        "index": 5,
+        "label": "Separation and countability",
+        "start": 9420,
+        "end": 10760
+      },
+      {
+        "id": "compactness",
+        "index": 6,
+        "label": "Compactness",
+        "start": 10760,
+        "end": 13028
+      },
+      {
+        "id": "connectedness",
+        "index": 7,
+        "label": "Connectedness",
+        "start": 13028,
+        "end": 14600
+      }
+    ],
+    "depth": {
+      "gt:e001": 0,
+      "gt:e002": 1,
+      "gt:e003": 1,
+      "gt:e004": 2,
+      "gt:e005": 2,
+      "gt:e006": 2,
+      "gt:e007": 3,
+      "gt:e008": 4,
+      "gt:e009": 2,
+      "gt:e010": 1,
+      "gt:e011": 4,
+      "gt:e012": 1,
+      "gt:e013": 2,
+      "gt:e014": 3,
+      "gt:e015": 3,
+      "gt:e016": 2,
+      "gt:e017": 3,
+      "gt:e018": 4,
+      "gt:e019": 5,
+      "gt:n:example:1.1": 1,
+      "gt:n:definition:1.2": 0,
+      "gt:n:theorem:1.3": 2,
+      "gt:n:example:1.4": 0,
+      "gt:n:remark:1.5": 1,
+      "gt:n:definition:1.6": 1,
+      "gt:n:example:1.7": 2,
+      "gt:n:example:1.8": 3,
+      "gt:n:example:1.9": 2,
+      "gt:n:definition:1.10": 0,
+      "gt:n:definition:1.11": 1,
+      "gt:n:example:1.12": 2,
+      "gt:n:example:1.13": 2,
+      "gt:n:example:1.14": 2,
+      "gt:n:definition:1.15": 0,
+      "gt:n:example:1.16": 2,
+      "gt:n:definition:1.17": 0,
+      "gt:n:example:1.18": 1,
+      "gt:n:example:1.19": 1,
+      "gt:n:theorem:1.20": 2,
+      "gt:n:definition:1.21": 1,
+      "gt:n:example:1.22": 2,
+      "gt:n:example:1.23": 2,
+      "gt:n:example:1.24": 2,
+      "gt:n:example:1.25": 1,
+      "gt:n:definition:1.26": 2,
+      "gt:n:example:1.27": 2,
+      "gt:n:definition:1.28": 2,
+      "gt:n:example:1.29": 2,
+      "gt:n:example:1.30": 2,
+      "gt:n:definition:1.31": 2,
+      "gt:n:remark:1.32": 3,
+      "gt:n:definition:1.33": 3,
+      "gt:n:example:1.34": 4,
+      "gt:n:example:1.35": 4,
+      "gt:n:theorem:1.36": 4,
+      "gt:n:definition:1.37": 4,
+      "gt:n:definition:1.38": 4,
+      "gt:n:example:1.39": 5,
+      "gt:n:example:1.40": 4,
+      "gt:n:lemma:1.41": 4,
+      "gt:n:lemma:1.42": 5,
+      "gt:n:lemma:1.43": 4,
+      "gt:n:theorem:1.44": 5,
+      "gt:n:definition:1.45": 2,
+      "gt:n:proposition:1.46": 3,
+      "gt:n:definition:1.47": 2,
+      "gt:n:definition:1.48": 2,
+      "gt:n:example:1.49": 3,
+      "gt:n:proposition:1.50": 0,
+      "gt:n:theorem:1.51": 5,
+      "gt:n:remark:1.52": 4,
+      "gt:n:lemma:1.53": 3,
+      "gt:n:theorem:1.54": 6,
+      "gt:n:definition:1.55": 4,
+      "gt:n:lemma:1.56": 3,
+      "gt:n:theorem:1.57": 4,
+      "gt:n:corollary:1.58": 5,
+      "gt:n:corollary:1.59": 6,
+      "gt:n:corollary:1.60": 6,
+      "gt:n:definition:1.61": 3,
+      "gt:n:example:1.62": 3,
+      "gt:n:example:1.63": 4,
+      "gt:n:lemma:1.64": 4,
+      "gt:n:proposition:1.65": 0,
+      "gt:n:theorem:1.66": 5,
+      "gt:n:theorem:1.67": 4,
+      "gt:n:proposition:1.68": 0,
+      "gt:n:theorem:1.69": 4,
+      "gt:n:theorem:1.70": 4,
+      "gt:n:corollary:1.71": 5,
+      "gt:n:theorem:1.72": 3,
+      "gt:n:corollary:1.73": 5,
+      "gt:n:proposition:1.74": 5,
+      "gt:n:corollary:1.75": 0,
+      "gt:n:proposition:1.76": 4,
+      "gt:n:corollary:1.77": 0,
+      "gt:n:theorem:1.78": 3,
+      "gt:n:theorem:1.79": 5,
+      "gt:n:theorem:1.80": 3,
+      "gt:n:definition:2.1": 2,
+      "gt:n:example:2.2": 3,
+      "gt:n:definition:2.3": 3,
+      "gt:n:example:2.4": 4,
+      "gt:n:definition:2.5": 4,
+      "gt:n:definition:2.6": 3,
+      "gt:n:proposition:2.7": 5,
+      "gt:n:definition:2.8": 4,
+      "gt:n:proposition:2.9": 5,
+      "gt:n:definition:2.10": 3,
+      "gt:n:example:2.11": 4,
+      "gt:n:proposition:2.12": 4,
+      "gt:n:definition:2.13": 4,
+      "gt:n:proposition:2.14": 4,
+      "gt:n:corollary:2.15": 4,
+      "gt:n:theorem:2.16": 5,
+      "gt:n:theorem:2.17": 5,
+      "gt:n:definition:2.18": 0,
+      "gt:n:definition:2.19": 1,
+      "gt:n:theorem:2.20": 6,
+      "gt:n:lemma:2.21": 5,
+      "gt:n:definition:2.22": 3,
+      "gt:n:proposition:2.23": 4,
+      "gt:n:example:2.24": 5,
+      "gt:n:definition:2.25": 4,
+      "gt:n:example:2.26": 5,
+      "gt:n:theorem:2.27": 5,
+      "gt:n:example:2.28": 5,
+      "gt:n:proposition:3.3": 2,
+      "gt:n:remark:3.4": 2,
+      "gt:n:example:3.5": 1,
+      "gt:n:example:3.6": 4,
+      "gt:n:example:3.7": 1,
+      "gt:n:example:3.8": 1,
+      "gt:n:lemma:3.9": 3,
+      "gt:n:example:3.10": 1,
+      "gt:n:definition:3.11": 0,
+      "gt:n:remark:3.12": 1,
+      "gt:n:definition:3.13": 1,
+      "gt:n:example:3.14": 4,
+      "gt:n:example:3.15": 2,
+      "gt:n:example:3.16": 2,
+      "gt:n:proposition:3.17": 2,
+      "gt:n:proposition:3.18": 2,
+      "gt:n:proposition:3.19": 2,
+      "gt:n:example:3.20": 4,
+      "gt:n:definition:3.21": 1,
+      "gt:n:example:3.22": 2,
+      "gt:n:theorem:3.23": 2,
+      "gt:n:remark:3.24": 1,
+      "gt:n:example:3.25": 2,
+      "gt:n:definition:3.26": 2,
+      "gt:n:proposition:3.27": 3,
+      "gt:n:proposition:3.28": 3,
+      "gt:n:definition:3.29": 1,
+      "gt:n:remark:3.30": 3,
+      "gt:n:example:3.31": 2,
+      "gt:n:definition:3.32": 1,
+      "gt:n:theorem:3.33": 3,
+      "gt:n:definition:3.34": 3,
+      "gt:n:definition:3.35": 3,
+      "gt:n:proposition:3.36": 2,
+      "gt:n:example:3.37": 4,
+      "gt:n:example:3.38": 4,
+      "gt:n:example:3.39": 4,
+      "gt:n:example:3.40": 4,
+      "gt:n:definition:3.41": 2,
+      "gt:n:theorem:3.42": 3,
+      "gt:n:example:3.43": 4,
+      "gt:n:definition:3.44": 1,
+      "gt:n:theorem:3.45": 3,
+      "gt:n:example:3.47": 2,
+      "gt:n:lemma:3.48": 2,
+      "gt:n:lemma:3.49": 2,
+      "gt:n:theorem:3.50": 3,
+      "gt:n:theorem:3.51": 4,
+      "gt:n:remark:3.52": 4,
+      "gt:n:definition:3.53": 3,
+      "gt:n:theorem:3.54": 4,
+      "gt:n:example:3.56": 3,
+      "gt:n:theorem:3.57": 4,
+      "gt:n:remark:3.58": 3,
+      "gt:n:remark:3.59": 3,
+      "gt:n:remark:3.60": 3,
+      "gt:n:example:3.61": 3,
+      "gt:n:example:3.62": 3,
+      "gt:n:example:3.63": 3,
+      "gt:n:theorem:3.64": 5,
+      "gt:n:lemma:3.65": 2,
+      "gt:n:corollary:3.66": 3,
+      "gt:n:remark:3.67": 2,
+      "gt:n:theorem:3.68": 3,
+      "gt:n:theorem:3.70": 4,
+      "gt:n:example:3.71": 4,
+      "gt:n:example:3.72": 4,
+      "gt:n:example:3.73": 4,
+      "gt:n:example:3.75": 4,
+      "gt:n:lemma:3.76": 4,
+      "gt:n:definition:3.77": 1,
+      "gt:n:remark:3.78": 4,
+      "gt:n:theorem:3.79": 5,
+      "gt:n:example:3.80": 4,
+      "gt:n:definition:3.81": 2,
+      "gt:n:example:3.82": 3,
+      "gt:n:definition:3.83": 2,
+      "gt:n:remark:3.84": 3,
+      "gt:n:remark:3.85": 3,
+      "gt:n:example:3.86": 3,
+      "gt:n:example:3.87": 3,
+      "gt:n:theorem:3.88": 3,
+      "gt:n:definition:3.89": 0,
+      "gt:n:theorem:3.90": 3,
+      "gt:n:theorem:3.91": 6,
+      "gt:n:remark:3.92": 3,
+      "gt:n:lemma:3.93": 5,
+      "gt:n:theorem:3.94": 3,
+      "gt:n:example:3.95": 3,
+      "gt:n:example:3.96": 3,
+      "gt:n:definition:3.97": 3,
+      "gt:n:remark:3.98": 4,
+      "gt:n:definition:3.99": 4,
+      "gt:n:example:3.100": 5,
+      "gt:n:example:3.101": 5,
+      "gt:n:definition:3.102": 5,
+      "gt:n:proposition:3.103": 6,
+      "gt:n:theorem:3.104": 6,
+      "gt:n:example:3.105": 6,
+      "gt:n:example:3.106": 6,
+      "gt:n:example:3.107": 6,
+      "gt:n:theorem:3.108": 6,
+      "gt:n:example:3.109": 4,
+      "gt:n:definition:3.110": 3,
+      "gt:n:example:3.111": 4,
+      "gt:n:example:3.112": 4,
+      "gt:n:example:3.113": 4,
+      "gt:n:proposition:3.114": 4,
+      "gt:n:proposition:3.115": 6,
+      "gt:n:definition:3.116": 4,
+      "gt:n:remark:3.117": 5,
+      "gt:n:definition:3.118": 4,
+      "gt:n:theorem:3.119": 5,
+      "gt:n:example:3.120": 5,
+      "gt:n:example:3.121": 5,
+      "gt:n:example:3.122": 5,
+      "gt:n:definition:3.123": 0,
+      "gt:n:definition:3.124": 4,
+      "gt:n:proposition:3.125": 5,
+      "gt:n:example:3.126": 5,
+      "gt:n:example:3.127": 5,
+      "gt:n:theorem:3.128": 4,
+      "gt:n:theorem:3.129": 4,
+      "gt:n:lemma:3.130": 6,
+      "gt:n:lemma:3.131": 4,
+      "gt:n:lemma:3.132": 5,
+      "gt:n:theorem:3.133": 7,
+      "gt:n:corollary:3.134": 3,
+      "gt:n:definition:3.135": 4,
+      "gt:n:definition:3.136": 1,
+      "gt:n:definition:3.137": 5,
+      "gt:n:lemma:3.138": 5,
+      "gt:n:lemma:3.139": 5,
+      "gt:n:theorem:3.140": 6,
+      "gt:n:proposition:4.1": 3,
+      "gt:n:definition:4.2": 2,
+      "gt:n:problem:4.3": 5,
+      "gt:n:proposition:4.4": 3,
+      "gt:n:example:4.5": 4,
+      "gt:n:example:4.6": 5,
+      "gt:n:example:4.7": 3,
+      "gt:n:example:4.8": 3,
+      "gt:n:proposition:4.9": 3,
+      "gt:n:theorem:4.10": 4,
+      "gt:n:example:4.11": 4,
+      "gt:n:definition:4.12": 1,
+      "gt:n:remark:4.13": 2,
+      "gt:n:example:4.14": 2,
+      "gt:n:definition:4.15": 2,
+      "gt:n:definition:4.16": 3,
+      "gt:n:remark:4.17": 3,
+      "gt:n:example:4.18": 3,
+      "gt:n:example:4.19": 3,
+      "gt:n:theorem:4.20": 3,
+      "gt:n:theorem:4.21": 3,
+      "gt:n:definition:5.1": 2,
+      "gt:n:definition:5.2": 5,
+      "gt:n:example:5.3": 6,
+      "gt:n:example:5.4": 6,
+      "gt:n:remark:5.5": 6,
+      "gt:n:example:5.6": 6,
+      "gt:n:example:5.7": 6,
+      "gt:n:theorem:5.8": 6,
+      "gt:n:definition:5.9": 4,
+      "gt:n:example:5.10": 6,
+      "gt:n:example:5.11": 6,
+      "gt:n:example:5.12": 5,
+      "gt:n:theorem:5.13": 5,
+      "gt:n:definition:5.14": 4,
+      "gt:n:example:5.15": 5,
+      "gt:n:theorem:5.16": 5,
+      "gt:n:example:5.17": 3,
+      "gt:n:lemma:5.19": 2,
+      "gt:n:example:5.20": 2,
+      "gt:n:example:5.21": 2,
+      "gt:n:example:5.22": 4,
+      "gt:n:proposition:5.24": 3,
+      "gt:n:example:5.25": 4,
+      "gt:n:theorem:5.26": 6,
+      "gt:n:definition:5.27": 2,
+      "gt:n:remark:5.28": 3,
+      "gt:n:example:5.29": 3,
+      "gt:n:lemma:5.30": 3,
+      "gt:n:theorem:5.31": 4,
+      "gt:n:example:5.32": 3,
+      "gt:n:example:5.33": 3,
+      "gt:n:proposition:5.34": 3,
+      "gt:n:theorem:5.35": 5,
+      "gt:n:theorem:5.36": 5,
+      "gt:n:lemma:5.37": 5,
+      "gt:n:theorem:5.38": 7,
+      "gt:n:lemma:5.39": 6,
+      "gt:n:theorem:6.1": 3,
+      "gt:n:theorem:6.2": 3,
+      "gt:n:example:6.4": 2,
+      "gt:n:example:6.5": 2,
+      "gt:n:example:6.6": 2,
+      "gt:n:example:6.7": 3,
+      "gt:n:example:6.8": 2,
+      "gt:n:example:6.10": 2,
+      "gt:n:example:6.14": 2,
+      "gt:n:theorem:6.15": 4,
+      "gt:n:definition:6.16": 1,
+      "gt:n:theorem:6.17": 2,
+      "gt:n:corollary:6.19": 4,
+      "gt:n:proposition:6.21": 5,
+      "gt:n:theorem:6.22": 3,
+      "gt:n:theorem:6.23": 5,
+      "gt:n:theorem:6.24": 4,
+      "gt:n:corollary:6.25": 2,
+      "gt:n:theorem:6.26": 7,
+      "gt:n:definition:6.27": 3,
+      "gt:n:example:6.28": 4,
+      "gt:n:definition:6.29": 5,
+      "gt:n:theorem:6.30": 6,
+      "gt:n:definition:6.31": 3,
+      "gt:n:theorem:6.32": 4,
+      "gt:n:definition:6.33": 3,
+      "gt:n:theorem:6.34": 6,
+      "gt:n:example:6.35": 4,
+      "gt:n:example:6.36": 4,
+      "gt:n:definition:6.37": 4,
+      "gt:n:definition:6.38": 3,
+      "gt:n:example:6.39": 4,
+      "gt:n:proposition:6.40": 5,
+      "gt:n:theorem:6.41": 5,
+      "gt:n:definition:6.42": 3,
+      "gt:n:example:6.43": 4,
+      "gt:n:lemma:6.44": 5,
+      "gt:n:lemma:6.45": 5,
+      "gt:n:lemma:6.46": 4,
+      "gt:n:theorem:6.47": 6,
+      "gt:n:example:6.48": 2,
+      "gt:n:example:6.49": 4,
+      "gt:n:definition:6.50": 2,
+      "gt:n:example:6.51": 3,
+      "gt:n:example:6.52": 3,
+      "gt:n:example:6.53": 3,
+      "gt:n:theorem:6.54": 4,
+      "gt:n:example:6.55": 5,
+      "gt:n:definition:6.57": 0,
+      "gt:n:proposition:6.58": 2,
+      "gt:n:definition:6.59": 2,
+      "gt:n:example:6.60": 3,
+      "gt:n:example:6.61": 3,
+      "gt:n:lemma:6.62": 3,
+      "gt:n:theorem:6.63": 4,
+      "gt:n:lemma:6.64": 4,
+      "gt:n:theorem:6.65": 5,
+      "gt:n:example:6.66": 4,
+      "gt:n:definition:6.67": 3,
+      "gt:n:lemma:6.68": 5,
+      "gt:n:theorem:6.69": 6,
+      "gt:n:theorem:7.1": 5,
+      "gt:n:definition:7.2": 4,
+      "gt:n:remark:7.3": 5,
+      "gt:n:remark:7.4": 5,
+      "gt:n:example:7.5": 5,
+      "gt:n:example:7.6": 5,
+      "gt:n:example:7.7": 5,
+      "gt:n:theorem:7.8": 5,
+      "gt:n:lemma:7.9": 5,
+      "gt:n:theorem:7.10": 6,
+      "gt:n:theorem:7.11": 6,
+      "gt:n:theorem:7.12": 7,
+      "gt:n:example:7.13": 5,
+      "gt:n:example:7.14": 5,
+      "gt:n:example:7.15": 5,
+      "gt:n:definition:7.16": 3,
+      "gt:n:definition:7.17": 4,
+      "gt:n:theorem:7.18": 5,
+      "gt:n:theorem:7.19": 6,
+      "gt:n:theorem:7.20": 5,
+      "gt:n:definition:7.21": 3,
+      "gt:n:lemma:7.22": 6,
+      "gt:n:example:7.23": 5,
+      "gt:n:example:7.24": 5,
+      "gt:n:definition:7.25": 5,
+      "gt:n:theorem:7.26": 7,
+      "gt:n:theorem:7.27": 6,
+      "gt:n:remark:7.28": 6,
+      "gt:n:example:7.29": 6,
+      "gt:n:example:7.30": 6,
+      "gt:n:definition:7.31": 5,
+      "gt:n:remark:7.32": 6,
+      "gt:n:example:7.33": 6,
+      "gt:n:example:7.34": 6,
+      "gt:n:example:7.35": 6,
+      "gt:n:example:7.36": 6,
+      "gt:n:theorem:7.37": 6,
+      "gt:n:theorem:7.38": 8,
+      "gt:n:corollary:7.39": 9,
+      "gt:n:corollary:7.40": 10,
+      "gt:n:definition:7.41": 6,
+      "gt:n:example:7.42": 7,
+      "gt:n:example:7.43": 7,
+      "gt:n:theorem:7.44": 7,
+      "gt:n:theorem:7.45": 7,
+      "gt:u:sets-basic": 0,
+      "gt:u:set-calculus": 1,
+      "gt:u:cartesian-pair": 0,
+      "gt:u:image": 2,
+      "gt:u:preimage": 0,
+      "gt:u:bijection": 2,
+      "gt:u:composition": 2,
+      "gt:u:product-family": 1,
+      "gt:u:order-map": 3,
+      "gt:u:choice": 0,
+      "gt:u:maximum": 3,
+      "gt:u:zorn": 4,
+      "gt:u:cardinality": 3,
+      "gt:u:real-continuity": 2,
+      "gt:u:product-recall": 2,
+      "gt:u:open-closed-map": 2,
+      "gt:v:V2": 6,
+      "gt:v:V3": 6,
+      "gt:v:V4": 7,
+      "gt:v:V5": 5,
+      "gt:v:V6": 7,
+      "gt:v:V7": 7,
+      "gt:v:V8": 7,
+      "gt:v:V9": 5,
+      "gt:v:V10": 5
+    },
+    "positions": {
+      "gt:n:definition:1.2": {
+        "x": 123.63,
+        "y": 166.04
+      },
+      "gt:n:example:1.1": {
+        "x": 266.77,
+        "y": 154.94
+      },
+      "gt:u:sets-basic": {
+        "x": 425.03,
+        "y": 159.73
+      },
+      "gt:u:set-calculus": {
+        "x": 563.37,
+        "y": 169.23
+      },
+      "gt:n:definition:1.6": {
+        "x": 123.22,
+        "y": 280.23
+      },
+      "gt:n:example:1.4": {
+        "x": 266.47,
+        "y": 281.41
+      },
+      "gt:n:example:1.7": {
+        "x": 408.16,
+        "y": 277.06
+      },
+      "gt:n:remark:1.5": {
+        "x": 552.98,
+        "y": 284.21
+      },
+      "gt:n:theorem:1.3": {
+        "x": 126.22,
+        "y": 390.08
+      },
+      "gt:u:cartesian-pair": {
+        "x": 273.04,
+        "y": 399.49
+      },
+      "gt:u:image": {
+        "x": 409.01,
+        "y": 399.24
+      },
+      "gt:n:definition:1.10": {
+        "x": 563.98,
+        "y": 396.84
+      },
+      "gt:n:definition:1.11": {
+        "x": 137.88,
+        "y": 513.84
+      },
+      "gt:n:example:1.8": {
+        "x": 267.69,
+        "y": 504.6
+      },
+      "gt:n:example:1.9": {
+        "x": 409.59,
+        "y": 512.25
+      },
+      "gt:n:example:1.12": {
+        "x": 573.87,
+        "y": 511.61
+      },
+      "gt:u:product-family": {
+        "x": 135.27,
+        "y": 631.98
+      },
+      "gt:u:composition": {
+        "x": 287.58,
+        "y": 619.9
+      },
+      "gt:u:bijection": {
+        "x": 415.55,
+        "y": 618.32
+      },
+      "gt:u:preimage": {
+        "x": 555.15,
+        "y": 636.05
+      },
+      "gt:n:definition:1.15": {
+        "x": 137.47,
+        "y": 741.12
+      },
+      "gt:n:definition:1.17": {
+        "x": 279.67,
+        "y": 742.27
+      },
+      "gt:n:example:1.13": {
+        "x": 431.97,
+        "y": 752.21
+      },
+      "gt:n:example:1.14": {
+        "x": 548.48,
+        "y": 746.57
+      },
+      "gt:n:example:1.16": {
+        "x": 122.28,
+        "y": 861.29
+      },
+      "gt:n:example:1.18": {
+        "x": 264.88,
+        "y": 865.99
+      },
+      "gt:n:example:1.19": {
+        "x": 406.99,
+        "y": 864.22
+      },
+      "gt:n:theorem:1.20": {
+        "x": 573.55,
+        "y": 860.71
+      },
+      "gt:n:definition:1.21": {
+        "x": 126.5,
+        "y": 967.63
+      },
+      "gt:n:definition:1.26": {
+        "x": 268.19,
+        "y": 974.88
+      },
+      "gt:n:example:1.22": {
+        "x": 408.51,
+        "y": 972.24
+      },
+      "gt:n:example:1.23": {
+        "x": 550.41,
+        "y": 976.44
+      },
+      "gt:n:example:1.24": {
+        "x": 124.31,
+        "y": 1082.06
+      },
+      "gt:n:example:1.25": {
+        "x": 266.2,
+        "y": 1095.09
+      },
+      "gt:n:definition:1.28": {
+        "x": 409.58,
+        "y": 1100.16
+      },
+      "gt:n:example:1.27": {
+        "x": 550,
+        "y": 1086.35
+      },
+      "gt:n:example:1.29": {
+        "x": 123.8,
+        "y": 1198.4
+      },
+      "gt:n:example:1.30": {
+        "x": 266.1,
+        "y": 1205.27
+      },
+      "gt:n:definition:1.31": {
+        "x": 410.91,
+        "y": 1206.23
+      },
+      "gt:n:definition:1.33": {
+        "x": 552.7,
+        "y": 1205.37
+      },
+      "gt:n:definition:1.37": {
+        "x": 126.3,
+        "y": 1330.86
+      },
+      "gt:n:definition:1.38": {
+        "x": 268.19,
+        "y": 1312.48
+      },
+      "gt:n:example:1.34": {
+        "x": 407.7,
+        "y": 1316.6
+      },
+      "gt:n:example:1.35": {
+        "x": 549.8,
+        "y": 1316.78
+      },
+      "gt:n:example:1.39": {
+        "x": 123.39,
+        "y": 1446.13
+      },
+      "gt:n:remark:1.32": {
+        "x": 287.46,
+        "y": 1446.6
+      },
+      "gt:n:theorem:1.36": {
+        "x": 431.14,
+        "y": 1444.89
+      },
+      "gt:n:example:1.40": {
+        "x": 562.49,
+        "y": 1435.9
+      },
+      "gt:n:lemma:1.41": {
+        "x": 122.58,
+        "y": 1549.25
+      },
+      "gt:n:lemma:1.42": {
+        "x": 264.48,
+        "y": 1549.95
+      },
+      "gt:n:lemma:1.43": {
+        "x": 406.38,
+        "y": 1555.76
+      },
+      "gt:n:theorem:1.44": {
+        "x": 573.54,
+        "y": 1555.1
+      },
+      "gt:u:order-map": {
+        "x": 139.9,
+        "y": 1669.48
+      },
+      "gt:n:definition:1.45": {
+        "x": 279.87,
+        "y": 1666.36
+      },
+      "gt:n:proposition:1.46": {
+        "x": 429.85,
+        "y": 1672.83
+      },
+      "gt:u:choice": {
+        "x": 564.38,
+        "y": 1676.31
+      },
+      "gt:n:definition:1.47": {
+        "x": 137.67,
+        "y": 1780.98
+      },
+      "gt:n:definition:1.48": {
+        "x": 280.99,
+        "y": 1792.25
+      },
+      "gt:n:example:1.49": {
+        "x": 419.58,
+        "y": 1793.83
+      },
+      "gt:n:proposition:1.50": {
+        "x": 571.03,
+        "y": 1795.55
+      },
+      "gt:n:theorem:1.51": {
+        "x": 146.62,
+        "y": 1893.27
+      },
+      "gt:u:maximum": {
+        "x": 268.17,
+        "y": 1893.68
+      },
+      "gt:u:zorn": {
+        "x": 414.12,
+        "y": 1904.7
+      },
+      "gt:n:lemma:1.53": {
+        "x": 561.38,
+        "y": 1904.36
+      },
+      "gt:n:remark:1.52": {
+        "x": 130.84,
+        "y": 2027.43
+      },
+      "gt:n:theorem:1.54": {
+        "x": 288.93,
+        "y": 2011.87
+      },
+      "gt:u:cardinality": {
+        "x": 420.14,
+        "y": 2015.55
+      },
+      "gt:n:corollary:1.58": {
+        "x": 566.43,
+        "y": 2026.42
+      },
+      "gt:n:corollary:1.59": {
+        "x": 140.33,
+        "y": 2133.82
+      },
+      "gt:n:definition:1.55": {
+        "x": 268.09,
+        "y": 2138.25
+      },
+      "gt:n:lemma:1.56": {
+        "x": 418.87,
+        "y": 2134.96
+      },
+      "gt:n:theorem:1.57": {
+        "x": 573.23,
+        "y": 2127.25
+      },
+      "gt:n:corollary:1.60": {
+        "x": 126.41,
+        "y": 2255.47
+      },
+      "gt:n:definition:1.61": {
+        "x": 279.06,
+        "y": 2246.12
+      },
+      "gt:n:example:1.62": {
+        "x": 419.07,
+        "y": 2242.6
+      },
+      "gt:n:example:1.63": {
+        "x": 560.97,
+        "y": 2245.15
+      },
+      "gt:n:lemma:1.64": {
+        "x": 146.25,
+        "y": 2358.69
+      },
+      "gt:n:proposition:1.65": {
+        "x": 276.17,
+        "y": 2367.47
+      },
+      "gt:n:theorem:1.66": {
+        "x": 416.71,
+        "y": 2361.66
+      },
+      "gt:n:proposition:1.68": {
+        "x": 559.05,
+        "y": 2370.76
+      },
+      "gt:n:theorem:1.67": {
+        "x": 132.61,
+        "y": 2479.94
+      },
+      "gt:n:theorem:1.69": {
+        "x": 274.82,
+        "y": 2480.92
+      },
+      "gt:n:theorem:1.70": {
+        "x": 431.74,
+        "y": 2477.08
+      },
+      "gt:n:corollary:1.71": {
+        "x": 565.92,
+        "y": 2475.04
+      },
+      "gt:n:corollary:1.73": {
+        "x": 139.72,
+        "y": 2599.85
+      },
+      "gt:n:theorem:1.72": {
+        "x": 289.54,
+        "y": 2593.82
+      },
+      "gt:n:corollary:1.75": {
+        "x": 424.33,
+        "y": 2602.17
+      },
+      "gt:n:corollary:1.77": {
+        "x": 566.12,
+        "y": 2601.64
+      },
+      "gt:n:proposition:1.74": {
+        "x": 132.85,
+        "y": 2720.63
+      },
+      "gt:n:proposition:1.76": {
+        "x": 274.64,
+        "y": 2711.28
+      },
+      "gt:n:theorem:1.78": {
+        "x": 430.93,
+        "y": 2719.77
+      },
+      "gt:n:theorem:1.79": {
+        "x": 573.03,
+        "y": 2716.6
+      },
+      "gt:n:theorem:1.80": {
+        "x": 134.94,
+        "y": 2825.23
+      },
+      "gt:n:definition:2.1": {
+        "x": 142.91,
+        "y": 3127.69
+      },
+      "gt:n:definition:2.3": {
+        "x": 285.11,
+        "y": 3119.79
+      },
+      "gt:n:example:2.2": {
+        "x": 420.33,
+        "y": 3130.17
+      },
+      "gt:u:real-continuity": {
+        "x": 551.58,
+        "y": 3119.92
+      },
+      "gt:n:definition:2.5": {
+        "x": 143.32,
+        "y": 3248.78
+      },
+      "gt:n:definition:2.6": {
+        "x": 285.62,
+        "y": 3243.06
+      },
+      "gt:n:definition:2.8": {
+        "x": 427.83,
+        "y": 3241.73
+      },
+      "gt:n:example:2.4": {
+        "x": 562.54,
+        "y": 3248.98
+      },
+      "gt:n:proposition:2.7": {
+        "x": 147.28,
+        "y": 3366
+      },
+      "gt:n:proposition:2.9": {
+        "x": 288.27,
+        "y": 3348.63
+      },
+      "gt:n:definition:2.10": {
+        "x": 407.56,
+        "y": 3357.77
+      },
+      "gt:n:example:2.11": {
+        "x": 571.32,
+        "y": 3357.92
+      },
+      "gt:n:proposition:2.12": {
+        "x": 142.86,
+        "y": 3477.74
+      },
+      "gt:n:corollary:2.15": {
+        "x": 281.64,
+        "y": 3471.73
+      },
+      "gt:n:definition:2.13": {
+        "x": 407.86,
+        "y": 3473.91
+      },
+      "gt:n:proposition:2.14": {
+        "x": 569.06,
+        "y": 3468.26
+      },
+      "gt:n:theorem:2.16": {
+        "x": 134.72,
+        "y": 3585.24
+      },
+      "gt:n:definition:2.18": {
+        "x": 266.37,
+        "y": 3587.1
+      },
+      "gt:n:definition:2.19": {
+        "x": 408.47,
+        "y": 3599.84
+      },
+      "gt:n:theorem:2.17": {
+        "x": 560.61,
+        "y": 3595.77
+      },
+      "gt:n:theorem:2.20": {
+        "x": 145.28,
+        "y": 3702.94
+      },
+      "gt:n:definition:2.22": {
+        "x": 267.59,
+        "y": 3714
+      },
+      "gt:n:lemma:2.21": {
+        "x": 419.45,
+        "y": 3699.98
+      },
+      "gt:n:proposition:2.23": {
+        "x": 557.38,
+        "y": 3706.97
+      },
+      "gt:n:example:2.24": {
+        "x": 132.63,
+        "y": 3828.03
+      },
+      "gt:n:definition:2.25": {
+        "x": 267.69,
+        "y": 3824.14
+      },
+      "gt:n:example:2.26": {
+        "x": 416.42,
+        "y": 3831.8
+      },
+      "gt:n:example:2.28": {
+        "x": 558.22,
+        "y": 3813.55
+      },
+      "gt:n:theorem:2.27": {
+        "x": 145.99,
+        "y": 3938.57
+      },
+      "gt:e001": {
+        "x": 132.29,
+        "y": 4244.14
+      },
+      "gt:e002": {
+        "x": 274.19,
+        "y": 4226.49
+      },
+      "gt:n:example:3.5": {
+        "x": 417.13,
+        "y": 4238.33
+      },
+      "gt:n:proposition:3.3": {
+        "x": 557.12,
+        "y": 4236.11
+      },
+      "gt:n:remark:3.4": {
+        "x": 131.45,
+        "y": 4352.04
+      },
+      "gt:n:example:3.6": {
+        "x": 275.44,
+        "y": 4347.53
+      },
+      "gt:n:example:3.7": {
+        "x": 417.34,
+        "y": 4355.48
+      },
+      "gt:n:example:3.8": {
+        "x": 560.45,
+        "y": 4344.9
+      },
+      "gt:n:example:3.10": {
+        "x": 126.09,
+        "y": 4465.41
+      },
+      "gt:n:lemma:3.9": {
+        "x": 279.12,
+        "y": 4468.67
+      },
+      "gt:n:definition:3.11": {
+        "x": 417.04,
+        "y": 4460.03
+      },
+      "gt:n:definition:3.13": {
+        "x": 558.84,
+        "y": 4473.57
+      },
+      "gt:n:remark:3.12": {
+        "x": 129.32,
+        "y": 4574.2
+      },
+      "gt:n:example:3.14": {
+        "x": 267.68,
+        "y": 4575.33
+      },
+      "gt:n:example:3.15": {
+        "x": 409.78,
+        "y": 4585.31
+      },
+      "gt:n:example:3.16": {
+        "x": 551.88,
+        "y": 4584.06
+      },
+      "gt:n:proposition:3.17": {
+        "x": 130.76,
+        "y": 4691.29
+      },
+      "gt:n:proposition:3.18": {
+        "x": 273.27,
+        "y": 4703.02
+      },
+      "gt:n:definition:3.21": {
+        "x": 427.6,
+        "y": 4703.92
+      },
+      "gt:n:example:3.20": {
+        "x": 563.67,
+        "y": 4702.09
+      },
+      "gt:n:proposition:3.19": {
+        "x": 131.37,
+        "y": 4809.38
+      },
+      "gt:n:definition:3.26": {
+        "x": 285.71,
+        "y": 4804.56
+      },
+      "gt:n:example:3.22": {
+        "x": 421.87,
+        "y": 4823.76
+      },
+      "gt:n:example:3.25": {
+        "x": 563.16,
+        "y": 4820.3
+      },
+      "gt:n:remark:3.24": {
+        "x": 142.32,
+        "y": 4929.68
+      },
+      "gt:n:theorem:3.23": {
+        "x": 276.03,
+        "y": 4927.74
+      },
+      "gt:n:definition:3.29": {
+        "x": 428.42,
+        "y": 4932.73
+      },
+      "gt:n:definition:3.32": {
+        "x": 570.32,
+        "y": 4923.54
+      },
+      "gt:n:example:3.31": {
+        "x": 137.16,
+        "y": 5044.25
+      },
+      "gt:n:proposition:3.27": {
+        "x": 274.39,
+        "y": 5056.32
+      },
+      "gt:n:proposition:3.28": {
+        "x": 416.29,
+        "y": 5042.62
+      },
+      "gt:n:remark:3.30": {
+        "x": 567.3,
+        "y": 5046.22
+      },
+      "gt:n:theorem:3.33": {
+        "x": 134.03,
+        "y": 5154.84
+      },
+      "gt:n:definition:3.34": {
+        "x": 285.71,
+        "y": 5160.07
+      },
+      "gt:n:definition:3.35": {
+        "x": 427.6,
+        "y": 5156.18
+      },
+      "gt:n:example:3.37": {
+        "x": 563.36,
+        "y": 5153.85
+      },
+      "gt:n:example:3.38": {
+        "x": 137.87,
+        "y": 5278.17
+      },
+      "gt:n:proposition:3.36": {
+        "x": 287.29,
+        "y": 5280.83
+      },
+      "gt:n:definition:3.41": {
+        "x": 427.19,
+        "y": 5281.88
+      },
+      "gt:n:example:3.39": {
+        "x": 563.97,
+        "y": 5286.84
+      },
+      "gt:n:example:3.40": {
+        "x": 124.25,
+        "y": 5400.56
+      },
+      "gt:n:theorem:3.42": {
+        "x": 275.32,
+        "y": 5395.32
+      },
+      "gt:n:definition:3.44": {
+        "x": 427.5,
+        "y": 5399.07
+      },
+      "gt:e003": {
+        "x": 558.08,
+        "y": 5392.95
+      },
+      "gt:n:example:3.43": {
+        "x": 123.95,
+        "y": 5505.39
+      },
+      "gt:n:theorem:3.45": {
+        "x": 275.42,
+        "y": 5502.52
+      },
+      "gt:n:example:3.47": {
+        "x": 408.36,
+        "y": 5510.48
+      },
+      "gt:n:lemma:3.48": {
+        "x": 555.62,
+        "y": 5503.41
+      },
+      "gt:n:lemma:3.49": {
+        "x": 129.52,
+        "y": 5629.46
+      },
+      "gt:n:theorem:3.50": {
+        "x": 264.75,
+        "y": 5629.6
+      },
+      "gt:n:theorem:3.51": {
+        "x": 406.85,
+        "y": 5617.06
+      },
+      "gt:n:definition:3.53": {
+        "x": 569.4,
+        "y": 5634.82
+      },
+      "gt:e004": {
+        "x": 132.8,
+        "y": 5744.58
+      },
+      "gt:n:example:3.56": {
+        "x": 279.25,
+        "y": 5741.26
+      },
+      "gt:n:remark:3.52": {
+        "x": 425.51,
+        "y": 5746.97
+      },
+      "gt:n:theorem:3.54": {
+        "x": 548.35,
+        "y": 5750.04
+      },
+      "gt:n:theorem:3.57": {
+        "x": 122.24,
+        "y": 5862.89
+      },
+      "gt:e005": {
+        "x": 274.69,
+        "y": 5859.27
+      },
+      "gt:v:V9": {
+        "x": 407.95,
+        "y": 5860.73
+      },
+      "gt:v:V10": {
+        "x": 557.48,
+        "y": 5851.67
+      },
+      "gt:n:example:3.61": {
+        "x": 125.37,
+        "y": 5965.57
+      },
+      "gt:n:example:3.62": {
+        "x": 267.68,
+        "y": 5981.19
+      },
+      "gt:n:example:3.63": {
+        "x": 409.58,
+        "y": 5970.83
+      },
+      "gt:n:remark:3.58": {
+        "x": 566.9,
+        "y": 5972.84
+      },
+      "gt:n:remark:3.59": {
+        "x": 141,
+        "y": 6097.78
+      },
+      "gt:n:remark:3.60": {
+        "x": 283.1,
+        "y": 6087.6
+      },
+      "gt:n:theorem:3.64": {
+        "x": 406.55,
+        "y": 6084.1
+      },
+      "gt:e006": {
+        "x": 558.59,
+        "y": 6086.38
+      },
+      "gt:n:corollary:3.66": {
+        "x": 131.87,
+        "y": 6211.73
+      },
+      "gt:n:lemma:3.65": {
+        "x": 285.33,
+        "y": 6208.55
+      },
+      "gt:n:remark:3.67": {
+        "x": 424.39,
+        "y": 6204.24
+      },
+      "gt:n:theorem:3.68": {
+        "x": 573.33,
+        "y": 6208.92
+      },
+      "gt:e007": {
+        "x": 132.49,
+        "y": 6322.74
+      },
+      "gt:n:example:3.71": {
+        "x": 266.97,
+        "y": 6323.66
+      },
+      "gt:n:example:3.72": {
+        "x": 408.66,
+        "y": 6330.94
+      },
+      "gt:n:example:3.73": {
+        "x": 550.76,
+        "y": 6329.94
+      },
+      "gt:e008": {
+        "x": 133.2,
+        "y": 6442.07
+      },
+      "gt:n:theorem:3.70": {
+        "x": 289.53,
+        "y": 6432.64
+      },
+      "gt:n:definition:3.77": {
+        "x": 416.43,
+        "y": 6441.27
+      },
+      "gt:n:definition:3.81": {
+        "x": 570.02,
+        "y": 6429.31
+      },
+      "gt:n:example:3.75": {
+        "x": 124.56,
+        "y": 6551.42
+      },
+      "gt:n:example:3.80": {
+        "x": 280.08,
+        "y": 6556.33
+      },
+      "gt:n:lemma:3.76": {
+        "x": 427.02,
+        "y": 6551.32
+      },
+      "gt:n:remark:3.78": {
+        "x": 554.31,
+        "y": 6561.31
+      },
+      "gt:n:theorem:3.79": {
+        "x": 146.82,
+        "y": 6671.54
+      },
+      "gt:u:product-recall": {
+        "x": 285.88,
+        "y": 6678.33
+      },
+      "gt:n:definition:3.83": {
+        "x": 428.22,
+        "y": 6676.93
+      },
+      "gt:n:example:3.82": {
+        "x": 563.88,
+        "y": 6676.71
+      },
+      "gt:n:example:3.86": {
+        "x": 137.47,
+        "y": 6786.08
+      },
+      "gt:n:example:3.87": {
+        "x": 279.37,
+        "y": 6795.38
+      },
+      "gt:n:remark:3.84": {
+        "x": 412.91,
+        "y": 6791.16
+      },
+      "gt:n:remark:3.85": {
+        "x": 554.8,
+        "y": 6795.06
+      },
+      "gt:n:theorem:3.88": {
+        "x": 134.73,
+        "y": 6908.66
+      },
+      "gt:n:definition:3.89": {
+        "x": 286.83,
+        "y": 6898.64
+      },
+      "gt:v:V4": {
+        "x": 408.26,
+        "y": 6900.84
+      },
+      "gt:n:lemma:3.93": {
+        "x": 569.54,
+        "y": 6897.77
+      },
+      "gt:n:remark:3.92": {
+        "x": 140.69,
+        "y": 7010.29
+      },
+      "gt:n:theorem:3.90": {
+        "x": 275.31,
+        "y": 7018.06
+      },
+      "gt:n:theorem:3.91": {
+        "x": 417.41,
+        "y": 7009.29
+      },
+      "gt:n:example:3.95": {
+        "x": 563.16,
+        "y": 7017.96
+      },
+      "gt:n:theorem:3.94": {
+        "x": 133.72,
+        "y": 7125.24
+      },
+      "gt:n:definition:3.97": {
+        "x": 285.81,
+        "y": 7135.7
+      },
+      "gt:n:example:3.96": {
+        "x": 421.27,
+        "y": 7131.61
+      },
+      "gt:n:remark:3.98": {
+        "x": 567.7,
+        "y": 7126.28
+      },
+      "gt:n:definition:3.99": {
+        "x": 145.24,
+        "y": 7254.89
+      },
+      "gt:n:example:3.100": {
+        "x": 287.49,
+        "y": 7249.62
+      },
+      "gt:n:example:3.101": {
+        "x": 429.59,
+        "y": 7248.62
+      },
+      "gt:n:definition:3.102": {
+        "x": 570.95,
+        "y": 7253.95
+      },
+      "gt:n:proposition:3.103": {
+        "x": 142.08,
+        "y": 7366.68
+      },
+      "gt:n:theorem:3.104": {
+        "x": 281.06,
+        "y": 7371.09
+      },
+      "gt:e009": {
+        "x": 417.1,
+        "y": 7375.59
+      },
+      "gt:u:open-closed-map": {
+        "x": 554.13,
+        "y": 7358.76
+      },
+      "gt:n:example:3.105": {
+        "x": 145.18,
+        "y": 7488.08
+      },
+      "gt:n:example:3.106": {
+        "x": 287.29,
+        "y": 7478.05
+      },
+      "gt:n:example:3.107": {
+        "x": 429.39,
+        "y": 7490.1
+      },
+      "gt:n:theorem:3.108": {
+        "x": 564.65,
+        "y": 7483.66
+      },
+      "gt:n:definition:3.110": {
+        "x": 144.13,
+        "y": 7591.96
+      },
+      "gt:n:example:3.109": {
+        "x": 288.4,
+        "y": 7603.46
+      },
+      "gt:n:example:3.111": {
+        "x": 430,
+        "y": 7591.6
+      },
+      "gt:n:example:3.112": {
+        "x": 571.9,
+        "y": 7606.72
+      },
+      "gt:n:example:3.113": {
+        "x": 145.79,
+        "y": 7707.07
+      },
+      "gt:n:proposition:3.114": {
+        "x": 285.2,
+        "y": 7706.27
+      },
+      "gt:n:proposition:3.115": {
+        "x": 427.1,
+        "y": 7717.32
+      },
+      "gt:n:definition:3.116": {
+        "x": 570.34,
+        "y": 7710.77
+      },
+      "gt:n:definition:3.118": {
+        "x": 143.32,
+        "y": 7821
+      },
+      "gt:n:definition:3.123": {
+        "x": 272.22,
+        "y": 7836.83
+      },
+      "gt:n:definition:3.124": {
+        "x": 414.12,
+        "y": 7839.44
+      },
+      "gt:n:example:3.120": {
+        "x": 559.71,
+        "y": 7822.74
+      },
+      "gt:n:example:3.121": {
+        "x": 133.81,
+        "y": 7945.71
+      },
+      "gt:n:example:3.122": {
+        "x": 275.51,
+        "y": 7950
+      },
+      "gt:n:remark:3.117": {
+        "x": 425.95,
+        "y": 7955.23
+      },
+      "gt:n:theorem:3.119": {
+        "x": 550.54,
+        "y": 7942.73
+      },
+      "gt:n:example:3.126": {
+        "x": 133.91,
+        "y": 8072.09
+      },
+      "gt:n:example:3.127": {
+        "x": 276.01,
+        "y": 8067.89
+      },
+      "gt:n:lemma:3.130": {
+        "x": 408.8,
+        "y": 8071.61
+      },
+      "gt:n:lemma:3.131": {
+        "x": 550.7,
+        "y": 8058.81
+      },
+      "gt:n:lemma:3.132": {
+        "x": 124.6,
+        "y": 8181.58
+      },
+      "gt:n:proposition:3.125": {
+        "x": 270.47,
+        "y": 8185.72
+      },
+      "gt:n:theorem:3.128": {
+        "x": 421.43,
+        "y": 8185.89
+      },
+      "gt:n:theorem:3.129": {
+        "x": 563.53,
+        "y": 8176.59
+      },
+      "gt:n:corollary:3.134": {
+        "x": 130.47,
+        "y": 8284.63
+      },
+      "gt:n:definition:3.135": {
+        "x": 271.61,
+        "y": 8302.06
+      },
+      "gt:n:definition:3.136": {
+        "x": 413.71,
+        "y": 8292.2
+      },
+      "gt:n:theorem:3.133": {
+        "x": 564.55,
+        "y": 8287.45
+      },
+      "gt:n:definition:3.137": {
+        "x": 129.81,
+        "y": 8419.44
+      },
+      "gt:n:lemma:3.138": {
+        "x": 265.99,
+        "y": 8404.41
+      },
+      "gt:n:lemma:3.139": {
+        "x": 407.89,
+        "y": 8419.26
+      },
+      "gt:n:theorem:3.140": {
+        "x": 564.66,
+        "y": 8419.75
+      },
+      "gt:n:definition:4.2": {
+        "x": 129.67,
+        "y": 8703.75
+      },
+      "gt:v:V2": {
+        "x": 266.46,
+        "y": 8704.26
+      },
+      "gt:n:example:4.5": {
+        "x": 415.59,
+        "y": 8696.67
+      },
+      "gt:n:problem:4.3": {
+        "x": 548.93,
+        "y": 8700.48
+      },
+      "gt:n:proposition:4.1": {
+        "x": 147.28,
+        "y": 8827.96
+      },
+      "gt:n:proposition:4.4": {
+        "x": 288.77,
+        "y": 8830.17
+      },
+      "gt:n:example:4.6": {
+        "x": 415.29,
+        "y": 8812.73
+      },
+      "gt:n:example:4.7": {
+        "x": 557.39,
+        "y": 8817.5
+      },
+      "gt:n:example:4.8": {
+        "x": 132.71,
+        "y": 8939.86
+      },
+      "gt:v:V3": {
+        "x": 266.56,
+        "y": 8930.44
+      },
+      "gt:n:example:4.11": {
+        "x": 416.96,
+        "y": 8937.56
+      },
+      "gt:n:proposition:4.9": {
+        "x": 548.09,
+        "y": 8943.53
+      },
+      "gt:n:theorem:4.10": {
+        "x": 144.99,
+        "y": 9048.11
+      },
+      "gt:n:definition:4.12": {
+        "x": 274.64,
+        "y": 9051.16
+      },
+      "gt:n:definition:4.15": {
+        "x": 417.36,
+        "y": 9058.21
+      },
+      "gt:n:definition:4.16": {
+        "x": 559.05,
+        "y": 9062.3
+      },
+      "gt:n:example:4.14": {
+        "x": 132.65,
+        "y": 9168.36
+      },
+      "gt:n:example:4.18": {
+        "x": 275.87,
+        "y": 9173.01
+      },
+      "gt:n:remark:4.13": {
+        "x": 411.23,
+        "y": 9179.33
+      },
+      "gt:n:remark:4.17": {
+        "x": 553.64,
+        "y": 9161.08
+      },
+      "gt:n:example:4.19": {
+        "x": 133.77,
+        "y": 9292.91
+      },
+      "gt:n:theorem:4.20": {
+        "x": 274.6,
+        "y": 9295.29
+      },
+      "gt:n:theorem:4.21": {
+        "x": 416.7,
+        "y": 9285.64
+      },
+      "gt:n:definition:5.1": {
+        "x": 132.53,
+        "y": 9579.87
+      },
+      "gt:n:definition:5.2": {
+        "x": 274.22,
+        "y": 9584.16
+      },
+      "gt:n:example:5.3": {
+        "x": 425.98,
+        "y": 9580.35
+      },
+      "gt:n:example:5.4": {
+        "x": 568.69,
+        "y": 9591.05
+      },
+      "gt:n:example:5.6": {
+        "x": 142.48,
+        "y": 9701.69
+      },
+      "gt:n:example:5.7": {
+        "x": 284.38,
+        "y": 9698.09
+      },
+      "gt:n:remark:5.5": {
+        "x": 431.77,
+        "y": 9694.41
+      },
+      "gt:n:definition:5.9": {
+        "x": 557.72,
+        "y": 9706.68
+      },
+      "gt:n:example:5.10": {
+        "x": 128.13,
+        "y": 9807.5
+      },
+      "gt:n:example:5.11": {
+        "x": 270.24,
+        "y": 9812.64
+      },
+      "gt:n:example:5.12": {
+        "x": 411.93,
+        "y": 9818.36
+      },
+      "gt:n:theorem:5.8": {
+        "x": 568.72,
+        "y": 9806.55
+      },
+      "gt:n:definition:5.14": {
+        "x": 145.32,
+        "y": 9937.45
+      },
+      "gt:n:example:5.15": {
+        "x": 269.83,
+        "y": 9920.44
+      },
+      "gt:n:theorem:5.13": {
+        "x": 410.08,
+        "y": 9938.33
+      },
+      "gt:n:theorem:5.16": {
+        "x": 552.39,
+        "y": 9925.24
+      },
+      "gt:e010": {
+        "x": 131.78,
+        "y": 10048.57
+      },
+      "gt:n:example:5.17": {
+        "x": 269.63,
+        "y": 10049.17
+      },
+      "gt:n:example:5.20": {
+        "x": 424.52,
+        "y": 10037.02
+      },
+      "gt:n:example:5.21": {
+        "x": 566.42,
+        "y": 10051.35
+      },
+      "gt:n:example:5.22": {
+        "x": 140.32,
+        "y": 10155.45
+      },
+      "gt:e011": {
+        "x": 273.88,
+        "y": 10155.75
+      },
+      "gt:n:lemma:5.19": {
+        "x": 423.24,
+        "y": 10159.44
+      },
+      "gt:n:proposition:5.24": {
+        "x": 562.53,
+        "y": 10159.2
+      },
+      "gt:n:definition:5.27": {
+        "x": 134.05,
+        "y": 10283.75
+      },
+      "gt:n:example:5.25": {
+        "x": 282.83,
+        "y": 10281.15
+      },
+      "gt:n:example:5.29": {
+        "x": 425.23,
+        "y": 10277.43
+      },
+      "gt:n:lemma:5.30": {
+        "x": 550.93,
+        "y": 10271.81
+      },
+      "gt:n:remark:5.28": {
+        "x": 126.53,
+        "y": 10393.8
+      },
+      "gt:n:theorem:5.26": {
+        "x": 279.97,
+        "y": 10391.66
+      },
+      "gt:v:V5": {
+        "x": 408.36,
+        "y": 10403.2
+      },
+      "gt:n:example:5.32": {
+        "x": 566.12,
+        "y": 10400.9
+      },
+      "gt:n:example:5.33": {
+        "x": 140.22,
+        "y": 10517.94
+      },
+      "gt:n:theorem:5.31": {
+        "x": 282.1,
+        "y": 10519.43
+      },
+      "gt:n:proposition:5.34": {
+        "x": 419.11,
+        "y": 10508.52
+      },
+      "gt:n:theorem:5.35": {
+        "x": 565.69,
+        "y": 10517.44
+      },
+      "gt:n:theorem:5.36": {
+        "x": 139.39,
+        "y": 10617.73
+      },
+      "gt:n:lemma:5.37": {
+        "x": 267.23,
+        "y": 10634.46
+      },
+      "gt:n:lemma:5.39": {
+        "x": 409.84,
+        "y": 10631.44
+      },
+      "gt:n:theorem:5.38": {
+        "x": 565.18,
+        "y": 10633.77
+      },
+      "gt:e012": {
+        "x": 131.98,
+        "y": 10925.71
+      },
+      "gt:n:example:6.4": {
+        "x": 269.22,
+        "y": 10919.78
+      },
+      "gt:n:example:6.5": {
+        "x": 411.33,
+        "y": 10930.96
+      },
+      "gt:n:example:6.6": {
+        "x": 553.43,
+        "y": 10920.93
+      },
+      "gt:n:example:6.7": {
+        "x": 127.53,
+        "y": 11028.98
+      },
+      "gt:n:example:6.8": {
+        "x": 270.44,
+        "y": 11043.66
+      },
+      "gt:n:example:6.10": {
+        "x": 431.21,
+        "y": 11044.21
+      },
+      "gt:e013": {
+        "x": 558.08,
+        "y": 11033.76
+      },
+      "gt:n:theorem:6.1": {
+        "x": 137.48,
+        "y": 11155.24
+      },
+      "gt:n:theorem:6.2": {
+        "x": 279.18,
+        "y": 11159.31
+      },
+      "gt:n:definition:6.16": {
+        "x": 408.82,
+        "y": 11159.43
+      },
+      "gt:e016": {
+        "x": 558.39,
+        "y": 11148.3
+      },
+      "gt:n:example:6.14": {
+        "x": 146.8,
+        "y": 11271.41
+      },
+      "gt:e014": {
+        "x": 274.19,
+        "y": 11277.28
+      },
+      "gt:e015": {
+        "x": 416.29,
+        "y": 11276.28
+      },
+      "gt:n:theorem:6.15": {
+        "x": 555.56,
+        "y": 11269.2
+      },
+      "gt:n:theorem:6.17": {
+        "x": 129.76,
+        "y": 11386.8
+      },
+      "gt:n:corollary:6.19": {
+        "x": 267.61,
+        "y": 11389.46
+      },
+      "gt:e019": {
+        "x": 416.69,
+        "y": 11379.3
+      },
+      "gt:n:proposition:6.21": {
+        "x": 550.11,
+        "y": 11395.94
+      },
+      "gt:e017": {
+        "x": 132.49,
+        "y": 11502
+      },
+      "gt:e018": {
+        "x": 274.59,
+        "y": 11494.56
+      },
+      "gt:n:theorem:6.22": {
+        "x": 425.44,
+        "y": 11508.66
+      },
+      "gt:n:theorem:6.23": {
+        "x": 567.54,
+        "y": 11509.58
+      },
+      "gt:n:corollary:6.25": {
+        "x": 137.39,
+        "y": 11624.82
+      },
+      "gt:n:theorem:6.24": {
+        "x": 282.83,
+        "y": 11612.62
+      },
+      "gt:n:theorem:6.26": {
+        "x": 425.03,
+        "y": 11613.47
+      },
+      "gt:n:definition:6.27": {
+        "x": 562.3,
+        "y": 11614.55
+      },
+      "gt:n:definition:6.29": {
+        "x": 137.31,
+        "y": 11744.2
+      },
+      "gt:n:definition:6.31": {
+        "x": 265.09,
+        "y": 11724.64
+      },
+      "gt:n:example:6.28": {
+        "x": 416.38,
+        "y": 11732.39
+      },
+      "gt:n:theorem:6.30": {
+        "x": 554.84,
+        "y": 11727.06
+      },
+      "gt:n:theorem:6.32": {
+        "x": 128.64,
+        "y": 11857.7
+      },
+      "gt:n:definition:6.33": {
+        "x": 264.89,
+        "y": 11859.26
+      },
+      "gt:n:theorem:6.34": {
+        "x": 412.44,
+        "y": 11856.71
+      },
+      "gt:v:V6": {
+        "x": 550.06,
+        "y": 11843.58
+      },
+      "gt:v:V7": {
+        "x": 124.16,
+        "y": 11959.77
+      },
+      "gt:n:example:6.35": {
+        "x": 273.67,
+        "y": 11970.53
+      },
+      "gt:n:example:6.36": {
+        "x": 415.98,
+        "y": 11965.55
+      },
+      "gt:n:definition:6.37": {
+        "x": 549.3,
+        "y": 11961.89
+      },
+      "gt:n:definition:6.38": {
+        "x": 123.8,
+        "y": 12089.62
+      },
+      "gt:n:example:6.39": {
+        "x": 274.89,
+        "y": 12078.88
+      },
+      "gt:n:proposition:6.40": {
+        "x": 406.79,
+        "y": 12091.12
+      },
+      "gt:n:theorem:6.41": {
+        "x": 569.37,
+        "y": 12079.32
+      },
+      "gt:n:definition:6.42": {
+        "x": 135.99,
+        "y": 12201.78
+      },
+      "gt:n:example:6.43": {
+        "x": 273.46,
+        "y": 12203.37
+      },
+      "gt:n:lemma:6.44": {
+        "x": 414.23,
+        "y": 12205.83
+      },
+      "gt:n:lemma:6.45": {
+        "x": 556.33,
+        "y": 12196.47
+      },
+      "gt:n:example:6.48": {
+        "x": 131.97,
+        "y": 12306.18
+      },
+      "gt:n:example:6.49": {
+        "x": 274.07,
+        "y": 12324.28
+      },
+      "gt:n:lemma:6.46": {
+        "x": 414.03,
+        "y": 12320.97
+      },
+      "gt:n:theorem:6.47": {
+        "x": 568.76,
+        "y": 12320.01
+      },
+      "gt:n:definition:6.50": {
+        "x": 135.58,
+        "y": 12422.1
+      },
+      "gt:n:example:6.51": {
+        "x": 273.66,
+        "y": 12435.72
+      },
+      "gt:n:example:6.52": {
+        "x": 415.56,
+        "y": 12427.51
+      },
+      "gt:n:example:6.53": {
+        "x": 557.46,
+        "y": 12423.62
+      },
+      "gt:n:example:6.55": {
+        "x": 132.07,
+        "y": 12553.84
+      },
+      "gt:n:theorem:6.54": {
+        "x": 283.03,
+        "y": 12555.1
+      },
+      "gt:n:definition:6.57": {
+        "x": 420.29,
+        "y": 12548.8
+      },
+      "gt:n:definition:6.59": {
+        "x": 562.49,
+        "y": 12545.91
+      },
+      "gt:n:example:6.60": {
+        "x": 132.38,
+        "y": 12656.18
+      },
+      "gt:n:example:6.61": {
+        "x": 274.48,
+        "y": 12661.88
+      },
+      "gt:n:lemma:6.62": {
+        "x": 412.81,
+        "y": 12655.48
+      },
+      "gt:n:proposition:6.58": {
+        "x": 548.59,
+        "y": 12659.85
+      },
+      "gt:n:theorem:6.63": {
+        "x": 129.35,
+        "y": 12773.01
+      },
+      "gt:n:lemma:6.64": {
+        "x": 270.2,
+        "y": 12777.61
+      },
+      "gt:n:definition:6.67": {
+        "x": 421.92,
+        "y": 12770.15
+      },
+      "gt:n:example:6.66": {
+        "x": 557.77,
+        "y": 12780.45
+      },
+      "gt:n:theorem:6.65": {
+        "x": 129.55,
+        "y": 12894.53
+      },
+      "gt:n:lemma:6.68": {
+        "x": 271.42,
+        "y": 12897.53
+      },
+      "gt:n:theorem:6.69": {
+        "x": 412.33,
+        "y": 12894.63
+      },
+      "gt:n:definition:7.2": {
+        "x": 141.27,
+        "y": 13186.06
+      },
+      "gt:n:example:7.5": {
+        "x": 280.38,
+        "y": 13196.3
+      },
+      "gt:n:example:7.6": {
+        "x": 422.69,
+        "y": 13200.1
+      },
+      "gt:n:example:7.7": {
+        "x": 564.59,
+        "y": 13183.79
+      },
+      "gt:n:lemma:7.9": {
+        "x": 145.72,
+        "y": 13306.01
+      },
+      "gt:n:remark:7.3": {
+        "x": 281.24,
+        "y": 13316.19
+      },
+      "gt:n:remark:7.4": {
+        "x": 423.13,
+        "y": 13305.81
+      },
+      "gt:n:theorem:7.1": {
+        "x": 560.66,
+        "y": 13297.55
+      },
+      "gt:n:theorem:7.8": {
+        "x": 133.95,
+        "y": 13415.78
+      },
+      "gt:n:theorem:7.10": {
+        "x": 267.01,
+        "y": 13413.17
+      },
+      "gt:n:theorem:7.11": {
+        "x": 409.11,
+        "y": 13428.13
+      },
+      "gt:n:definition:7.16": {
+        "x": 563.42,
+        "y": 13417.28
+      },
+      "gt:n:example:7.13": {
+        "x": 132.07,
+        "y": 13547.07
+      },
+      "gt:n:example:7.14": {
+        "x": 274.17,
+        "y": 13532.98
+      },
+      "gt:n:example:7.15": {
+        "x": 416.27,
+        "y": 13546.01
+      },
+      "gt:n:theorem:7.12": {
+        "x": 550.81,
+        "y": 13535.68
+      },
+      "gt:n:definition:7.17": {
+        "x": 137.32,
+        "y": 13660.34
+      },
+      "gt:n:definition:7.21": {
+        "x": 279.93,
+        "y": 13655.7
+      },
+      "gt:n:lemma:7.22": {
+        "x": 422.38,
+        "y": 13648.84
+      },
+      "gt:n:theorem:7.18": {
+        "x": 550.2,
+        "y": 13655.23
+      },
+      "gt:n:theorem:7.19": {
+        "x": 124.3,
+        "y": 13772.15
+      },
+      "gt:n:theorem:7.20": {
+        "x": 266.4,
+        "y": 13761.36
+      },
+      "gt:n:definition:7.25": {
+        "x": 421.52,
+        "y": 13761.63
+      },
+      "gt:v:V8": {
+        "x": 549.85,
+        "y": 13771.81
+      },
+      "gt:n:example:7.23": {
+        "x": 146.7,
+        "y": 13889.55
+      },
+      "gt:n:example:7.24": {
+        "x": 289,
+        "y": 13893.9
+      },
+      "gt:n:theorem:7.26": {
+        "x": 408.61,
+        "y": 13879.55
+      },
+      "gt:n:definition:7.31": {
+        "x": 561.08,
+        "y": 13895.1
+      },
+      "gt:n:example:7.29": {
+        "x": 145.68,
+        "y": 13999.33
+      },
+      "gt:n:example:7.30": {
+        "x": 287.98,
+        "y": 14010.18
+      },
+      "gt:n:example:7.33": {
+        "x": 429.88,
+        "y": 14000.81
+      },
+      "gt:n:example:7.34": {
+        "x": 571.58,
+        "y": 14012.38
+      },
+      "gt:n:example:7.35": {
+        "x": 145.68,
+        "y": 14114.05
+      },
+      "gt:n:example:7.36": {
+        "x": 287.37,
+        "y": 14119.03
+      },
+      "gt:n:remark:7.28": {
+        "x": 411.94,
+        "y": 14124.58
+      },
+      "gt:n:remark:7.32": {
+        "x": 565.72,
+        "y": 14127.89
+      },
+      "gt:n:theorem:7.27": {
+        "x": 124.5,
+        "y": 14232.9
+      },
+      "gt:n:corollary:7.39": {
+        "x": 266.07,
+        "y": 14225.47
+      },
+      "gt:n:corollary:7.40": {
+        "x": 407.97,
+        "y": 14231.99
+      },
+      "gt:n:definition:7.41": {
+        "x": 548.9,
+        "y": 14226.48
+      },
+      "gt:n:example:7.42": {
+        "x": 134.61,
+        "y": 14349.34
+      },
+      "gt:n:example:7.43": {
+        "x": 276.51,
+        "y": 14355.16
+      },
+      "gt:n:theorem:7.37": {
+        "x": 408.5,
+        "y": 14341.89
+      },
+      "gt:n:theorem:7.38": {
+        "x": 548.98,
+        "y": 14359.86
+      },
+      "gt:n:theorem:7.44": {
+        "x": 124.41,
+        "y": 14460.77
+      },
+      "gt:n:theorem:7.45": {
+        "x": 266.31,
+        "y": 14460.03
+      }
+    }
+  }
+}

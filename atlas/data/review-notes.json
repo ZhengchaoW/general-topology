@@ -1,0 +1,591 @@
+{
+  "version": 2,
+  "origin": "atlas_redesign_source_check",
+  "note": "Candidate issues noticed while checking the atlas against the lecture-notes PDF during the 2026 redesign. Each cites text on the given page. Not teacher-approved and not applied to atlas.json. Levels: check = may need a correction or a recorded relationship; info = a difference readers should know about.",
+  "items": [
+    {
+      "id": "gt:n001",
+      "level": "check",
+      "page": 44,
+      "title": "Citation in the proof of Theorem 3.57",
+      "quote": "is closed by (2)",
+      "body": "In the step (3) ⇒ (4), the notes say that f⁻¹ of the closure of f(A) “is closed by (2)”, but this step assumes (3), closed preimages, so “(3)” may be intended. The atlas models only (1) ⇔ (3) of this theorem, and the notes prove (3) ⇒ (1) through (4); Theorem 6.20 uses it in step S7.",
+      "relatesTo": [
+        "gt:e005",
+        "gt:e018",
+        "gt:n:theorem:3.57"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "gt:n002",
+      "level": "check",
+      "page": 80,
+      "title": "Example 6.13 is derived from Theorem 6.12 in the notes",
+      "quote": "This theorem immediately tells us",
+      "body": "The notes obtain Example 6.13 from the theorem just before it, Theorem 6.12 (a compact subspace of a Hausdorff space is closed), applied in ℝ. The atlas records no link from Example 6.13 to Theorem 6.12, only an editorial comparison with Example 3.74. The argument also needs ℝ to be Hausdorff, which the notes do not restate there (compare Example 5.23). Candidate relationship; not added to atlas.json.",
+      "relatesTo": [
+        "gt:e016",
+        "gt:e015"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "gt:n003",
+      "level": "check",
+      "page": 80,
+      "title": "Proofs of Theorems 6.11 and 6.12 work with covers by open sets of X",
+      "quote": "be an open cover of Y by open sets in X",
+      "body": "Both proofs cover Y by open sets of the ambient space X (6.11 begins “Let {Uα} be an open cover of Y by open sets in X”; 6.12 covers Y by the open sets Vy of X), which is what Lemma 6.9 justifies. The notes do not cite Lemma 6.9 there, and the atlas records no link from these theorems to it. Check whether a proof dependency on Lemma 6.9 should be recorded.",
+      "relatesTo": [
+        "gt:e014",
+        "gt:e015",
+        "gt:e013"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "gt:n004",
+      "level": "info",
+      "page": 45,
+      "title": "Topology on A in Theorem 3.64(4)",
+      "quote": "If f : X → Y is continuous and A ⊆ X",
+      "body": "The notes leave the topology on A implicit; the proof uses that (f|A)⁻¹(U) = f⁻¹(U) ∩ A is open in A, i.e. the subspace topology. The atlas paraphrase states “A ⊆ X has the subspace topology” as a hypothesis, and step S3 of Theorem 6.20's proof uses it as the local hypothesis L1.",
+      "relatesTo": [
+        "gt:e006",
+        "gt:e018",
+        "gt:n:theorem:3.64"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "gt:n005",
+      "level": "info",
+      "page": 80,
+      "title": "Letters in Theorems 6.11 and 6.12",
+      "quote": "Every compact subspace Y of a Hausdorff space X is closed",
+      "body": "The notes state both theorems for a subset Y of a space X. The atlas paraphrases rename the letters (C in X for 6.11; K in Y for 6.12) to match their use in the proof of Theorem 6.20. The mathematics is the same; readers comparing with the notes should expect different letters.",
+      "relatesTo": [
+        "gt:e014",
+        "gt:e015"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "review:course:choice-domain",
+      "level": "check",
+      "page": 11,
+      "title": "Choice-function domain notation",
+      "quote": "A choice",
+      "body": "The printed choice-function domain is the family A while values are written f(i). The notation is retained verbatim; no correction is substituted.",
+      "relatesTo": [
+        "gt:n:definition:1.45"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:natural-zero",
+      "level": "check",
+      "page": 9,
+      "title": "Two conventions for natural numbers",
+      "quote": "{0, 1, 2, . . .}",
+      "body": "Example 1.1 starts N at 1, whereas Example 1.34 displays N starting at 0. Both source conventions are retained.",
+      "relatesTo": [
+        "gt:n:example:1.34"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:integer-enumeration",
+      "level": "check",
+      "page": 16,
+      "title": "Indexing of the integer enumeration",
+      "quote": "f (1) = 0",
+      "body": "The stated formula and the separately stated value f(1)=0 need reconciliation at n=0. The atlas retains both as printed.",
+      "relatesTo": [
+        "gt:n:example:1.62"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:zero-lipschitz",
+      "level": "check",
+      "page": 24,
+      "title": "Zero Lipschitz constant",
+      "quote": "let δ = ε/L",
+      "body": "The definition permits L=0, while the source proof divides by L. This is a proof-review candidate, not a silently supplied repair.",
+      "relatesTo": [
+        "gt:n:proposition:2.7"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:dendrogram-constancy",
+      "level": "check",
+      "page": 30,
+      "title": "Local constancy formulation",
+      "quote": "θ(t) = θ(t + ϵ)",
+      "body": "The printed dendrogram condition asserts equality at one later time. Review whether stronger right-continuity/local constancy was intended. The exact condition is retained.",
+      "relatesTo": [
+        "gt:n:definition:2.25",
+        "gt:n:theorem:2.27"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:closed-subspace",
+      "level": "check",
+      "page": 46,
+      "title": "Missing ambient closedness hypothesis",
+      "quote": "If E is closed in A then E",
+      "body": "Corollary 3.66 omits a hypothesis that A is closed in X. This claim is retained verbatim; its use in the surrounding pasting argument needs teacher review.",
+      "relatesTo": [
+        "gt:n:corollary:3.66",
+        "gt:n:theorem:3.64"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:closure-refs",
+      "level": "check",
+      "page": 37,
+      "title": "Internal definition references",
+      "quote": "Definition 2",
+      "body": "The source references Definition 2 and Definition 1 rather than the chapter-numbered definitions. The atlas preserves these labels and does not invent a citation resolution.",
+      "relatesTo": [
+        "gt:n:proposition:3.27",
+        "gt:n:proposition:3.28"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:quotient-finest",
+      "level": "check",
+      "page": 53,
+      "title": "Coarsest versus finest quotient wording",
+      "quote": "as coarse as possible",
+      "body": "The informal lead-in says coarsest, while Remark 3.98 correctly describes the stated quotient topology as finest. Both passages are retained as source facts; no implication is inferred from the informal phrase.",
+      "relatesTo": [
+        "gt:n:example:3.96",
+        "gt:n:remark:3.98"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:sphere-surjective",
+      "level": "check",
+      "page": 61,
+      "title": "Surjective circle-map case omitted",
+      "quote": "f could be surjective",
+      "body": "The proof explicitly ignores the possibility that f is surjective and says further arguments can fix it. The atlas records the actual incomplete source argument and supplies no missing proof.",
+      "relatesTo": [
+        "gt:n:lemma:3.131",
+        "gt:n:theorem:3.129"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:lifting-induction",
+      "level": "check",
+      "page": 61,
+      "title": "Lifting induction notation",
+      "quote": "H̃N",
+      "body": "The initial lift is indexed N rather than 0, and the next line uses inequality of consecutive values where the preceding bound excludes antipodal values. The source text is unchanged.",
+      "relatesTo": [
+        "gt:n:lemma:3.132"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:brouwer-scope",
+      "level": "check",
+      "page": 62,
+      "title": "Dimension scope and circular reference",
+      "quote": "We prove the case when n = 2",
+      "body": "The first proof treats n=2; the second invokes Brouwer, whose following proof invokes no retraction. These are separate printed arguments, not a certified proof for all dimensions.",
+      "relatesTo": [
+        "gt:n:theorem:3.133",
+        "gt:n:corollary:3.134"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:cylinder-criterion",
+      "level": "check",
+      "page": 63,
+      "title": "Mapping-cylinder criterion needs review",
+      "quote": "if and only if",
+      "body": "Lemma 3.139 is stated without a proof; its ordinary deformation-retraction formulation and use in Theorem 3.140 require teacher review. The atlas does not replace it with a cofibration or homotopy-extension theorem.",
+      "relatesTo": [
+        "gt:n:lemma:3.139",
+        "gt:n:theorem:3.140"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:product-zero",
+      "level": "check",
+      "page": 65,
+      "title": "Finite-zero-support construction",
+      "quote": "g(x) = 0 otherwise",
+      "body": "The source writes zero both at the selected points and otherwise, although E requires zeros only finitely often. It later switches S_n to A_n. Both source defects remain verbatim.",
+      "relatesTo": [
+        "gt:n:example:4.6"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:closure-choice",
+      "level": "check",
+      "page": 70,
+      "title": "Chosen sequence not required to lie in A",
+      "quote": "pick xn ∈ Bn",
+      "body": "For the closure converse, the source chooses x_n in B_n without explicitly choosing from A ∩ B_n. Only this converse is proved; no missing arguments are supplied.",
+      "relatesTo": [
+        "gt:n:theorem:5.8"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:product-countability",
+      "level": "check",
+      "page": 71,
+      "title": "Countable index set left implicit",
+      "quote": "family of first countable spaces",
+      "body": "The theorem requires countable products, but the proof writes a general index set J and calls the resulting family countable. The source statement controls the recorded hypothesis.",
+      "relatesTo": [
+        "gt:n:theorem:5.13"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:unique-limit",
+      "level": "check",
+      "page": 72,
+      "title": "Hausdorffness absent from statement",
+      "quote": "Every sequence has a unique limit in a topological space.",
+      "body": "The printed claim is false for general spaces; the source proof begins When X is Hausdorff. The missing condition is not silently inserted into the quoted statement.",
+      "relatesTo": [
+        "gt:n:proposition:5.24"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:riemann-partitions",
+      "level": "check",
+      "page": 67,
+      "title": "Interval partitions versus disjoint blocks",
+      "quote": "closed subintervals",
+      "body": "Adjacent closed subintervals share endpoints, so partition here is interval-subdivision terminology rather than a literal disjoint set partition as in Definition 1.17. No equivalence edge between these definitions is asserted.",
+      "relatesTo": [
+        "gt:n:example:4.18"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:ivt-endpoints",
+      "level": "check",
+      "page": 79,
+      "title": "IVT endpoint mismatch",
+      "quote": "r ∈ [f (0), f (1)]",
+      "body": "The source includes endpoint values r while requiring an interior point c. The statement is retained literally and is not silently changed to an open range.",
+      "relatesTo": [
+        "gt:n:theorem:6.1"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:maximum-hypotheses",
+      "level": "check",
+      "page": 81,
+      "title": "Missing compactness and sequence membership",
+      "quote": "{yn } ⊂ R",
+      "body": "The source omits compactness of X from the statement, then uses compactness of f(X). Its approximating sequence is stated only to lie in R rather than f(X). The recorded argument remains unsupported at these points.",
+      "relatesTo": [
+        "gt:n:corollary:6.19"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:compactness-transition",
+      "level": "check",
+      "page": 80,
+      "title": "Condition named before the cofinite example",
+      "quote": "compactness assumption is necessary",
+      "body": "The transition names compactness, but the following cofinite example removes Hausdorffness. The source wording remains unchanged and no necessity implication is inferred.",
+      "relatesTo": [
+        "gt:e016",
+        "gt:n:example:6.14"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:order-proof",
+      "level": "check",
+      "page": 82,
+      "title": "Order-interval proof details",
+      "quote": "Let T = {x ∈ [c, b]",
+      "body": "The source writes linear post and its supremum argument includes a set T whose stated definition needs checking in the gap/successor case. The atlas preserves the entire argument, without presenting a repaired proof.",
+      "relatesTo": [
+        "gt:n:theorem:6.24"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:paracompact-euclidean",
+      "level": "check",
+      "page": 91,
+      "title": "Annular refinement local finiteness",
+      "quote": "a locally finite open refinement",
+      "body": "The chosen covering members are not explicitly restricted by an upper bounded shell. Review whether the asserted local finiteness follows from the construction as printed.",
+      "relatesTo": [
+        "gt:n:example:6.60"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:paracompact-metric",
+      "level": "check",
+      "page": 93,
+      "title": "Levelwise versus global local finiteness",
+      "quote": "a locally finite open refinement",
+      "body": "The proof moves from separated families at each n to a countable union and calls the union locally finite. Review the use of Lemma 6.64; the atlas does not supply the omitted transition.",
+      "relatesTo": [
+        "gt:n:theorem:6.65"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:ultranet-sketch",
+      "level": "check",
+      "page": 88,
+      "title": "Ultranet existence is only sketched",
+      "quote": "we will not give a full proof here",
+      "body": "The source explicitly withholds a full proof and gives a sketch with assertions left for the reader. The atlas labels it a sketch and does not fabricate missing steps.",
+      "relatesTo": [
+        "gt:n:lemma:6.45"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:compactification-uniqueness",
+      "level": "check",
+      "page": 90,
+      "title": "Uniqueness is an exercise",
+      "quote": "leave it as an exercise",
+      "body": "The construction and implications are argued, but checking the final identification homeomorphism is explicitly left as an exercise.",
+      "relatesTo": [
+        "gt:n:theorem:6.54"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:ivt-repeat",
+      "level": "check",
+      "page": 95,
+      "title": "Repeated IVT endpoint mismatch",
+      "quote": "r ∈ [f (0), f (1)]",
+      "body": "As in Theorem 6.1, the endpoint values are included while c is required to be interior. The exact statement remains available.",
+      "relatesTo": [
+        "gt:n:theorem:7.1"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:ivt-undefined-x",
+      "level": "check",
+      "page": 97,
+      "title": "Undefined X in interval IVT",
+      "quote": "with X being connected",
+      "body": "The domain is [a,b], but the statement separately mentions X without defining it. The atlas records the interval theorem without inventing a definition of X in the source.",
+      "relatesTo": [
+        "gt:n:theorem:7.19"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:sine-sequence",
+      "level": "check",
+      "page": 98,
+      "title": "Sine values in the path argument",
+      "quote": "sin(nπ/2) = (−1)n",
+      "body": "The source equates sin(nπ/2) with (−1)^n. The formula is retained exactly and flagged; no corrected oscillating sequence is substituted.",
+      "relatesTo": [
+        "gt:n:example:7.24"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    },
+    {
+      "id": "review:course:component-argument",
+      "level": "check",
+      "page": 100,
+      "title": "Open-component inference needs context",
+      "quote": "we know C is open",
+      "body": "The proof invokes the previous theorem to assert that a component C is open. Review the path-component union reasoning used here; no expansion is presented as a source sentence.",
+      "relatesTo": [
+        "gt:n:theorem:7.38"
+      ],
+      "review": {
+        "status": "pending_teacher",
+        "reviewer": null,
+        "formal_verification": "not_attempted",
+        "revision": 3
+      }
+    }
+  ]
+}
