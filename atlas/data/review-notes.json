@@ -303,7 +303,7 @@
       "page": 65,
       "title": "Finite-zero-support construction",
       "quote": "g(x) = 0 otherwise",
-      "body": "The source writes zero both at the selected points and otherwise, although E requires zeros only finitely often. It later switches S_n to A_n. Both source defects remain verbatim.",
+      "body": "The frozen PDF contains the finite-zero-support construction typo. The current reading text corrects the value outside the selected coordinates to 1 and the coordinate-neighborhood notation; the original PDF and TeX snapshots are preserved.",
       "relatesTo": [
         "gt:n:example:4.6"
       ],
@@ -312,6 +312,11 @@
         "reviewer": null,
         "formal_verification": "not_attempted",
         "revision": 3
+      },
+      "originalBody": "The source writes zero both at the selected points and otherwise, although E requires zeros only finitely often. It later switches S_n to A_n. Both source defects remain verbatim.",
+      "readingCorrectionApplied": {
+        "date": "2026-11-02",
+        "status": "applied_to_current_reading_text_only"
       }
     },
     {
@@ -320,7 +325,7 @@
       "page": 70,
       "title": "Chosen sequence not required to lie in A",
       "quote": "pick xn ∈ Bn",
-      "body": "For the closure converse, the source chooses x_n in B_n without explicitly choosing from A ∩ B_n. Only this converse is proved; no missing arguments are supplied.",
+      "body": "The original source omits A from the choice of x_n. The current reading proof now chooses x_n in A intersect B_n. Only the closure converse is proved here; the scope of the original proof is unchanged.",
       "relatesTo": [
         "gt:n:theorem:5.8"
       ],
@@ -329,6 +334,11 @@
         "reviewer": null,
         "formal_verification": "not_attempted",
         "revision": 3
+      },
+      "originalBody": "For the closure converse, the source chooses x_n in B_n without explicitly choosing from A ∩ B_n. Only this converse is proved; no missing arguments are supplied.",
+      "readingCorrectionApplied": {
+        "date": "2026-11-02",
+        "status": "applied_to_current_reading_text_only"
       }
     },
     {

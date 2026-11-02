@@ -177,23 +177,25 @@ function project(raw, source) {
 return {KIND,KINDS,KIND_LABEL,ROLE_LABEL,numberLabel,esc,math,loadAtlas,Atlas,SOURCE,pdfLink,facsimileHTML,CHAPTER_HUE,ROLE_SHAPE,shapePath,project};})();
 const module_latex_source_js=(()=>{
 const { esc }=module_core_js;
-// HTML is generated exclusively from the byte-preserved canonical TeX at build time.
+// HTML is generated from canonical TeX with any explicitly marked course errata.
+// Original TeX and frozen PDF snapshots remain byte-preserved.
 // Missing mappings are visible; the frozen PDF transcript is never a fallback.
 function sourceRecords(atlas,n) { return (atlas.latex.entities[n.id]?.keys||[]).map(k=>atlas.latex.records[k]); }
 function sourceSpan(record) {return `<a class="src" href="source/latex-current/${esc(record.file)}" target="_blank" rel="noopener">${esc(record.file)}:${record.startLine}–${record.endLine}</a>`;}
+function erratumNotice(record) {const e=record.erratum;return e?`<aside class="note course-erratum" data-course-erratum="${esc(e.key)}"><b>Course erratum (${esc(e.date)})</b> ${esc(e.note)} The reading text is corrected; the original source snapshot is preserved.</aside>`:'';}
 function latexStatement(atlas,n) {
  const entry=atlas.latex.entities[n.id];
  if(entry?.editorial)return `<section class="note editorial"><b>Atlas editorial variant · no canonical LaTeX environment</b><p>${esc(n.statement)}</p>${n.formula?`<p>${esc(n.formula)}</p>`:''}</section>`;
  const records=sourceRecords(atlas,n);
  if(!records.length)return `<section class="source-gap" role="status"><b>Source mapping needs review</b><p>${esc(entry?.gap||n.number+' has no verified canonical source span.')} Open the current source chapter to inspect the original LaTeX.</p><button data-source-chapter="${esc(n.number.match(/\d+/)?.[0]||'1')}">Read current source chapter</button></section>`;
- return records.map(r=>`<section class="latex-source source-statement" data-source-key="${r.key}"><div class="source-caption"><b>Current notes · ${esc(r.kind)} ${r.number}</b>${sourceSpan(r)}</div>${entry.atlasNumber!==r.kind[0].toUpperCase()+r.kind.slice(1)+' '+r.number?`<p class="small source-edition">Atlas label: ${esc(entry.atlasNumber)}. Complete current source environment follows; the graph retains its frozen edition numbering.</p>`:''}${r.html}</section>`).join('');
+ return records.map(r=>`<section class="latex-source source-statement" data-source-key="${r.key}"><div class="source-caption"><b>Current notes · ${esc(r.kind)} ${r.number}</b>${sourceSpan(r)}</div>${erratumNotice(r)}${entry.atlasNumber!==r.kind[0].toUpperCase()+r.kind.slice(1)+' '+r.number?`<p class="small source-edition">Atlas label: ${esc(entry.atlasNumber)}. Complete current source environment follows; the graph retains its frozen edition numbering.</p>`:''}${r.html}</section>`).join('');
 }
 function latexProof(atlas,p) {
  const n=atlas.node.get(p.theorem),records=sourceRecords(atlas,n),proofs=records.flatMap(r=>r.proofs);
  if(!proofs.length)return `<p class="source-gap">No separately mapped canonical proof for ${esc(n.number)}. ${records.length?'The complete environment above may contain its argument.':'Source mapping needs review.'}</p>`;
- return proofs.map(r=>`<section class="latex-source source-proof"><div class="source-caption"><b>Original LaTeX proof</b>${sourceSpan(r)}</div>${r.html}</section>`).join('');
+ return proofs.map(r=>`<section class="latex-source source-proof"><div class="source-caption"><b>${r.erratum?'Corrected LaTeX proof':'Original LaTeX proof'}</b>${sourceSpan(r)}</div>${erratumNotice(r)}${r.html}</section>`).join('');
 }
-function sourceChapterHTML(atlas,number,html) {const ch=atlas.latex.chapters.find(c=>c.number===String(number));return `<article class="source-chapter latex-source"><h2>Current notes · Chapter ${esc(number)}</h2><p class="small">Original canonical LaTeX prose and mathematics. Source: <a href="source/latex-current/${esc(ch.file)}">${esc(ch.file)}</a>. The graph retains frozen edition labels.</p>${html}</article>`;}
+function sourceChapterHTML(atlas,number,html) {const ch=atlas.latex.chapters.find(c=>c.number===String(number));return `<article class="source-chapter latex-source"><h2>Current notes · Chapter ${esc(number)}</h2><p class="small">${ch.readingErrata?.length?'Canonical LaTeX prose and mathematics with explicitly marked course errata. Original source':'Original canonical LaTeX prose and mathematics. Source'}: <a href="source/latex-current/${esc(ch.file)}">${esc(ch.file)}</a>. The graph retains frozen edition labels.</p>${html}</article>`;}
 
 return {sourceRecords,sourceSpan,latexStatement,latexProof,sourceChapterHTML};})();
 const module_canvas_js=(()=>{
@@ -584,7 +586,7 @@ function proofHTML(atlas, p, { expanded = new Set(), expandAll = false, activeSt
       <span class="idx">S${s.index}</span>
       <div class="step-main"><button class="step-title math" data-action="step" data-id="${s.id}" aria-expanded="${open}">${s.origin==='source_passage_with_editorial_segmentation'?'Source argument · S'+s.index:math(s.title)}${s.origin!=='source_passage_with_editorial_segmentation'?'<em class="tag">atlas reading aid</em>':''}</button>
         <div class="just"><span class="rule" title="${esc(rule.long)}"><b>${rule.symbol}</b> ${esc(rule.label)}</span>${s.inputs.map(id => `<button class="premise" data-action="premise" data-id="${id}" title="${esc(p.steps.find(y => y.id === id)?.title || p.assumptions.find(a => a.id === id)?.label || '')}">${label[id] || id}</button>`).join('')}${s.resources.length ? '<span class="by">by</span>' : ''}${s.resources.map(id => chip(atlas.node.get(id))).join('')}</div>
-        ${open ? `<div class="step-body">${s.origin==='source_passage_with_editorial_segmentation'?'':`<p class="math">${math(s.body)}</p>`}<p class="small">This step is an atlas reading aid. The complete original LaTeX argument appears in “Read the original proof” below.</p><p class="small"><details><summary>Provenance details</summary>${esc(ORIGIN[s.origin] || s.origin.replaceAll('_', ' '))}</details>${s.inputs.length ? ` · ${rule.long ? esc(rule.long) : ''}` : ''}</p></div>` : ''}
+        ${open ? `<div class="step-body">${s.origin==='source_passage_with_editorial_segmentation'?'':`<p class="math">${math(s.body)}</p>`}<p class="small">This step is an atlas reading aid. The complete LaTeX argument, including any marked course errata, appears below.</p><p class="small"><details><summary>Provenance details</summary>${esc(ORIGIN[s.origin] || s.origin.replaceAll('_', ' '))}</details>${s.inputs.length ? ` · ${rule.long ? esc(rule.long) : ''}` : ''}</p></div>` : ''}
       </div></li>`;
   };
   let rows = '', scope = 'gt:scope:global', macro = 0;
@@ -608,7 +610,7 @@ function proofHTML(atlas, p, { expanded = new Set(), expandAll = false, activeSt
     </div>
     <div class="proof-actions"><button class="btn" data-action="expand-all" aria-pressed="${expandAll}">${expandAll ? 'Collapse step explanations' : `Explain ${p.steps.length === 1 ? 'this step' : 'all ' + p.steps.length + ' steps'}`}</button></div>
     ${hyps.length ? `<details class="assumption-lab"${removedId ? ' open' : ''}><summary>What if a hypothesis is removed?</summary><p>Losing a justification is not a proof that the conclusion is false.</p>${hyps.map(a=>`<button class="btn" data-action="remove-assumption" data-id="${a.id}" aria-pressed="${removedId===a.id}">${removedId===a.id?'Restore':'Remove'} ${esc(a.label)}</button>`).join(' ')}${removedId?`<p class="note">Steps losing recorded support: ${p.steps.filter(s=>lost.has(s.id)).map(s=>'S'+s.index).join(', ')||'none'}.</p>${variant?`<p>Recorded editorial variant: ${chip(variant)} ${esc(variant.statement)}</p>${counter?`<p>Recorded counterexample: ${chip(atlas.node.get(counter.prereq))}</p>`:''}`:'<p>No variant or counterexample is recorded for this removal.</p>'}`:''}</details>`:''}
-    <details class="original" open><summary>Read the original proof · current canonical LaTeX</summary>${latexProof(atlas,p)}<p class="small">Step labels, scopes and premise numbers are an atlas reconstruction, pending teacher review.</p></details>
+    <details class="original" open><summary>Read the LaTeX proof · current notes and marked errata</summary>${latexProof(atlas,p)}<p class="small">Step labels, scopes and premise numbers are an atlas reconstruction, pending teacher review.</p></details>
   </article>`;
 }
 

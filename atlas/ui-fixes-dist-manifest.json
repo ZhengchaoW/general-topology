@@ -16,11 +16,11 @@
     },
     "blocks.js": {
       "bytes": 12518,
-      "sha256": "9f0d77cc1d2375f1a46cf725e3fe9417845e5dbca0b02f6d88bb461149b736bb"
+      "sha256": "94fd13bab81b3a5aa0f692935b21770e6a0903b272358ef90703fbc8df1df959"
     },
     "bundle.mjs": {
-      "bytes": 376751,
-      "sha256": "099b188529027af641112ae7575792ee4950dd2fe66ab469203f4a489a45f7f6"
+      "bytes": 377290,
+      "sha256": "eccea0d9485385595417cefe498f4d5a417018b3140a7b79e0640976038a9d8b"
     },
     "canvas.js": {
       "bytes": 10834,
@@ -55,12 +55,12 @@
       "sha256": "8315bf015f86d327a42779e2dcf7d3812a1139a042dffc28c085b1c61f2dee9b"
     },
     "data/latex-chapter-4.html": {
-      "bytes": 401106,
-      "sha256": "885704109c4a9d56cf7586eefd90b16aa966ebd0bc0bd9124665f12afd181475"
+      "bytes": 403551,
+      "sha256": "39ab6dede56723d3f27281b5c822c9ffc7ee244e67d9e2a2258f019a2816bc19"
     },
     "data/latex-chapter-5.html": {
-      "bytes": 797673,
-      "sha256": "24ae10313f55a1c93f3075417f24c3370d0526014753c941b91adfa13fa1ebe2"
+      "bytes": 799804,
+      "sha256": "4c92bd65d35d1c24a449dcddb42eac6332a31e697835a05f078b004b411ad8a3"
     },
     "data/latex-chapter-6.html": {
       "bytes": 1292062,
@@ -71,8 +71,8 @@
       "sha256": "2a05050901804b27daa9d57ce07a512bf23cfb10a065b477af7b270b45fe9eb5"
     },
     "data/latex-source.json": {
-      "bytes": 7533942,
-      "sha256": "37a19b66bb6a2794ea4254369df69a38b6fa345be1c961193aba0de7a172b5f1"
+      "bytes": 7709193,
+      "sha256": "fb5a4f0ca1cf0b1d6fbe9607124b552fae349491f5cf5073a0ed3f7ead52fb12"
     },
     "data/layout.json": {
       "bytes": 101413,
@@ -83,8 +83,8 @@
       "sha256": "c7fd6110866284cc696436fef2319db2d0601301a7f786b1c06689bc0a72955b"
     },
     "data/review-notes.json": {
-      "bytes": 21573,
-      "sha256": "2da94aa77249a565c331bb9b818cf910b5de06babbd1170ada4ba5f6d65355ba"
+      "bytes": 22330,
+      "sha256": "64f31f793d2e76065f307b77913744f403d6bfdc126e79ed2822b9ba1cd1cd46"
     },
     "data/source-facsimile-manifest.json": {
       "bytes": 6603,
@@ -139,8 +139,8 @@
       "sha256": "a28b491369fdee068263f90dea012ec1d93e9e4b6bf50ca569deca3bf3033e78"
     },
     "latex-source.js": {
-      "bytes": 2663,
-      "sha256": "522e791e2ad711660082ee86ac7734056a9d97284e592ceb314814e870d90736"
+      "bytes": 3202,
+      "sha256": "2fb87454d7ecd66e3fba604be60537a975b895801c19dc6cfa3d8e307e336d60"
     },
     "renderer.mjs": {
       "bytes": 20717,
@@ -950,5 +950,16 @@
       "bytes": 23352,
       "sha256": "19095127357ed6d29fe0a63a6b000c913a89f7f1963b765dd3715e97c9852e75"
     }
+  },
+  "courseErrata": {
+    "date": "2026-11-02",
+    "keys": [
+      "4.6",
+      "4.10",
+      "4.18",
+      "5.6",
+      "5.8"
+    ],
+    "sourceSnapshotsUnchanged": true
   }
 }
